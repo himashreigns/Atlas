@@ -16,8 +16,7 @@ module mac_array #(
 
     assign a_pipe[0]    = a_in;
     assign w_pipe[0]    = w_in;
-    assign psum_pipe[0] = '0;
-
+    assign psum_pipe[0] = {ACC_W{1'b0}};
     genvar i;
     generate
         for (i = 0; i < N; i = i + 1) begin : MACS

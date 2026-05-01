@@ -15,8 +15,9 @@ module streaming_row_buffer #(
     input  wire stream_in_valid,
     output wire stream_in_ready,
     
-    // Kernel window output (KERNEL_ROWS × IMG_COLS × NUM_CHANNELS)
-    output wire [DATA_W-1:0] window_data [0:KERNEL_ROWS-1][0:IMG_COLS-1][0:NUM_CHANNELS-1],
+    // Kernel window output (KERNEL_ROWS x IMG_COLS x NUM_CHANNELS), flattened packed bus
+    // Element [r][c][ch] = window_data[ DATA_W*((r*IMG_COLS*NUM_CHANNELS)+(c*NUM_CHANNELS)+ch) +: DATA_W ]
+    output wire [DATA_W*KERNEL_ROWS*IMG_COLS*NUM_CHANNELS-1:0] window_data,
     output wire window_valid,
     
     // Control
@@ -106,7 +107,10 @@ module streaming_row_buffer #(
                     // Calculate actual row index in circular buffer
                     wire [$clog2(KERNEL_ROWS):0] actual_row;
                     assign actual_row = (rd_row_ptr + r) % KERNEL_ROWS;
-                    assign window_data[r][c][ch] = row_mem[actual_row][c][ch];
+                    // Map to flattened packed bus:
+                    // bit offset = DATA_W * (r*IMG_COLS*NUM_CHANNELS + c*NUM_CHANNELS + ch)
+                    assign window_data[DATA_W*((r*IMG_COLS*NUM_CHANNELS)+(c*NUM_CHANNELS)+ch) +: DATA_W]
+                        = row_mem[actual_row][c][ch];
                 end
             end
         end

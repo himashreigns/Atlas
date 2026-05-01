@@ -34,7 +34,8 @@ module tb_streaming_nn_system;
     // Configuration
     reg [MEM_ADDR_W-1:0] input_base_addr;
     reg [MEM_ADDR_W-1:0] output_base_addr;
-    reg [MEM_ADDR_W-1:0] weights_base_addr [0:NUM_LAYERS-1];
+    // Flattened packed bus to match DUT port: element[i] = weights_base_addr[MEM_ADDR_W*(i+1)-1 -: MEM_ADDR_W]
+    reg [MEM_ADDR_W*NUM_LAYERS-1:0] weights_base_addr;
     
     // Status
     wire [NUM_LAYERS-1:0] layer_busy;
@@ -113,12 +114,12 @@ module tb_streaming_nn_system;
             // Layer 0 weights: CONV 5x5x1x6 = 150 weights
             // Initialize with small random values
             for (i = 0; i < 150; i = i + 1) begin
-                memory[weights_base_addr[0] + i] = $random & 16'hFFFF;
+                memory[weights_base_addr[MEM_ADDR_W*1-1 -: MEM_ADDR_W] + i] = $random & 16'hFFFF;
             end
             
             // Layer 2 weights: CONV 5x5x6x16 = 2400 weights
             for (i = 0; i < 2400; i = i + 1) begin
-                memory[weights_base_addr[2] + i] = $random & 16'hFFFF;
+                memory[weights_base_addr[MEM_ADDR_W*3-1 -: MEM_ADDR_W] + i] = $random & 16'hFFFF;
             end
             
             // Input image: 28x28x1 = 784 pixels
@@ -147,10 +148,10 @@ module tb_streaming_nn_system;
         // Configure memory addresses
         input_base_addr = 20'h00000;
         output_base_addr = 20'h10000;
-        weights_base_addr[0] = 20'h20000;  // Layer 0 weights
-        weights_base_addr[1] = 20'h20100;  // Layer 1 (no weights, but need address)
-        weights_base_addr[2] = 20'h30000;  // Layer 2 weights
-        weights_base_addr[3] = 20'h30A00;  // Layer 3 (no weights)
+        weights_base_addr[MEM_ADDR_W*1-1 -: MEM_ADDR_W] = 20'h20000;  // Layer 0 weights
+        weights_base_addr[MEM_ADDR_W*2-1 -: MEM_ADDR_W] = 20'h20100;  // Layer 1 (no weights)
+        weights_base_addr[MEM_ADDR_W*3-1 -: MEM_ADDR_W] = 20'h30000;  // Layer 2 weights
+        weights_base_addr[MEM_ADDR_W*4-1 -: MEM_ADDR_W] = 20'h30A00;  // Layer 3 (no weights)
         
         // Initialize memory
         init_memory();

@@ -41,7 +41,10 @@ module tb_hw_vs_golden;
     // Configuration
     reg [MEM_ADDR_W-1:0] input_base_addr;
     reg [MEM_ADDR_W-1:0] output_base_addr;
-    reg [MEM_ADDR_W-1:0] weights_base_addr [0:NUM_LAYERS-1];
+    reg [MEM_ADDR_W-1:0] weights_base_addr_0;
+    reg [MEM_ADDR_W-1:0] weights_base_addr_1;
+    reg [MEM_ADDR_W-1:0] weights_base_addr_2;
+    reg [MEM_ADDR_W-1:0] weights_base_addr_3;
     
     // Status
     wire [NUM_LAYERS-1:0] layer_busy;
@@ -87,7 +90,10 @@ module tb_hw_vs_golden;
         .mem_wdata(mem_wdata),
         .input_base_addr(input_base_addr),
         .output_base_addr(output_base_addr),
-        .weights_base_addr(weights_base_addr),
+    .weights_base_addr_0(weights_base_addr_0),
+    .weights_base_addr_1(weights_base_addr_1),
+    .weights_base_addr_2(weights_base_addr_2),
+    .weights_base_addr_3(weights_base_addr_3),       
         .layer_busy(layer_busy),
         .pipeline_active(pipeline_active)
     );
@@ -321,7 +327,12 @@ module tb_hw_vs_golden;
                 
                 if (file != 0) begin
                     $display("  Loading layer %0d weights: %s", layer_idx, filename);
-                    base_addr = weights_base_addr[layer_idx];
+                    case (layer_idx)
+    0: base_addr = weights_base_addr_0;
+    1: base_addr = weights_base_addr_1;
+    2: base_addr = weights_base_addr_2;
+    3: base_addr = weights_base_addr_3;
+endcase
                     
                     while (!$feof(file)) begin
                         scan_result = $fscanf(file, "@%h %h\n", addr, value);
@@ -351,10 +362,10 @@ module tb_hw_vs_golden;
         // Configure addresses
         input_base_addr = 20'h00000;
         output_base_addr = 20'h10000;
-        weights_base_addr[0] = 20'h20000;
-        weights_base_addr[1] = 20'h20100;
-        weights_base_addr[2] = 20'h30000;
-        weights_base_addr[3] = 20'h30A00;
+        weights_base_addr_0 = 20'h20000;
+    weights_base_addr_1 = 20'h20100;
+    weights_base_addr_2 = 20'h30000;
+    weights_base_addr_3 = 20'h30A00;;
         
         total_tests = 0;
         passed_tests = 0;
@@ -364,9 +375,9 @@ module tb_hw_vs_golden;
         rst = 0;
         #(CLK_PERIOD * 5);
         
-        $display("=".repeat(80));
+        $display("================================================================================");
         $display("Hardware vs Golden Model Comparison Test");
-        $display("=".repeat(80));
+        $display("================================================================================");
         
         // Load weights into memory
         load_all_weights();
@@ -386,9 +397,9 @@ module tb_hw_vs_golden;
             integer sample_idx;
             
             for (sample_idx = 0; sample_idx < 2; sample_idx = sample_idx + 1) begin
-                $display("\n" + "=".repeat(80));
+                $display("================================================================================");
                 $display("Testing Sample %0d", sample_idx);
-                $display("=".repeat(80));
+                $display("================================================================================");
                 
                 // Load input
                 load_input_sample(sample_idx);
@@ -424,9 +435,9 @@ module tb_hw_vs_golden;
         end
         
         // Final summary
-        $display("\n" + "=".repeat(80));
+       $display("================================================================================");
         $display("FINAL TEST SUMMARY");
-        $display("=".repeat(80));
+        $display("================================================================================");
         $display("Total comparisons: %0d", total_tests);
         $display("Passed: %0d", passed_tests);
         $display("Failed: %0d", failed_tests);
