@@ -63,7 +63,9 @@ module streaming_nn_layer_stage #(
     // STREAMING ROW BUFFER (for CONV and POOL)
     // =========================================================================
     
-    wire [DATA_W-1:0] window_data [0:KERNEL_ROWS-1][0:IMG_COLS-1][0:IN_CHANNELS-1];
+    // Flat packed bus matching streaming_row_buffer port
+    // Element [r][c][ch] = window_data[DATA_W*((r*IMG_COLS*IN_CHANNELS)+(c*IN_CHANNELS)+ch) +: DATA_W]
+    wire [DATA_W*KERNEL_ROWS*IMG_COLS*IN_CHANNELS-1:0] window_data;
     wire window_valid;
     wire window_read;
     wire buffer_full;
@@ -296,7 +298,7 @@ module streaming_nn_layer_stage #(
     assign act_waddr = (win_kr * IMG_COLS * IN_CHANNELS + 
                         win_kc * IN_CHANNELS + 
                         win_ch) & ((1 << ADDR_W) - 1);
-    assign act_wdata = window_data[win_kr][win_kc][win_ch];
+    assign act_wdata = window_data[DATA_W*((win_kr*IMG_COLS*IN_CHANNELS)+(win_kc*IN_CHANNELS)+win_ch) +: DATA_W];
     
     assign window_read = (state == ST_STREAM_OUT) && 
                          (out_col_cnt == OUT_COLS - 1) && 
@@ -353,8 +355,8 @@ module streaming_nn_layer_stage #(
     
     always @(posedge clk) begin
         if (rst) begin
-            act_reg <= '0;
-            wgt_reg <= '0;
+            act_reg <= {DATA_W{1'b0}};
+            wgt_reg <= {DATA_W{1'b0}};
         end else if (compute_enable) begin
             act_reg <= act_rdata;
             wgt_reg <= wgt_rdata;
@@ -370,8 +372,8 @@ module streaming_nn_layer_stage #(
     ) mac_array_inst (
         .clk(clk),
         .rst(rst),
-        .a_in(compute_enable ? act_reg : '0),
-        .w_in(compute_enable ? wgt_reg : '0),
+        .a_in (compute_enable ? act_reg : {DATA_W{1'b0}}),
+        .w_in (compute_enable ? wgt_reg : {DATA_W{1'b0}}),
         .psum_out(mac_psum)
     );
     

@@ -17,9 +17,9 @@ module mac_stage #(
 
     always @(posedge clk) begin
         if (rst) begin
-            a_out    <= '0;
-            w_out    <= '0;
-            psum_out <= '0;
+           a_out    <= {DATA_W{1'b0}};
+           w_out    <= {DATA_W{1'b0}};
+           psum_out <= {ACC_W{1'b0}};
         end else begin
             a_out    <= a_in;
             w_out    <= w_in;

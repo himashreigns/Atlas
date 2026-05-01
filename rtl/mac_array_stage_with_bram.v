@@ -65,8 +65,8 @@ module mac_array_stage_with_bram #(
     reg [DATA_W-1:0] act_reg, wgt_reg;
     always @(posedge clk) begin
         if (rst) begin
-            act_reg <= '0;
-            wgt_reg <= '0;
+           act_reg <= {DATA_W{1'b0}};
+           wgt_reg <= {DATA_W{1'b0}};;
         end else if (compute_enable) begin
             act_reg <= act_rdata_r;
             wgt_reg <= wgt_rdata_r;
@@ -82,8 +82,8 @@ module mac_array_stage_with_bram #(
     ) mac_array_i (
         .clk      (clk),
         .rst      (rst),
-        .a_in     (compute_enable ? act_reg : '0),
-        .w_in     (compute_enable ? wgt_reg : '0),
+       .a_in (compute_enable ? act_reg : {DATA_W{1'b0}}),
+        .w_in (compute_enable ? wgt_reg : {DATA_W{1'b0}}),
         .psum_out (mac_psum)
     );
 

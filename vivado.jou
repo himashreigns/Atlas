@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Apr 29 17:43:17 2026
+# Process ID         : 84911
+# Current directory  : /home/himash-ruwanga/Desktop/stream_processing_final
+# Command line       : vivado
+# Log file           : /home/himash-ruwanga/Desktop/stream_processing_final/vivado.log
+# Journal file       : /home/himash-ruwanga/Desktop/stream_processing_final/vivado.jou
+# Running On         : himash-ruwanga-GF63-Thin-10SCSR
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10500H CPU @ 2.50GHz
+# CPU Frequency      : 3400.003 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16580 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20875 MB
+# Available Virtual  : 15557 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/himash-ruwanga/Desktop/stream_processing_final/vivado_project/stream_processing_final.xpr
+add_files {{/home/himash-ruwanga/Desktop/stream_processing_final/stream array complete system test/tb_hw_vs_golden.sv} /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_array.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/runtime_resource_manager.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_row_buffer.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_system.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_layer_stage.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_stage.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/dynamic_interconnect.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/stream_processing_top.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_pipeline.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/reconfigurable_nn_accelerator.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_array_stage_with_bram.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/nn_layer_control_unit.v /home/himash-ruwanga/Desktop/stream_processing_final/tb/tb_streaming_nn_system.v /home/himash-ruwanga/Desktop/stream_processing_final/tb/tb_hw_vs_golden.sv}
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_streaming_nn_system.tcl

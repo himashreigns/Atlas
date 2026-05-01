@@ -34,7 +34,7 @@ module streaming_nn_system #(
     // Configuration (base addresses in external memory)
     input  wire [MEM_ADDR_W-1:0] input_base_addr,
     input  wire [MEM_ADDR_W-1:0] output_base_addr,
-    input  wire [MEM_ADDR_W-1:0] weights_base_addr [0:NUM_LAYERS-1],
+    input  wire [MEM_ADDR_W*NUM_LAYERS-1:0] weights_base_addr,  // Flattened: layer[i] = weights_base_addr[MEM_ADDR_W*(i+1)-1 : MEM_ADDR_W*i]
     
     // Debug/monitoring
     output wire [NUM_LAYERS-1:0] layer_busy,
@@ -138,7 +138,7 @@ module streaming_nn_system #(
                     if (load_weights) begin
                         wl_layer_idx <= 0;
                         wl_addr_cnt <= 0;
-                        wl_mem_addr <= weights_base_addr[0];
+                        wl_mem_addr <= weights_base_addr[MEM_ADDR_W*1-1 -: MEM_ADDR_W];  // index 0
                         weights_loaded <= 0;
                         wl_state <= WL_READ_MEM;
                     end
@@ -181,7 +181,7 @@ module streaming_nn_system #(
                     
                     if (wl_layer_idx < NUM_LAYERS - 1) begin
                         wl_layer_idx <= wl_layer_idx + 1;
-                        wl_mem_addr <= weights_base_addr[wl_layer_idx + 1];
+                        wl_mem_addr <= weights_base_addr[MEM_ADDR_W*(wl_layer_idx+2)-1 -: MEM_ADDR_W];  // index wl_layer_idx+1
                         wl_state <= WL_READ_MEM;
                     end else begin
                         wl_state <= WL_DONE;
