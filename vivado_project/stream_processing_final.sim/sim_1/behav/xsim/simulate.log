@@ -1,8 +1,3 @@
 Time resolution is 1 ps
-Initializing memory...
-Memory initialization complete
-
-=== Streaming NN Pipeline System Test ===
-
---- Loading Weights ---
-INFO: xsimkernel Simulation Memory Usage: 286960 KB (Peak: 340688 KB), Simulation CPU Usage: 1220 ms
+PASS: mac_stage unit test completed successfully.
+$finish called at time : 120 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" Line 95

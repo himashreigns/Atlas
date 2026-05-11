@@ -31,23 +31,24 @@ puts "\nAdding RTL source files..."
 
 # Add RTL files in dependency order
 set rtl_files [list \
-    "../rtl/mac_stage.v" \
-    "../rtl/mac_array.v" \
-    "../rtl/mac_array_stage_with_bram.v" \
-    "../rtl/nn_layer_control_unit.v" \
-    "../rtl/streaming_row_buffer.v" \
-    "../rtl/streaming_nn_layer_stage.v" \
-    "../rtl/streaming_nn_pipeline.v" \
-    "../rtl/streaming_nn_system.v" \
-    "../rtl/runtime_resource_manager.v" \
-    "../rtl/dynamic_interconnect.v" \
-    "../rtl/reconfigurable_nn_accelerator.v" \
-    "../rtl/stream_processing_top.v" \
+    "rtl/mac_stage.v" \
+    "rtl/mac_array.v" \
+    "rtl/mac_array_stage_with_bram.v" \
+    "rtl/nn_layer_control_unit.v" \
+    "rtl/streaming_row_buffer.v" \
+    "rtl/streaming_nn_layer_stage.v" \
+    "rtl/streaming_nn_pipeline.v" \
+    "rtl/streaming_nn_system.v" \
+    "rtl/runtime_resource_manager.v" \
+    "rtl/dynamic_interconnect.v" \
+    "rtl/reconfigurable_nn_accelerator.v" \
+    "rtl/stream_processing_top.v" \
 ]
 
 foreach file $rtl_files {
     if {[file exists $file]} {
         add_files -fileset sources_1 $file
+        set_property file_type SystemVerilog [get_files $file]
         puts "  Added: $file"
     } else {
         puts "  WARNING: File not found: $file"
@@ -57,12 +58,14 @@ foreach file $rtl_files {
 # Add testbench files
 puts "\nAdding testbench files..."
 set tb_files [list \
-    "../tb/tb_streaming_nn_system.v" \
+    "tb/tb_streaming_nn_system.v" \
+    "tb/tb_mac_stage.v" \
 ]
 
 foreach file $tb_files {
     if {[file exists $file]} {
         add_files -fileset sim_1 $file
+        set_property file_type SystemVerilog [get_files $file]
         puts "  Added: $file"
     } else {
         puts "  WARNING: File not found: $file"
@@ -71,13 +74,13 @@ foreach file $tb_files {
 
 # Add constraints
 puts "\nAdding constraint files..."
-if {[file exists "../constraints/timing_constraints.xdc"]} {
-    add_files -fileset constrs_1 "../constraints/timing_constraints.xdc"
+if {[file exists "constraints/timing_constraints.xdc"]} {
+    add_files -fileset constrs_1 "constraints/timing_constraints.xdc"
     puts "  Added: timing_constraints.xdc"
 }
 
-if {[file exists "../constraints/pin_constraints.xdc"]} {
-    add_files -fileset constrs_1 "../constraints/pin_constraints.xdc"
+if {[file exists "constraints/pin_constraints.xdc"]} {
+    add_files -fileset constrs_1 "constraints/pin_constraints.xdc"
     puts "  Added: pin_constraints.xdc"
 }
 

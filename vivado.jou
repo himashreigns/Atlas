@@ -3,31 +3,56 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Apr 29 17:43:17 2026
-# Process ID         : 84911
-# Current directory  : /home/himash-ruwanga/Desktop/stream_processing_final
+# Start of session at: Mon May 11 17:11:05 2026
+# Process ID         : 10522
+# Current directory  : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas
 # Command line       : vivado
-# Log file           : /home/himash-ruwanga/Desktop/stream_processing_final/vivado.log
-# Journal file       : /home/himash-ruwanga/Desktop/stream_processing_final/vivado.jou
-# Running On         : himash-ruwanga-GF63-Thin-10SCSR
+# Log file           : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado.log
+# Journal file       : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado.jou
+# Running On         : chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB
 # Platform           : Ubuntu
-# Operating System   : Ubuntu 24.04.3 LTS
-# Processor Detail   : Intel(R) Core(TM) i5-10500H CPU @ 2.50GHz
-# CPU Frequency      : 3400.003 MHz
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+# CPU Frequency      : 999.164 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
-# Host memory        : 16580 MB
+# Host memory        : 16476 MB
 # Swap memory        : 4294 MB
-# Total Virtual      : 20875 MB
-# Available Virtual  : 15557 MB
+# Total Virtual      : 20771 MB
+# Available Virtual  : 17169 MB
 #-----------------------------------------------------------
 start_gui
-open_project /home/himash-ruwanga/Desktop/stream_processing_final/vivado_project/stream_processing_final.xpr
-add_files {{/home/himash-ruwanga/Desktop/stream_processing_final/stream array complete system test/tb_hw_vs_golden.sv} /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_array.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/runtime_resource_manager.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_row_buffer.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_system.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_layer_stage.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_stage.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/dynamic_interconnect.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/stream_processing_top.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/streaming_nn_pipeline.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/reconfigurable_nn_accelerator.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/mac_array_stage_with_bram.v /home/himash-ruwanga/Desktop/stream_processing_final/rtl/nn_layer_control_unit.v /home/himash-ruwanga/Desktop/stream_processing_final/tb/tb_streaming_nn_system.v /home/himash-ruwanga/Desktop/stream_processing_final/tb/tb_hw_vs_golden.sv}
+open_project {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.xpr}
+update_compile_order -fileset sim_1
 update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top mac_stage [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+set_property top_file {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v} [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
 launch_simulation
+source mac_stage.tcl
+close_sim
 launch_simulation
+source mac_stage.tcl
+close_sim
 launch_simulation
+source mac_stage.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_mac_stage [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
 launch_simulation
+source tb_mac_stage.tcl
+close_sim
 launch_simulation
-source tb_streaming_nn_system.tcl
+source tb_mac_stage.tcl
+close_sim
+launch_simulation
+source tb_mac_stage.tcl

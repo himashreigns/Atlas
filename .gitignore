@@ -1,0 +1,24 @@
+# Vivado project and simulation output
+vivado_project/
+.Xil/
+# Vivado log and journal files
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+vivado_pid*.str
+xvlog.pb
+# Simulation waveform and generated files
+*.vcd
+*.wdb
+# Editor and system files
+*.swp
+*~
+.DS_Store
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+# Temporary files
+*.tmp
+*.bak
