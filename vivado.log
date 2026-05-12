@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon May 11 17:11:05 2026
-# Process ID         : 10522
+# Start of session at: Mon May 11 18:18:11 2026
+# Process ID         : 23874
 # Current directory  : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas
 # Command line       : vivado
 # Log file           : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
-# CPU Frequency      : 999.164 MHz
+# CPU Frequency      : 938.108 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16476 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20771 MB
-# Available Virtual  : 17169 MB
+# Available Virtual  : 15609 MB
 #-----------------------------------------------------------
 start_gui
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/chamath-ishanka/Vivado/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -172,68 +172,53 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/chamath-ishanka/Vivado/2025.2/data/ip'.
-open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:06 . Memory (MB): peak = 10004.613 ; gain = 164.680 ; free physical = 6426 ; free virtual = 15636
-update_compile_order -fileset sim_1
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:06 . Memory (MB): peak = 9991.500 ; gain = 150.641 ; free physical = 3991 ; free virtual = 14056
 update_compile_order -fileset sources_1
-set_property top mac_stage [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-set_property top_file {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v} [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
 INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:14:00 2026
+INFO: [Vivado 12-28535] Process started - Mon May 11 18:19:12 2026
 
-INFO: [Vivado 12-12493] Simulation top is 'mac_stage'
+INFO: [Vivado 12-12493] Simulation top is 'tb_mac_array'
 INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'mac_stage' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_mac_array' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj mac_stage_vlog.prj
+xvlog --incr --relax -L uvm -prj tb_mac_array_vlog.prj
 /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
 Waiting for jobs to finish...
 No pending jobs, compilation finished.
-execute_script: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10043.523 ; gain = 0.000 ; free physical = 6343 ; free virtual = 15541
 INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_array_behav xil_defaultlib.tb_mac_array xil_defaultlib.glbl -log elaborate.log
 Vivado Simulator v2025.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log 
+Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_array_behav xil_defaultlib.tb_mac_array xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
     LIBRARY_PATH
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v" Line 1. Module mac_stage doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mac_stage
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot mac_stage_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
 /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-execute_script: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 10043.523 ; gain = 0.000 ; free physical = 6336 ; free virtual = 15534
+execute_script: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10013.375 ; gain = 0.000 ; free physical = 3974 ; free virtual = 14022
 INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "mac_stage_behav -key {Behavioral:sim_1:Functional:mac_stage} -tclbatch {mac_stage.tcl} -log {simulate.log}"
+   with args "tb_mac_array_behav -key {Behavioral:sim_1:Functional:tb_mac_array} -tclbatch {tb_mac_array.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-source mac_stage.tcl
+source tb_mac_array.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -244,338 +229,23 @@ source mac_stage.tcl
 #   }
 # }
 # log_wave -r /
-# run 1us
-xsim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 10125.711 ; gain = 76.793 ; free physical = 6303 ; free virtual = 15544
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:31 ; elapsed = 00:00:25 . Memory (MB): peak = 10125.711 ; gain = 82.188 ; free physical = 6303 ; free virtual = 15544
+# run 2us
+ERROR: cycle=4 expected 3c got 30
+ERROR: cycle=5 expected 337 got 78
+ERROR: cycle=6 expected 1032b got 40
+ERROR: cycle=7 expected 627036d got bf4
+ERROR: cycle=8 expected 628025d got 40000
+ERROR: cycle=9 expected xxxxxxxx got 18980180
+ERROR: cycle=10 expected xxxxxxxx got 3fc00
+ERROR: cycle=11 expected xxxxxxxx got 0
+FAIL: mac_array unit test found 8 errors.
+$finish called at time : 180 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_array.v" Line 98
+xsim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 10110.562 ; gain = 91.758 ; free physical = 3900 ; free virtual = 13981
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_mac_array_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 2us
+launch_simulation: Time (s): cpu = 00:00:32 ; elapsed = 00:00:25 . Memory (MB): peak = 10110.562 ; gain = 97.188 ; free physical = 3900 ; free virtual = 13981
 close_sim
-INFO: xsimkernel Simulation Memory Usage: 280852 KB (Peak: 338384 KB), Simulation CPU Usage: 4260 ms
+INFO: xsimkernel Simulation Memory Usage: 281136 KB (Peak: 338408 KB), Simulation CPU Usage: 4040 ms
 INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
-INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:14:51 2026
-
-INFO: [Vivado 12-12493] Simulation top is 'mac_stage'
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'mac_stage' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj mac_stage_vlog.prj
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-Waiting for jobs to finish...
-No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log
-Vivado Simulator v2025.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
-    LIBRARY_PATH
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "mac_stage_behav -key {Behavioral:sim_1:Functional:mac_stage} -tclbatch {mac_stage.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source mac_stage.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# log_wave -r /
-# run 1us
-xsim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10127.707 ; gain = 1.996 ; free physical = 6280 ; free virtual = 15522
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 10127.707 ; gain = 1.996 ; free physical = 6280 ; free virtual = 15522
-close_sim
-INFO: xsimkernel Simulation Memory Usage: 280852 KB (Peak: 338384 KB), Simulation CPU Usage: 3940 ms
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
-INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:17:46 2026
-
-INFO: [Vivado 12-12493] Simulation top is 'mac_stage'
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'mac_stage' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj mac_stage_vlog.prj
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-Waiting for jobs to finish...
-No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log
-Vivado Simulator v2025.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mac_stage_behav xil_defaultlib.mac_stage xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
-    LIBRARY_PATH
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "mac_stage_behav -key {Behavioral:sim_1:Functional:mac_stage} -tclbatch {mac_stage.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source mac_stage.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# log_wave -r /
-# run 1us
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10127.707 ; gain = 0.000 ; free physical = 6173 ; free virtual = 15472
-set_property top tb_mac_stage [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
-INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:19:47 2026
-
-INFO: [Vivado 12-12493] Simulation top is 'tb_mac_stage'
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_mac_stage' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -L uvm -prj tb_mac_stage_vlog.prj
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-Waiting for jobs to finish...
-No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log
-Vivado Simulator v2025.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
-    LIBRARY_PATH
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v" Line 1. Module mac_stage doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mac_stage
-Compiling module xil_defaultlib.tb_mac_stage
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_mac_stage_behav
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_mac_stage_behav -key {Behavioral:sim_1:Functional:tb_mac_stage} -tclbatch {tb_mac_stage.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source tb_mac_stage.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# log_wave -r /
-# run 1us
-ERROR: psum_out expected 2c, got 24
-ERROR: psum_out expected ffff0000, got 10000
-ERROR: psum_out expected fee24040, got 5020060
-FAIL: mac_stage unit test found 3 errors.
-$finish called at time : 120 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" Line 95
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10217.539 ; gain = 84.789 ; free physical = 6067 ; free virtual = 15323
-close_sim
-INFO: xsimkernel Simulation Memory Usage: 281128 KB (Peak: 338400 KB), Simulation CPU Usage: 1140 ms
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
-INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:23:14 2026
-
-INFO: [Vivado 12-12493] Simulation top is 'tb_mac_stage'
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_mac_stage' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -L uvm -prj tb_mac_stage_vlog.prj
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_mac_stage
-Waiting for jobs to finish...
-No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log
-Vivado Simulator v2025.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
-    LIBRARY_PATH
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/rtl/mac_stage.v" Line 1. Module mac_stage doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mac_stage
-Compiling module xil_defaultlib.tb_mac_stage
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_mac_stage_behav
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_mac_stage_behav -key {Behavioral:sim_1:Functional:tb_mac_stage} -tclbatch {tb_mac_stage.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source tb_mac_stage.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# log_wave -r /
-# run 1us
-PASS: mac_stage unit test completed successfully.
-$finish called at time : 120 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" Line 95
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10255.543 ; gain = 19.887 ; free physical = 6115 ; free virtual = 15350
-close_sim
-INFO: xsimkernel Simulation Memory Usage: 281128 KB (Peak: 338400 KB), Simulation CPU Usage: 1150 ms
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
-INFO: [Project 1-5737] Running on host chamath-ishanka-ASUS-TUF-Gaming-F15-FX506HCB-FX506HCB (64) - Ubuntu 24.04.4 LTS
-INFO: [Vivado 12-28535] Process started - Mon May 11 17:23:44 2026
-
-INFO: [Vivado 12-12493] Simulation top is 'tb_mac_stage'
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from '/home/chamath-ishanka/Vivado/2025.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_mac_stage' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xvlog --incr --relax -L uvm -prj tb_mac_stage_vlog.prj
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-Waiting for jobs to finish...
-No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log
-Vivado Simulator v2025.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/chamath-ishanka/Vivado/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_mac_stage_behav xil_defaultlib.tb_mac_stage xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
-    LIBRARY_PATH
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-/home/chamath-ishanka/Vivado/2025.2/Vivado/bin/setupEnv.sh: line 236: [: too many arguments
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_mac_stage_behav -key {Behavioral:sim_1:Functional:tb_mac_stage} -tclbatch {tb_mac_stage.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source tb_mac_stage.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# log_wave -r /
-# run 1us
-PASS: mac_stage unit test completed successfully.
-$finish called at time : 120 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" Line 95
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_mac_stage_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1us
-launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 10255.543 ; gain = 0.000 ; free physical = 6111 ; free virtual = 15351
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 11 18:31:39 2026...

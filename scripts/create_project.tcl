@@ -60,6 +60,7 @@ puts "\nAdding testbench files..."
 set tb_files [list \
     "tb/tb_streaming_nn_system.v" \
     "tb/tb_mac_stage.v" \
+    "tb/tb_mac_array.v" \
 ]
 
 foreach file $tb_files {

@@ -1,3 +1,12 @@
 Time resolution is 1 ps
-PASS: mac_stage unit test completed successfully.
-$finish called at time : 120 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v" Line 95
+ERROR: cycle=4 expected 3c got 30
+ERROR: cycle=5 expected 337 got 78
+ERROR: cycle=6 expected 1032b got 40
+ERROR: cycle=7 expected 627036d got bf4
+ERROR: cycle=8 expected 628025d got 40000
+ERROR: cycle=9 expected xxxxxxxx got 18980180
+ERROR: cycle=10 expected xxxxxxxx got 3fc00
+ERROR: cycle=11 expected xxxxxxxx got 0
+FAIL: mac_array unit test found 8 errors.
+$finish called at time : 180 ns : File "/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_array.v" Line 98
+INFO: xsimkernel Simulation Memory Usage: 281136 KB (Peak: 338408 KB), Simulation CPU Usage: 4040 ms
