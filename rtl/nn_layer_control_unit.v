@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module nn_layer_control_unit #(
     parameter ADDR_W         = 10,
     parameter DATA_W         = 16,
@@ -48,9 +49,9 @@ module nn_layer_control_unit #(
     output reg  out_re,
     output reg  [ADDR_W-1:0] out_raddr,
     
-    // Status outputs
-    output reg  [$clog2(1024):0] in_rows_buffered,
-    output reg  [$clog2(1024):0] out_rows_produced
+    // Status outputs  ($clog2(1024)=10, replaced for Verilog-2001 compatibility)
+    output reg  [10:0] in_rows_buffered,
+    output reg  [10:0] out_rows_produced
 );
 
     // Operation modes
@@ -93,10 +94,15 @@ module nn_layer_control_unit #(
     
     // Pipeline delay counter
     reg [3:0] pipe_delay_cnt;
-    
+
     // Computation tracking
     reg [15:0] total_computations;
     reg [15:0] comp_cnt;
+
+    // Weight loading and computation completion flags (declared here to avoid
+    // forward-reference error in combinational next-state block)
+    reg wgt_loading_done;
+    reg computation_done;
     
     // Calculate output dimensions
     always @(*) begin
@@ -162,12 +168,6 @@ module nn_layer_control_unit #(
             default: next_state = IDLE;
         endcase
     end
-    
-    // Weight loading completion flag
-    reg wgt_loading_done;
-    
-    // Computation done flag
-    reg computation_done;
     
     // Main control logic
     always @(posedge clk) begin
