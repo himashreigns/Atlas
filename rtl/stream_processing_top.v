@@ -97,7 +97,8 @@ module stream_processing_top #(
     // Configuration registers
     reg [MEM_ADDR_W-1:0] input_base_addr;
     reg [MEM_ADDR_W-1:0] output_base_addr;
-    reg [MEM_ADDR_W-1:0] weights_base_addr [0:NUM_LAYERS-1];
+    // Flat packed vector; layer i = weights_base_addr_flat[i*MEM_ADDR_W +: MEM_ADDR_W]
+    reg [NUM_LAYERS*MEM_ADDR_W-1:0] weights_base_addr_flat;
     
     // Control register write
     always @(posedge clk) begin
@@ -107,8 +108,10 @@ module stream_processing_top #(
             operation_mode <= 0;
             input_base_addr <= 0;
             output_base_addr <= 0;
-            for (integer i = 0; i < NUM_LAYERS; i = i + 1) begin
-                weights_base_addr[i] <= 0;
+            begin : rst_wgt_addrs
+                integer i;
+                for (i = 0; i < NUM_LAYERS; i = i + 1)
+                    weights_base_addr_flat[i*MEM_ADDR_W +: MEM_ADDR_W] <= 0;
             end
         end else begin
             // Auto-clear start
@@ -124,7 +127,7 @@ module stream_processing_top #(
                     end
                     ADDR_INPUT_BASE: input_base_addr <= ctrl_wdata[MEM_ADDR_W-1:0];
                     ADDR_OUTPUT_BASE: output_base_addr <= ctrl_wdata[MEM_ADDR_W-1:0];
-                    ADDR_WEIGHT_BASE: weights_base_addr[0] <= ctrl_wdata[MEM_ADDR_W-1:0];
+                    ADDR_WEIGHT_BASE: weights_base_addr_flat[0 +: MEM_ADDR_W] <= ctrl_wdata[MEM_ADDR_W-1:0];
                 endcase
             end
         end
@@ -269,7 +272,7 @@ module stream_processing_top #(
                 .mem_wdata(mem_wdata),
                 .input_base_addr(input_base_addr),
                 .output_base_addr(output_base_addr),
-                .weights_base_addr(weights_base_addr),
+                .weights_base_addr(weights_base_addr_flat),
                 .layer_busy(layer_busy),
                 .pipeline_active(network_busy)
             );

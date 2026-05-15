@@ -34,7 +34,7 @@ module streaming_nn_system #(
     // Configuration (base addresses in external memory)
     input  wire [MEM_ADDR_W-1:0] input_base_addr,
     input  wire [MEM_ADDR_W-1:0] output_base_addr,
-    input  wire [MEM_ADDR_W*NUM_LAYERS-1:0] weights_base_addr,  // Flattened: layer[i] = weights_base_addr[MEM_ADDR_W*(i+1)-1 : MEM_ADDR_W*i]
+    input  wire [NUM_LAYERS*MEM_ADDR_W-1:0] weights_base_addr,
     
     // Debug/monitoring
     output wire [NUM_LAYERS-1:0] layer_busy,
@@ -76,7 +76,7 @@ module streaming_nn_system #(
         .pipeline_out_ready(pipeline_out_ready),
         .wgt_load_en(wgt_load_en),
         .wgt_load_addr(wgt_load_addr),
-        .wgt_load_data(wgt_load_data),
+        .wgt_load_data({{(32-DATA_W){1'b0}}, wgt_load_data}),
         .pipeline_ready(pipeline_ready),
         .layer_busy(layer_busy)
     );
@@ -119,6 +119,64 @@ module streaming_nn_system #(
         weights_per_layer[3] = 0;     // POOL (no weights)
     end
     
+    // =========================================================================
+    // MEMORY BUS ARBITRATION
+    // =========================================================================
+    // FIX: The original code had three separate always blocks all driving the
+    // shared output regs mem_addr, mem_read, and mem_write.  In Verilog,
+    // multiple always blocks writing the same reg produce a race — the
+    // "default mem_read <= 0" in the WL block overwrites the IF block's
+    // "mem_read <= 1" in the same clock edge, so the input feeder never
+    // actually issues a read request and the pipeline never receives data.
+    //
+    // Fix: each FSM drives its own private request bus; a single always block
+    // (priority MUX) merges them onto the shared mem_* outputs.
+    // Priority: WL (weight loader) > OC (output collector) > IF (input feeder).
+    // WL finishes before inference starts, so in practice IF and OC share the
+    // bus in non-overlapping phases: IF reads pixels while OC waits for valid
+    // output; OC writes results after the pipeline has produced data.
+    
+    // Private request buses — driven by each FSM independently
+    reg                   wl_req_read;
+    reg [MEM_ADDR_W-1:0]  wl_req_addr;
+    
+    reg                   if_req_read;
+    reg [MEM_ADDR_W-1:0]  if_req_addr;
+    
+    reg                   oc_req_write;
+    reg [MEM_ADDR_W-1:0]  oc_req_addr;
+    reg [MEM_DATA_W-1:0]  oc_req_wdata;
+    
+    // Single always block owns mem_addr, mem_read, mem_write
+    always @(posedge clk) begin
+        if (rst) begin
+            mem_addr  <= 0;
+            mem_read  <= 0;
+            mem_write <= 0;
+            mem_wdata <= 0;
+        end else begin
+            // Defaults
+            mem_read  <= 0;
+            mem_write <= 0;
+            // Priority MUX: WL > OC > IF
+            if (wl_req_read) begin
+                mem_addr <= wl_req_addr;
+                mem_read <= 1;
+            end else if (oc_req_write) begin
+                mem_addr  <= oc_req_addr;
+                mem_wdata <= oc_req_wdata;
+                mem_write <= 1;
+            end else if (if_req_read) begin
+                mem_addr <= if_req_addr;
+                mem_read <= 1;
+            end
+        end
+    end
+
+    // =========================================================================
+    // WEIGHT LOADER FSM  (drives wl_req_*)
+    // =========================================================================
+
     always @(posedge clk) begin
         if (rst) begin
             wl_state <= WL_IDLE;
@@ -127,10 +185,11 @@ module streaming_nn_system #(
             wl_mem_addr <= 0;
             weights_loaded <= 0;
             wgt_load_en_reg <= 0;
-            mem_read <= 0;
+            wl_req_read <= 0;
+            wl_req_addr <= 0;
         end else begin
-            // Default
-            mem_read <= 0;
+            // Defaults
+            wl_req_read     <= 0;
             wgt_load_en_reg <= 0;
             
             case (wl_state)
@@ -138,7 +197,7 @@ module streaming_nn_system #(
                     if (load_weights) begin
                         wl_layer_idx <= 0;
                         wl_addr_cnt <= 0;
-                        wl_mem_addr <= weights_base_addr[MEM_ADDR_W*1-1 -: MEM_ADDR_W];  // index 0
+                        wl_mem_addr <= weights_base_addr[0*MEM_ADDR_W +: MEM_ADDR_W];
                         weights_loaded <= 0;
                         wl_state <= WL_READ_MEM;
                     end
@@ -146,42 +205,33 @@ module streaming_nn_system #(
                 
                 WL_READ_MEM: begin
                     if (weights_per_layer[wl_layer_idx] > 0) begin
-                        // Request memory read
-                        mem_addr <= wl_mem_addr;
-                        mem_read <= 1;
+                        wl_req_addr <= wl_mem_addr;
+                        wl_req_read <= 1;
                         wl_state <= WL_WRITE_LAYER;
                     end else begin
-                        // Skip layers with no weights (pooling)
                         wl_state <= WL_NEXT_LAYER;
                     end
                 end
                 
                 WL_WRITE_LAYER: begin
                     if (mem_rdata_valid) begin
-                        // Write to current layer's weight memory
                         wgt_load_en_reg[wl_layer_idx] <= 1;
                         wgt_load_addr_reg <= wl_addr_cnt;
                         wgt_load_data_reg <= mem_rdata[DATA_W-1:0];
-                        
-                        // Increment counters
                         wl_addr_cnt <= wl_addr_cnt + 1;
                         wl_mem_addr <= wl_mem_addr + 1;
-                        
-                        // Check if layer complete
-                        if (wl_addr_cnt >= weights_per_layer[wl_layer_idx] - 1) begin
+                        if (wl_addr_cnt >= weights_per_layer[wl_layer_idx] - 1)
                             wl_state <= WL_NEXT_LAYER;
-                        end else begin
+                        else
                             wl_state <= WL_READ_MEM;
-                        end
                     end
                 end
                 
                 WL_NEXT_LAYER: begin
                     wl_addr_cnt <= 0;
-                    
                     if (wl_layer_idx < NUM_LAYERS - 1) begin
                         wl_layer_idx <= wl_layer_idx + 1;
-                        wl_mem_addr <= weights_base_addr[MEM_ADDR_W*(wl_layer_idx+2)-1 -: MEM_ADDR_W];  // index wl_layer_idx+1
+                        wl_mem_addr <= weights_base_addr[(wl_layer_idx + 1) * MEM_ADDR_W +: MEM_ADDR_W];
                         wl_state <= WL_READ_MEM;
                     end else begin
                         wl_state <= WL_DONE;
@@ -223,8 +273,11 @@ module streaming_nn_system #(
             if_mem_addr <= 0;
             if_pixel_cnt <= 0;
             input_valid_reg <= 0;
+            if_req_read <= 0;
+            if_req_addr <= 0;
         end else begin
             input_valid_reg <= 0;  // Default
+            if_req_read     <= 0;  // Default
             
             case (if_state)
                 IF_IDLE: begin
@@ -236,8 +289,8 @@ module streaming_nn_system #(
                 end
                 
                 IF_READ_MEM: begin
-                    mem_addr <= if_mem_addr;
-                    mem_read <= 1;
+                    if_req_addr <= if_mem_addr;
+                    if_req_read <= 1;
                     if_state <= IF_FEED;
                 end
                 
@@ -246,15 +299,12 @@ module streaming_nn_system #(
                         if (pipeline_in_ready) begin
                             input_data_reg <= mem_rdata[DATA_W-1:0];
                             input_valid_reg <= 1;
-                            
                             if_pixel_cnt <= if_pixel_cnt + 1;
                             if_mem_addr <= if_mem_addr + 1;
-                            
-                            if (if_pixel_cnt >= INPUT_SIZE - 1) begin
+                            if (if_pixel_cnt >= INPUT_SIZE - 1)
                                 if_state <= IF_IDLE;
-                            end else begin
+                            else
                                 if_state <= IF_READ_MEM;
-                            end
                         end
                     end
                 end
@@ -287,9 +337,11 @@ module streaming_nn_system #(
             oc_pixel_cnt <= 0;
             pipeline_out_ready_reg <= 0;
             inference_done <= 0;
-            mem_write <= 0;
+            oc_req_write <= 0;
+            oc_req_addr  <= 0;
+            oc_req_wdata <= 0;
         end else begin
-            mem_write <= 0;  // Default
+            oc_req_write   <= 0;  // Default
             inference_done <= 0;
             
             case (oc_state)
@@ -309,13 +361,11 @@ module streaming_nn_system #(
                 end
                 
                 OC_WRITE: begin
-                    mem_addr <= oc_mem_addr;
-                    mem_wdata <= {{(MEM_DATA_W-ACC_W){1'b0}}, pipeline_out_data};
-                    mem_write <= 1;
-                    
+                    oc_req_addr  <= oc_mem_addr;
+                    oc_req_wdata <= {{(MEM_DATA_W-ACC_W){1'b0}}, pipeline_out_data};
+                    oc_req_write <= 1;
                     oc_pixel_cnt <= oc_pixel_cnt + 1;
-                    oc_mem_addr <= oc_mem_addr + 1;
-                    
+                    oc_mem_addr  <= oc_mem_addr + 1;
                     if (oc_pixel_cnt >= OUTPUT_SIZE - 1) begin
                         inference_done <= 1;
                         pipeline_out_ready_reg <= 0;

@@ -176,11 +176,16 @@ module streaming_nn_layer_stage #(
     reg [7:0] out_ch_cnt;
     
     reg ctrl_start;
+    reg win_load_done;  // FIX: explicit done pulse for ST_LOAD_WIN exit
     wire ctrl_done;
     wire ctrl_busy;
     
     // Window to activation BRAM loader
-    reg [$clog2(KERNEL_SIZE):0] win_kr, win_kc, win_ch;
+    // win_kr iterates over KERNEL_ROWS, win_kc over KERNEL_SIZE columns,
+    // win_ch over IN_CHANNELS.  Each counter needs enough bits for its range.
+    reg [$clog2(KERNEL_ROWS > 1  ? KERNEL_ROWS  : 2):0] win_kr;
+    reg [$clog2(KERNEL_SIZE > 1  ? KERNEL_SIZE  : 2):0] win_kc;
+    reg [$clog2(IN_CHANNELS > 1  ? IN_CHANNELS  : 2):0] win_ch;
     reg win_load_active;
     
     always @(posedge clk) begin
@@ -201,7 +206,12 @@ module streaming_nn_layer_stage #(
             end
             
             ST_LOAD_WIN: begin
-                if (!win_load_active) begin
+                // FIX: use win_load_done (a registered pulse) instead of !win_load_active.
+                // win_load_active is 0 on the very first cycle in ST_LOAD_WIN (it's a
+                // registered signal set one cycle late), so the original !win_load_active
+                // condition fired immediately, skipping all loading and jumping straight to
+                // ST_COMPUTE with an empty activation BRAM.
+                if (win_load_done) begin
                     next_state = ST_COMPUTE;
                 end
             end
@@ -226,6 +236,7 @@ module streaming_nn_layer_stage #(
         if (rst) begin
             ctrl_start <= 0;
             win_load_active <= 0;
+            win_load_done <= 0;
             win_kr <= 0;
             win_kc <= 0;
             win_ch <= 0;
@@ -243,26 +254,35 @@ module streaming_nn_layer_stage #(
                     win_kr <= 0;
                     win_kc <= 0;
                     win_ch <= 0;
+                    win_load_done <= 0;
                 end
                 
                 ST_LOAD_WIN: begin
-                    // Load window data into activation BRAM
+                    // Load window data into activation BRAM.
+                    // FIX: win_load_active drives act_we; win_load_done is the exit signal.
+                    // We start loading on the first cycle in this state (win_load_active <= 1)
+                    // and keep going until the last element has been written, then pulse
+                    // win_load_done so the combinational next_state block can advance.
                     win_load_active <= 1;
+                    win_load_done   <= 0;
                     
                     // Simple sequential loading
+                    // Iterate win_ch -> win_kc (KERNEL_SIZE cols) -> win_kr
                     if (win_ch < IN_CHANNELS - 1) begin
                         win_ch <= win_ch + 1;
                     end else begin
                         win_ch <= 0;
-                        if (win_kc < IMG_COLS - 1) begin
+                        if (win_kc < KERNEL_SIZE - 1) begin
                             win_kc <= win_kc + 1;
                         end else begin
                             win_kc <= 0;
                             if (win_kr < KERNEL_ROWS - 1) begin
                                 win_kr <= win_kr + 1;
                             end else begin
-                                win_kr <= 0;
+                                // All elements loaded — signal done, stop writing
+                                win_kr          <= 0;
                                 win_load_active <= 0;
+                                win_load_done   <= 1;  // exit pulse seen next cycle
                             end
                         end
                     end
@@ -387,7 +407,11 @@ module streaming_nn_layer_stage #(
     assign stream_out_data = out_rdata;
     assign stream_out_valid = (state == ST_STREAM_OUT);
     
-    assign layer_ready = (state == ST_IDLE) && buffer_full;
+    // FIX: removed && buffer_full (caused deadlock — see comment below)
+    // buffer_full only goes high once pixels are flowing, but the feeder waits
+    // for pipeline_ready, which waits for layer_ready, which waited for buffer_full.
+    // A layer is ready when its FSM is idle; buffer state is irrelevant here.
+    assign layer_ready = (state == ST_IDLE);
     assign layer_busy = (state != ST_IDLE);
 
 endmodule

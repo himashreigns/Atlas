@@ -9,6 +9,8 @@
 # =============================================================================
 vivado_project/
 
+stream_processing_final/
+
 # Vivado logs, journals, and backups (root-level and nested)
 *.jou
 *.log
