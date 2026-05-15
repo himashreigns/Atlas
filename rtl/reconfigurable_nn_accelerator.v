@@ -290,9 +290,11 @@ module reconfigurable_nn_accelerator #(
     task schedule_virtual_stages;
         integer layer_idx, stage_idx;
         integer can_allocate;
+        integer sched_abort;
         begin
             stage_idx = 0;
             layer_idx = 0;
+            sched_abort = 0;
             
             // Reset stage mapping
             for (stage_idx = 0; stage_idx < MAX_VIRTUAL_STAGES; stage_idx = stage_idx + 1) begin
@@ -302,7 +304,7 @@ module reconfigurable_nn_accelerator #(
             stage_idx = 0;
             
             // Greedy allocation: pack layers into stages
-            while (layer_idx < total_layers) begin
+            while (layer_idx < total_layers && !sched_abort) begin
                 // Try to allocate current layer
                 can_allocate = 1;
                 
@@ -329,13 +331,14 @@ module reconfigurable_nn_accelerator #(
                     
                     if (stage_idx >= MAX_VIRTUAL_STAGES) begin
                         // Need to execute current stages before proceeding
-                        break;
-                    end
-                    
-                    // Deallocate previous stage to free resources
-                    if (stage_idx > 0) begin
-                        for (integer i = 0; i < virtual_stage_num_layers[stage_idx-1]; i = i + 1) begin
-                            deallocate_layer_resources(virtual_stage_layers[stage_idx-1][i]);
+                        sched_abort = 1;
+                    end else begin
+                        // Deallocate previous stage to free resources
+                        if (stage_idx > 0) begin : dealloc_prev
+                            integer i;
+                            for (i = 0; i < virtual_stage_num_layers[stage_idx-1]; i = i + 1) begin
+                                deallocate_layer_resources(virtual_stage_layers[stage_idx-1][i]);
+                            end
                         end
                     end
                 end
@@ -390,11 +393,14 @@ module reconfigurable_nn_accelerator #(
             total_allocated_brams <= 0;
             
             // Initialize allocation tables
-            for (integer i = 0; i < TOTAL_MAC_UNITS; i = i + 1) begin
-                mac_to_layer[i] <= 5'h1F;  // Free
-            end
-            for (integer i = 0; i < TOTAL_BRAM_BLOCKS; i = i + 1) begin
-                bram_to_layer[i] <= 5'h1F;  // Free
+            begin : init_alloc_tables
+                integer i;
+                for (i = 0; i < TOTAL_MAC_UNITS; i = i + 1) begin
+                    mac_to_layer[i] <= 5'h1F;  // Free
+                end
+                for (i = 0; i < TOTAL_BRAM_BLOCKS; i = i + 1) begin
+                    bram_to_layer[i] <= 5'h1F;  // Free
+                end
             end
             
         end else begin
@@ -429,13 +435,25 @@ module reconfigurable_nn_accelerator #(
                 
                 EXEC_COMPUTE: begin
                     // Enable computation for all layers in current stage
-                    for (integer i = 0; i < virtual_stage_num_layers[exec_stage_idx]; i = i + 1) begin
-                        layer_compute_enable[virtual_stage_layers[exec_stage_idx][i]] <= 1;
+                    begin : enable_compute
+                        integer i;
+                        for (i = 0; i < virtual_stage_num_layers[exec_stage_idx]; i = i + 1) begin
+                            layer_compute_enable[virtual_stage_layers[exec_stage_idx][i]] <= 1;
+                        end
                     end
                     
                     // Check if all layers done
-                    if (&layer_compute_done[virtual_stage_num_layers[exec_stage_idx]-1:0]) begin
-                        exec_state <= EXEC_DRAIN;
+                    begin : check_compute_done
+                        integer i;
+                        reg all_done;
+                        all_done = 1;
+                        for (i = 0; i < virtual_stage_num_layers[exec_stage_idx]; i = i + 1) begin
+                            if (!layer_compute_done[virtual_stage_layers[exec_stage_idx][i]])
+                                all_done = 0;
+                        end
+                        if (all_done) begin
+                            exec_state <= EXEC_DRAIN;
+                        end
                     end
                 end
                 
@@ -447,8 +465,11 @@ module reconfigurable_nn_accelerator #(
                 
                 EXEC_NEXT_STAGE: begin
                     // Deallocate resources from current stage
-                    for (integer i = 0; i < virtual_stage_num_layers[exec_stage_idx]; i = i + 1) begin
-                        deallocate_layer_resources(virtual_stage_layers[exec_stage_idx][i]);
+                    begin : dealloc_stage
+                        integer i;
+                        for (i = 0; i < virtual_stage_num_layers[exec_stage_idx]; i = i + 1) begin
+                            deallocate_layer_resources(virtual_stage_layers[exec_stage_idx][i]);
+                        end
                     end
                     
                     if (exec_stage_idx < num_virtual_stages - 1) begin
@@ -456,8 +477,11 @@ module reconfigurable_nn_accelerator #(
                         current_virtual_stage <= exec_stage_idx + 1;
                         
                         // Allocate next stage
-                        for (integer i = 0; i < virtual_stage_num_layers[exec_stage_idx+1]; i = i + 1) begin
-                            allocate_layer_resources(virtual_stage_layers[exec_stage_idx+1][i]);
+                        begin : alloc_next_stage
+                            integer i;
+                            for (i = 0; i < virtual_stage_num_layers[exec_stage_idx+1]; i = i + 1) begin
+                                allocate_layer_resources(virtual_stage_layers[exec_stage_idx+1][i]);
+                            end
                         end
                         
                         exec_state <= EXEC_LOAD_WEIGHTS;
@@ -488,9 +512,9 @@ module reconfigurable_nn_accelerator #(
                     8'h00: total_layers <= config_data[7:0];
                     
                     // Layer configurations (0x10 - 0x1F for layer 0, 0x20 - 0x2F for layer 1, etc.)
-                    default: begin
+                    default: begin : cfg_layer_decode
+                        integer lidx;
                         if (config_addr >= 8'h10) begin
-                            integer lidx;
                             lidx = (config_addr - 8'h10) / 16;
                             
                             case ((config_addr - 8'h10) % 16)
