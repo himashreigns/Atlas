@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Single Streaming NN Layer Stage
 // Fixed parameters at design time, processes feature maps in streaming fashion
 // Uses row buffers instead of full feature map storage

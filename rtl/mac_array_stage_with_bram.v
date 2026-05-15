@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module mac_array_stage_with_bram #(
     parameter N               = 8,
     parameter DATA_W          = 16,
@@ -38,6 +39,7 @@ module mac_array_stage_with_bram #(
 
     wire compute_enable  = (in_rows_buffered  >= KERNEL_ROWS);
     wire output_enable   = (out_rows_produced >= NEXT_KERNEL_ROWS);
+    wire [ACC_W-1:0] mac_psum;
 
     reg [DATA_W-1:0] act_mem [0:(1<<ADDR_W)-1];
     reg [DATA_W-1:0] wgt_mem [0:(1<<ADDR_W)-1];
@@ -66,14 +68,12 @@ module mac_array_stage_with_bram #(
     always @(posedge clk) begin
         if (rst) begin
            act_reg <= {DATA_W{1'b0}};
-           wgt_reg <= {DATA_W{1'b0}};;
+           wgt_reg <= {DATA_W{1'b0}};
         end else if (compute_enable) begin
             act_reg <= act_rdata_r;
             wgt_reg <= wgt_rdata_r;
         end
     end
-
-    wire [ACC_W-1:0] mac_psum;
 
     mac_array #(
         .N(N),

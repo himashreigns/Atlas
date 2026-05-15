@@ -6,7 +6,7 @@ VIVADO_BATCH = $(VIVADO) -mode batch -source
 PROJECT_DIR = vivado_project
 PROJECT_NAME = stream_processing_final
 
-.PHONY: help create build simulate clean program gui reports
+.PHONY: help create build simulate test clean program gui reports
 
 # Default target
 help:
@@ -15,6 +15,8 @@ help:
 	@echo "================================================"
 	@echo ""
 	@echo "Available targets:"
+	@echo "  make test       - Run all RTL unit tests (Vivado XSim)"
+	@echo "  make test-clean - Clean sim_out/ then run all unit tests"
 	@echo "  make create     - Create Vivado project"
 	@echo "  make build      - Run full synthesis and implementation"
 	@echo "  make simulate   - Run behavioral simulation"
@@ -29,6 +31,14 @@ help:
 	@echo "  2. make build"
 	@echo "  3. make program"
 	@echo ""
+
+# Run all unit tests with Vivado XSim
+test:
+	@bash scripts/run_tests.sh
+
+# Run tests after deleting previous sim output
+test-clean:
+	@bash scripts/run_tests.sh --clean
 
 # Create Vivado project
 create:

@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module mac_stage #(
     parameter DATA_W = 16,
     parameter ACC_W  = 32

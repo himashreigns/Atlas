@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Streaming Row Buffer - stores just enough rows for convolution window
 // Implements circular buffer with read pointers for kernel window access
 

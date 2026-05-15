@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Multi-Stage Streaming Neural Network Pipeline
 // Each stage is a fixed NN layer with streaming row buffers
 // Pipeline processes feature maps with minimal buffering

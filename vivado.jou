@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon May 11 18:18:11 2026
-# Process ID         : 23874
+# Start of session at: Fri May 15 15:59:53 2026
+# Process ID         : 23242
 # Current directory  : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas
 # Command line       : vivado
 # Log file           : /home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado.log
@@ -13,18 +13,70 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
-# CPU Frequency      : 938.108 MHz
+# CPU Frequency      : 3795.360 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16476 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20771 MB
-# Available Virtual  : 15609 MB
+# Available Virtual  : 14780 MB
 #-----------------------------------------------------------
 start_gui
 open_project {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/vivado_project/stream_processing_final.xpr}
 update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_mac_stage [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_mac_stage.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_mac_array [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
 launch_simulation
 source tb_mac_array.tcl
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse {{/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_streaming_nn_system.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_nn_layer_control_unit.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_dynamic_interconnect.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_streaming_nn_pipeline.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_array.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_runtime_resource_manager.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_streaming_nn_layer_stage.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_hw_vs_golden.sv} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_stage.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_mac_array_stage_with_bram.v} {/home/chamath-ishanka/Desktop/FNL Project KB/FYPRepo/Atlas/tb/tb_streaming_row_buffer.v}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_streaming_row_buffer [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_streaming_row_buffer.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_dynamic_interconnect [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_dynamic_interconnect.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_runtime_resource_manager [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+source tb_runtime_resource_manager.tcl
+update_compile_order -fileset sim_1
+close_sim
+current_sim simulation_4
+close_sim
+current_sim simulation_3
+close_sim
+current_sim simulation_2
+close_sim
 close_sim
