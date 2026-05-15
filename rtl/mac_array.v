@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module mac_array #(
     parameter N      = 8,
     parameter DATA_W = 16,
@@ -10,31 +11,30 @@ module mac_array #(
     output wire [ACC_W-1:0]          psum_out
 );
 
-    wire [DATA_W-1:0] a_pipe   [0:N];
-    wire [DATA_W-1:0] w_pipe   [0:N];
-    wire [ACC_W-1:0]  psum_pipe[0:N];
+    // Sliding-window dot product of depth N.
+    // Each cycle: compute product, shift into prod[0], drop the oldest from prod[N-1].
+    // psum_out is the combinational sum of all N registered products.
+    reg [ACC_W-1:0] prod [0:N-1];
 
-    assign a_pipe[0]    = a_in;
-    assign w_pipe[0]    = w_in;
-    assign psum_pipe[0] = {ACC_W{1'b0}};
-    genvar i;
-    generate
-        for (i = 0; i < N; i = i + 1) begin : MACS
-            mac_stage #(
-                .DATA_W(DATA_W),
-                .ACC_W (ACC_W)
-            ) mac_i (
-                .clk      (clk),
-                .rst      (rst),
-                .a_in     (a_pipe[i]),
-                .w_in     (w_pipe[i]),
-                .psum_in  (psum_pipe[i]),
-                .a_out    (a_pipe[i+1]),
-                .w_out    (w_pipe[i+1]),
-                .psum_out (psum_pipe[i+1])
-            );
+    integer k;
+    always @(posedge clk) begin
+        if (rst) begin
+            for (k = 0; k < N; k = k + 1)
+                prod[k] <= {ACC_W{1'b0}};
+        end else begin
+            prod[0] <= a_in * w_in;
+            for (k = 1; k < N; k = k + 1)
+                prod[k] <= prod[k-1];
         end
-    endgenerate
+    end
 
-    assign psum_out = psum_pipe[N];
+    integer j;
+    reg [ACC_W-1:0] sum_comb;
+    always @* begin
+        sum_comb = {ACC_W{1'b0}};
+        for (j = 0; j < N; j = j + 1)
+            sum_comb = sum_comb + prod[j];
+    end
+
+    assign psum_out = sum_comb;
 endmodule

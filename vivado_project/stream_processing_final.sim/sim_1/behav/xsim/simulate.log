@@ -1,8 +1,0 @@
-Time resolution is 1 ps
-Initializing memory...
-Memory initialization complete
-
-=== Streaming NN Pipeline System Test ===
-
---- Loading Weights ---
-INFO: xsimkernel Simulation Memory Usage: 286960 KB (Peak: 340688 KB), Simulation CPU Usage: 1220 ms
