@@ -50,6 +50,7 @@ module streaming_row_buffer #(
     always @(posedge clk) begin
         if (rst) begin
             wr_row_ptr <= 0;
+            rd_row_ptr <= 0;
             col_cnt <= 0;
             ch_cnt <= 0;
             valid_rows <= 0;
