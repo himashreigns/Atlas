@@ -1,0 +1,11 @@
+benchmark,workload,architecture,n_macs,cycles,exec_time_us,throughput_k_inf_per_s,energy_uj,power_mw,area_au,dram_overhead_cycles,dram_pct,speedup_vs_sa
+FatFC,Single Large FC — DRAM Penalty Demo,Streaming,8,14778,147.7800,6.7668,70.9344,480.0,26.1,0,0.0,—
+FatFC,Single Large FC — DRAM Penalty Demo,SA-1×8,8,65236,652.3600,1.5329,306.6430,470.1,16.0,50176,76.9,4.41
+DoubleFC,Two Large FC Layers — Compounded DRAM Penalty,Streaming,8,61306,613.0600,1.6312,294.2688,480.0,61.5,0,0.0,—
+DoubleFC,Two Large FC Layers — Compounded DRAM Penalty,SA-1×8,8,293089,2930.8900,0.3412,1406.3250,479.8,16.0,231424,79.0,4.78
+PoolHeavy,Pool Cascade + DRAM FC — Combined Advantages,Streaming,8,24620,246.2000,4.0617,118.1760,480.0,21.2,0,0.0,—
+PoolHeavy,Pool Cascade + DRAM FC — Combined Advantages,SA-1×8,8,51740,517.4000,1.9327,172.7223,333.8,16.0,25088,48.5,2.10
+VGG-Micro,VGG-Style Two-Stage CONV + Fat FC,Streaming,8,33335,333.3500,2.9999,160.0080,480.0,29.5,0,0.0,—
+VGG-Micro,VGG-Style Two-Stage CONV + Fat FC,SA-1×8,8,99672,996.7200,1.0033,415.4790,416.8,16.0,65536,65.8,2.99
+EdgeDetector,Deep Edge-AI CNN — Realistic Topology,Streaming,8,27031,270.3100,3.6995,129.7488,480.0,23.1,0,0.0,—
+EdgeDetector,Deep Edge-AI CNN — Realistic Topology,SA-1×8,8,60274,602.7400,1.6591,218.5294,362.6,16.0,32768,54.4,2.23

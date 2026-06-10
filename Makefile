@@ -200,6 +200,11 @@ bench-sa:
 	@echo "=== Systolic Array Benchmark ==="
 	$(PY) benchmarks/sa_benchmark.py
 
+# Fair architectural comparison (equal MACs, DRAM modelled, corrected OS formula)
+bench-fair:
+	@echo "=== Fair Comparison: Streaming Pipeline vs SA-1×8 ==="
+	$(PY) benchmarks/fair_comparison_benchmark.py
+
 # Vivado batch mode for any benchmark:
 #   make vivado-bench BENCH=kws
 vivado-bench:
