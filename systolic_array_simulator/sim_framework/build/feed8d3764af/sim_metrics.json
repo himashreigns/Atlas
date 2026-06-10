@@ -1,0 +1,1 @@
+{"passed": true, "cycles": 73, "stats": {"weight_reuse": 1.0, "input_reuse": 20.0, "weight_traffic": 720.0, "input_traffic": 36.0, "output_traffic": 20.0, "bytes_loaded": 3024, "backend": "software_ref"}}

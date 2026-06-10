@@ -195,6 +195,11 @@ bench-report: bench-all
 	@echo "=== Generating performance report ==="
 	$(PY) benchmarks/perf_report.py
 
+# Systolic-array benchmark (uses systolic_array_simulator/sim_framework)
+bench-sa:
+	@echo "=== Systolic Array Benchmark ==="
+	$(PY) benchmarks/sa_benchmark.py
+
 # Vivado batch mode for any benchmark:
 #   make vivado-bench BENCH=kws
 vivado-bench:

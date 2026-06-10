@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo -n true)",
+      "Bash(echo \"sudo_exit=$?\")",
+      "Bash(pip3 install *)",
+      "Bash(lsb_release -a)"
+    ]
+  }
+}

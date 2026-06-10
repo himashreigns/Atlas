@@ -1,0 +1,21 @@
+benchmark,workload,architecture,n_pes,dataflow,cycles,exec_time_us,throughput_k_inf_per_s,energy_uj,avg_power_mw,area_au,mac_util_pct,total_macs,dram_bytes
+ECG-Net,Cardiac Anomaly Detection,Streaming-Pipeline,8,pipelined,800,8.0000,125.0000,3.7280,466.0,32.0,100,,
+GestureNet,IMU Gesture Recognition,Streaming-Pipeline,8,pipelined,1147,11.4700,87.2000,5.3450,466.0,32.0,100,,
+KWS-CNN,Keyword Spotting,Streaming-Pipeline,8,pipelined,1840,18.4000,54.3000,23.9200,1300.0,35.5,100,,
+YOLO-Nano,Object Detection,Streaming-Pipeline,8,pipelined,1942,19.4200,51.5000,15.5360,800.0,33.0,100,,
+VWW-Tiny,Visual Wake Words,Streaming-Pipeline,8,pipelined,10590,105.9000,9.4000,134.0690,1266.0,50.0,100,,
+ECG-Net,Cardiac Anomaly Detection,SA-4×4,16,OS,324,3.2400,308.6420,0.3267,100.8,20.0,117.6,6096,1088
+ECG-Net,Cardiac Anomaly Detection,SA-8×8,64,OS,199,1.9900,502.5126,0.3573,179.5,44.0,47.9,6096,1088
+ECG-Net,Cardiac Anomaly Detection,SA-16×16,256,OS,170,1.7000,588.2353,1.0384,610.8,140.0,14.0,6096,1088
+GestureNet,IMU Gesture Recognition,SA-4×4,16,OS,286,2.8600,349.6503,0.3021,105.6,20.0,97.5,4460,1584
+GestureNet,IMU Gesture Recognition,SA-8×8,64,OS,173,1.7300,578.0347,0.3346,193.4,44.0,40.3,4460,1584
+GestureNet,IMU Gesture Recognition,SA-16×16,256,OS,159,1.5900,628.9308,1.0411,654.8,140.0,11.0,4460,1584
+KWS-CNN,Keyword Spotting,SA-4×4,16,OS,680,6.8000,147.0588,0.6840,100.6,20.0,129.1,14048,4808
+KWS-CNN,Keyword Spotting,SA-8×8,64,OS,387,3.8700,258.3979,0.6718,173.6,44.0,56.7,14048,4808
+KWS-CNN,Keyword Spotting,SA-16×16,256,OS,287,2.8700,348.4321,1.6402,571.5,140.0,19.1,14048,4808
+YOLO-Nano,Object Detection,SA-4×4,16,OS,434,4.3400,230.4147,0.4535,104.5,20.0,112.0,7776,4192
+YOLO-Nano,Object Detection,SA-8×8,64,OS,247,2.4700,404.8583,0.4590,185.8,44.0,49.2,7776,4192
+YOLO-Nano,Object Detection,SA-16×16,256,OS,191,1.9100,523.5602,1.1589,606.7,140.0,15.9,7776,4192
+VWW-Tiny,Visual Wake Words,SA-4×4,16,OS,2039,20.3900,49.0436,2.0891,102.5,20.0,392.8,128160,11072
+VWW-Tiny,Visual Wake Words,SA-8×8,64,OS,914,9.1400,109.4092,1.4365,157.2,44.0,219.1,128160,11072
+VWW-Tiny,Visual Wake Words,SA-16×16,256,OS,497,4.9700,201.2072,2.0834,419.2,140.0,100.7,128160,11072
