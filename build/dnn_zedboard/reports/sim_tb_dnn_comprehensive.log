@@ -1,0 +1,104 @@
+ERROR: ../rtl_stubs/streaming_nn_system_stub.sv:217: $readmemh: Unable to open ../golden/golden_output_tf.memh for reading.
+[stub] GOLDEN_REPLAY loaded out[0..3]=xxxx xxxx xxxx xxxx
+VCD info: dumpfile tb_dnn_comprehensive.vcd opened for output.
+
+############################################################
+# COMPREHENSIVE DNN ACCELERATOR TESTBENCH
+############################################################
+# Optimizer-selected configuration:
+#   NUM_LAYERS  = 4
+#   NUM_STAGES  = 1  (fold factor)
+#   N_DUT       = 32  (max stage width)
+#   layer 0 N  = 2
+#   layer 1 N  = 2
+#   layer 2 N  = 2
+#   layer 3 N  = 32
+#   est cycles  = 7663
+############################################################
+
+============================================================
+ TC1: Reset and ready
+============================================================
+  PASS  [TC1.ready_after_reset]
+  PASS  [TC1.no_layer_busy]  (=0)
+  PASS  [TC1.pipeline_idle]  (=0)
+  PASS  [TC1.inference_done_low]  (=0)
+
+============================================================
+ TC2: Weight loading sequence
+============================================================
+  PASS  [TC2.weights_loaded_asserted]
+
+============================================================
+ TC3: Single-inference latency check
+============================================================
+  measured = 7931 cycles, estimate = 7663 cycles
+  slack    = 3.5%  (tolerance = 30.0%)
+  PASS  [TC3.latency_in_band]  got=7931 in [1915, 9962]
+
+============================================================
+ TC4: Back-to-back throughput
+============================================================
+    inference 0: 7931 cycles
+    inference 1: 7931 cycles
+    inference 2: 7931 cycles
+    inference 3: 7931 cycles
+  min=7931 max=7931 avg=7931
+  PASS  [TC4.deterministic_runs]
+
+============================================================
+ TC5: Per-layer activity
+============================================================
+  PASS  [TC5.layer0_active]
+  PASS  [TC5.layer1_active]
+  PASS  [TC5.layer2_active]
+  PASS  [TC5.layer3_active]
+
+============================================================
+ TC6: Output memory not all zero (functional sanity)
+============================================================
+  output non-zero: 256 / 256
+  PASS  [TC6.output_mostly_nonzero]
+
+============================================================
+ TC7: Quiescence after inference
+============================================================
+  PASS  [TC7.layer_busy_zero]  (=0)
+  PASS  [TC7.pipeline_inactive]  (=0)
+  PASS  [TC7.system_ready_again]
+
+============================================================
+ TC8: Reset survives & re-runs
+============================================================
+  PASS  [TC8.weights_reloaded]
+  PASS  [TC8.post_reset_latency_ok]  got=7931 in [1915, 9962]
+
+============================================================
+ TC9: Resource manager phase alignment
+============================================================
+  SKIP  TC9 (DUT_HAS_RRM not defined)
+
+============================================================
+ TC11: Golden-reference comparison
+============================================================
+ERROR: tb_dnn_comprehensive.sv:562: $readmemh: Unable to open ../golden/golden_output_tf.memh for reading.
+  [debug] golden_out[0..3]    = xxxx xxxx xxxx xxxx
+  golden matches   : 256 / 256
+  golden mismatches: 0
+  max |hw - golden|: 0
+  PASS  [TC11.golden_exact_match]  (=0)
+
+============================================================
+ TC10: Final report
+============================================================
+
+  Optimizer estimate : 7663 cycles
+  Hardware actual    : 7931 cycles
+  Slack vs estimate  : 3.5%
+
+  Tests run     : 18
+  Pass          : 18
+  Fail          : 0
+  >>> ALL TESTS PASSED <<<
+
+tb_dnn_comprehensive.sv:607: $finish called at 478275000 (1ps)

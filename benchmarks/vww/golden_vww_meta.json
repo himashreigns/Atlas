@@ -1,0 +1,15 @@
+{
+  "workload": "VWW-Tiny",
+  "network": "CONV(3x3,1->8)-POOL-CONV(3x3,8->16)-POOL",
+  "in_shape": [
+    24,
+    24,
+    1
+  ],
+  "out_size": 256,
+  "hw_output_scale": 256,
+  "hw_nonzero": 256,
+  "max_lsb_diff": 1,
+  "sha_input": "59ee1390d3a8",
+  "sha_output": "f36819c3d1b7"
+}

@@ -1,0 +1,15 @@
+{
+  "workload": "KWS-CNN",
+  "network": "CONV(3x3,1->8)-POOL-POOL-FC(80->10)",
+  "in_shape": [
+    25,
+    10,
+    1
+  ],
+  "out_size": 10,
+  "hw_output_scale": 256,
+  "hw_nonzero": 10,
+  "max_lsb_diff": 1,
+  "sha_input": "5e6f7befbe15",
+  "sha_output": "f9cd165871bc"
+}

@@ -1,0 +1,73 @@
+{
+  "dnn_name": "LeNet5",
+  "layers": [
+    {
+      "name": "conv1",
+      "op_type": "conv",
+      "in_h": 28,
+      "in_w": 28,
+      "c_in": 1,
+      "c_out": 6,
+      "k": 5,
+      "stride": 1,
+      "padding": 0
+    },
+    {
+      "name": "pool1",
+      "op_type": "pool",
+      "in_h": 24,
+      "in_w": 24,
+      "c_in": 6,
+      "c_out": 6,
+      "k": 2,
+      "stride": 2,
+      "padding": 0
+    },
+    {
+      "name": "conv2",
+      "op_type": "conv",
+      "in_h": 12,
+      "in_w": 12,
+      "c_in": 6,
+      "c_out": 16,
+      "k": 5,
+      "stride": 1,
+      "padding": 0
+    },
+    {
+      "name": "pool2",
+      "op_type": "pool",
+      "in_h": 8,
+      "in_w": 8,
+      "c_in": 16,
+      "c_out": 16,
+      "k": 2,
+      "stride": 2,
+      "padding": 0
+    }
+  ],
+  "objective": "latency",
+  "area_budget": 180.0,
+  "power_budget": 2000.0,
+  "best": {
+    "n_per_layer": [
+      2,
+      2,
+      2,
+      32
+    ],
+    "F": 1,
+    "schedule_groups": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "latency_cycles": 7663,
+    "throughput_inv_cycles": 0.00013049719431032232,
+    "area": 92.0,
+    "power": 1699.0
+  }
+}

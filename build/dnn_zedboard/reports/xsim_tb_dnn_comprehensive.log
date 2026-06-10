@@ -1,0 +1,33 @@
+Time resolution is 1 ps
+
+############################################################
+# COMPREHENSIVE DNN ACCELERATOR TESTBENCH
+############################################################
+# Optimizer-selected configuration:
+#   NUM_LAYERS  = 4
+#   NUM_STAGES  = 1  (fold factor)
+#   N_DUT       = 32  (max stage width)
+#   layer 0 N  = 2
+#   layer 1 N  = 2
+#   layer 2 N  = 2
+#   layer 3 N  = 32
+#   est cycles  = 7663
+############################################################
+
+============================================================
+ TC1: Reset and ready
+============================================================
+  FAIL  [TC1.ready_after_reset]
+  PASS  [TC1.no_layer_busy]  (=0)
+  PASS  [TC1.pipeline_idle]  (=0)
+  PASS  [TC1.inference_done_low]  (=0)
+
+============================================================
+ TC2: Weight loading sequence
+============================================================
+  PASS  [TC2.weights_loaded_asserted]
+
+============================================================
+ TC3: Single-inference latency check
+============================================================
+INFO: xsimkernel Simulation Memory Usage: 285936 KB (Peak: 342644 KB), Simulation CPU Usage: 12280 ms

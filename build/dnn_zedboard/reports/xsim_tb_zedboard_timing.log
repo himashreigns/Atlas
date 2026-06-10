@@ -1,0 +1,37 @@
+Time resolution is 1 ps
+############################################################
+#       ZEDBOARD TIMING-VERIFICATION TESTBENCH
+############################################################
+# Target part   : XC7Z020-1CLG484 (ZedBoard, speed grade -1)
+# Clock period  : 10.000 ns  (100.0 MHz)
+# Tcko          : 0.500 ns
+# T_comb (model): 7.500 ns
+# Tsetup        : 0.300 ns
+# Thold         : 0.100 ns
+# Uncertainty   : 0.250 ns
+# ------------------------------------------------------------
+# Setup slack   : 1.450 ns  (period - Tcko - Tcomb - Tsu - U)
+############################################################
+
+============================================================
+ TT1: Period budget vs combinational + setup
+============================================================
+  PASS  [TT1.slack_nonnegative]  actual=1.450ns  threshold=0.000ns
+
+============================================================
+ TT2: Reset/ready at 100 MHz with injected delays
+============================================================
+  FAIL  [TT2.system_ready_after_reset]
+
+============================================================
+ TT3: Weight load survives delayed load_weights
+============================================================
+  PASS  [TT3.weights_loaded_under_delay]
+
+============================================================
+ TT4: Full inference at Zedboard frequency
+============================================================
+
+>>> TIMEOUT — simulation exceeded global watchdog <<<
+$finish called at time : 1766300 ns : File "/home/chathupa/Desktop/New Folder/dnn_opt/sim/tb_zedboard_timing.sv" Line 372
+INFO: xsimkernel Simulation Memory Usage: 285484 KB (Peak: 342260 KB), Simulation CPU Usage: 3710 ms

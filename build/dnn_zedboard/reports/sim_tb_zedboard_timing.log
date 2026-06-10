@@ -1,0 +1,80 @@
+ERROR: ../rtl_stubs/streaming_nn_system_stub.sv:217: $readmemh: Unable to open ../golden/golden_output.memh for reading.
+[stub] GOLDEN_REPLAY loaded out[0..3]=xxxx xxxx xxxx xxxx
+VCD info: dumpfile tb_zedboard_timing.vcd opened for output.
+############################################################
+#       ZEDBOARD TIMING-VERIFICATION TESTBENCH
+############################################################
+# Target part   : XC7Z020-1CLG484 (ZedBoard, speed grade -1)
+# Clock period  : 10.000 ns  (100.0 MHz)
+# Tcko          : 0.500 ns
+# T_comb (model): 7.500 ns
+# Tsetup        : 0.300 ns
+# Thold         : 0.100 ns
+# Uncertainty   : 0.250 ns
+# ------------------------------------------------------------
+# Setup slack   : 1.450 ns  (period - Tcko - Tcomb - Tsu - U)
+############################################################
+
+============================================================
+ TT1: Period budget vs combinational + setup
+============================================================
+  PASS  [TT1.slack_nonnegative]  actual=1.450ns  threshold=0.000ns
+
+============================================================
+ TT2: Reset/ready at 100 MHz with injected delays
+============================================================
+  PASS  [TT2.system_ready_after_reset]
+
+============================================================
+ TT3: Weight load survives delayed load_weights
+============================================================
+  PASS  [TT3.weights_loaded_under_delay]
+
+============================================================
+ TT4: Full inference at Zedboard frequency
+============================================================
+  PASS  [TT4.inference_done_under_delay]
+
+============================================================
+ TT5: Golden-reference comparison under timing model
+============================================================
+ERROR: tb_zedboard_timing.sv:456: $readmemh: Unable to open ../golden/golden_output.memh for reading.
+  golden matches    : 256 / 256
+  golden mismatches : 0
+  max |hw-golden|   : 0
+  PASS  [TT5.golden_exact_match_under_delay]  (=0)
+
+============================================================
+ TT6: Behavioral setup-margin observed across whole run
+============================================================
+  worst observed setup margin : 6.700 ns
+  setup violations            : 0
+  PASS  [TT6.no_setup_violations]  (=0)
+  PASS  [TT6.setup_margin_positive]  actual=6.700ns  threshold=0.000ns
+
+============================================================
+ TT7: Behavioral hold-margin observed across whole run
+============================================================
+  worst observed hold margin  : 2.900 ns
+  hold violations             : 0
+  PASS  [TT7.no_hold_violations]  (=0)
+  PASS  [TT7.hold_margin_positive]  actual=2.900ns  threshold=0.000ns
+
+============================================================
+ TT8: Final timing-verification report
+============================================================
+
+  Target part       : XC7Z020-1CLG484 (ZedBoard)
+  Clock frequency   : 100.0 MHz
+  Period            : 10.000 ns
+  Setup budget used : 8.550 ns / 10.000 ns
+  Setup slack       : 1.450 ns
+  Worst setup obs   : 6.700 ns
+  Worst hold obs    : 2.900 ns
+
+  Tests run   : 9
+  Pass        : 9
+  Fail        : 0
+  >>> TIMING VERIFICATION PASSED <<<
+
+tb_zedboard_timing.sv:508: $finish called at 80515000 (1ps)

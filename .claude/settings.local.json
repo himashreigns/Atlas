@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"task automatic\\\\|for \\(integer\\\\|integer [a-z][a-z_]*;\\\\s*$\\\\|while \\(\\\\|break;\" /home/himash-ruwanga/Desktop/atlas-dev_v2/dnn_opt/rtl_stubs/reconfigurable_nn_accelerator.v)",
+      "Bash(iverilog -g2001 -t null rtl_stubs/reconfigurable_nn_accelerator.v)",
+      "Bash(make bench-kws *)"
+    ]
+  }
+}

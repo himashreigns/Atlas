@@ -1,0 +1,22 @@
+{
+  "workload": "GestureNet",
+  "network": "CONV(3x3,1->4)-POOL-POOL-FC(28->5)",
+  "in_shape": [
+    6,
+    32,
+    1
+  ],
+  "out_size": 5,
+  "gestures": [
+    "swipe-L",
+    "swipe-R",
+    "push",
+    "pull",
+    "rest"
+  ],
+  "hw_output_scale": 256,
+  "hw_prediction": "push",
+  "max_lsb_diff": 1,
+  "sha_input": "e42601b94593",
+  "sha_output": "06529cc53331"
+}

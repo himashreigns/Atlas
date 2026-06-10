@@ -1,0 +1,19 @@
+{
+  "workload": "ECG-Net",
+  "network": "CONV(3x3,1->8)-POOL-POOL-FC(24->2)",
+  "in_shape": [
+    16,
+    8,
+    1
+  ],
+  "out_size": 2,
+  "classes": [
+    "normal",
+    "anomaly"
+  ],
+  "hw_output_scale": 256,
+  "hw_prediction": "normal",
+  "max_lsb_diff": 1,
+  "sha_input": "04bd2eff269c",
+  "sha_output": "994177118801"
+}

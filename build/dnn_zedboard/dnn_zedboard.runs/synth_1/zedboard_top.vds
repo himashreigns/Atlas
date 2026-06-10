@@ -1,0 +1,1541 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue May 26 21:23:21 2026
+# Process ID         : 9455
+# Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zedboard/dnn_zedboard.runs/synth_1
+# Command line       : vivado -log zedboard_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zedboard_top.tcl
+# Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zedboard/dnn_zedboard.runs/synth_1/zedboard_top.vds
+# Journal file       : /home/chathupa/Desktop/dnn_opt/build/dnn_zedboard/dnn_zedboard.runs/synth_1/vivado.jou
+# Running On         : chathupa-Nitro-AN515-55
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+# CPU Frequency      : 3827.007 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16589 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20884 MB
+# Available Virtual  : 16371 MB
+#-----------------------------------------------------------
+source zedboard_top.tcl -notrace
+Command: synth_design -top zedboard_top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9514
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2245.578 ; gain = 482.594 ; free physical = 1384 ; free virtual = 14345
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zedboard_top' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/zedboard_top.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_system' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:4]
+	Parameter NUM_LAYERS bound to: 4 - type: integer 
+	Parameter MEM_ADDR_W bound to: 20 - type: integer 
+	Parameter MEM_DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_pipeline' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_pipeline.v:5]
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter NUM_LAYERS bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_layer_stage' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+	Parameter LAYER_TYPE bound to: 0 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter IMG_ROWS bound to: 28 - type: integer 
+	Parameter IMG_COLS bound to: 28 - type: integer 
+	Parameter KERNEL_SIZE bound to: 5 - type: integer 
+	Parameter STRIDE bound to: 1 - type: integer 
+	Parameter PADDING bound to: 0 - type: integer 
+	Parameter IN_CHANNELS bound to: 1 - type: integer 
+	Parameter OUT_CHANNELS bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_row_buffer' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter IMG_COLS bound to: 28 - type: integer 
+	Parameter KERNEL_ROWS bound to: 5 - type: integer 
+	Parameter NUM_CHANNELS bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'streaming_row_buffer' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:209]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:251]
+INFO: [Synth 8-6157] synthesizing module 'nn_layer_control_unit' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:2]
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:229]
+INFO: [Synth 8-6155] done synthesizing module 'nn_layer_control_unit' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:2]
+INFO: [Synth 8-6157] synthesizing module 'mac_array' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_array.v:1]
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mac_stage' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:1]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mac_stage' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mac_array' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_array.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_layer_stage' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_layer_stage__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+	Parameter LAYER_TYPE bound to: 2 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter IMG_ROWS bound to: 24 - type: integer 
+	Parameter IMG_COLS bound to: 24 - type: integer 
+	Parameter IN_CHANNELS bound to: 6 - type: integer 
+	Parameter OUT_CHANNELS bound to: 6 - type: integer 
+	Parameter POOL_SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_row_buffer__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter IMG_COLS bound to: 24 - type: integer 
+	Parameter KERNEL_ROWS bound to: 2 - type: integer 
+	Parameter NUM_CHANNELS bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'streaming_row_buffer__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:209]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:251]
+INFO: [Synth 8-6157] synthesizing module 'nn_layer_control_unit__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:2]
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:229]
+INFO: [Synth 8-6155] done synthesizing module 'nn_layer_control_unit__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:2]
+INFO: [Synth 8-6157] synthesizing module 'mac_array__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_array.v:1]
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mac_stage__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:1]
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mac_stage__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mac_array__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_array.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_layer_stage__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+WARNING: [Synth 8-689] width (16) of port connection 'wgt_load_data' does not match port width (32) of module 'streaming_nn_layer_stage__parameterized0' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_pipeline.v:122]
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_layer_stage__parameterized1' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+	Parameter LAYER_TYPE bound to: 0 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter IMG_ROWS bound to: 12 - type: integer 
+	Parameter IMG_COLS bound to: 12 - type: integer 
+	Parameter KERNEL_SIZE bound to: 5 - type: integer 
+	Parameter STRIDE bound to: 1 - type: integer 
+	Parameter PADDING bound to: 0 - type: integer 
+	Parameter IN_CHANNELS bound to: 6 - type: integer 
+	Parameter OUT_CHANNELS bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_row_buffer__parameterized1' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter IMG_COLS bound to: 12 - type: integer 
+	Parameter KERNEL_ROWS bound to: 5 - type: integer 
+	Parameter NUM_CHANNELS bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'streaming_row_buffer__parameterized1' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:209]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:251]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_layer_stage__parameterized1' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+WARNING: [Synth 8-689] width (16) of port connection 'wgt_load_data' does not match port width (32) of module 'streaming_nn_layer_stage__parameterized1' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_pipeline.v:156]
+INFO: [Synth 8-6157] synthesizing module 'streaming_nn_layer_stage__parameterized2' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+	Parameter LAYER_TYPE bound to: 2 - type: integer 
+	Parameter N bound to: 8 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter ACC_W bound to: 32 - type: integer 
+	Parameter ADDR_W bound to: 10 - type: integer 
+	Parameter IMG_ROWS bound to: 8 - type: integer 
+	Parameter IMG_COLS bound to: 8 - type: integer 
+	Parameter IN_CHANNELS bound to: 16 - type: integer 
+	Parameter OUT_CHANNELS bound to: 16 - type: integer 
+	Parameter POOL_SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'streaming_row_buffer__parameterized2' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter IMG_COLS bound to: 8 - type: integer 
+	Parameter KERNEL_ROWS bound to: 2 - type: integer 
+	Parameter NUM_CHANNELS bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'streaming_row_buffer__parameterized2' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_row_buffer.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:209]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:251]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_layer_stage__parameterized2' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:5]
+WARNING: [Synth 8-689] width (16) of port connection 'wgt_load_data' does not match port width (32) of module 'streaming_nn_layer_stage__parameterized2' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_pipeline.v:188]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_pipeline' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_pipeline.v:5]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:136]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:229]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:313]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:295]
+INFO: [Synth 8-6155] done synthesizing module 'streaming_nn_system' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_system.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'zedboard_top' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl_stubs/zedboard_top.sv:14]
+WARNING: [Synth 8-6014] Unused sequential element act_base_addr_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:206]
+WARNING: [Synth 8-6014] Unused sequential element wgt_base_addr_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:207]
+WARNING: [Synth 8-6014] Unused sequential element out_base_addr_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:208]
+WARNING: [Synth 8-6014] Unused sequential element comp_cnt_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:211]
+WARNING: [Synth 8-6014] Unused sequential element wgt_we_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:180]
+WARNING: [Synth 8-6014] Unused sequential element out_re_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:187]
+WARNING: [Synth 8-6014] Unused sequential element out_we_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/nn_layer_control_unit.v:185]
+WARNING: [Synth 8-6014] Unused sequential element out_row_cnt_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:245]
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  row_mem_reg with 9216 registers
+WARNING: [Synth 8-6014] Unused sequential element out_row_cnt_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:245]
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  row_mem_reg with 11520 registers
+WARNING: [Synth 8-6014] Unused sequential element out_row_cnt_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:245]
+WARNING: [Synth 8-6014] Unused sequential element out_row_cnt_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:245]
+WARNING: [Synth 8-7129] Port mem_rdata[31] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[30] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[29] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[28] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[27] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[26] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[25] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[24] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[23] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[22] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[21] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[20] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[19] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[18] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[17] in module streaming_nn_system is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_rdata[16] in module streaming_nn_system is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2534.227 ; gain = 771.242 ; free physical = 1085 ; free virtual = 14051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2534.227 ; gain = 771.242 ; free physical = 1088 ; free virtual = 14055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2534.227 ; gain = 771.242 ; free physical = 1088 ; free virtual = 14055
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2534.227 ; gain = 0.000 ; free physical = 1100 ; free virtual = 14066
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/chathupa/Desktop/dnn_opt/xdc/zedboard.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zedboard_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zedboard_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2653.996 ; gain = 0.000 ; free physical = 1062 ; free virtual = 14039
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2654.031 ; gain = 0.000 ; free physical = 1057 ; free virtual = 14034
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2654.031 ; gain = 891.047 ; free physical = 1060 ; free virtual = 14038
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2662.000 ; gain = 899.016 ; free physical = 1060 ; free virtual = 14038
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2662.000 ; gain = 899.016 ; free physical = 1060 ; free virtual = 14038
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'nn_layer_control_unit'
+INFO: [Synth 8-802] inferred FSM for state register 'wl_state_reg' in module 'streaming_nn_system'
+INFO: [Synth 8-802] inferred FSM for state register 'if_state_reg' in module 'streaming_nn_system'
+INFO: [Synth 8-802] inferred FSM for state register 'oc_state_reg' in module 'streaming_nn_system'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+                LOAD_WGT |                            00010 |                              001
+                 COMPUTE |                            00100 |                              010
+               WRITE_OUT |                            01000 |                              011
+                 DONE_ST |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'nn_layer_control_unit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 WL_IDLE |                              000 |                              000
+             WL_READ_MEM |                              001 |                              001
+          WL_WRITE_LAYER |                              010 |                              010
+           WL_NEXT_LAYER |                              011 |                              011
+                 WL_DONE |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wl_state_reg' using encoding 'sequential' in module 'streaming_nn_system'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 OC_IDLE |                              001 |                               00
+              OC_COLLECT |                              010 |                               01
+                OC_WRITE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'oc_state_reg' using encoding 'one-hot' in module 'streaming_nn_system'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 IF_IDLE |                              001 |                               00
+             IF_READ_MEM |                              010 |                               01
+                 IF_FEED |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'if_state_reg' using encoding 'one-hot' in module 'streaming_nn_system'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2793.219 ; gain = 1030.234 ; free physical = 892 ; free virtual = 13873
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 8     
+	   2 Input   32 Bit       Adders := 57    
+	   2 Input   20 Bit       Adders := 3     
+	   2 Input   16 Bit       Adders := 10    
+	   2 Input   11 Bit       Adders := 8     
+	   2 Input   10 Bit       Adders := 5     
+	   2 Input    8 Bit       Adders := 40    
+	   2 Input    5 Bit       Adders := 11    
+	   2 Input    4 Bit       Adders := 11    
+	   2 Input    3 Bit       Adders := 17    
+	   2 Input    2 Bit       Adders := 4     
+	   2 Input    1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 1001  
+	               20 Bit    Registers := 3     
+	               16 Bit    Registers := 172   
+	               11 Bit    Registers := 12    
+	               10 Bit    Registers := 18    
+	                8 Bit    Registers := 104   
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 21    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 44    
++---Multipliers : 
+	              32x32  Multipliers := 24    
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 10    
+	              16K Bit	(1024 X 16 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 550   
+	  64 Input   32 Bit        Muxes := 3     
+	   5 Input   20 Bit        Muxes := 1     
+	   3 Input   20 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 6     
+	   5 Input   16 Bit        Muxes := 8     
+	  16 Input   16 Bit        Muxes := 1     
+	   3 Input   16 Bit        Muxes := 2     
+	   5 Input   11 Bit        Muxes := 4     
+	   4 Input   10 Bit        Muxes := 24    
+	   5 Input   10 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 24    
+	   2 Input    8 Bit        Muxes := 36    
+	   5 Input    8 Bit        Muxes := 32    
+	   2 Input    5 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 6     
+	   2 Input    4 Bit        Muxes := 9     
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 18    
+	   4 Input    3 Bit        Muxes := 7     
+	   5 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 1322  
+	   4 Input    1 Bit        Muxes := 86    
+	   5 Input    1 Bit        Muxes := 97    
+	   3 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Debug: swapped A/B pins for adder 0x62e09320
+DSP Report: Generating DSP act_raddr1, operation Mode is: A*B.
+DSP Report: operator act_raddr1 is absorbed into DSP act_raddr1.
+DSP Report: Generating DSP act_raddr0, operation Mode is: C+A2*B.
+DSP Report: register col_cnt_reg is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr0 is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr2 is absorbed into DSP act_raddr0.
+DSP Report: Generating DSP act_raddr0, operation Mode is: PCIN+(D+A2)*B.
+DSP Report: register pool_row_cnt_reg is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr0 is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr2 is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr3 is absorbed into DSP act_raddr0.
+DSP Report: Generating DSP act_raddr0, operation Mode is: C+(D+A2)*B.
+DSP Report: register kr_cnt_reg is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr0 is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr2 is absorbed into DSP act_raddr0.
+DSP Report: operator act_raddr3 is absorbed into DSP act_raddr0.
+DSP Report: Generating DSP wgt_raddr3, operation Mode is: A*B.
+DSP Report: operator wgt_raddr3 is absorbed into DSP wgt_raddr3.
+DSP Report: Generating DSP wgt_raddr4, operation Mode is: A*B.
+DSP Report: operator wgt_raddr4 is absorbed into DSP wgt_raddr4.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_1_out, operation Mode is: PCIN+(A:0x0):B+C.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP out_waddr2, operation Mode is: A2*B.
+DSP Report: register row_cnt_reg is absorbed into DSP out_waddr2.
+DSP Report: operator out_waddr2 is absorbed into DSP out_waddr2.
+DSP Report: Generating DSP out_waddr0, operation Mode is: C+A*B.
+DSP Report: operator out_waddr0 is absorbed into DSP out_waddr0.
+DSP Report: operator out_waddr2 is absorbed into DSP out_waddr0.
+DSP Report: Generating DSP out_waddr2, operation Mode is: A*B.
+DSP Report: operator out_waddr2 is absorbed into DSP out_waddr2.
+DSP Report: Generating DSP out_waddr0, operation Mode is: C+A2*B.
+DSP Report: register row_cnt_reg is absorbed into DSP out_waddr0.
+DSP Report: operator out_waddr0 is absorbed into DSP out_waddr0.
+DSP Report: operator out_waddr2 is absorbed into DSP out_waddr0.
+DSP Report: Generating DSP out_waddr0, operation Mode is: PCIN+(A:0x0):B2.
+DSP Report: register col_cnt_reg is absorbed into DSP out_waddr0.
+DSP Report: operator out_waddr0 is absorbed into DSP out_waddr0.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/psum_out_reg, operation Mode is: (A*B)'.
+DSP Report: register mac_array_inst/MACS[0].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[0].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[0].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/psum_out_reg, operation Mode is: (PCIN+A2*B2)'.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[1].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[1].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/psum_out_reg, operation Mode is: (PCIN+A''*B'')'.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[2].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/psum_out_reg, operation Mode is: (PCIN+ACIN''*BCIN'')'.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[3].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/psum_out_reg, operation Mode is: (PCIN+ACIN2*BCIN2)'.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[4].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[4].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/psum_out_reg, operation Mode is: (PCIN+ACIN2*BCIN2)'.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[5].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[5].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/psum_out_reg, operation Mode is: (PCIN+ACIN2*BCIN2)'.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[6].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[6].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/psum_out_reg, operation Mode is: (PCIN+ACIN2*BCIN2)'.
+DSP Report: register mac_array_inst/MACS[6].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[6].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/psum_out_reg.
+DSP Report: register mac_array_inst/MACS[7].mac_i/psum_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/psum_out0 is absorbed into DSP mac_array_inst/MACS[7].mac_i/psum_out_reg.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/psum_out_reg.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: A2*B2.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[7].mac_i/mult is absorbed into DSP mac_array_inst/MACS[7].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[6].mac_i/mult is absorbed into DSP mac_array_inst/MACS[6].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[5].mac_i/mult is absorbed into DSP mac_array_inst/MACS[5].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[4].mac_i/mult is absorbed into DSP mac_array_inst/MACS[4].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[3].mac_i/mult is absorbed into DSP mac_array_inst/MACS[3].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[2].mac_i/mult is absorbed into DSP mac_array_inst/MACS[2].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[0].mac_i/a_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: A2*B2.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mac_array_inst/MACS[0].mac_i/w_out_reg is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: register mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[1].mac_i/mult is absorbed into DSP mac_array_inst/MACS[1].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: Generating DSP mac_array_inst/MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+DSP Report: operator mac_array_inst/MACS[0].mac_i/mult is absorbed into DSP mac_array_inst/MACS[0].mac_i/mult.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\GEN_ROW_BUFFER.row_buffer /\ch_cnt_reg[0] )
+INFO: [Synth 8-4471] merging register 'win_ch_reg[3:0]' into 'win_ch_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:244]
+INFO: [Synth 8-4471] merging register 'win_kc_reg[3:0]' into 'win_kc_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:243]
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__GCB4 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__GCB4 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__GCB4 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__GCB4 has port P[0] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[5]' (FDRE) to 'out_col_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[6]' (FDRE) to 'out_col_cnt_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_col_cnt_reg[7] )
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[3]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[4]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[5]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[6]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_ch_cnt_reg[7] )
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[3]' (FDRE) to 'win_kr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[2]' (FDRE) to 'win_kr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'win_ch_reg[0]' (FDRE) to 'win_ch_reg[1]'
+INFO: [Synth 8-3886] merging instance 'win_ch_reg[1]' (FDRE) to 'win_ch_reg[2]'
+INFO: [Synth 8-3886] merging instance 'win_ch_reg[2]' (FDRE) to 'win_ch_reg[3]'
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[0]' (FDRE) to 'win_kr_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_kr_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_ch_reg[3] )
+INFO: [Synth 8-4471] merging register 'win_kc_reg[2:0]' into 'win_kc_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:243]
+INFO: [Synth 8-4471] merging register 'win_ch_reg[2:0]' into 'win_ch_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:244]
+INFO: [Synth 8-4471] merging register 'win_kc_reg[2:0]' into 'win_kc_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:243]
+DSP Debug: swapped A/B pins for adder 0x58357560
+DSP Debug: swapped A/B pins for adder 0x58357560
+DSP Debug: swapped A/B pins for adder 0x5e898ae0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized0__GCB26 has port P[4] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized0__GCB26 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized0__GCB26 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized0__GCB26 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized0__GCB26 has port P[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[6]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[7]' (FDRE) to 'out_ch_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[5]' (FDRE) to 'out_ch_cnt_reg[4]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[4]' (FDRE) to 'out_ch_cnt_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_ch_cnt_reg[3] )
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[6]' (FDRE) to 'out_col_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[7]' (FDRE) to 'out_col_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[5]' (FDRE) to 'out_col_cnt_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_col_cnt_reg[4] )
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[2]' (FDRE) to 'win_kr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[1]' (FDRE) to 'win_kr_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_kr_reg[0] )
+INFO: [Synth 8-4471] merging register 'win_kr_reg[3:0]' into 'win_kr_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:242]
+INFO: [Synth 8-4471] merging register 'win_kc_reg[3:0]' into 'win_kc_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:243]
+INFO: [Synth 8-4471] merging register 'win_ch_reg[3:0]' into 'win_ch_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:244]
+INFO: [Synth 8-4471] merging register 'win_kc_reg[3:0]' into 'win_kc_reg[3:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:243]
+DSP Debug: swapped A/B pins for adder 0x66205aa0
+DSP Debug: swapped A/B pins for adder 0x66205aa0
+DSP Debug: swapped A/B pins for adder 0x6632de60
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized1__GCB24 has port P[4] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized1__GCB24 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized1__GCB24 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized1__GCB24 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized1__GCB24 has port P[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[6]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[7]' (FDRE) to 'out_ch_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[5]' (FDRE) to 'out_ch_cnt_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_ch_cnt_reg[4] )
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[6]' (FDRE) to 'out_col_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[7]' (FDRE) to 'out_col_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[5]' (FDRE) to 'out_col_cnt_reg[4]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[4]' (FDRE) to 'out_col_cnt_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_col_cnt_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_kr_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_ch_reg[3] )
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+INFO: [Synth 8-12192] Not enough pipeline registers after wide multiplier. Pipeline registers present is 0. Recommended levels of pipeline registers is 4. [/home/chathupa/Desktop/dnn_opt/rtl_stubs/mac_stage.v:16]
+DSP Report: Generating DSP MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[5].mac_i/a_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[6].mac_i/a_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: Generating DSP MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[5].mac_i/w_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[6].mac_i/w_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[5].mac_i/a_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[6].mac_i/a_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: Generating DSP MACS[7].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: Generating DSP MACS[7].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[5].mac_i/w_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[6].mac_i/w_out_reg is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: register MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: operator MACS[7].mac_i/mult is absorbed into DSP MACS[7].mac_i/mult.
+DSP Report: Generating DSP MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[4].mac_i/a_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[5].mac_i/a_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: Generating DSP MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[4].mac_i/w_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[5].mac_i/w_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[4].mac_i/a_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[5].mac_i/a_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: Generating DSP MACS[6].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: Generating DSP MACS[6].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[4].mac_i/w_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[5].mac_i/w_out_reg is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: register MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: operator MACS[6].mac_i/mult is absorbed into DSP MACS[6].mac_i/mult.
+DSP Report: Generating DSP MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[3].mac_i/a_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[4].mac_i/a_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: Generating DSP MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[3].mac_i/w_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[4].mac_i/w_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[3].mac_i/a_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[4].mac_i/a_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: Generating DSP MACS[5].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: Generating DSP MACS[5].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[3].mac_i/w_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[4].mac_i/w_out_reg is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: register MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: operator MACS[5].mac_i/mult is absorbed into DSP MACS[5].mac_i/mult.
+DSP Report: Generating DSP MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[2].mac_i/a_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[3].mac_i/a_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: Generating DSP MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[2].mac_i/w_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[3].mac_i/w_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[2].mac_i/a_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[3].mac_i/a_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: Generating DSP MACS[4].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: Generating DSP MACS[4].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[2].mac_i/w_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[3].mac_i/w_out_reg is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: register MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: operator MACS[4].mac_i/mult is absorbed into DSP MACS[4].mac_i/mult.
+DSP Report: Generating DSP MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[1].mac_i/a_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[2].mac_i/a_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: Generating DSP MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[1].mac_i/w_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[2].mac_i/w_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[1].mac_i/a_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[2].mac_i/a_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: Generating DSP MACS[3].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: Generating DSP MACS[3].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B''.
+DSP Report: register MACS[1].mac_i/w_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[2].mac_i/w_out_reg is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: register MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: operator MACS[3].mac_i/mult is absorbed into DSP MACS[3].mac_i/mult.
+DSP Report: Generating DSP MACS[2].mac_i/mult, operation Mode is: A''*B2.
+DSP Report: register MACS[1].mac_i/a_out_reg is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: Generating DSP MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register MACS[1].mac_i/w_out_reg is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[1].mac_i/a_out_reg is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: Generating DSP MACS[2].mac_i/mult, operation Mode is: A''*B''.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: Generating DSP MACS[2].mac_i/mult, operation Mode is: (PCIN>>17)+A''*B2.
+DSP Report: register MACS[1].mac_i/w_out_reg is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: register MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: operator MACS[2].mac_i/mult is absorbed into DSP MACS[2].mac_i/mult.
+DSP Report: Generating DSP MACS[1].mac_i/mult, operation Mode is: A2*B.
+DSP Report: register MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: Generating DSP MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: Generating DSP MACS[1].mac_i/mult, operation Mode is: A2*B2.
+DSP Report: register MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: register MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: Generating DSP MACS[1].mac_i/mult, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: operator MACS[1].mac_i/mult is absorbed into DSP MACS[1].mac_i/mult.
+DSP Report: Generating DSP MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: Generating DSP MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: Generating DSP MACS[0].mac_i/mult, operation Mode is: A*B.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: Generating DSP MACS[0].mac_i/mult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+DSP Report: operator MACS[0].mac_i/mult is absorbed into DSP MACS[0].mac_i/mult.
+INFO: [Synth 8-4471] merging register 'win_kr_reg[2:0]' into 'win_kr_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:242]
+INFO: [Synth 8-4471] merging register 'win_kr_reg[2:0]' into 'win_kr_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:242]
+INFO: [Synth 8-4471] merging register 'win_ch_reg[2:0]' into 'win_ch_reg[2:0]' [/home/chathupa/Desktop/dnn_opt/rtl_stubs/streaming_nn_layer_stage.v:244]
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[8] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[4] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design streaming_nn_layer_stage__parameterized2__GCB18 has port P[0] driven by constant 0
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM act_mem_reg to conserve power
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM wgt_mem_reg to conserve power
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[2]' (FDRE) to 'win_kr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'win_kr_reg[0]' (FDRE) to 'win_kr_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\win_kr_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[6]' (FDRE) to 'out_ch_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[7]' (FDRE) to 'out_ch_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_ch_cnt_reg[5]' (FDRE) to 'out_ch_cnt_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_ch_cnt_reg[4] )
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[6]' (FDRE) to 'out_col_cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[7]' (FDRE) to 'out_col_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[5]' (FDRE) to 'out_col_cnt_reg[4]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[4]' (FDRE) to 'out_col_cnt_reg[3]'
+INFO: [Synth 8-3886] merging instance 'out_col_cnt_reg[3]' (FDRE) to 'out_col_cnt_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\out_col_cnt_reg[2] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:02:02 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 180 ; free virtual = 5758
+---------------------------------------------------------------------------------
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 0 : 2073 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 1 : 2105 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 2 : 2137 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 3 : 2137 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 4 : 2105 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 5 : 2105 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 6 : 2105 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__GCB3 mac_array_inst/MACS[0].mac_i/psum_out_reg_13 : 0 7 : 2105 16872 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[3].mac_i/mult_11 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[3].mac_i/mult_11 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[4].mac_i/mult_16 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[4].mac_i/mult_16 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[5].mac_i/mult_18 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[5].mac_i/mult_18 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[6].mac_i/mult_1a : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[6].mac_i/mult_1a : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[7].mac_i/mult_1c : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[7].mac_i/mult_1c : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[2].mac_i/mult_24 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[2].mac_i/mult_24 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[2].mac_i/mult_38 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[2].mac_i/mult_38 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[3].mac_i/mult_2a : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[3].mac_i/mult_2a : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[3].mac_i/mult_3a : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[3].mac_i/mult_3a : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[4].mac_i/mult_2c : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[4].mac_i/mult_2c : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[4].mac_i/mult_3c : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[4].mac_i/mult_3c : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[5].mac_i/mult_2e : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[5].mac_i/mult_2e : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[5].mac_i/mult_3e : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[5].mac_i/mult_3e : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[6].mac_i/mult_30 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[6].mac_i/mult_30 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[6].mac_i/mult_40 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[6].mac_i/mult_40 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[7].mac_i/mult_32 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[7].mac_i/mult_32 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[7].mac_i/mult_42 : 0 0 : 3173 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[7].mac_i/mult_42 : 0 1 : 2846 6019 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[2].mac_i/mult_b : 0 0 : 3173 6003 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[2].mac_i/mult_b : 0 1 : 2830 6003 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[1].mac_i/mult_1e : 0 0 : 3137 5949 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[1].mac_i/mult_1e : 0 1 : 2812 5949 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[1].mac_i/mult_36 : 0 0 : 3137 5949 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[1].mac_i/mult_36 : 0 1 : 2812 5949 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[1].mac_i/mult_6 : 0 0 : 3137 5933 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[1].mac_i/mult_6 : 0 1 : 2796 5933 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[0].mac_i/mult_0 : 0 0 : 3101 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[0].mac_i/mult_0 : 0 1 : 2778 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[0].mac_i/mult_18 : 0 0 : 3101 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[0].mac_i/mult_18 : 0 1 : 2778 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[0].mac_i/mult_34 : 0 0 : 3101 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[0].mac_i/mult_34 : 0 1 : 2778 5879 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[3].mac_i/mult_13 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[3].mac_i/mult_13 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[4].mac_i/mult_17 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[4].mac_i/mult_17 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[5].mac_i/mult_19 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[5].mac_i/mult_19 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[6].mac_i/mult_1b : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[6].mac_i/mult_1b : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[7].mac_i/mult_1d : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[7].mac_i/mult_1d : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[2].mac_i/mult_27 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[2].mac_i/mult_27 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[2].mac_i/mult_39 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[2].mac_i/mult_39 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[3].mac_i/mult_2b : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[3].mac_i/mult_2b : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[3].mac_i/mult_3b : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[3].mac_i/mult_3b : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[4].mac_i/mult_2d : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[4].mac_i/mult_2d : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[4].mac_i/mult_3d : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[4].mac_i/mult_3d : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[5].mac_i/mult_2f : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[5].mac_i/mult_2f : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[5].mac_i/mult_3f : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[5].mac_i/mult_3f : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[6].mac_i/mult_31 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[6].mac_i/mult_31 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[6].mac_i/mult_41 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[6].mac_i/mult_41 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[7].mac_i/mult_33 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[7].mac_i/mult_33 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[7].mac_i/mult_43 : 0 0 : 2827 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[7].mac_i/mult_43 : 0 1 : 2723 5550 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[2].mac_i/mult_e : 0 0 : 2811 5502 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[2].mac_i/mult_e : 0 1 : 2691 5502 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[1].mac_i/mult_21 : 0 0 : 2793 5484 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[1].mac_i/mult_21 : 0 1 : 2691 5484 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[1].mac_i/mult_37 : 0 0 : 2793 5484 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[1].mac_i/mult_37 : 0 1 : 2691 5484 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[1].mac_i/mult_9 : 0 0 : 2777 5436 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[1].mac_i/mult_9 : 0 1 : 2659 5436 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[0].mac_i/mult_3 : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized2__GCB18 MACS[0].mac_i/mult_3 : 0 1 : 2659 5418 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[0].mac_i/mult_1b : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized0__GCB16 mac_array_inst/MACS[0].mac_i/mult_1b : 0 1 : 2659 5418 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[0].mac_i/mult_35 : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is streaming_nn_layer_stage__parameterized1__GCB11 mac_array_inst/MACS[0].mac_i/mult_35 : 0 1 : 2659 5418 : Used 1 time 0
+ Sort Area is nn_layer_control_unit act_raddr0_4 : 0 0 : 491 1117 : Used 4 time 0
+ Sort Area is nn_layer_control_unit act_raddr0_4 : 0 1 : 626 1117 : Used 4 time 0
+ Sort Area is nn_layer_control_unit p_0_out_8 : 0 0 : 723 799 : Used 4 time 0
+ Sort Area is nn_layer_control_unit p_0_out_8 : 0 1 : 76 799 : Used 4 time 0
+ Sort Area is nn_layer_control_unit act_raddr0_2 : 0 0 : 626 626 : Used 4 time 0
+ Sort Area is nn_layer_control_unit out_waddr0_11 : 0 0 : 589 589 : Used 4 time 0
+ Sort Area is nn_layer_control_unit act_raddr1_0 : 0 0 : 560 560 : Used 4 time 0
+ Sort Area is nn_layer_control_unit out_waddr2_c : 0 0 : 560 560 : Used 4 time 0
+ Sort Area is nn_layer_control_unit wgt_raddr3_b : 0 0 : 560 560 : Used 4 time 0
+ Sort Area is nn_layer_control_unit wgt_raddr4_7 : 0 0 : 560 560 : Used 4 time 0
+ Sort Area is nn_layer_control_unit out_waddr0_d : 0 0 : 491 528 : Used 4 time 0
+ Sort Area is nn_layer_control_unit out_waddr0_d : 0 1 : 37 528 : Used 4 time 0
+ Sort Area is nn_layer_control_unit out_waddr2_f : 0 0 : 462 462 : Used 4 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------------------------------------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                     | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------------------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|zedboard_top                                    | wgt_mem_reg | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|zedboard_top                                    | out_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | act_mem_reg | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|zedboard_top                                    | act_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | wgt_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | out_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | act_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | wgt_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|zedboard_top                                    | out_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|streaming_nn_layer_stage__parameterized2__GCB18 | act_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|streaming_nn_layer_stage__parameterized2__GCB18 | wgt_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|streaming_nn_layer_stage__parameterized2__GCB18 | out_mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------------------------------------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name           | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|nn_layer_control_unit | A*B                   | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | C+A2*B                | 8      | 8      | 10     | -      | 10     | 1    | 0    | 0    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | PCIN+(D+A2)*B         | 8      | 8      | -      | 10     | 10     | 1    | 0    | -    | 0    | 0     | 0    | 0    | 
+|nn_layer_control_unit | C+(D+A2)*B            | 8      | 8      | 10     | 10     | 10     | 1    | 0    | 0    | 0    | 0     | 0    | 0    | 
+|nn_layer_control_unit | A*B                   | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | A*B                   | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | A*B                   | 10     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | PCIN+(A:0x0):B+C      | 30     | 10     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | A2*B                  | 8      | 8      | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | C+A*B                 | 10     | 8      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | A*B                   | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | C+A2*B                | 8      | 8      | 10     | -      | 10     | 1    | 0    | 0    | -    | -     | 0    | 0    | 
+|nn_layer_control_unit | PCIN+(A:0x0):B2       | 30     | 8      | -      | -      | -1     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|mac_stage             | (A*B)'                | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|zedboard_top          | (PCIN+A2*B2)'         | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+A''*B'')'       | 16     | 16     | -      | -      | 32     | 2    | 2    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+ACIN''*BCIN'')' | 16     | 16     | -      | -      | 32     | 2    | 2    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+ACIN2*BCIN2)'   | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+ACIN2*BCIN2)'   | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+ACIN2*BCIN2)'   | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | (PCIN+ACIN2*BCIN2)'   | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A2*B2                 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A2*B2      | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A2*B2                 | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A2*B2      | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A*B                   | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A*B        | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A*B                   | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A*B        | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A2*B2                 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A2*B2      | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A2*B2                 | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A2*B2      | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A*B                   | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A*B        | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | A*B                   | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|zedboard_top          | (PCIN>>17)+A*B        | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 16     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B''    | 18     | 16     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B2                | 18     | 16     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A2*B2      | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A''*B''               | 18     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A''*B2     | 18     | 16     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A2*B                  | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A*B        | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A2*B2                 | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A2*B       | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A*B                   | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A*B        | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | A*B                   | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mac_array             | (PCIN>>17)+A*B        | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:49 ; elapsed = 00:02:24 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3453 ; free virtual = 9139
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:53 ; elapsed = 00:02:29 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3465 ; free virtual = 9153
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:54 ; elapsed = 00:02:29 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3449 ; free virtual = 9150
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:57 ; elapsed = 00:02:33 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3455 ; free virtual = 9157
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:57 ; elapsed = 00:02:33 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3455 ; free virtual = 9157
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:58 ; elapsed = 00:02:34 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3456 ; free virtual = 9158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:58 ; elapsed = 00:02:34 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3456 ; free virtual = 9158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:58 ; elapsed = 00:02:34 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3456 ; free virtual = 9158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:58 ; elapsed = 00:02:34 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3456 ; free virtual = 9158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    32|
+|3     |LUT1   |     7|
+|4     |LUT2   |   149|
+|5     |LUT3   |    52|
+|6     |LUT4   |   102|
+|7     |LUT5   |   103|
+|8     |LUT6   |   107|
+|9     |FDPE   |     2|
+|10    |FDRE   |   336|
+|11    |FDSE   |     5|
+|12    |IBUF   |     3|
+|13    |OBUF   |     8|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:58 ; elapsed = 00:02:34 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 3456 ; free virtual = 9158
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:47 ; elapsed = 00:02:36 . Memory (MB): peak = 3028.066 ; gain = 1145.277 ; free physical = 8008 ; free virtual = 13720
+Synthesis Optimization Complete : Time (s): cpu = 00:06:56 ; elapsed = 00:02:43 . Memory (MB): peak = 3028.066 ; gain = 1265.082 ; free physical = 8033 ; free virtual = 13734
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3028.066 ; gain = 0.000 ; free physical = 8033 ; free virtual = 13734
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3072.168 ; gain = 0.000 ; free physical = 8068 ; free virtual = 13775
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 8d25f35
+INFO: [Common 17-83] Releasing license: Synthesis
+148 Infos, 53 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:07:03 ; elapsed = 00:03:03 . Memory (MB): peak = 3072.203 ; gain = 1453.109 ; free physical = 8084 ; free virtual = 13792
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 10600.881; main = 2167.399; forked = 8664.370
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 19654.773; main = 3072.172; forked = 16630.621
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3096.180 ; gain = 0.000 ; free physical = 8084 ; free virtual = 13792
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zedboard/dnn_zedboard.runs/synth_1/zedboard_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file zedboard_top_utilization_synth.rpt -pb zedboard_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 26 21:26:29 2026...

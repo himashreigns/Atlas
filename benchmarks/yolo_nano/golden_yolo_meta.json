@@ -1,0 +1,17 @@
+{
+  "workload": "YOLO-Nano",
+  "network": "CONV(3x3,1->4)-POOL-POOL-FC(36->20)",
+  "grid": "2x2",
+  "params_per_cell": 5,
+  "in_shape": [
+    16,
+    16,
+    1
+  ],
+  "out_size": 20,
+  "hw_output_scale": 256,
+  "hw_nonzero": 20,
+  "max_lsb_diff": 1,
+  "sha_input": "2a6fbc34dee6",
+  "sha_output": "821544fe240d"
+}

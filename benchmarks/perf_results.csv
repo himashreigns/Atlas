@@ -1,0 +1,6 @@
+benchmark,workload,network,input_shape,cycles,exec_time_us,throughput_k_inf_per_s,energy_uj,power_mw,area_au,area_efficiency_inf_s_au,tb_status
+ECG-Net,Cardiac Anomaly Detection,"CONV(3×3,1→8)→POOL→POOL→FC(24→2)",128-sample ECG → 16×8,800,8.0000,125.0000,3.7280,466.0,32.0,3906.25,16/16 PASS
+GestureNet,IMU Gesture Recognition,"CONV(3×3,1→4)→POOL→POOL→FC(28→5)",6-axis × 32 timesteps,1147,11.4700,87.1840,5.3450,466.0,32.0,2724.50,17/17 PASS
+KWS-CNN,Keyword Spotting,"CONV(3×3,1→8)→POOL→POOL→FC(80→10)",25×10 MFCC,1840,18.4000,54.3478,23.9200,1300.0,35.5,1530.92,18/18 PASS
+YOLO-Nano,Object Detection,"CONV(3×3,1→4)→POOL→POOL→FC(36→20)",16×16 grayscale → 2×2 grid,1942,19.4200,51.4933,15.5360,800.0,33.0,1560.40,15/15 PASS
+VWW-Tiny,Visual Wake Words,"CONV(3×3,1→8)→POOL→CONV(3×3,8→16)→POOL",24×24 grayscale,10590,105.9000,9.4429,134.0694,1266.0,50.0,188.86,16/16 PASS

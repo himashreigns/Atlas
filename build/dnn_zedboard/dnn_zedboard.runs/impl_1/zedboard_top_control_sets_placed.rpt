@@ -1,0 +1,117 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue May 26 21:27:34 2026
+| Host         : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
+| Command      : report_control_sets -verbose -file zedboard_top_control_sets_placed.rpt
+| Design       : zedboard_top
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    39 |
+|    Minimum number of control sets                        |    39 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    65 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    39 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |    14 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |    22 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               9 |            4 |
+| No           | No                    | Yes                    |               2 |            1 |
+| No           | Yes                   | No                     |              86 |           32 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             246 |           73 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                            Enable Signal                           |                            Set/Reset Signal                            | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+--------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                                                    | rst_sync_0_i_1_n_0                                                     |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/out_col_cnt[3]_i_1__0_n_0                   | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/pipe_delay_cnt[3]_i_1__0_n_0   | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/pipe_delay_cnt[3]_i_1__1_n_0   | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/pipe_delay_cnt[3]_i_1_n_0      | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/GEN_ROW_BUFFER.row_buffer/col_cnt[0]        | u_dut/pipeline/layer_2/GEN_ROW_BUFFER.row_buffer/col_cnt[3]_i_1__4_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/out_ch_cnt[3]_i_1_n_0                       | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/CEA2                                        | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/pipe_delay_cnt[3]_i_1__2_n_0   | rst                                                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/FSM_onehot_state[4]_i_1__1_n_0 | rst                                                                    |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/FSM_onehot_state[4]_i_1_n_0    | rst                                                                    |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/FSM_onehot_state[4]_i_1__0_n_0 | rst                                                                    |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/FSM_onehot_state[4]_i_1__2_n_0 | rst                                                                    |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/out_col_cnt[4]_i_1_n_0                      | rst                                                                    |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/GEN_ROW_BUFFER.row_buffer/col_cnt[0]        | u_dut/pipeline/layer_1/GEN_ROW_BUFFER.row_buffer/col_cnt[4]_i_1__3_n_0 |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/kr_cnt0                        | rst                                                                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/col_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/row_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/row_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/row_cnt0                       | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/ch_out_cnt0                    | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/ch_in_cnt0                     | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/col_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/pool_row_cnt0                  | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_1/control_unit/pool_col_cnt0                  | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/col_cnt0                       | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/ch_in_cnt0                     | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/ch_out_cnt0                    | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/col_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_0/control_unit/kc_cnt0                        | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/ch_in_cnt0                     | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/pool_col_cnt0                  | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/row_cnt0                       | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_3/control_unit/pool_row_cnt0                  | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/kc_cnt0                        | rst                                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_dut/pipeline/layer_2/control_unit/kr_cnt0                        | rst                                                                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG |                                                                    |                                                                        |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG | u_dut/oc_mem_addr[0]                                               | rst                                                                    |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG |                                                                    | rst                                                                    |               32 |             86 |         2.69 |
++----------------+--------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
