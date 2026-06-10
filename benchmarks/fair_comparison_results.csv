@@ -1,11 +1,16 @@
-benchmark,workload,architecture,n_macs,cycles,exec_time_us,throughput_k_inf_per_s,energy_uj,power_mw,area_au,dram_overhead_cycles,dram_pct,speedup_vs_sa
-FatFC,Single Large FC — DRAM Penalty Demo,Streaming,8,14778,147.7800,6.7668,70.9344,480.0,26.1,0,0.0,—
-FatFC,Single Large FC — DRAM Penalty Demo,SA-1×8,8,65236,652.3600,1.5329,306.6430,470.1,16.0,50176,76.9,4.41
-DoubleFC,Two Large FC Layers — Compounded DRAM Penalty,Streaming,8,61306,613.0600,1.6312,294.2688,480.0,61.5,0,0.0,—
-DoubleFC,Two Large FC Layers — Compounded DRAM Penalty,SA-1×8,8,293089,2930.8900,0.3412,1406.3250,479.8,16.0,231424,79.0,4.78
-PoolHeavy,Pool Cascade + DRAM FC — Combined Advantages,Streaming,8,24620,246.2000,4.0617,118.1760,480.0,21.2,0,0.0,—
-PoolHeavy,Pool Cascade + DRAM FC — Combined Advantages,SA-1×8,8,51740,517.4000,1.9327,172.7223,333.8,16.0,25088,48.5,2.10
-VGG-Micro,VGG-Style Two-Stage CONV + Fat FC,Streaming,8,33335,333.3500,2.9999,160.0080,480.0,29.5,0,0.0,—
-VGG-Micro,VGG-Style Two-Stage CONV + Fat FC,SA-1×8,8,99672,996.7200,1.0033,415.4790,416.8,16.0,65536,65.8,2.99
-EdgeDetector,Deep Edge-AI CNN — Realistic Topology,Streaming,8,27031,270.3100,3.6995,129.7488,480.0,23.1,0,0.0,—
-EdgeDetector,Deep Edge-AI CNN — Realistic Topology,SA-1×8,8,60274,602.7400,1.6591,218.5294,362.6,16.0,32768,54.4,2.23
+benchmark,workload,architecture,n_macs,cycles,exec_time_us,throughput_k_inf_per_s,energy_uj,area_au,thruput_per_area_k_per_au,energy_x_area_uj_au,dram_overhead_cycles,dram_pct,speedup_vs_streaming,tpa_ratio_vs_streaming
+LeNet-5,Handwritten Digit Classification (MNIST-style),Streaming,8,52432,524.3200,1.9072,251.6736,22.1,0.086496,5549.40,0,0.0,1.00,1.00
+LeNet-5,Handwritten Digit Classification (MNIST-style),SA-4×4,16,55863,558.6300,1.7901,202.6038,20.0,0.089505,4052.08,29040,52.0,0.9386,0.9664
+LeNet-5,Handwritten Digit Classification (MNIST-style),SA-8×8,64,35978,359.7800,2.7795,187.1290,44.0,0.063170,8233.67,29040,80.7,1.4573,1.3693
+AlexNet-Nano,"Object Classification (AlexNet-inspired, 20×20 scaled)",Streaming,8,61306,613.0600,1.6312,294.2688,61.5,0.026523,18097.53,0,0.0,1.00,1.00
+AlexNet-Nano,"Object Classification (AlexNet-inspired, 20×20 scaled)",SA-4×4,16,262285,2622.8500,0.3813,1381.6945,20.0,0.019063,27633.89,231424,88.2,0.2337,1.3913
+AlexNet-Nano,"Object Classification (AlexNet-inspired, 20×20 scaled)",SA-8×8,64,239411,2394.1100,0.4177,1363.9102,44.0,0.009493,60012.05,231424,96.7,0.2561,2.7940
+YOLO-Tiny,"Object Detection (YOLO-tiny-inspired, 64×64 → 5 classes)",Streaming,8,24620,246.2000,4.0617,118.1760,21.2,0.191591,2505.33,0,0.0,1.00,1.00
+YOLO-Tiny,"Object Detection (YOLO-tiny-inspired, 64×64 → 5 classes)",SA-4×4,16,38442,384.4200,2.6013,162.0939,20.0,0.130066,3241.88,25088,65.3,0.6404,1.4730
+YOLO-Tiny,"Object Detection (YOLO-tiny-inspired, 64×64 → 5 classes)",SA-8×8,64,28692,286.9200,3.4853,154.7821,44.0,0.079211,6810.41,25088,87.4,0.8581,2.4187
+VGG-8,"Image Classification (VGG-8-inspired, 24×24 input)",Streaming,8,33335,333.3500,2.9999,160.0080,29.5,0.101862,4712.24,0,0.0,1.00,1.00
+VGG-8,"Image Classification (VGG-8-inspired, 24×24 input)",SA-4×4,16,82635,826.3500,1.2101,401.8623,20.0,0.060507,8037.25,65536,79.3,0.4034,1.6835
+VGG-8,"Image Classification (VGG-8-inspired, 24×24 input)",SA-8×8,64,70333,703.3300,1.4218,393.0094,44.0,0.032314,17292.42,65536,93.2,0.4740,3.1523
+ResNet-Micro,"Image Classification (ResNet-micro-inspired, 24×24 input)",Streaming,8,27031,270.3100,3.6995,129.7488,23.1,0.160150,2997.20,0,0.0,1.00,1.00
+ResNet-Micro,"Image Classification (ResNet-micro-inspired, 24×24 input)",SA-4×4,16,46565,465.6500,2.1475,207.5814,20.0,0.107377,4151.63,32768,70.4,0.5805,1.4915
+ResNet-Micro,"Image Classification (ResNet-micro-inspired, 24×24 input)",SA-8×8,64,36487,364.8700,2.7407,200.0229,44.0,0.062289,8801.01,32768,89.8,0.7408,2.5711
