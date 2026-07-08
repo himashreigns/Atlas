@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Jul  8 16:41:23 2026
+| Date         : Wed Jul  8 19:53:45 2026
 | Host         : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
 | Design       : system_wrapper
@@ -95,7 +95,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   38 |     0 |          0 |       200 | 19.00 |
+| Bonded IOB                  |   40 |     0 |          0 |       200 | 20.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -152,6 +152,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | OBUF     |   38 |                  IO |
+| OBUFT    |    2 |                  IO |
+| IBUF     |    2 |                  IO |
 +----------+------+---------------------+
 
 
@@ -166,9 +168,11 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | system_hdmi_0                    |    1 |
 | system_axi_pc_hdmi_0             |    1 |
 | system_axi_pc_ctrl_0             |    1 |
+| system_axi_iic_hdmi_0            |    1 |
 | system_axi_ic_vid_imp_auto_pc_0  |    1 |
 | system_axi_ic_mem_imp_auto_pc_0  |    1 |
 | system_axi_ic_ctrl_imp_xbar_0    |    1 |
+| system_axi_ic_ctrl_imp_auto_pc_1 |    1 |
 | system_axi_ic_ctrl_imp_auto_pc_0 |    1 |
 | system_accel_0                   |    1 |
 +----------------------------------+------+

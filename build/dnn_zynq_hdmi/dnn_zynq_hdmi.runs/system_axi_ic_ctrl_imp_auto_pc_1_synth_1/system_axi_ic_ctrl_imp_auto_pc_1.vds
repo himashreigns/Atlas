@@ -1,0 +1,262 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Jul  8 19:50:55 2026
+# Process ID         : 29376
+# Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1
+# Command line       : vivado -log system_axi_ic_ctrl_imp_auto_pc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_ic_ctrl_imp_auto_pc_1.tcl
+# Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/system_axi_ic_ctrl_imp_auto_pc_1.vds
+# Journal file       : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/vivado.jou
+# Running On         : chathupa-Nitro-AN515-55
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+# CPU Frequency      : 3599.987 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16589 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20884 MB
+# Available Virtual  : 13587 MB
+#-----------------------------------------------------------
+source system_axi_ic_ctrl_imp_auto_pc_1.tcl -notrace
+Command: synth_design -top system_axi_ic_ctrl_imp_auto_pc_1 -part xc7z020clg484-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 30044
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2308.039 ; gain = 481.188 ; free physical = 1572 ; free virtual = 10475
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_1' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/synth/system_axi_ic_ctrl_imp_auto_pc_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_axi_protocol_converter' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_axi_protocol_converter' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_1' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/synth/system_axi_ic_ctrl_imp_auto_pc_1.v:53]
+INFO: [Synth 8-7129] Port aclk in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port aresetn in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awlock[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[11] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[10] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[9] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[8] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[7] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[6] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[5] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[4] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arlock[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2509.977 ; gain = 683.125 ; free physical = 1363 ; free virtual = 10264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2509.977 ; gain = 683.125 ; free physical = 1363 ; free virtual = 10264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2509.977 ; gain = 683.125 ; free physical = 1363 ; free virtual = 10264
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2509.977 ; gain = 0.000 ; free physical = 1363 ; free virtual = 10264
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+WARNING: [Designutils 20-1758] instance inst wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1_ooc.xdc'.
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2549.996 ; gain = 0.000 ; free physical = 1223 ; free virtual = 10140
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2550.031 ; gain = 0.000 ; free physical = 1215 ; free virtual = 10132
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2550.031 ; gain = 723.180 ; free physical = 448 ; free virtual = 9372
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2558.000 ; gain = 731.148 ; free physical = 448 ; free virtual = 9372
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2558.000 ; gain = 731.148 ; free physical = 448 ; free virtual = 9372
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2558.000 ; gain = 731.148 ; free physical = 436 ; free virtual = 9351
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7129] Port aclk in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port aresetn in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awlock[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awregion[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[11] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[10] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[9] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[8] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[7] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[6] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[5] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[4] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wid[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arlock[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[3] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[2] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[1] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arregion[0] in module axi_protocol_converter_v2_1_37_axi_protocol_converter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2558.000 ; gain = 731.148 ; free physical = 383 ; free virtual = 9300
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2564.000 ; gain = 737.148 ; free physical = 263 ; free virtual = 9177
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2564.000 ; gain = 737.148 ; free physical = 263 ; free virtual = 9177
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2574.016 ; gain = 747.164 ; free physical = 247 ; free virtual = 9161
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.828 ; gain = 932.977 ; free physical = 172 ; free virtual = 9026
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2759.828 ; gain = 892.922 ; free physical = 173 ; free virtual = 9018
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2759.836 ; gain = 932.977 ; free physical = 173 ; free virtual = 9018
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2759.836 ; gain = 0.000 ; free physical = 213 ; free virtual = 9058
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2759.836 ; gain = 0.000 ; free physical = 2084 ; free virtual = 10923
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: eec5a3bd
+INFO: [Common 17-83] Releasing license: Synthesis
+65 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:39 . Memory (MB): peak = 2759.863 ; gain = 1138.793 ; free physical = 2033 ; free virtual = 10872
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1761.927; main = 1726.379; forked = 211.366
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3585.543; main = 2759.832; forked = 986.523
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/system_axi_ic_ctrl_imp_auto_pc_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_axi_ic_ctrl_imp_auto_pc_1, cache-ID = 238a09ea2f51b1cc
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_1_synth_1/system_axi_ic_ctrl_imp_auto_pc_1.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_axi_ic_ctrl_imp_auto_pc_1_utilization_synth.rpt -pb system_axi_ic_ctrl_imp_auto_pc_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 19:51:49 2026...

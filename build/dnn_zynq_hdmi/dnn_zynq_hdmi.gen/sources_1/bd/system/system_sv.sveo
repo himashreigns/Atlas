@@ -87,14 +87,18 @@ system_sv your_instance_name (
   .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb), // inout wire FIXED_IO_ps_srstb
   .FIXED_IO_ps_clk(FIXED_IO_ps_clk), // inout wire FIXED_IO_ps_clk
   .FIXED_IO_ps_porb(FIXED_IO_ps_porb), // inout wire FIXED_IO_ps_porb
+  .hdmi_iic_scl_i(hdmi_iic_scl_i), // input wire hdmi_iic_scl_i
+  .hdmi_iic_scl_o(hdmi_iic_scl_o), // output wire hdmi_iic_scl_o
+  .hdmi_iic_scl_t(hdmi_iic_scl_t), // output wire hdmi_iic_scl_t
+  .hdmi_iic_sda_i(hdmi_iic_sda_i), // input wire hdmi_iic_sda_i
+  .hdmi_iic_sda_o(hdmi_iic_sda_o), // output wire hdmi_iic_sda_o
+  .hdmi_iic_sda_t(hdmi_iic_sda_t), // output wire hdmi_iic_sda_t
   .leds(leds), // output wire [3:0] leds
   .hdmi_clk(hdmi_clk), // output wire hdmi_clk
   .hdmi_d(hdmi_d), // output wire [15:0] hdmi_d
   .hdmi_de(hdmi_de), // output wire hdmi_de
   .hdmi_hsync(hdmi_hsync), // output wire hdmi_hsync
   .hdmi_vsync(hdmi_vsync), // output wire hdmi_vsync
-  .hdmi_scl(hdmi_scl), // inout wire hdmi_scl
-  .hdmi_sda(hdmi_sda), // inout wire hdmi_sda
   .vga_r(vga_r), // output wire [3:0] vga_r
   .vga_g(vga_g), // output wire [3:0] vga_g
   .vga_b(vga_b), // output wire [3:0] vga_b

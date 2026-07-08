@@ -96,6 +96,18 @@ module system_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire FIXED_IO_ps_porb,
   (* X_INTERFACE_IGNORE = "true" *)
+  input wire hdmi_iic_scl_i,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire hdmi_iic_scl_o,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire hdmi_iic_scl_t,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire hdmi_iic_sda_i,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire hdmi_iic_sda_o,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire hdmi_iic_sda_t,
+  (* X_INTERFACE_IGNORE = "true" *)
   output wire [3:0] leds,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire hdmi_clk,
@@ -107,10 +119,6 @@ module system_sv (
   output wire hdmi_hsync,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire hdmi_vsync,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire hdmi_scl,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire hdmi_sda,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire [3:0] vga_r,
   (* X_INTERFACE_IGNORE = "true" *)
@@ -145,14 +153,18 @@ module system_sv (
     .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
     .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
     .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
+    .hdmi_iic_scl_i(hdmi_iic_scl_i),
+    .hdmi_iic_scl_o(hdmi_iic_scl_o),
+    .hdmi_iic_scl_t(hdmi_iic_scl_t),
+    .hdmi_iic_sda_i(hdmi_iic_sda_i),
+    .hdmi_iic_sda_o(hdmi_iic_sda_o),
+    .hdmi_iic_sda_t(hdmi_iic_sda_t),
     .leds(leds),
     .hdmi_clk(hdmi_clk),
     .hdmi_d(hdmi_d),
     .hdmi_de(hdmi_de),
     .hdmi_hsync(hdmi_hsync),
     .hdmi_vsync(hdmi_vsync),
-    .hdmi_scl(hdmi_scl),
-    .hdmi_sda(hdmi_sda),
     .vga_r(vga_r),
     .vga_g(vga_g),
     .vga_b(vga_b),

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAC03AC5E52E1883A",
+      "boundary_crc": "0xA3F5E36CDF5A65C6",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../dnn_zynq_hdmi.gen/sources_1/bd/system",
       "name": "system",
@@ -20,8 +20,12 @@
           "auto_pc": ""
         },
         "m00_couplers": {},
-        "m01_couplers": {}
+        "m01_couplers": {},
+        "m02_couplers": {
+          "auto_pc": ""
+        }
       },
+      "axi_iic_hdmi": "",
       "axi_ic_mem": {
         "s00_couplers": {
           "auto_pc": ""
@@ -216,6 +220,43 @@
             "direction": "IO"
           }
         }
+      },
+      "hdmi_iic": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:iic:1.0",
+        "vlnv": "xilinx.com:interface:iic_rtl:1.0",
+        "hdl_attributes": {
+          "LOCKED": {
+            "value": "FALSE",
+            "value_src": "default"
+          }
+        },
+        "port_maps": {
+          "SCL_I": {
+            "physical_name": "hdmi_iic_scl_i",
+            "direction": "I"
+          },
+          "SCL_O": {
+            "physical_name": "hdmi_iic_scl_o",
+            "direction": "O"
+          },
+          "SCL_T": {
+            "physical_name": "hdmi_iic_scl_t",
+            "direction": "O"
+          },
+          "SDA_I": {
+            "physical_name": "hdmi_iic_sda_i",
+            "direction": "I"
+          },
+          "SDA_O": {
+            "physical_name": "hdmi_iic_sda_o",
+            "direction": "O"
+          },
+          "SDA_T": {
+            "physical_name": "hdmi_iic_sda_t",
+            "direction": "O"
+          }
+        }
       }
     },
     "ports": {
@@ -254,12 +295,6 @@
       },
       "hdmi_vsync": {
         "direction": "O"
-      },
-      "hdmi_scl": {
-        "direction": "IO"
-      },
-      "hdmi_sda": {
-        "direction": "IO"
       },
       "vga_r": {
         "direction": "O",
@@ -2345,12 +2380,6 @@
           "hdmi_vsync": {
             "direction": "O"
           },
-          "hdmi_scl": {
-            "direction": "IO"
-          },
-          "hdmi_sda": {
-            "direction": "IO"
-          },
           "vga_r": {
             "direction": "O",
             "left": "3",
@@ -2389,7 +2418,7 @@
         "xci_name": "system_axi_ic_ctrl_0",
         "parameters": {
           "NUM_MI": {
-            "value": "2"
+            "value": "3"
           },
           "NUM_SI": {
             "value": "1"
@@ -2419,6 +2448,17 @@
             }
           },
           "M01_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "hdl_attributes": {
+              "LOCKED": {
+                "value": "FALSE",
+                "value_src": "default"
+              }
+            }
+          },
+          "M02_AXI": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -2491,6 +2531,22 @@
           "M01_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M02_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M02_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M02_ARESETN"
+              }
+            }
+          },
+          "M02_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -2503,7 +2559,7 @@
             "has_run_ip_tcl": "true",
             "parameters": {
               "NUM_MI": {
-                "value": "2"
+                "value": "3"
               },
               "NUM_SI": {
                 "value": "1"
@@ -2516,7 +2572,7 @@
               "S00_AXI": {
                 "bd_attributes": {
                   "BRIDGES": {
-                    "value": "M00_AXI:M01_AXI",
+                    "value": "M00_AXI:M01_AXI:M02_AXI",
                     "value_src": "auto"
                   },
                   "TYPE": {
@@ -2528,7 +2584,8 @@
                 "mode": "Slave",
                 "bridges": [
                   "M00_AXI",
-                  "M01_AXI"
+                  "M01_AXI",
+                  "M02_AXI"
                 ]
               },
               "M00_AXI": {
@@ -2540,6 +2597,14 @@
                 }
               },
               "M01_AXI": {
+                "bd_attributes": {
+                  "TYPE": {
+                    "value": "interior",
+                    "value_src": "default"
+                  }
+                }
+              },
+              "M02_AXI": {
                 "bd_attributes": {
                   "TYPE": {
                     "value": "interior",
@@ -2612,8 +2677,8 @@
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                 "ip_revision": "37",
-                "xci_name": "system_axi_ic_ctrl_imp_auto_pc_0",
-                "xci_path": "ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0.xci",
+                "xci_name": "system_axi_ic_ctrl_imp_auto_pc_1",
+                "xci_path": "ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1.xci",
                 "inst_hier_path": "axi_ic_ctrl/s00_couplers/auto_pc",
                 "has_run_ip_tcl": "true",
                 "parameters": {
@@ -2817,6 +2882,139 @@
                 ]
               }
             }
+          },
+          "m02_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "hdl_attributes": {
+                  "LOCKED": {
+                    "value": "FALSE",
+                    "value_src": "default"
+                  }
+                }
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "hdl_attributes": {
+                  "LOCKED": {
+                    "value": "FALSE",
+                    "value_src": "default"
+                  }
+                }
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "components": {
+              "auto_pc": {
+                "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+                "ip_revision": "37",
+                "xci_name": "system_axi_ic_ctrl_imp_auto_pc_0",
+                "xci_path": "ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0.xci",
+                "inst_hier_path": "axi_ic_ctrl/m02_couplers/auto_pc",
+                "has_run_ip_tcl": "true",
+                "parameters": {
+                  "MI_PROTOCOL": {
+                    "value": "AXI4LITE"
+                  },
+                  "SI_PROTOCOL": {
+                    "value": "AXI4"
+                  }
+                },
+                "interface_ports": {
+                  "S_AXI": {
+                    "bd_attributes": {
+                      "BRIDGES": {
+                        "value": "M_AXI",
+                        "value_src": "auto"
+                      },
+                      "TYPE": {
+                        "value": "interior",
+                        "value_src": "default"
+                      }
+                    },
+                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                    "mode": "Slave",
+                    "bridges": [
+                      "M_AXI"
+                    ]
+                  },
+                  "M_AXI": {
+                    "bd_attributes": {
+                      "TYPE": {
+                        "value": "interior",
+                        "value_src": "default"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "interface_nets": {
+              "auto_pc_to_m02_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
+                ]
+              },
+              "m02_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
+                ]
+              }
+            },
+            "nets": {
+              "S_ACLK_1": {
+                "ports": [
+                  "S_ACLK",
+                  "auto_pc/aclk"
+                ]
+              },
+              "S_ARESETN_1": {
+                "ports": [
+                  "S_ARESETN",
+                  "auto_pc/aresetn"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
@@ -2838,6 +3036,12 @@
               "M01_AXI"
             ]
           },
+          "m02_couplers_to_axi_ic_ctrl": {
+            "interface_ports": [
+              "m02_couplers/M_AXI",
+              "M02_AXI"
+            ]
+          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -2855,6 +3059,12 @@
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
             ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
+            ]
           }
         },
         "nets": {
@@ -2866,8 +3076,10 @@
               "s00_couplers/M_ACLK",
               "m00_couplers/M_ACLK",
               "m01_couplers/M_ACLK",
+              "m02_couplers/M_ACLK",
               "m00_couplers/S_ACLK",
-              "m01_couplers/S_ACLK"
+              "m01_couplers/S_ACLK",
+              "m02_couplers/S_ACLK"
             ]
           },
           "axi_ic_ctrl_ARESETN_net": {
@@ -2878,11 +3090,21 @@
               "s00_couplers/M_ARESETN",
               "m00_couplers/M_ARESETN",
               "m01_couplers/M_ARESETN",
+              "m02_couplers/M_ARESETN",
               "m00_couplers/S_ARESETN",
-              "m01_couplers/S_ARESETN"
+              "m01_couplers/S_ARESETN",
+              "m02_couplers/S_ARESETN"
             ]
           }
         }
+      },
+      "axi_iic_hdmi": {
+        "vlnv": "xilinx.com:ip:axi_iic:2.1",
+        "ip_revision": "11",
+        "xci_name": "system_axi_iic_hdmi_0",
+        "xci_path": "ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0.xci",
+        "inst_hier_path": "axi_iic_hdmi",
+        "has_run_ip_tcl": "true"
       },
       "axi_ic_mem": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
@@ -3502,6 +3724,12 @@
           "axi_pc_hdmi/S_AXI"
         ]
       },
+      "axi_ic_ctrl_M02_AXI": {
+        "interface_ports": [
+          "axi_ic_ctrl/M02_AXI",
+          "axi_iic_hdmi/S_AXI"
+        ]
+      },
       "axi_ic_mem_M00_AXI": {
         "interface_ports": [
           "axi_ic_mem/M00_AXI",
@@ -3512,6 +3740,12 @@
         "interface_ports": [
           "axi_ic_vid/M00_AXI",
           "ps7/S_AXI_HP1"
+        ]
+      },
+      "axi_iic_hdmi_IIC": {
+        "interface_ports": [
+          "hdmi_iic",
+          "axi_iic_hdmi/IIC"
         ]
       },
       "axi_pc_ctrl_M_AXI": {
@@ -3552,18 +3786,6 @@
       }
     },
     "nets": {
-      "Net": {
-        "ports": [
-          "hdmi_scl",
-          "hdmi/hdmi_scl"
-        ]
-      },
-      "Net1": {
-        "ports": [
-          "hdmi_sda",
-          "hdmi/hdmi_sda"
-        ]
-      },
       "accel_irq_done": {
         "ports": [
           "accel/irq_done",
@@ -3649,6 +3871,8 @@
           "axi_ic_mem/S00_ACLK",
           "axi_ic_mem/M00_ACLK",
           "axi_ic_ctrl/M01_ACLK",
+          "axi_ic_ctrl/M02_ACLK",
+          "axi_iic_hdmi/s_axi_aclk",
           "ps7/S_AXI_HP1_ACLK",
           "axi_ic_vid/ACLK",
           "axi_ic_vid/S00_ACLK",
@@ -3681,6 +3905,8 @@
           "axi_ic_mem/S00_ARESETN",
           "axi_ic_mem/M00_ARESETN",
           "axi_ic_ctrl/M01_ARESETN",
+          "axi_ic_ctrl/M02_ARESETN",
+          "axi_iic_hdmi/s_axi_aresetn",
           "axi_ic_vid/ARESETN",
           "axi_ic_vid/S00_ARESETN",
           "axi_ic_vid/M00_ARESETN",
@@ -3699,6 +3925,11 @@
               "SEG_accel_reg0": {
                 "address_block": "/accel/s_axi_lite/reg0",
                 "offset": "0x43C00000",
+                "range": "64K"
+              },
+              "SEG_axi_iic_hdmi_Reg": {
+                "address_block": "/axi_iic_hdmi/S_AXI/Reg",
+                "offset": "0x43C20000",
                 "range": "64K"
               },
               "SEG_hdmi_reg0": {

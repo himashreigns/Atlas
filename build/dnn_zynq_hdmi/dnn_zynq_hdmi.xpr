@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="71" Path="/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="cdde53121d454c1fabc1f5d12b243866"/>
+    <Option Name="Id" Val="03e46058aa8f4bd6a0d27dc32d4b01e5"/>
     <Option Name="Part" Val="xc7z020clg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -229,6 +229,9 @@
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0.xci">
           <Proxy FileSetName="system_axi_ic_ctrl_imp_auto_pc_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1.xci">
+          <Proxy FileSetName="system_axi_ic_ctrl_imp_auto_pc_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0.xci">
           <Proxy FileSetName="system_axi_ic_ctrl_imp_xbar_0"/>
         </CompFileExtendedInfo>
@@ -237,6 +240,9 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_ic_vid_imp_auto_pc_0/system_axi_ic_vid_imp_auto_pc_0.xci">
           <Proxy FileSetName="system_axi_ic_vid_imp_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0.xci">
+          <Proxy FileSetName="system_axi_iic_hdmi_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0.xci">
           <Proxy FileSetName="system_axi_pc_ctrl_0"/>
@@ -316,9 +322,15 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_axi_ic_mem_imp_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_ic_mem_imp_auto_pc_0" RelGenDir="$PGENDIR/system_axi_ic_mem_imp_auto_pc_0">
+    <FileSet Name="system_hdmi_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_hdmi_0" RelGenDir="$PGENDIR/system_hdmi_0">
       <Config>
-        <Option Name="TopModule" Val="system_axi_ic_mem_imp_auto_pc_0"/>
+        <Option Name="TopModule" Val="system_hdmi_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_ps7_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_ps7_0" RelGenDir="$PGENDIR/system_ps7_0">
+      <Config>
+        <Option Name="TopModule" Val="system_ps7_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -340,21 +352,27 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_hdmi_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_hdmi_0" RelGenDir="$PGENDIR/system_hdmi_0">
+    <FileSet Name="system_axi_ic_mem_imp_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_ic_mem_imp_auto_pc_0" RelGenDir="$PGENDIR/system_axi_ic_mem_imp_auto_pc_0">
       <Config>
-        <Option Name="TopModule" Val="system_hdmi_0"/>
+        <Option Name="TopModule" Val="system_axi_ic_mem_imp_auto_pc_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_ps7_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_ps7_0" RelGenDir="$PGENDIR/system_ps7_0">
+    <FileSet Name="system_axi_ic_ctrl_imp_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_ic_ctrl_imp_auto_pc_0" RelGenDir="$PGENDIR/system_axi_ic_ctrl_imp_auto_pc_0">
       <Config>
-        <Option Name="TopModule" Val="system_ps7_0"/>
+        <Option Name="TopModule" Val="system_axi_ic_ctrl_imp_auto_pc_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_rst_sys_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_sys_0" RelGenDir="$PGENDIR/system_rst_sys_0">
+    <FileSet Name="system_axi_ic_ctrl_imp_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_ic_ctrl_imp_auto_pc_1" RelGenDir="$PGENDIR/system_axi_ic_ctrl_imp_auto_pc_1">
       <Config>
-        <Option Name="TopModule" Val="system_rst_sys_0"/>
+        <Option Name="TopModule" Val="system_axi_ic_ctrl_imp_auto_pc_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_axi_iic_hdmi_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_iic_hdmi_0" RelGenDir="$PGENDIR/system_axi_iic_hdmi_0">
+      <Config>
+        <Option Name="TopModule" Val="system_axi_iic_hdmi_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -364,15 +382,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_accel_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_accel_0" RelGenDir="$PGENDIR/system_accel_0">
+    <FileSet Name="system_rst_sys_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_sys_0" RelGenDir="$PGENDIR/system_rst_sys_0">
       <Config>
-        <Option Name="TopModule" Val="system_accel_0"/>
+        <Option Name="TopModule" Val="system_rst_sys_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_axi_ic_ctrl_imp_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_ic_ctrl_imp_auto_pc_0" RelGenDir="$PGENDIR/system_axi_ic_ctrl_imp_auto_pc_0">
+    <FileSet Name="system_accel_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_accel_0" RelGenDir="$PGENDIR/system_accel_0">
       <Config>
-        <Option Name="TopModule" Val="system_axi_ic_ctrl_imp_auto_pc_0"/>
+        <Option Name="TopModule" Val="system_accel_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -411,7 +429,19 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_axi_ic_mem_imp_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_ic_mem_imp_auto_pc_0" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_mem_imp_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_ic_mem_imp_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_hdmi_0_synth_1" Type="Ft3:Synth" SrcSet="system_hdmi_0" Part="xc7z020clg484-1" ConstrsSet="system_hdmi_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_hdmi_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_hdmi_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_hdmi_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="system_ps7_0_synth_1" Type="Ft3:Synth" SrcSet="system_ps7_0" Part="xc7z020clg484-1" ConstrsSet="system_ps7_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_ps7_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_ps7_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_ps7_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -459,7 +489,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_hdmi_0_synth_1" Type="Ft3:Synth" SrcSet="system_hdmi_0" Part="xc7z020clg484-1" ConstrsSet="system_hdmi_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_hdmi_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_hdmi_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_hdmi_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_mem_imp_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_ic_mem_imp_auto_pc_0" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_mem_imp_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_ic_mem_imp_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -471,7 +501,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_ps7_0_synth_1" Type="Ft3:Synth" SrcSet="system_ps7_0" Part="xc7z020clg484-1" ConstrsSet="system_ps7_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_ps7_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_ps7_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_ps7_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_ctrl_imp_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_ic_ctrl_imp_auto_pc_0" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -483,7 +513,19 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_sys_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_sys_0" Part="xc7z020clg484-1" ConstrsSet="system_rst_sys_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_sys_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_ctrl_imp_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="system_axi_ic_ctrl_imp_auto_pc_1" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_ic_ctrl_imp_auto_pc_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_1_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="system_axi_iic_hdmi_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_iic_hdmi_0" Part="xc7z020clg484-1" ConstrsSet="system_axi_iic_hdmi_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_iic_hdmi_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_iic_hdmi_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_iic_hdmi_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -507,7 +549,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_accel_0_synth_1" Type="Ft3:Synth" SrcSet="system_accel_0" Part="xc7z020clg484-1" ConstrsSet="system_accel_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_accel_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_accel_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_accel_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_rst_sys_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_sys_0" Part="xc7z020clg484-1" ConstrsSet="system_rst_sys_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_sys_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -519,7 +561,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_axi_ic_ctrl_imp_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_ic_ctrl_imp_auto_pc_0" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_synth_1" ParallelReportGen="true">
+    <Run Id="system_accel_0_synth_1" Type="Ft3:Synth" SrcSet="system_accel_0" Part="xc7z020clg484-1" ConstrsSet="system_accel_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_accel_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_accel_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_accel_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -551,7 +593,26 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_axi_ic_mem_imp_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_mem_imp_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_ic_mem_imp_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_hdmi_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_hdmi_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_hdmi_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_hdmi_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_hdmi_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="system_ps7_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_ps7_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_ps7_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_ps7_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_ps7_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -627,7 +688,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_hdmi_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_hdmi_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_hdmi_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_hdmi_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_hdmi_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_mem_imp_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_mem_imp_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_ic_mem_imp_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_mem_imp_auto_pc_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -646,7 +707,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_ps7_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_ps7_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_ps7_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_ps7_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_ps7_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_ctrl_imp_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_ic_ctrl_imp_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -665,7 +726,26 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_sys_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_rst_sys_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_sys_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_axi_ic_ctrl_imp_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_ic_ctrl_imp_auto_pc_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_1_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="system_axi_iic_hdmi_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_iic_hdmi_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_iic_hdmi_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_iic_hdmi_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_iic_hdmi_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -703,7 +783,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_accel_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_accel_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_accel_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_accel_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_accel_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_rst_sys_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_rst_sys_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_sys_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_rst_sys_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -722,7 +802,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_axi_ic_ctrl_imp_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_axi_ic_ctrl_imp_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_ic_ctrl_imp_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_axi_ic_ctrl_imp_auto_pc_0_impl_1" ParallelReportGen="true">
+    <Run Id="system_accel_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="system_accel_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_accel_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_accel_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/system_accel_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>

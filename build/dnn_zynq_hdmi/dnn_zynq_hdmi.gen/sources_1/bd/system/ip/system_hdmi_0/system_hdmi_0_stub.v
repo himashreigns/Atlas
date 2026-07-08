@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jul  8 16:38:57 2026
+// Date        : Wed Jul  8 19:50:41 2026
 // Host        : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/system_hdmi_0_stub.v
@@ -25,8 +25,8 @@ module system_hdmi_0(aclk, aresetn, pixel_clk, s_axi_lite_awaddr,
   m_axi_hp_arsize, m_axi_hp_arburst, m_axi_hp_arlock, m_axi_hp_arcache, m_axi_hp_arprot, 
   m_axi_hp_arqos, m_axi_hp_arvalid, m_axi_hp_arready, m_axi_hp_rid, m_axi_hp_rdata, 
   m_axi_hp_rresp, m_axi_hp_rlast, m_axi_hp_rvalid, m_axi_hp_rready, hdmi_clk, hdmi_d, hdmi_de, 
-  hdmi_hsync, hdmi_vsync, hdmi_scl, hdmi_sda, vga_r, vga_g, vga_b, vga_hsync, vga_vsync)
-/* synthesis syn_black_box black_box_pad_pin="aresetn,s_axi_lite_awaddr[15:0],s_axi_lite_awprot[2:0],s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_wdata[31:0],s_axi_lite_wstrb[3:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_araddr[15:0],s_axi_lite_arprot[2:0],s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],s_axi_lite_rvalid,s_axi_lite_rready,m_axi_hp_arid[5:0],m_axi_hp_araddr[31:0],m_axi_hp_arlen[7:0],m_axi_hp_arsize[2:0],m_axi_hp_arburst[1:0],m_axi_hp_arlock[1:0],m_axi_hp_arcache[3:0],m_axi_hp_arprot[2:0],m_axi_hp_arqos[3:0],m_axi_hp_arvalid,m_axi_hp_arready,m_axi_hp_rid[5:0],m_axi_hp_rdata[31:0],m_axi_hp_rresp[1:0],m_axi_hp_rlast,m_axi_hp_rvalid,m_axi_hp_rready,hdmi_clk,hdmi_d[15:0],hdmi_de,hdmi_hsync,hdmi_vsync,hdmi_scl,hdmi_sda,vga_r[3:0],vga_g[3:0],vga_b[3:0],vga_hsync,vga_vsync" */
+  hdmi_hsync, hdmi_vsync, vga_r, vga_g, vga_b, vga_hsync, vga_vsync)
+/* synthesis syn_black_box black_box_pad_pin="aresetn,s_axi_lite_awaddr[15:0],s_axi_lite_awprot[2:0],s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_wdata[31:0],s_axi_lite_wstrb[3:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_araddr[15:0],s_axi_lite_arprot[2:0],s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],s_axi_lite_rvalid,s_axi_lite_rready,m_axi_hp_arid[5:0],m_axi_hp_araddr[31:0],m_axi_hp_arlen[7:0],m_axi_hp_arsize[2:0],m_axi_hp_arburst[1:0],m_axi_hp_arlock[1:0],m_axi_hp_arcache[3:0],m_axi_hp_arprot[2:0],m_axi_hp_arqos[3:0],m_axi_hp_arvalid,m_axi_hp_arready,m_axi_hp_rid[5:0],m_axi_hp_rdata[31:0],m_axi_hp_rresp[1:0],m_axi_hp_rlast,m_axi_hp_rvalid,m_axi_hp_rready,hdmi_clk,hdmi_d[15:0],hdmi_de,hdmi_hsync,hdmi_vsync,vga_r[3:0],vga_g[3:0],vga_b[3:0],vga_hsync,vga_vsync" */
 /* synthesis syn_force_seq_prim="aclk" */
 /* synthesis syn_force_seq_prim="pixel_clk" */;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk CLK" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF m_axi_hp:s_axi_lite, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_ps7_0_FCLK_CLK0, INSERT_VIP 0" *) input aclk /* synthesis syn_isclock = 1 */;
@@ -73,8 +73,6 @@ module system_hdmi_0(aclk, aresetn, pixel_clk, s_axi_lite_awaddr,
   output hdmi_de;
   output hdmi_hsync;
   output hdmi_vsync;
-  inout hdmi_scl;
-  inout hdmi_sda;
   output [3:0]vga_r;
   output [3:0]vga_g;
   output [3:0]vga_b;

@@ -129,7 +129,12 @@ create_bd_cell -type module -reference hdmi_out hdmi
 
 # AXI Interconnect: PS GP0 → accel ctrl (AXI-Lite, 32-bit)
 create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_ic_ctrl
-set_property -dict [list CONFIG.NUM_MI {2} CONFIG.NUM_SI {1}] [get_bd_cells axi_ic_ctrl]
+set_property -dict [list CONFIG.NUM_MI {3} CONFIG.NUM_SI {1}] [get_bd_cells axi_ic_ctrl]
+
+# Hardware I2C master for the ADV7511 (replaces hdmi_out's bit-bang pads —
+# multi-register write sequences were unreliable over GPIO bit-bang and chip
+# reads mostly echoed the revision register).
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_iic:2.1 axi_iic_hdmi
 
 # AXI Interconnect: accel master → PS HP0 (AXI3 32-bit)
 create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_ic_mem
@@ -158,6 +163,8 @@ connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_mem/ACLK]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_mem/S00_ACLK]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_mem/M00_ACLK]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_ctrl/M01_ACLK]
+connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_ctrl/M02_ACLK]
+connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_iic_hdmi/s_axi_aclk]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins ps7/S_AXI_HP1_ACLK]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_vid/ACLK]
 connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins axi_ic_vid/S00_ACLK]
@@ -177,6 +184,8 @@ connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_mem/
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_mem/S00_ARESETN]
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_mem/M00_ARESETN]
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_ctrl/M01_ARESETN]
+connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_ctrl/M02_ARESETN]
+connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_iic_hdmi/s_axi_aresetn]
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_vid/ARESETN]
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_vid/S00_ARESETN]
 connect_bd_net [get_bd_pins rst_sys/peripheral_aresetn] [get_bd_pins axi_ic_vid/M00_ARESETN]
@@ -200,6 +209,12 @@ connect_bd_intf_net [get_bd_intf_pins axi_ic_mem/M00_AXI]   [get_bd_intf_pins ps
 connect_bd_intf_net [get_bd_intf_pins axi_ic_ctrl/M01_AXI] [get_bd_intf_pins axi_pc_hdmi/S_AXI]
 connect_bd_intf_net [get_bd_intf_pins axi_pc_hdmi/M_AXI]   [get_bd_intf_pins hdmi/s_axi_lite]
 
+# I2C master: 3rd master of ctrl IC → axi_iic (Lite slave; IC converts)
+connect_bd_intf_net [get_bd_intf_pins axi_ic_ctrl/M02_AXI] [get_bd_intf_pins axi_iic_hdmi/S_AXI]
+# ADV7511 I2C pads out to top (wrapper auto-inserts IOBUFs for the IIC intf)
+make_bd_intf_pins_external [get_bd_intf_pins axi_iic_hdmi/IIC]
+set_property name hdmi_iic [get_bd_intf_ports IIC_0]
+
 # HDMI framebuffer reads: hdmi read master → IC → PS S_AXI_HP1
 connect_bd_intf_net [get_bd_intf_pins hdmi/m_axi_hp]       [get_bd_intf_pins axi_ic_vid/S00_AXI]
 connect_bd_intf_net [get_bd_intf_pins axi_ic_vid/M00_AXI]  [get_bd_intf_pins ps7/S_AXI_HP1]
@@ -217,14 +232,12 @@ create_bd_port -dir O -from 15 -to 0 hdmi_d
 create_bd_port -dir O hdmi_de
 create_bd_port -dir O hdmi_hsync
 create_bd_port -dir O hdmi_vsync
-create_bd_port -dir IO hdmi_scl
-create_bd_port -dir IO hdmi_sda
 create_bd_port -dir O -from 3 -to 0 vga_r
 create_bd_port -dir O -from 3 -to 0 vga_g
 create_bd_port -dir O -from 3 -to 0 vga_b
 create_bd_port -dir O vga_hsync
 create_bd_port -dir O vga_vsync
-foreach p {hdmi_clk hdmi_d hdmi_de hdmi_hsync hdmi_vsync hdmi_scl hdmi_sda \
+foreach p {hdmi_clk hdmi_d hdmi_de hdmi_hsync hdmi_vsync \
            vga_r vga_g vga_b vga_hsync vga_vsync} {
     connect_bd_net [get_bd_pins hdmi/$p] [get_bd_ports $p]
 }
@@ -242,6 +255,11 @@ assign_bd_address -target_address_space /ps7/Data \
     [get_bd_addr_segs {hdmi/s_axi_lite/reg0}] -force
 set_property offset 0x43C10000 [get_bd_addr_segs ps7/Data/SEG_hdmi_reg0]
 set_property range  64K        [get_bd_addr_segs ps7/Data/SEG_hdmi_reg0]
+
+assign_bd_address -target_address_space /ps7/Data \
+    [get_bd_addr_segs {axi_iic_hdmi/S_AXI/Reg}] -force
+set_property offset 0x43C20000 [get_bd_addr_segs ps7/Data/SEG_axi_iic_hdmi_Reg]
+set_property range  64K        [get_bd_addr_segs ps7/Data/SEG_axi_iic_hdmi_Reg]
 
 assign_bd_address -target_address_space /hdmi/m_axi_hp \
     [get_bd_addr_segs {ps7/S_AXI_HP1/HP1_DDR_LOWOCM}] -force

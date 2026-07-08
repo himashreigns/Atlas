@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Jul  8 16:38:03 2026
-# Process ID         : 136269
+# Start of session at: Wed Jul  8 19:49:53 2026
+# Process ID         : 27960
 # Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_hdmi_0_synth_1
 # Command line       : vivado -log system_hdmi_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_hdmi_0.tcl
 # Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_hdmi_0_synth_1/system_hdmi_0.vds
@@ -13,16 +13,16 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
-# CPU Frequency      : 3500.099 MHz
+# CPU Frequency      : 3599.933 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16589 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20884 MB
-# Available Virtual  : 16145 MB
+# Available Virtual  : 16095 MB
 #-----------------------------------------------------------
 source system_hdmi_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 1587.977 ; gain = 100.059 ; free physical = 4272 ; free virtual = 12305
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1614.543 ; gain = 64.059 ; free physical = 149 ; free virtual = 13746
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/chathupa/Desktop/AMD/2025.2/data/ip'.
@@ -33,12 +33,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 136677
+INFO: [Synth 8-7075] Helper process launched with PID 28395
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2306.461 ; gain = 483.156 ; free physical = 615 ; free virtual = 8669
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2306.715 ; gain = 485.594 ; free physical = 147 ; free virtual = 10131
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/synth/system_hdmi_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_out' [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:26]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out' [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:27]
 	Parameter AXI_LITE_ADDR_W bound to: 16 - type: integer 
 	Parameter AXI_ID_W bound to: 6 - type: integer 
 	Parameter FB_DEFAULT bound to: 269484032 - type: integer 
@@ -50,17 +50,15 @@ INFO: [Synth 8-6157] synthesizing module 'hdmi_out' [/home/chathupa/Desktop/dnn_
 	Parameter V_FP bound to: 10 - type: integer 
 	Parameter V_SYNC bound to: 2 - type: integer 
 	Parameter V_BP bound to: 33 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
-INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117225]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'ODDR' (0#1) [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117225]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_out' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out' (0#1) [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:27]
 INFO: [Synth 8-6155] done synthesizing module 'system_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/synth/system_hdmi_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element vga_hsync_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:290]
-WARNING: [Synth 8-6014] Unused sequential element vga_vsync_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:291]
+WARNING: [Synth 8-6014] Unused sequential element vga_hsync_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:281]
+WARNING: [Synth 8-6014] Unused sequential element vga_vsync_reg was removed.  [/home/chathupa/Desktop/dnn_opt/rtl/ps_integration/hdmi_out.v:282]
 INFO: [Synth 8-7129] Port s_axi_lite_awprot[2] in module hdmi_out is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axi_lite_awprot[1] in module hdmi_out is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axi_lite_awprot[0] in module hdmi_out is either unconnected or has no load
@@ -80,19 +78,19 @@ INFO: [Synth 8-7129] Port m_axi_hp_rid[0] in module hdmi_out is either unconnect
 INFO: [Synth 8-7129] Port m_axi_hp_rresp[1] in module hdmi_out is either unconnected or has no load
 INFO: [Synth 8-7129] Port m_axi_hp_rresp[0] in module hdmi_out is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2398.398 ; gain = 575.094 ; free physical = 354 ; free virtual = 8404
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2398.652 ; gain = 577.531 ; free physical = 158 ; free virtual = 9915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2413.242 ; gain = 589.938 ; free physical = 338 ; free virtual = 8389
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2410.527 ; gain = 589.406 ; free physical = 224 ; free virtual = 9883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2413.242 ; gain = 589.938 ; free physical = 338 ; free virtual = 8389
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2410.527 ; gain = 589.406 ; free physical = 224 ; free virtual = 9883
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2419.180 ; gain = 0.000 ; free physical = 326 ; free virtual = 8377
-INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2416.465 ; gain = 0.000 ; free physical = 189 ; free virtual = 9847
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -100,28 +98,27 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2527.980 ; gain = 0.000 ; free physical = 294 ; free virtual = 8221
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.266 ; gain = 0.000 ; free physical = 202 ; free virtual = 9673
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2528.016 ; gain = 0.000 ; free physical = 293 ; free virtual = 8219
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2526.301 ; gain = 0.000 ; free physical = 149 ; free virtual = 9627
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2528.016 ; gain = 704.711 ; free physical = 996 ; free virtual = 7933
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2526.301 ; gain = 705.180 ; free physical = 193 ; free virtual = 9490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 996 ; free virtual = 7933
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 192 ; free virtual = 9489
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 996 ; free virtual = 7933
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 192 ; free virtual = 9489
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fstate_reg' in module 'hdmi_out'
 ---------------------------------------------------------------------------------------------------
@@ -133,7 +130,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'fstate_reg' in module 'hdmi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fstate_reg' using encoding 'sequential' in module 'hdmi_out'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 967 ; free virtual = 7920
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 188 ; free virtual = 9486
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -251,7 +248,7 @@ INFO: [Synth 8-7129] Port m_axi_hp_rid[0] in module system_hdmi_0 is either unco
 INFO: [Synth 8-7129] Port m_axi_hp_rresp[1] in module system_hdmi_0 is either unconnected or has no load
 INFO: [Synth 8-7129] Port m_axi_hp_rresp[0] in module system_hdmi_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 285 ; free virtual = 7805
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 167 ; free virtual = 9467
 ---------------------------------------------------------------------------------
  Sort Area is  inst/f_addr0_0 : 0 0 : 167 167 : Used 1 time 0
 ---------------------------------------------------------------------------------
@@ -283,7 +280,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 242 ; free virtual = 7786
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 167 ; free virtual = 9467
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -303,7 +300,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2535.984 ; gain = 712.680 ; free physical = 357 ; free virtual = 7874
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2534.270 ; gain = 713.148 ; free physical = 177 ; free virtual = 9478
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -321,37 +318,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 302 ; free virtual = 7691
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 302 ; free virtual = 7691
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 300 ; free virtual = 7690
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 300 ; free virtual = 7689
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 299 ; free virtual = 7688
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 299 ; free virtual = 7688
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -377,46 +374,44 @@ Report Cell Usage:
 +------+--------+------+
 |1     |CARRY4  |    13|
 |2     |DSP48E1 |     1|
-|3     |LUT1    |    11|
+|3     |LUT1    |     9|
 |4     |LUT2    |    22|
 |5     |LUT3    |    31|
 |6     |LUT4    |   108|
-|7     |LUT5    |    99|
-|8     |LUT6    |   196|
+|7     |LUT5    |   101|
+|8     |LUT6    |   194|
 |9     |MUXF7   |    64|
 |10    |ODDR    |     1|
 |11    |RAM64M  |   198|
 |12    |FDRE    |   374|
 |13    |FDSE    |     2|
-|14    |IOBUF   |     2|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.797 ; gain = 799.492 ; free physical = 299 ; free virtual = 7688
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2623.082 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2622.797 ; gain = 684.719 ; free physical = 296 ; free virtual = 7685
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2622.805 ; gain = 799.492 ; free physical = 296 ; free virtual = 7685
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2623.082 ; gain = 686.188 ; free physical = 234 ; free virtual = 9157
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2623.090 ; gain = 801.961 ; free physical = 234 ; free virtual = 9157
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2636.672 ; gain = 0.000 ; free physical = 286 ; free virtual = 7676
-INFO: [Netlist 29-17] Analyzing 279 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2636.957 ; gain = 0.000 ; free physical = 228 ; free virtual = 9151
+INFO: [Netlist 29-17] Analyzing 277 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 4 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'system_hdmi_0' is not ideal for floorplanning, since the cellview 'hdmi_out' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2794.293 ; gain = 0.000 ; free physical = 318 ; free virtual = 7709
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2793.578 ; gain = 0.000 ; free physical = 221 ; free virtual = 9100
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 200 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  A total of 198 instances were transformed.
   RAM64M => RAM64M (RAMD64E(x4)): 198 instances
 
-Synth Design complete | Checksum: d366c1b5
+Synth Design complete | Checksum: 39fec7c9
 INFO: [Common 17-83] Releasing license: Synthesis
-103 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 2794.328 ; gain = 1166.898 ; free physical = 310 ; free virtual = 7701
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1681.095; main = 1681.095; forked = 206.415
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3522.508; main = 2794.297; forked = 986.520
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2818.305 ; gain = 0.000 ; free physical = 310 ; free virtual = 7701
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2793.613 ; gain = 1167.430 ; free physical = 213 ; free virtual = 9092
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1674.847; main = 1674.847; forked = 206.469
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3520.797; main = 2793.582; forked = 986.523
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2817.590 ; gain = 0.000 ; free physical = 207 ; free virtual = 9086
 INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_hdmi_0_synth_1/system_hdmi_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file system_hdmi_0_utilization_synth.rpt -pb system_hdmi_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 16:38:57 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 19:50:41 2026...

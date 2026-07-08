@@ -114,9 +114,23 @@
 #define HREG_CTRL       0x00    /* [0] en [1] yc_swap [2] cbcr_swap [3] testpat */
 #define HREG_FB         0x04
 #define HREG_STAT       0x08
-#define HREG_I2C        0x0C    /* w: [0] sda_low [1] scl_low; r: [8] sda [9] scl */
+#define HREG_I2C        0x0C    /* legacy bit-bang reg; pads removed, reads idle */
 
 #define ADV7511_ADDR    0x39    /* 7-bit I2C address */
+
+/* ---- AXI IIC hardware I2C master (axi_iic_hdmi in the BD) ------------------
+ * Replaces the bit-bang pads: multi-register write bursts were unreliable and
+ * chip reads mostly echoed the revision register. Dynamic-mode controller
+ * (PG090): push address+data with START/STOP flags into the TX FIFO. */
+#define IIC_BASE        0x43C20000u
+#define IIC_SPAN        0x1000u
+#define IIC_ISR         0x020   /* toggle-on-write; [1] = slave NACK */
+#define IIC_SOFTR       0x040   /* write 0xA = soft reset */
+#define IIC_CR          0x100   /* [0] enable [1] TX FIFO reset */
+#define IIC_SR          0x104   /* [2] bus busy [6] RX empty [7] TX empty */
+#define IIC_TX          0x108   /* [8] START [9] STOP | data byte */
+#define IIC_RX          0x10C
+#define IIC_RX_PIRQ     0x120
 
 /* ---- Globals ------------------------------------------------------------- */
 static volatile uint32_t *g_regs;   /* accelerator register window */
@@ -255,64 +269,54 @@ static int accel_run(const int16_t *input, int32_t *output, uint32_t *statusp) {
 static inline void hreg_wr(uint32_t off, uint32_t v) { g_hdmi[off >> 2] = v; }
 static inline uint32_t hreg_rd(uint32_t off)         { return g_hdmi[off >> 2]; }
 
-/* Open-drain bit-bang. Board pull-ups; ~10-20 kHz effective (fine, the
- * ADV7511 accepts arbitrarily slow I2C). */
-#define I2C_DEL 20
-static void i2c_set(int scl_low, int sda_low) {
-    hreg_wr(HREG_I2C, ((scl_low & 1) << 1) | (sda_low & 1));
-    usleep(I2C_DEL);
-}
-static int i2c_sda_in(void) { return (hreg_rd(HREG_I2C) >> 8) & 1; }
+static volatile uint32_t *g_iic;    /* axi_iic register window (or NULL) */
+static inline void     ireg_wr(uint32_t off, uint32_t v) { g_iic[off >> 2] = v; }
+static inline uint32_t ireg_rd(uint32_t off)             { return g_iic[off >> 2]; }
 
-static void i2c_start(void) {
-    i2c_set(0, 0 /*both released*/);
-    i2c_set(0, 1);      /* SDA low while SCL high */
-    i2c_set(1, 1);      /* SCL low */
+static void iic_reset(void) {
+    ireg_wr(IIC_SOFTR, 0xA);
+    usleep(100);
+    ireg_wr(IIC_RX_PIRQ, 0x0F);
+    ireg_wr(IIC_CR, 0x2);                  /* TX FIFO reset */
+    ireg_wr(IIC_CR, 0x1);                  /* enable (dynamic mode) */
+    ireg_wr(IIC_ISR, ireg_rd(IIC_ISR));    /* clear sticky flags (TOW) */
 }
-static void i2c_stop(void) {
-    i2c_set(1, 1);
-    i2c_set(0, 1);      /* SCL high, SDA low */
-    i2c_set(0, 0);      /* SDA released while SCL high */
-}
-/* returns 0 on ACK */
-static int i2c_wbyte(uint8_t b) {
-    for (int i = 7; i >= 0; --i) {
-        int sda_low = !((b >> i) & 1);
-        i2c_set(1, sda_low);
-        i2c_set(0, sda_low);    /* clock high */
-        i2c_set(1, sda_low);
+
+/* poll SR until (SR & mask) == want; 0 on success */
+static int iic_wait(uint32_t mask, uint32_t want) {
+    for (int i = 0; i < 20000; ++i) {
+        if ((ireg_rd(IIC_SR) & mask) == want) return 0;
+        usleep(10);
     }
-    i2c_set(1, 0);              /* release SDA for ACK */
-    i2c_set(0, 0);
-    int ack = i2c_sda_in();     /* 0 = ACK */
-    i2c_set(1, 0);
-    return ack;
+    return -1;
 }
+static int iic_idle(void) { return iic_wait(0x04, 0x00); }  /* bus not busy */
+
+/* returns 0 on ACKed transfer, -1 on NACK/timeout */
 static int adv_wr(uint8_t reg, uint8_t val) {
-    i2c_start();
-    int e = i2c_wbyte(ADV7511_ADDR << 1);
-    e |= i2c_wbyte(reg);
-    e |= i2c_wbyte(val);
-    i2c_stop();
-    return e;
+    if (iic_idle()) { iic_reset(); if (iic_idle()) return -1; }
+    ireg_wr(IIC_ISR, ireg_rd(IIC_ISR));
+    ireg_wr(IIC_TX, 0x100 | (ADV7511_ADDR << 1));   /* START, write */
+    ireg_wr(IIC_TX, reg);
+    ireg_wr(IIC_TX, 0x200 | val);                   /* data, STOP */
+    if (iic_wait(0x80, 0x80)) return -1;            /* TX FIFO drained */
+    if (iic_idle()) return -1;
+    return (ireg_rd(IIC_ISR) & 0x2) ? -1 : 0;       /* slave NACK? */
 }
 static int adv_rd(uint8_t reg, uint8_t *val) {
-    int e; uint8_t b = 0;
-    i2c_start();
-    e  = i2c_wbyte(ADV7511_ADDR << 1);
-    e |= i2c_wbyte(reg);
-    i2c_start();                          /* repeated start */
-    e |= i2c_wbyte((ADV7511_ADDR << 1) | 1);
-    for (int i = 7; i >= 0; --i) {        /* read byte, NACK */
-        i2c_set(1, 0);
-        i2c_set(0, 0);
-        b = (b << 1) | i2c_sda_in();
-        i2c_set(1, 0);
-    }
-    i2c_set(1, 1); i2c_set(0, 1); i2c_set(1, 0);   /* master NACK */
-    i2c_stop();
-    *val = b;
-    return e;
+    *val = 0;
+    if (iic_idle()) { iic_reset(); if (iic_idle()) return -1; }
+    ireg_wr(IIC_ISR, ireg_rd(IIC_ISR));
+    ireg_wr(IIC_TX, 0x100 | (ADV7511_ADDR << 1));       /* START, write */
+    ireg_wr(IIC_TX, reg);
+    ireg_wr(IIC_TX, 0x100 | (ADV7511_ADDR << 1) | 1);   /* reSTART, read */
+    ireg_wr(IIC_TX, 0x200 | 1);                         /* STOP after 1 byte */
+    if (iic_wait(0x40, 0x00)) return -1;                /* RX not empty */
+    *val = (uint8_t)(ireg_rd(IIC_RX) & 0xFF);
+    /* NOTE: don't check ISR[1] here — the core flags the master's own
+     * terminating NACK of a read as "TX error" (i2c-xiic ignores it too).
+     * An address NACK shows up as the RX wait timing out instead. */
+    return 0;
 }
 
 /* ADV7511 init — faithful port of the Linux kernel driver's sequence
@@ -340,17 +344,34 @@ static int adv_wr_v(uint8_t reg, uint8_t val) {
 }
 
 static int adv7511_init(int mode) {
+    iic_reset();
+
+    /* probe: the chip must ACK its address and return rev 0x13/0x14 */
+    uint8_t rev = 0;
+    int pe = -1;
+    for (int t = 0; t < 3 && pe; ++t) {
+        if (t) iic_reset();
+        pe = adv_rd(0x00, &rev);
+    }
+    if (pe) {
+        /* SR reset value is 0xC0 (both FIFOs empty); ISR[1] = slave NACK,
+         * SR[2] stuck = bus busy (SDA/SCL held), SR=0xFFFFFFFF = no decode */
+        printf("[adv] ERROR: probe 0x%02x failed  SR=0x%08x ISR=0x%08x\n",
+               ADV7511_ADDR, ireg_rd(IIC_SR), ireg_rd(IIC_ISR));
+        return -1;
+    }
+
     /* __adv7511_power_on: power up, then mask HPD so nothing resets us */
-    adv_wr(0x41, 0x10);
-    adv_wr(0xD6, 0xC0);           /* HPD_SRC_NONE */
+    int nacks = 0;
+    nacks += adv_wr(0x41, 0x10) ? 1 : 0;
+    nacks += adv_wr(0xD6, 0xC0) ? 1 : 0;   /* HPD_SRC_NONE */
     usleep(100000);
-    adv_wr(0x41, 0x10);
+    nacks += adv_wr(0x41, 0x10) ? 1 : 0;
     usleep(20000);
 
-    uint8_t rev = 0, sense = 0;
-    adv_rd(0x00, &rev);
+    uint8_t sense = 0;
     adv_rd(0x42, &sense);
-    printf("[adv] rev=0x%02x hpd/sense=0x%02x\n", rev, sense);
+    printf("[adv] rev=0x%02x hpd/sense=0x%02x nacks=%d\n", rev, sense, nacks);
 
     /* regcache_sync equivalent: fixed registers (kernel table) */
     static const uint8_t fixed[][2] = {
@@ -402,6 +423,14 @@ static int adv7511_init(int mode) {
     printf("[adv] init done (mode %d) 0x15=0x%02x(%s) 0x16=0x%02x(%s) 0x18=0x%02x\n",
            mode, r15, e15 ? "RETRY-FAIL" : "ok",
            r16, e16 ? "RETRY-FAIL" : "ok", r18);
+    if (mode == 0) {
+        /* CSC coefficients never verified over bit-bang — now we can look */
+        printf("[adv] CSC 0x18-0x2F:");
+        for (uint8_t r = 0x18; r <= 0x2F; ++r) {
+            uint8_t v = 0; adv_rd(r, &v); printf(" %02x", v);
+        }
+        printf("\n");
+    }
     return 0;
 }
 
@@ -762,14 +791,21 @@ int main(int argc, char **argv) {
                       fd, HDMI_BASE);
         g_fb = mmap(NULL, FB_BYTES, PROT_READ | PROT_WRITE, MAP_SHARED,
                     fd, FB_PHYS);
-        if (g_hdmi == MAP_FAILED || g_fb == MAP_FAILED) {
-            perror("mmap hdmi/fb"); return 1;
+        g_iic = mmap(NULL, IIC_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED,
+                     fd, IIC_BASE);
+        if (g_hdmi == MAP_FAILED || g_fb == MAP_FAILED || g_iic == MAP_FAILED) {
+            perror("mmap hdmi/fb/iic"); return 1;
         }
+        int mono = 0;
+        for (int a = 1; a < argc; ++a)
+            if (strcmp(argv[a], "--mono") == 0) mono = 1;
         if (!hdmi_poke) {
         hreg_wr(HREG_FB, FB_PHYS);
-        /* enable + MONO (bit5: Y duplicated into the chroma slot -> R=G=B
-         * downstream, sidestepping the ADV7511's unwritable CSC block) */
-        hreg_wr(HREG_CTRL, 0x21 | (hdmi_test ? 0x8 : 0x0));
+        /* enable + yc_swap (bit1): the ADV7511's 16-bit bus wants chroma on
+         * the byte lane the RTL calls Y — verified with the color-bar pattern
+         * (without it: tinted bars with chroma striping as luma).
+         * --mono restores the grayscale fallback (bit5) from the bit-bang days */
+        hreg_wr(HREG_CTRL, 0x1 | 0x2 | (mono ? 0x20 : 0x0) | (hdmi_test ? 0x8 : 0x0));
         usleep(50000);
         printf("[hdmi] frames=%lu (must advance)\n",
                (unsigned long)((hreg_rd(HREG_STAT) >> 8) & 0xFF));
@@ -788,16 +824,23 @@ int main(int argc, char **argv) {
         g_use_hdmi = 1;
     }
 
-    /* --adv REG VAL: raw ADV7511 register poke (hex), then exit. Live CSC /
-     * mode experiments without rebuild cycles. Requires --hdmi* mapping done
-     * above (g_hdmi set). Usage: dnn_demo --hdmi-poke REG VAL */
-    if (argc > 3 && strcmp(argv[1], "--hdmi-poke") == 0) {
-        if (!g_hdmi) { fprintf(stderr, "need hdmi mapping\n"); return 1; }
+    /* --hdmi-poke REG [VAL]: raw ADV7511 register read/poke (hex), then exit.
+     * Live CSC / mode experiments without rebuild cycles. */
+    if (argc > 2 && strcmp(argv[1], "--hdmi-poke") == 0) {
+        if (!g_iic) { fprintf(stderr, "need hdmi mapping\n"); return 1; }
+        iic_reset();
         unsigned reg = strtoul(argv[2], NULL, 16);
-        unsigned val = strtoul(argv[3], NULL, 16);
-        adv_wr((uint8_t)reg, (uint8_t)val);
-        uint8_t rb = 0; adv_rd((uint8_t)reg, &rb);
-        printf("[adv] 0x%02x <= 0x%02x (rb 0x%02x)\n", reg, val, rb);
+        if (argc > 3) {
+            unsigned val = strtoul(argv[3], NULL, 16);
+            int e = adv_wr((uint8_t)reg, (uint8_t)val);
+            uint8_t rb = 0; adv_rd((uint8_t)reg, &rb);
+            printf("[adv] 0x%02x <= 0x%02x (rb 0x%02x)%s\n",
+                   reg, val, rb, e ? " WRITE-NACK" : "");
+        } else {
+            uint8_t rb = 0;
+            int e = adv_rd((uint8_t)reg, &rb);
+            printf("[adv] 0x%02x == 0x%02x%s\n", reg, rb, e ? " READ-NACK" : "");
+        }
         return 0;
     }
 

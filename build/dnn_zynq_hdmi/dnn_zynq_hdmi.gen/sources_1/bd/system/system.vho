@@ -74,14 +74,18 @@ COMPONENT system
     FIXED_IO_ps_srstb : INOUT STD_LOGIC;
     FIXED_IO_ps_clk : INOUT STD_LOGIC;
     FIXED_IO_ps_porb : INOUT STD_LOGIC;
+    hdmi_iic_scl_i : IN STD_LOGIC;
+    hdmi_iic_scl_o : OUT STD_LOGIC;
+    hdmi_iic_scl_t : OUT STD_LOGIC;
+    hdmi_iic_sda_i : IN STD_LOGIC;
+    hdmi_iic_sda_o : OUT STD_LOGIC;
+    hdmi_iic_sda_t : OUT STD_LOGIC;
     leds : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     hdmi_clk : OUT STD_LOGIC;
     hdmi_d : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     hdmi_de : OUT STD_LOGIC;
     hdmi_hsync : OUT STD_LOGIC;
     hdmi_vsync : OUT STD_LOGIC;
-    hdmi_scl : INOUT STD_LOGIC;
-    hdmi_sda : INOUT STD_LOGIC;
     vga_r : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_g : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_b : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -118,14 +122,18 @@ your_instance_name : system
     FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
     FIXED_IO_ps_clk => FIXED_IO_ps_clk,
     FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+    hdmi_iic_scl_i => hdmi_iic_scl_i,
+    hdmi_iic_scl_o => hdmi_iic_scl_o,
+    hdmi_iic_scl_t => hdmi_iic_scl_t,
+    hdmi_iic_sda_i => hdmi_iic_sda_i,
+    hdmi_iic_sda_o => hdmi_iic_sda_o,
+    hdmi_iic_sda_t => hdmi_iic_sda_t,
     leds => leds,
     hdmi_clk => hdmi_clk,
     hdmi_d => hdmi_d,
     hdmi_de => hdmi_de,
     hdmi_hsync => hdmi_hsync,
     hdmi_vsync => hdmi_vsync,
-    hdmi_scl => hdmi_scl,
-    hdmi_sda => hdmi_sda,
     vga_r => vga_r,
     vga_g => vga_g,
     vga_b => vga_b,

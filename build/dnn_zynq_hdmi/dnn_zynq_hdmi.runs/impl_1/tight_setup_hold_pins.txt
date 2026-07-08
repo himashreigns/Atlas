@@ -1,7 +1,7 @@
 +====================+===================+=================================================================================================+
 | Launch Setup Clock | Launch Hold Clock | Pin                                                                                             |
 +====================+===================+=================================================================================================+
-| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[1]/D |
-| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/control_unit/act_raddr_reg[6]/D |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/control_unit/act_raddr_reg[3]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/control_unit/act_raddr_reg[1]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/control_unit/act_raddr_reg[0]/D |
 +--------------------+-------------------+-------------------------------------------------------------------------------------------------+

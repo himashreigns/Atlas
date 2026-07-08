@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Wed Jul  8 16:37:41 2026
+//Date        : Wed Jul  8 19:49:31 2026
 //Host        : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
@@ -36,8 +36,8 @@ module system_wrapper
     hdmi_d,
     hdmi_de,
     hdmi_hsync,
-    hdmi_scl,
-    hdmi_sda,
+    hdmi_iic_scl_io,
+    hdmi_iic_sda_io,
     hdmi_vsync,
     leds,
     vga_b,
@@ -70,8 +70,8 @@ module system_wrapper
   output [15:0]hdmi_d;
   output hdmi_de;
   output hdmi_hsync;
-  inout hdmi_scl;
-  inout hdmi_sda;
+  inout hdmi_iic_scl_io;
+  inout hdmi_iic_sda_io;
   output hdmi_vsync;
   output [3:0]leds;
   output [3:0]vga_b;
@@ -105,8 +105,14 @@ module system_wrapper
   wire [15:0]hdmi_d;
   wire hdmi_de;
   wire hdmi_hsync;
-  wire hdmi_scl;
-  wire hdmi_sda;
+  wire hdmi_iic_scl_i;
+  wire hdmi_iic_scl_io;
+  wire hdmi_iic_scl_o;
+  wire hdmi_iic_scl_t;
+  wire hdmi_iic_sda_i;
+  wire hdmi_iic_sda_io;
+  wire hdmi_iic_sda_o;
+  wire hdmi_iic_sda_t;
   wire hdmi_vsync;
   wire [3:0]leds;
   wire [3:0]vga_b;
@@ -115,6 +121,16 @@ module system_wrapper
   wire [3:0]vga_r;
   wire vga_vsync;
 
+  IOBUF hdmi_iic_scl_iobuf
+       (.I(hdmi_iic_scl_o),
+        .IO(hdmi_iic_scl_io),
+        .O(hdmi_iic_scl_i),
+        .T(hdmi_iic_scl_t));
+  IOBUF hdmi_iic_sda_iobuf
+       (.I(hdmi_iic_sda_o),
+        .IO(hdmi_iic_sda_io),
+        .O(hdmi_iic_sda_i),
+        .T(hdmi_iic_sda_t));
   system system_i
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -141,8 +157,12 @@ module system_wrapper
         .hdmi_d(hdmi_d),
         .hdmi_de(hdmi_de),
         .hdmi_hsync(hdmi_hsync),
-        .hdmi_scl(hdmi_scl),
-        .hdmi_sda(hdmi_sda),
+        .hdmi_iic_scl_i(hdmi_iic_scl_i),
+        .hdmi_iic_scl_o(hdmi_iic_scl_o),
+        .hdmi_iic_scl_t(hdmi_iic_scl_t),
+        .hdmi_iic_sda_i(hdmi_iic_sda_i),
+        .hdmi_iic_sda_o(hdmi_iic_sda_o),
+        .hdmi_iic_sda_t(hdmi_iic_sda_t),
         .hdmi_vsync(hdmi_vsync),
         .leds(leds),
         .vga_b(vga_b),

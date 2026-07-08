@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Wed Jul  8 16:38:57 2026
+-- Date        : Wed Jul  8 19:50:41 2026
 -- Host        : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/system_hdmi_0_sim_netlist.vhdl
@@ -31,8 +31,6 @@ entity system_hdmi_0_hdmi_out is
     vga_b : out STD_LOGIC_VECTOR ( 3 downto 0 );
     rvalid_q_reg_0 : out STD_LOGIC;
     m_axi_hp_arvalid : out STD_LOGIC;
-    hdmi_scl : inout STD_LOGIC;
-    hdmi_sda : inout STD_LOGIC;
     s_axi_lite_wvalid : in STD_LOGIC;
     s_axi_lite_awvalid : in STD_LOGIC;
     s_axi_lite_arvalid : in STD_LOGIC;
@@ -57,7 +55,6 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal \FSM_sequential_fstate[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_fstate[0]_i_2_n_0\ : STD_LOGIC;
   signal \FSM_sequential_fstate[1]_i_1_n_0\ : STD_LOGIC;
-  signal T0 : STD_LOGIC;
   signal ar_done_i_1_n_0 : STD_LOGIC;
   signal ar_done_reg_n_0 : STD_LOGIC;
   signal araddr_q : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -91,6 +88,7 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal ctrl_mono : STD_LOGIC;
   signal ctrl_yc_swap : STD_LOGIC;
   signal data2 : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal data3 : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal en_p1 : STD_LOGIC;
   signal en_p2 : STD_LOGIC;
   signal f_addr : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -178,7 +176,7 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal \f_line_reg_n_0_[0]\ : STD_LOGIC;
   signal f_word : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal \f_word[8]_i_3_n_0\ : STD_LOGIC;
-  signal f_word_3 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal f_word_2 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \f_word_reg_n_0_[0]\ : STD_LOGIC;
   signal \f_word_reg_n_0_[1]\ : STD_LOGIC;
   signal \f_word_reg_n_0_[2]\ : STD_LOGIC;
@@ -191,7 +189,7 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal fb_base : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal fb_base_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal fetch_overrun_set : STD_LOGIC;
-  signal fetch_overrun_set_4 : STD_LOGIC;
+  signal fetch_overrun_set_3 : STD_LOGIC;
   signal \frame_cnt_pix[0]_i_1_n_0\ : STD_LOGIC;
   signal \frame_cnt_pix[1]_i_1_n_0\ : STD_LOGIC;
   signal \frame_cnt_pix[2]_i_1_n_0\ : STD_LOGIC;
@@ -268,10 +266,8 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal hdmi_de_i_1_n_0 : STD_LOGIC;
   signal hdmi_hsync_i_1_n_0 : STD_LOGIC;
   signal hdmi_vsync_i_1_n_0 : STD_LOGIC;
-  signal i2c_scl_low : STD_LOGIC;
   signal i2c_scl_low_i_1_n_0 : STD_LOGIC;
   signal i2c_sda_low : STD_LOGIC;
-  signal i2c_sda_low_1 : STD_LOGIC;
   signal i2c_sda_low_i_1_n_0 : STD_LOGIC;
   signal in10 : STD_LOGIC_VECTOR ( 31 downto 5 );
   signal lb_rdata0 : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1159,7 +1155,7 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal mono_p2 : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal p_0_in0 : STD_LOGIC;
-  signal p_0_in_2 : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal p_0_in_1 : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal p_1_in : STD_LOGIC;
   signal p_3_in : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \pix_alive[0]_i_2_n_0\ : STD_LOGIC;
@@ -1267,8 +1263,6 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal rvalid_q0 : STD_LOGIC;
   signal rvalid_q_i_1_n_0 : STD_LOGIC;
   signal \^rvalid_q_reg_0\ : STD_LOGIC;
-  signal scl_in : STD_LOGIC;
-  signal sda_in : STD_LOGIC;
   signal st_overrun_i_1_n_0 : STD_LOGIC;
   signal st_overrun_i_2_n_0 : STD_LOGIC;
   signal t_s1 : STD_LOGIC;
@@ -1276,7 +1270,6 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   signal t_s3 : STD_LOGIC;
   signal tp_p1 : STD_LOGIC;
   signal tp_p2 : STD_LOGIC;
-  signal u_iobuf_sda_i_1_n_0 : STD_LOGIC;
   signal vcnt : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \vcnt[3]_i_2_n_0\ : STD_LOGIC;
   signal \vcnt[8]_i_2_n_0\ : STD_LOGIC;
@@ -1581,8 +1574,8 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   attribute FSM_ENCODED_STATES of \FSM_sequential_fstate_reg[1]\ : label is "F_DATA:10,F_AR:01,F_IDLE:00";
   attribute SOFT_HLUTNM of arvalid_q2_i_2 : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of arvalid_q2_i_4 : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of bvalid_q_i_1 : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of ctrl_enable_i_2 : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of bvalid_q_i_1 : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of ctrl_enable_i_2 : label is "soft_lutpair17";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of f_addr0 : label is "{SYNTH-11 {cell *THIS*}}";
   attribute ADDER_THRESHOLD : integer;
@@ -1595,12 +1588,12 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   attribute ADDER_THRESHOLD of \f_addr0_carry__5\ : label is 35;
   attribute SOFT_HLUTNM of f_addr0_i_2 : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of f_addr0_i_3 : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of f_addr0_i_6 : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of f_addr0_i_7 : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \f_addr[0]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of f_addr0_i_6 : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of f_addr0_i_7 : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \f_addr[0]_i_1\ : label is "soft_lutpair24";
   attribute SOFT_HLUTNM of \f_addr[31]_i_4\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \f_addr[31]_i_5\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \f_burst[0]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \f_burst[0]_i_1\ : label is "soft_lutpair24";
   attribute SOFT_HLUTNM of \f_burst[1]_i_1\ : label is "soft_lutpair14";
   attribute SOFT_HLUTNM of \f_burst[2]_i_1\ : label is "soft_lutpair14";
   attribute SOFT_HLUTNM of \f_word[1]_i_1\ : label is "soft_lutpair15";
@@ -1610,43 +1603,43 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   attribute SOFT_HLUTNM of \frame_cnt_pix[2]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \frame_cnt_pix[3]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \frame_cnt_pix[5]_i_2\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \frame_cnt_pix[7]_i_3\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \frame_cnt_pix[7]_i_3\ : label is "soft_lutpair31";
   attribute SOFT_HLUTNM of \frame_cnt_pix[7]_i_5\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \frame_cnt_pix[7]_i_6\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \hcnt[0]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \hcnt[1]_i_1\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \hcnt[2]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \hcnt[1]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \hcnt[2]_i_1\ : label is "soft_lutpair33";
   attribute SOFT_HLUTNM of \hcnt[3]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \hcnt[4]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \hcnt[6]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \hcnt[7]_i_2\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \hcnt[7]_i_2\ : label is "soft_lutpair33";
   attribute SOFT_HLUTNM of \hcnt[8]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \hcnt[9]_i_2\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \hdmi_d_q[0]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \hdmi_d_q[10]_i_4\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \hdmi_d_q[11]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \hdmi_d_q[12]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \hdmi_d_q[0]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \hdmi_d_q[10]_i_4\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \hdmi_d_q[11]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \hdmi_d_q[12]_i_1\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \hdmi_d_q[12]_i_3\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \hdmi_d_q[13]_i_1\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \hdmi_d_q[13]_i_3\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \hdmi_d_q[13]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \hdmi_d_q[13]_i_3\ : label is "soft_lutpair23";
   attribute SOFT_HLUTNM of \hdmi_d_q[13]_i_4\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \hdmi_d_q[14]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \hdmi_d_q[14]_i_1\ : label is "soft_lutpair32";
   attribute SOFT_HLUTNM of \hdmi_d_q[14]_i_3\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \hdmi_d_q[14]_i_4\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \hdmi_d_q[15]_i_3\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \hdmi_d_q[3]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \hdmi_d_q[4]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \hdmi_d_q[5]_i_1\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \hdmi_d_q[6]_i_1\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \hdmi_d_q[8]_i_1\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \hdmi_d_q[14]_i_4\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \hdmi_d_q[15]_i_3\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \hdmi_d_q[3]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \hdmi_d_q[4]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \hdmi_d_q[5]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \hdmi_d_q[6]_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \hdmi_d_q[8]_i_1\ : label is "soft_lutpair35";
   attribute SOFT_HLUTNM of \hdmi_d_q[8]_i_4\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \hdmi_d_q[8]_i_5\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \hdmi_d_q[8]_i_5\ : label is "soft_lutpair36";
   attribute SOFT_HLUTNM of \hdmi_d_q[9]_i_3\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \hdmi_d_q[9]_i_4\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of i2c_scl_low_i_1 : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of i2c_sda_low_i_1 : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \line_req_num[0]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of line_req_tgl_i_1 : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \hdmi_d_q[9]_i_4\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of i2c_scl_low_i_1 : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of i2c_sda_low_i_1 : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \line_req_num[0]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of line_req_tgl_i_1 : label is "soft_lutpair20";
   attribute METHODOLOGY_DRC_VIOS of linebuf_reg_r1_0_63_0_2 : label is "";
   attribute RTL_RAM_BITS : integer;
   attribute RTL_RAM_BITS of linebuf_reg_r1_0_63_0_2 : label is 32768;
@@ -3642,34 +3635,30 @@ architecture STRUCTURE of system_hdmi_0_hdmi_out is
   attribute ADDER_THRESHOLD of \pix_alive_reg[20]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \pix_alive_reg[4]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \pix_alive_reg[8]_i_1\ : label is 35;
-  attribute SOFT_HLUTNM of \rdata_q[0]_i_2\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \rdata_q[24]_i_1\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \rdata_q[25]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \rdata_q[26]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \rdata_q[27]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \rdata_q[28]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \rdata_q[29]_i_1\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \rdata_q[30]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \rdata_q[31]_i_3\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \rdata_q[4]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \rdata_q[5]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \rdata_q[6]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \rdata_q[7]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \rdata_q[24]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \rdata_q[25]_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \rdata_q[26]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \rdata_q[27]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \rdata_q[28]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \rdata_q[29]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \rdata_q[30]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \rdata_q[31]_i_3\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \rdata_q[4]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \rdata_q[5]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \rdata_q[6]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \rdata_q[7]_i_1\ : label is "soft_lutpair26";
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of u_clk_fwd : label is "PRIMITIVE";
   attribute OPT_MODIFIED : string;
   attribute OPT_MODIFIED of u_clk_fwd : label is "MLO";
   attribute \__SRVAL\ : string;
   attribute \__SRVAL\ of u_clk_fwd : label is "TRUE";
-  attribute BOX_TYPE of u_iobuf_scl : label is "PRIMITIVE";
-  attribute BOX_TYPE of u_iobuf_sda : label is "PRIMITIVE";
-  attribute SOFT_HLUTNM of u_iobuf_sda_i_1 : label is "soft_lutpair17";
   attribute SOFT_HLUTNM of \vcnt[8]_i_2\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \vcnt[9]_i_6\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \vcnt[9]_i_7\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \vcnt[9]_i_8\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \vga_q[1]_i_2\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \vga_q[3]_i_2\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \vga_q[1]_i_2\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \vga_q[3]_i_2\ : label is "soft_lutpair38";
 begin
   arready_q_reg_0 <= \^arready_q_reg_0\;
   awready_q_reg_0 <= \^awready_q_reg_0\;
@@ -4393,9 +4382,9 @@ f_addr0_i_3: unisim.vcomponents.LUT3
       INIT => X"01"
     )
         port map (
-      I0 => p_0_in_2(5),
-      I1 => p_0_in_2(4),
-      I2 => p_0_in_2(3),
+      I0 => p_0_in_1(5),
+      I1 => p_0_in_1(4),
+      I2 => p_0_in_1(3),
       O => f_addr0_i_3_n_0
     );
 f_addr0_i_4: unisim.vcomponents.LUT6
@@ -4403,11 +4392,11 @@ f_addr0_i_4: unisim.vcomponents.LUT6
       INIT => X"0000000000000100"
     )
         port map (
-      I0 => p_0_in_2(1),
-      I1 => p_0_in_2(8),
-      I2 => p_0_in_2(2),
+      I0 => p_0_in_1(1),
+      I1 => p_0_in_1(8),
+      I2 => p_0_in_1(2),
       I3 => \vga_q[1]_i_2_n_0\,
-      I4 => p_0_in_2(0),
+      I4 => p_0_in_1(0),
       I5 => \hcnt_reg_n_0_[0]\,
       O => f_addr0_i_4_n_0
     );
@@ -5318,7 +5307,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
       I3 => t_s2,
       I4 => t_s3,
       I5 => lb_waddr(0),
-      O => f_word_3(0)
+      O => f_word_2(0)
     );
 \f_word[8]_i_2\: unisim.vcomponents.LUT6
     generic map(
@@ -5348,7 +5337,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(0),
       Q => \f_word_reg_n_0_[0]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5356,7 +5345,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(1),
       Q => \f_word_reg_n_0_[1]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5364,7 +5353,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(2),
       Q => \f_word_reg_n_0_[2]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5372,7 +5361,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(3),
       Q => \f_word_reg_n_0_[3]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5380,7 +5369,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(4),
       Q => \f_word_reg_n_0_[4]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5388,7 +5377,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(5),
       Q => \f_word_reg_n_0_[5]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5396,7 +5385,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(6),
       Q => \f_word_reg_n_0_[6]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5404,7 +5393,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(7),
       Q => \f_word_reg_n_0_[7]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5412,7 +5401,7 @@ f_addr0_i_7: unisim.vcomponents.LUT3
 \f_word_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
-      CE => f_word_3(0),
+      CE => f_word_2(0),
       D => f_word(8),
       Q => \f_word_reg_n_0_[8]\,
       R => \rdata_q[31]_i_1_n_0\
@@ -5695,13 +5684,13 @@ fetch_overrun_set_i_1: unisim.vcomponents.LUT4
       I1 => fstate(0),
       I2 => t_s2,
       I3 => t_s3,
-      O => fetch_overrun_set_4
+      O => fetch_overrun_set_3
     );
 fetch_overrun_set_reg: unisim.vcomponents.FDRE
      port map (
       C => aclk,
       CE => '1',
-      D => fetch_overrun_set_4,
+      D => fetch_overrun_set_3,
       Q => fetch_overrun_set,
       R => \rdata_q[31]_i_1_n_0\
     );
@@ -6070,7 +6059,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6"
     )
         port map (
-      I0 => p_0_in_2(0),
+      I0 => p_0_in_1(0),
       I1 => \hcnt_reg_n_0_[0]\,
       O => \hcnt[1]_i_1_n_0\
     );
@@ -6079,9 +6068,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6A"
     )
         port map (
-      I0 => p_0_in_2(1),
+      I0 => p_0_in_1(1),
       I1 => \hcnt_reg_n_0_[0]\,
-      I2 => p_0_in_2(0),
+      I2 => p_0_in_1(0),
       O => \hcnt[2]_i_1_n_0\
     );
 \hcnt[3]_i_1\: unisim.vcomponents.LUT4
@@ -6089,10 +6078,10 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(2),
-      I1 => p_0_in_2(0),
+      I0 => p_0_in_1(2),
+      I1 => p_0_in_1(0),
       I2 => \hcnt_reg_n_0_[0]\,
-      I3 => p_0_in_2(1),
+      I3 => p_0_in_1(1),
       O => \hcnt[3]_i_1_n_0\
     );
 \hcnt[4]_i_1\: unisim.vcomponents.LUT5
@@ -6100,11 +6089,11 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(3),
+      I0 => p_0_in_1(3),
       I1 => \hcnt_reg_n_0_[0]\,
-      I2 => p_0_in_2(1),
-      I3 => p_0_in_2(0),
-      I4 => p_0_in_2(2),
+      I2 => p_0_in_1(1),
+      I3 => p_0_in_1(0),
+      I4 => p_0_in_1(2),
       O => \hcnt[4]_i_1_n_0\
     );
 \hcnt[5]_i_1\: unisim.vcomponents.LUT6
@@ -6113,11 +6102,11 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \hcnt_reg_n_0_[0]\,
-      I1 => p_0_in_2(1),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(3),
-      I5 => p_0_in_2(4),
+      I1 => p_0_in_1(1),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(3),
+      I5 => p_0_in_1(4),
       O => \hcnt[5]_i_1_n_0\
     );
 \hcnt[6]_i_1\: unisim.vcomponents.LUT5
@@ -6125,11 +6114,11 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"9AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(5),
+      I0 => p_0_in_1(5),
       I1 => \hcnt[7]_i_2_n_0\,
       I2 => \hcnt_reg_n_0_[0]\,
-      I3 => p_0_in_2(3),
-      I4 => p_0_in_2(4),
+      I3 => p_0_in_1(3),
+      I4 => p_0_in_1(4),
       O => \hcnt[6]_i_1_n_0\
     );
 \hcnt[7]_i_1\: unisim.vcomponents.LUT6
@@ -6137,11 +6126,11 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"AAAAAAAA6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(6),
+      I0 => p_0_in_1(6),
       I1 => \hcnt_reg_n_0_[0]\,
-      I2 => p_0_in_2(3),
-      I3 => p_0_in_2(4),
-      I4 => p_0_in_2(5),
+      I2 => p_0_in_1(3),
+      I3 => p_0_in_1(4),
+      I4 => p_0_in_1(5),
       I5 => \hcnt[7]_i_2_n_0\,
       O => \hcnt[7]_i_1_n_0\
     );
@@ -6150,9 +6139,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"7F"
     )
         port map (
-      I0 => p_0_in_2(1),
-      I1 => p_0_in_2(0),
-      I2 => p_0_in_2(2),
+      I0 => p_0_in_1(1),
+      I1 => p_0_in_1(0),
+      I2 => p_0_in_1(2),
       O => \hcnt[7]_i_2_n_0\
     );
 \hcnt[8]_i_1\: unisim.vcomponents.LUT4
@@ -6160,9 +6149,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(7),
+      I0 => p_0_in_1(7),
       I1 => \hcnt_reg_n_0_[0]\,
-      I2 => p_0_in_2(6),
+      I2 => p_0_in_1(6),
       I3 => \hcnt[9]_i_3_n_0\,
       O => \hcnt[8]_i_1_n_0\
     );
@@ -6180,9 +6169,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(7),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(7),
       I3 => \hcnt[9]_i_3_n_0\,
       I4 => \hcnt_reg_n_0_[0]\,
       O => \hcnt[9]_i_2_n_0\
@@ -6192,12 +6181,12 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => p_0_in_2(3),
-      I1 => p_0_in_2(4),
-      I2 => p_0_in_2(5),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(0),
-      I5 => p_0_in_2(1),
+      I0 => p_0_in_1(3),
+      I1 => p_0_in_1(4),
+      I2 => p_0_in_1(5),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(0),
+      I5 => p_0_in_1(1),
       O => \hcnt[9]_i_3_n_0\
     );
 \hcnt_reg[0]\: unisim.vcomponents.FDRE
@@ -6213,7 +6202,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[1]_i_1_n_0\,
-      Q => p_0_in_2(0),
+      Q => p_0_in_1(0),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[2]\: unisim.vcomponents.FDRE
@@ -6221,7 +6210,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[2]_i_1_n_0\,
-      Q => p_0_in_2(1),
+      Q => p_0_in_1(1),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[3]\: unisim.vcomponents.FDRE
@@ -6229,7 +6218,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[3]_i_1_n_0\,
-      Q => p_0_in_2(2),
+      Q => p_0_in_1(2),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[4]\: unisim.vcomponents.FDRE
@@ -6237,7 +6226,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[4]_i_1_n_0\,
-      Q => p_0_in_2(3),
+      Q => p_0_in_1(3),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[5]\: unisim.vcomponents.FDRE
@@ -6245,7 +6234,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[5]_i_1_n_0\,
-      Q => p_0_in_2(4),
+      Q => p_0_in_1(4),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[6]\: unisim.vcomponents.FDRE
@@ -6253,7 +6242,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[6]_i_1_n_0\,
-      Q => p_0_in_2(5),
+      Q => p_0_in_1(5),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[7]\: unisim.vcomponents.FDRE
@@ -6261,7 +6250,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[7]_i_1_n_0\,
-      Q => p_0_in_2(6),
+      Q => p_0_in_1(6),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[8]\: unisim.vcomponents.FDRE
@@ -6269,7 +6258,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[8]_i_1_n_0\,
-      Q => p_0_in_2(7),
+      Q => p_0_in_1(7),
       R => \hcnt[9]_i_1_n_0\
     );
 \hcnt_reg[9]\: unisim.vcomponents.FDRE
@@ -6277,7 +6266,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       C => pixel_clk,
       CE => '1',
       D => \hcnt[9]_i_2_n_0\,
-      Q => p_0_in_2(8),
+      Q => p_0_in_1(8),
       R => \hcnt[9]_i_1_n_0\
     );
 \hdmi_d_q[0]_i_1\: unisim.vcomponents.LUT3
@@ -6321,9 +6310,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"CC10FFFFCC100000"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(8),
-      I2 => p_0_in_2(7),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(8),
+      I2 => p_0_in_1(7),
       I3 => \hcnt_reg_n_0_[0]\,
       I4 => tp_p2,
       I5 => \hdmi_d_q[10]_i_4_n_0\,
@@ -6357,7 +6346,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \vga_q[1]_i_2_n_0\,
-      I1 => p_0_in_2(8),
+      I1 => p_0_in_1(8),
       I2 => \lb_rdata_reg_n_0_[19]\,
       I3 => \hcnt_reg_n_0_[0]\,
       I4 => \lb_rdata_reg_n_0_[3]\,
@@ -6369,9 +6358,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"AA40FFFFAA400000"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(7),
-      I2 => p_0_in_2(6),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(7),
+      I2 => p_0_in_1(6),
       I3 => \hcnt_reg_n_0_[0]\,
       I4 => tp_p2,
       I5 => \hdmi_d_q[11]_i_4_n_0\,
@@ -6418,9 +6407,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => tp_p2,
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(8),
-      I3 => p_0_in_2(7),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(8),
+      I3 => p_0_in_1(7),
       I4 => \hcnt_reg_n_0_[0]\,
       O => \hdmi_d_q[12]_i_3_n_0\
     );
@@ -6441,7 +6430,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \vga_q[1]_i_1_n_0\,
       I1 => mono_p2,
-      I2 => p_0_in_2(7),
+      I2 => p_0_in_1(7),
       I3 => \hdmi_d_q[13]_i_3_n_0\,
       I4 => \hdmi_d_q[14]_i_4_n_0\,
       I5 => \hdmi_d_q[13]_i_4_n_0\,
@@ -6452,7 +6441,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"2"
     )
         port map (
-      I0 => p_0_in_2(6),
+      I0 => p_0_in_1(6),
       I1 => \hcnt_reg_n_0_[0]\,
       O => \hdmi_d_q[13]_i_3_n_0\
     );
@@ -6487,8 +6476,8 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       I1 => mono_p2,
       I2 => \hdmi_d_q[14]_i_3_n_0\,
       I3 => \hdmi_d_q[14]_i_4_n_0\,
-      I4 => p_0_in_2(6),
-      I5 => p_0_in_2(7),
+      I4 => p_0_in_1(6),
+      I5 => p_0_in_1(7),
       O => \hdmi_d_q[14]_i_2_n_0\
     );
 \hdmi_d_q[14]_i_3\: unisim.vcomponents.LUT5
@@ -6508,7 +6497,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"B"
     )
         port map (
-      I0 => p_0_in_2(8),
+      I0 => p_0_in_1(8),
       I1 => tp_p2,
       O => \hdmi_d_q[14]_i_4_n_0\
     );
@@ -6520,9 +6509,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       I0 => \hdmi_d_q[15]_i_3_n_0\,
       I1 => \vcnt_reg_n_0_[9]\,
       I2 => en_p2,
-      I3 => p_0_in_2(8),
-      I4 => p_0_in_2(7),
-      I5 => p_0_in_2(6),
+      I3 => p_0_in_1(8),
+      I4 => p_0_in_1(7),
+      I5 => p_0_in_1(6),
       O => \hdmi_d_q[15]_i_1_n_0\
     );
 \hdmi_d_q[15]_i_2\: unisim.vcomponents.LUT4
@@ -6555,7 +6544,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       I0 => \lb_rdata_reg_n_0_[23]\,
       I1 => \hcnt_reg_n_0_[0]\,
       I2 => \lb_rdata_reg_n_0_[7]\,
-      I3 => p_0_in_2(8),
+      I3 => p_0_in_1(8),
       I4 => tp_p2,
       I5 => \vga_q[3]_i_2_n_0\,
       O => \hdmi_d_q[15]_i_4_n_0\
@@ -6566,9 +6555,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \hcnt_reg_n_0_[0]\,
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(7),
-      I3 => p_0_in_2(8),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(7),
+      I3 => p_0_in_1(8),
       I4 => tp_p2,
       I5 => \hdmi_d_q[15]_i_6_n_0\,
       O => \hdmi_d_q[15]_i_5_n_0\
@@ -6693,7 +6682,7 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"DDDDDDDDD0DDD000"
     )
         port map (
-      I0 => p_0_in_2(6),
+      I0 => p_0_in_1(6),
       I1 => \hdmi_d_q[8]_i_5_n_0\,
       I2 => \lb_rdata_reg_n_0_[16]\,
       I3 => \hcnt_reg_n_0_[0]\,
@@ -6715,9 +6704,9 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"FB"
     )
         port map (
-      I0 => p_0_in_2(7),
+      I0 => p_0_in_1(7),
       I1 => tp_p2,
-      I2 => p_0_in_2(8),
+      I2 => p_0_in_1(8),
       O => \hdmi_d_q[8]_i_5_n_0\
     );
 \hdmi_d_q[9]_i_1\: unisim.vcomponents.LUT6
@@ -6738,8 +6727,8 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"11111111F0FFF000"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(7),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(7),
       I2 => \lb_rdata_reg_n_0_[17]\,
       I3 => \hcnt_reg_n_0_[0]\,
       I4 => \lb_rdata_reg_n_0_[1]\,
@@ -6751,10 +6740,10 @@ fetch_overrun_set_reg: unisim.vcomponents.FDRE
       INIT => X"B5E0"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(6),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(6),
       I2 => \hcnt_reg_n_0_[0]\,
-      I3 => p_0_in_2(7),
+      I3 => p_0_in_1(7),
       O => \hdmi_d_q[9]_i_3_n_0\
     );
 \hdmi_d_q[9]_i_4\: unisim.vcomponents.LUT4
@@ -6901,9 +6890,9 @@ hdmi_de_i_1: unisim.vcomponents.LUT6
       INIT => X"00001F0000000000"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(7),
-      I2 => p_0_in_2(8),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(7),
+      I2 => p_0_in_1(8),
       I3 => en_p2,
       I4 => \vcnt_reg_n_0_[9]\,
       I5 => \hdmi_d_q[15]_i_3_n_0\,
@@ -6922,12 +6911,12 @@ hdmi_hsync_i_1: unisim.vcomponents.LUT6
       INIT => X"FFDFDFDFDFDFDFFF"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(7),
-      I2 => p_0_in_2(8),
-      I3 => p_0_in_2(5),
-      I4 => p_0_in_2(4),
-      I5 => p_0_in_2(3),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(7),
+      I2 => p_0_in_1(8),
+      I3 => p_0_in_1(5),
+      I4 => p_0_in_1(4),
+      I5 => p_0_in_1(3),
       O => hdmi_hsync_i_1_n_0
     );
 hdmi_hsync_reg: unisim.vcomponents.FDRE
@@ -6965,8 +6954,8 @@ i2c_scl_low_i_1: unisim.vcomponents.LUT3
     )
         port map (
       I0 => \wdata_q_reg_n_0_[1]\,
-      I1 => i2c_sda_low_1,
-      I2 => i2c_scl_low,
+      I1 => i2c_sda_low,
+      I2 => data3(1),
       O => i2c_scl_low_i_1_n_0
     );
 i2c_scl_low_reg: unisim.vcomponents.FDRE
@@ -6974,7 +6963,7 @@ i2c_scl_low_reg: unisim.vcomponents.FDRE
       C => aclk,
       CE => '1',
       D => i2c_scl_low_i_1_n_0,
-      Q => i2c_scl_low,
+      Q => data3(1),
       R => \rdata_q[31]_i_1_n_0\
     );
 i2c_sda_low_i_1: unisim.vcomponents.LUT3
@@ -6983,8 +6972,8 @@ i2c_sda_low_i_1: unisim.vcomponents.LUT3
     )
         port map (
       I0 => \wdata_q_reg_n_0_[0]\,
-      I1 => i2c_sda_low_1,
-      I2 => i2c_sda_low,
+      I1 => i2c_sda_low,
+      I2 => data3(0),
       O => i2c_sda_low_i_1_n_0
     );
 i2c_sda_low_i_2: unisim.vcomponents.LUT6
@@ -6998,14 +6987,14 @@ i2c_sda_low_i_2: unisim.vcomponents.LUT6
       I3 => \awaddr_q_reg_n_0_[1]\,
       I4 => \awaddr_q_reg_n_0_[3]\,
       I5 => \awaddr_q_reg_n_0_[2]\,
-      O => i2c_sda_low_1
+      O => i2c_sda_low
     );
 i2c_sda_low_reg: unisim.vcomponents.FDRE
      port map (
       C => aclk,
       CE => '1',
       D => i2c_sda_low_i_1_n_0,
-      Q => i2c_sda_low,
+      Q => data3(0),
       R => \rdata_q[31]_i_1_n_0\
     );
 \lb_rdata[0]_i_1\: unisim.vcomponents.LUT5
@@ -8814,9 +8803,9 @@ i2c_sda_low_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \hcnt_reg_n_0_[0]\,
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(7),
-      I3 => p_0_in_2(8),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(7),
+      I3 => p_0_in_1(8),
       O => \lb_rdata[31]_i_1_n_0\
     );
 \lb_rdata[31]_i_10\: unisim.vcomponents.LUT6
@@ -8850,11 +8839,11 @@ i2c_sda_low_reg: unisim.vcomponents.FDRE
       INIT => X"AAAAAAAA6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(7),
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(3),
-      I3 => p_0_in_2(4),
-      I4 => p_0_in_2(5),
+      I0 => p_0_in_1(7),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(3),
+      I3 => p_0_in_1(4),
+      I4 => p_0_in_1(5),
       I5 => \hcnt[7]_i_2_n_0\,
       O => rd_addr_next0(7)
     );
@@ -8863,11 +8852,11 @@ i2c_sda_low_reg: unisim.vcomponents.FDRE
       INIT => X"9AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(6),
+      I0 => p_0_in_1(6),
       I1 => \hcnt[7]_i_2_n_0\,
-      I2 => p_0_in_2(5),
-      I3 => p_0_in_2(4),
-      I4 => p_0_in_2(3),
+      I2 => p_0_in_1(5),
+      I3 => p_0_in_1(4),
+      I4 => p_0_in_1(3),
       O => rd_addr_next0(6)
     );
 \lb_rdata[31]_i_2\: unisim.vcomponents.LUT5
@@ -8898,9 +8887,9 @@ i2c_sda_low_reg: unisim.vcomponents.FDRE
       INIT => X"A8"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(7),
-      I2 => p_0_in_2(6),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(7),
+      I2 => p_0_in_1(6),
       O => \lb_rdata[31]_i_4_n_0\
     );
 \lb_rdata[31]_i_7\: unisim.vcomponents.LUT4
@@ -8908,9 +8897,9 @@ i2c_sda_low_reg: unisim.vcomponents.FDRE
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(8),
-      I1 => p_0_in_2(6),
-      I2 => p_0_in_2(7),
+      I0 => p_0_in_1(8),
+      I1 => p_0_in_1(6),
+      I2 => p_0_in_1(7),
       I3 => \hcnt[9]_i_3_n_0\,
       O => rd_addr_next0(8)
     );
@@ -10985,12 +10974,12 @@ linebuf_reg_r2_0_63_0_2_i_1: unisim.vcomponents.LUT6
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(5),
-      I1 => p_0_in_2(3),
-      I2 => p_0_in_2(4),
-      I3 => p_0_in_2(1),
-      I4 => p_0_in_2(0),
-      I5 => p_0_in_2(2),
+      I0 => p_0_in_1(5),
+      I1 => p_0_in_1(3),
+      I2 => p_0_in_1(4),
+      I3 => p_0_in_1(1),
+      I4 => p_0_in_1(0),
+      I5 => p_0_in_1(2),
       O => rd_addr_next0(5)
     );
 linebuf_reg_r2_0_63_0_2_i_2: unisim.vcomponents.LUT5
@@ -10998,11 +10987,11 @@ linebuf_reg_r2_0_63_0_2_i_2: unisim.vcomponents.LUT5
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(4),
-      I1 => p_0_in_2(1),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(3),
+      I0 => p_0_in_1(4),
+      I1 => p_0_in_1(1),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(3),
       O => rd_addr_next0(4)
     );
 linebuf_reg_r2_0_63_0_2_i_3: unisim.vcomponents.LUT4
@@ -11010,10 +10999,10 @@ linebuf_reg_r2_0_63_0_2_i_3: unisim.vcomponents.LUT4
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(3),
-      I1 => p_0_in_2(2),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(1),
+      I0 => p_0_in_1(3),
+      I1 => p_0_in_1(2),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_0_2_i_3_n_0
     );
 linebuf_reg_r2_0_63_0_2_i_4: unisim.vcomponents.LUT3
@@ -11021,9 +11010,9 @@ linebuf_reg_r2_0_63_0_2_i_4: unisim.vcomponents.LUT3
       INIT => X"6A"
     )
         port map (
-      I0 => p_0_in_2(2),
-      I1 => p_0_in_2(0),
-      I2 => p_0_in_2(1),
+      I0 => p_0_in_1(2),
+      I1 => p_0_in_1(0),
+      I2 => p_0_in_1(1),
       O => rd_addr_next0(2)
     );
 linebuf_reg_r2_0_63_0_2_i_5: unisim.vcomponents.LUT2
@@ -11031,8 +11020,8 @@ linebuf_reg_r2_0_63_0_2_i_5: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => p_0_in_2(0),
-      I1 => p_0_in_2(1),
+      I0 => p_0_in_1(0),
+      I1 => p_0_in_1(1),
       O => rd_addr_next0(1)
     );
 linebuf_reg_r2_0_63_0_2_i_6: unisim.vcomponents.LUT1
@@ -11040,7 +11029,7 @@ linebuf_reg_r2_0_63_0_2_i_6: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in_2(0),
+      I0 => p_0_in_1(0),
       O => rd_addr_next0(0)
     );
 linebuf_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
@@ -11112,10 +11101,10 @@ linebuf_reg_r2_0_63_15_17_i_1: unisim.vcomponents.LUT4
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(3),
-      I1 => p_0_in_2(2),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(1),
+      I0 => p_0_in_1(3),
+      I1 => p_0_in_1(2),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_15_17_i_1_n_0
     );
 linebuf_reg_r2_0_63_18_20: unisim.vcomponents.RAM64M
@@ -11155,12 +11144,12 @@ linebuf_reg_r2_0_63_18_20_i_1: unisim.vcomponents.LUT6
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(5),
-      I1 => p_0_in_2(3),
-      I2 => p_0_in_2(4),
-      I3 => p_0_in_2(1),
-      I4 => p_0_in_2(0),
-      I5 => p_0_in_2(2),
+      I0 => p_0_in_1(5),
+      I1 => p_0_in_1(3),
+      I2 => p_0_in_1(4),
+      I3 => p_0_in_1(1),
+      I4 => p_0_in_1(0),
+      I5 => p_0_in_1(2),
       O => linebuf_reg_r2_0_63_18_20_i_1_n_0
     );
 linebuf_reg_r2_0_63_18_20_i_2: unisim.vcomponents.LUT5
@@ -11168,11 +11157,11 @@ linebuf_reg_r2_0_63_18_20_i_2: unisim.vcomponents.LUT5
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(4),
-      I1 => p_0_in_2(1),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(3),
+      I0 => p_0_in_1(4),
+      I1 => p_0_in_1(1),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(3),
       O => linebuf_reg_r2_0_63_18_20_i_2_n_0
     );
 linebuf_reg_r2_0_63_18_20_i_3: unisim.vcomponents.LUT3
@@ -11180,9 +11169,9 @@ linebuf_reg_r2_0_63_18_20_i_3: unisim.vcomponents.LUT3
       INIT => X"6A"
     )
         port map (
-      I0 => p_0_in_2(2),
-      I1 => p_0_in_2(0),
-      I2 => p_0_in_2(1),
+      I0 => p_0_in_1(2),
+      I1 => p_0_in_1(0),
+      I2 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_18_20_i_3_n_0
     );
 linebuf_reg_r2_0_63_18_20_i_4: unisim.vcomponents.LUT2
@@ -11190,8 +11179,8 @@ linebuf_reg_r2_0_63_18_20_i_4: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => p_0_in_2(0),
-      I1 => p_0_in_2(1),
+      I0 => p_0_in_1(0),
+      I1 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_18_20_i_4_n_0
     );
 linebuf_reg_r2_0_63_18_20_i_5: unisim.vcomponents.LUT1
@@ -11199,7 +11188,7 @@ linebuf_reg_r2_0_63_18_20_i_5: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in_2(0),
+      I0 => p_0_in_1(0),
       O => linebuf_reg_r2_0_63_18_20_i_5_n_0
     );
 linebuf_reg_r2_0_63_21_23: unisim.vcomponents.RAM64M
@@ -11271,10 +11260,10 @@ linebuf_reg_r2_0_63_24_26_i_1: unisim.vcomponents.LUT4
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(3),
-      I1 => p_0_in_2(2),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(1),
+      I0 => p_0_in_1(3),
+      I1 => p_0_in_1(2),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_24_26_i_1_n_0
     );
 linebuf_reg_r2_0_63_27_29: unisim.vcomponents.RAM64M
@@ -11314,12 +11303,12 @@ linebuf_reg_r2_0_63_27_29_i_1: unisim.vcomponents.LUT6
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(5),
-      I1 => p_0_in_2(3),
-      I2 => p_0_in_2(4),
-      I3 => p_0_in_2(1),
-      I4 => p_0_in_2(0),
-      I5 => p_0_in_2(2),
+      I0 => p_0_in_1(5),
+      I1 => p_0_in_1(3),
+      I2 => p_0_in_1(4),
+      I3 => p_0_in_1(1),
+      I4 => p_0_in_1(0),
+      I5 => p_0_in_1(2),
       O => linebuf_reg_r2_0_63_27_29_i_1_n_0
     );
 linebuf_reg_r2_0_63_27_29_i_2: unisim.vcomponents.LUT5
@@ -11327,11 +11316,11 @@ linebuf_reg_r2_0_63_27_29_i_2: unisim.vcomponents.LUT5
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(4),
-      I1 => p_0_in_2(1),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(3),
+      I0 => p_0_in_1(4),
+      I1 => p_0_in_1(1),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(3),
       O => linebuf_reg_r2_0_63_27_29_i_2_n_0
     );
 linebuf_reg_r2_0_63_27_29_i_3: unisim.vcomponents.LUT3
@@ -11339,9 +11328,9 @@ linebuf_reg_r2_0_63_27_29_i_3: unisim.vcomponents.LUT3
       INIT => X"6A"
     )
         port map (
-      I0 => p_0_in_2(2),
-      I1 => p_0_in_2(0),
-      I2 => p_0_in_2(1),
+      I0 => p_0_in_1(2),
+      I1 => p_0_in_1(0),
+      I2 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_27_29_i_3_n_0
     );
 linebuf_reg_r2_0_63_27_29_i_4: unisim.vcomponents.LUT2
@@ -11349,8 +11338,8 @@ linebuf_reg_r2_0_63_27_29_i_4: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => p_0_in_2(0),
-      I1 => p_0_in_2(1),
+      I0 => p_0_in_1(0),
+      I1 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_27_29_i_4_n_0
     );
 linebuf_reg_r2_0_63_27_29_i_5: unisim.vcomponents.LUT1
@@ -11358,7 +11347,7 @@ linebuf_reg_r2_0_63_27_29_i_5: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in_2(0),
+      I0 => p_0_in_1(0),
       O => linebuf_reg_r2_0_63_27_29_i_5_n_0
     );
 linebuf_reg_r2_0_63_30_31: unisim.vcomponents.RAM64M
@@ -11444,10 +11433,10 @@ linebuf_reg_r2_0_63_6_8_i_1: unisim.vcomponents.LUT4
       INIT => X"6AAA"
     )
         port map (
-      I0 => p_0_in_2(3),
-      I1 => p_0_in_2(2),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(1),
+      I0 => p_0_in_1(3),
+      I1 => p_0_in_1(2),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_6_8_i_1_n_0
     );
 linebuf_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
@@ -11487,12 +11476,12 @@ linebuf_reg_r2_0_63_9_11_i_1: unisim.vcomponents.LUT6
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(5),
-      I1 => p_0_in_2(3),
-      I2 => p_0_in_2(4),
-      I3 => p_0_in_2(1),
-      I4 => p_0_in_2(0),
-      I5 => p_0_in_2(2),
+      I0 => p_0_in_1(5),
+      I1 => p_0_in_1(3),
+      I2 => p_0_in_1(4),
+      I3 => p_0_in_1(1),
+      I4 => p_0_in_1(0),
+      I5 => p_0_in_1(2),
       O => linebuf_reg_r2_0_63_9_11_i_1_n_0
     );
 linebuf_reg_r2_0_63_9_11_i_2: unisim.vcomponents.LUT5
@@ -11500,11 +11489,11 @@ linebuf_reg_r2_0_63_9_11_i_2: unisim.vcomponents.LUT5
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => p_0_in_2(4),
-      I1 => p_0_in_2(1),
-      I2 => p_0_in_2(0),
-      I3 => p_0_in_2(2),
-      I4 => p_0_in_2(3),
+      I0 => p_0_in_1(4),
+      I1 => p_0_in_1(1),
+      I2 => p_0_in_1(0),
+      I3 => p_0_in_1(2),
+      I4 => p_0_in_1(3),
       O => linebuf_reg_r2_0_63_9_11_i_2_n_0
     );
 linebuf_reg_r2_0_63_9_11_i_3: unisim.vcomponents.LUT3
@@ -11512,9 +11501,9 @@ linebuf_reg_r2_0_63_9_11_i_3: unisim.vcomponents.LUT3
       INIT => X"6A"
     )
         port map (
-      I0 => p_0_in_2(2),
-      I1 => p_0_in_2(0),
-      I2 => p_0_in_2(1),
+      I0 => p_0_in_1(2),
+      I1 => p_0_in_1(0),
+      I2 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_9_11_i_3_n_0
     );
 linebuf_reg_r2_0_63_9_11_i_4: unisim.vcomponents.LUT2
@@ -11522,8 +11511,8 @@ linebuf_reg_r2_0_63_9_11_i_4: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => p_0_in_2(0),
-      I1 => p_0_in_2(1),
+      I0 => p_0_in_1(0),
+      I1 => p_0_in_1(1),
       O => linebuf_reg_r2_0_63_9_11_i_4_n_0
     );
 linebuf_reg_r2_0_63_9_11_i_5: unisim.vcomponents.LUT1
@@ -11531,7 +11520,7 @@ linebuf_reg_r2_0_63_9_11_i_5: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in_2(0),
+      I0 => p_0_in_1(0),
       O => linebuf_reg_r2_0_63_9_11_i_5_n_0
     );
 linebuf_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
@@ -17025,26 +17014,26 @@ mono_p2_reg: unisim.vcomponents.FDRE
     );
 \rdata_q[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFBAAA"
+      INIT => X"FFFFEAAA"
     )
         port map (
       I0 => \rdata_q[31]_i_4_n_0\,
-      I1 => araddr_q(2),
-      I2 => araddr_q(3),
-      I3 => data2(0),
+      I1 => araddr_q(3),
+      I2 => araddr_q(2),
+      I3 => data3(0),
       I4 => \rdata_q[0]_i_2_n_0\,
       O => \rdata_q[0]_i_1_n_0\
     );
 \rdata_q[0]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"AA00F0CC"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => i2c_sda_low,
-      I1 => p_3_in(0),
-      I2 => fb_base(0),
-      I3 => araddr_q(2),
-      I4 => araddr_q(3),
+      I0 => p_3_in(0),
+      I1 => fb_base(0),
+      I2 => data2(0),
+      I3 => araddr_q(3),
+      I4 => araddr_q(2),
       O => \rdata_q[0]_i_2_n_0\
     );
 \rdata_q[10]_i_1\: unisim.vcomponents.LUT5
@@ -17169,14 +17158,14 @@ mono_p2_reg: unisim.vcomponents.FDRE
     );
 \rdata_q[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFFD9C85140"
+      INIT => X"FFFFFFFFD591C480"
     )
         port map (
       I0 => araddr_q(3),
       I1 => araddr_q(2),
-      I2 => fb_base(1),
-      I3 => ctrl_yc_swap,
-      I4 => i2c_scl_low,
+      I2 => data3(1),
+      I3 => fb_base(1),
+      I4 => ctrl_yc_swap,
       I5 => \rdata_q[31]_i_4_n_0\,
       O => \rdata_q[1]_i_1_n_0\
     );
@@ -17414,30 +17403,28 @@ mono_p2_reg: unisim.vcomponents.FDRE
       I3 => \rdata_q[31]_i_4_n_0\,
       O => \rdata_q[7]_i_1_n_0\
     );
-\rdata_q[8]_i_1\: unisim.vcomponents.LUT6
+\rdata_q[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0000CAF00000CA00"
+      INIT => X"0F0A0808"
     )
         port map (
-      I0 => data2(8),
-      I1 => sda_in,
-      I2 => araddr_q(2),
-      I3 => araddr_q(3),
-      I4 => \rdata_q[31]_i_4_n_0\,
-      I5 => fb_base(8),
+      I0 => araddr_q(3),
+      I1 => data2(8),
+      I2 => \rdata_q[31]_i_4_n_0\,
+      I3 => fb_base(8),
+      I4 => araddr_q(2),
       O => \rdata_q[8]_i_1_n_0\
     );
-\rdata_q[9]_i_1\: unisim.vcomponents.LUT6
+\rdata_q[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFFEAC86240"
+      INIT => X"FFEAFAEA"
     )
         port map (
-      I0 => araddr_q(2),
-      I1 => araddr_q(3),
-      I2 => data2(9),
-      I3 => fb_base(9),
-      I4 => scl_in,
-      I5 => \rdata_q[31]_i_4_n_0\,
+      I0 => \rdata_q[31]_i_4_n_0\,
+      I1 => fb_base(9),
+      I2 => araddr_q(2),
+      I3 => araddr_q(3),
+      I4 => data2(9),
       O => \rdata_q[9]_i_1_n_0\
     );
 \rdata_q_reg[0]\: unisim.vcomponents.FDRE
@@ -17807,42 +17794,6 @@ u_clk_fwd: unisim.vcomponents.ODDR
       R => NLW_u_clk_fwd_R_UNCONNECTED,
       S => NLW_u_clk_fwd_S_UNCONNECTED
     );
-u_iobuf_scl: unisim.vcomponents.IOBUF
-    generic map(
-      IOSTANDARD => "DEFAULT"
-    )
-        port map (
-      I => '0',
-      IO => hdmi_scl,
-      O => scl_in,
-      T => T0
-    );
-u_iobuf_scl_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => i2c_scl_low,
-      O => T0
-    );
-u_iobuf_sda: unisim.vcomponents.IOBUF
-    generic map(
-      IOSTANDARD => "DEFAULT"
-    )
-        port map (
-      I => '0',
-      IO => hdmi_sda,
-      O => sda_in,
-      T => u_iobuf_sda_i_1_n_0
-    );
-u_iobuf_sda_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => i2c_sda_low,
-      O => u_iobuf_sda_i_1_n_0
-    );
 \vcnt[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
@@ -17981,10 +17932,10 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
     )
         port map (
       I0 => \vcnt[9]_i_4_n_0\,
-      I1 => p_0_in_2(5),
-      I2 => p_0_in_2(8),
-      I3 => p_0_in_2(6),
-      I4 => p_0_in_2(7),
+      I1 => p_0_in_1(5),
+      I2 => p_0_in_1(8),
+      I3 => p_0_in_1(6),
+      I4 => p_0_in_1(7),
       O => vcnt(0)
     );
 \vcnt[9]_i_3\: unisim.vcomponents.LUT6
@@ -18005,11 +17956,11 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       INIT => X"4000000000000000"
     )
         port map (
-      I0 => p_0_in_2(4),
-      I1 => p_0_in_2(3),
-      I2 => p_0_in_2(2),
-      I3 => p_0_in_2(0),
-      I4 => p_0_in_2(1),
+      I0 => p_0_in_1(4),
+      I1 => p_0_in_1(3),
+      I2 => p_0_in_1(2),
+      I3 => p_0_in_1(0),
+      I4 => p_0_in_1(1),
       I5 => \hcnt_reg_n_0_[0]\,
       O => \vcnt[9]_i_4_n_0\
     );
@@ -18143,7 +18094,7 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
     )
         port map (
       I0 => \vga_q[1]_i_2_n_0\,
-      I1 => p_0_in_2(8),
+      I1 => p_0_in_1(8),
       I2 => tp_p2,
       I3 => \lb_rdata_reg_n_0_[4]\,
       I4 => \lb_rdata_reg_n_0_[20]\,
@@ -18155,7 +18106,7 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       INIT => X"EFE0EFEFEFE0E0E0"
     )
         port map (
-      I0 => p_0_in_2(8),
+      I0 => p_0_in_1(8),
       I1 => \vga_q[1]_i_2_n_0\,
       I2 => tp_p2,
       I3 => \lb_rdata_reg_n_0_[21]\,
@@ -18168,8 +18119,8 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(7),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(7),
       O => \vga_q[1]_i_2_n_0\
     );
 \vga_q[2]_i_1\: unisim.vcomponents.LUT6
@@ -18180,7 +18131,7 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       I0 => \lb_rdata_reg_n_0_[22]\,
       I1 => \hcnt_reg_n_0_[0]\,
       I2 => \lb_rdata_reg_n_0_[6]\,
-      I3 => p_0_in_2(8),
+      I3 => p_0_in_1(8),
       I4 => tp_p2,
       I5 => \vga_q[2]_i_2_n_0\,
       O => \vga_q[2]_i_1_n_0\
@@ -18190,8 +18141,8 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       INIT => X"B"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(7),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(7),
       O => \vga_q[2]_i_2_n_0\
     );
 \vga_q[3]_i_1\: unisim.vcomponents.LUT6
@@ -18201,7 +18152,7 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
         port map (
       I0 => \vga_q[3]_i_2_n_0\,
       I1 => tp_p2,
-      I2 => p_0_in_2(8),
+      I2 => p_0_in_1(8),
       I3 => \lb_rdata_reg_n_0_[7]\,
       I4 => \hcnt_reg_n_0_[0]\,
       I5 => \lb_rdata_reg_n_0_[23]\,
@@ -18212,8 +18163,8 @@ u_iobuf_sda_i_1: unisim.vcomponents.LUT1
       INIT => X"8"
     )
         port map (
-      I0 => p_0_in_2(6),
-      I1 => p_0_in_2(7),
+      I0 => p_0_in_1(6),
+      I1 => p_0_in_1(7),
       O => \vga_q[3]_i_2_n_0\
     );
 \vga_q_reg[0]\: unisim.vcomponents.FDRE
@@ -18621,8 +18572,6 @@ entity system_hdmi_0 is
     hdmi_de : out STD_LOGIC;
     hdmi_hsync : out STD_LOGIC;
     hdmi_vsync : out STD_LOGIC;
-    hdmi_scl : inout STD_LOGIC;
-    hdmi_sda : inout STD_LOGIC;
     vga_r : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_g : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_b : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -18765,8 +18714,6 @@ inst: entity work.system_hdmi_0_hdmi_out
       hdmi_clk => hdmi_clk,
       hdmi_d(15 downto 0) => hdmi_d(15 downto 0),
       hdmi_de => hdmi_de,
-      hdmi_scl => hdmi_scl,
-      hdmi_sda => hdmi_sda,
       m_axi_hp_araddr(31 downto 0) => m_axi_hp_araddr(31 downto 0),
       m_axi_hp_arready => m_axi_hp_arready,
       m_axi_hp_arvalid => m_axi_hp_arvalid,

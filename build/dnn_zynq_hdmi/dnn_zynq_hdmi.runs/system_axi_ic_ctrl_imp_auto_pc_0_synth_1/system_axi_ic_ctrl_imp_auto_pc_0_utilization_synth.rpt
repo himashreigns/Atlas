@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Jul  8 16:40:41 2026
+| Date         : Wed Jul  8 19:51:50 2026
 | Host         : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_utilization -file system_axi_ic_ctrl_imp_auto_pc_0_utilization_synth.rpt -pb system_axi_ic_ctrl_imp_auto_pc_0_utilization_synth.pb
 | Design       : system_axi_ic_ctrl_imp_auto_pc_0
@@ -28,19 +28,21 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    0 |     0 |          0 |     53200 |  0.00 |
-|   LUT as Logic          |    0 |     0 |          0 |     53200 |  0.00 |
-|   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |    0 |     0 |          0 |    106400 |  0.00 |
-|   Register as Flip Flop |    0 |     0 |          0 |    106400 |  0.00 |
-|   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
-| Unique Control Sets     |    0 |       |          0 |     13300 |  0.00 |
-+-------------------------+------+-------+------------+-----------+-------+
++----------------------------+------+-------+------------+-----------+-------+
+|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
++----------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*                |  435 |     0 |          0 |     53200 |  0.82 |
+|   LUT as Logic             |  366 |     0 |          0 |     53200 |  0.69 |
+|   LUT as Memory            |   69 |     0 |          0 |     17400 |  0.40 |
+|     LUT as Distributed RAM |    0 |     0 |            |           |       |
+|     LUT as Shift Register  |   69 |     0 |            |           |       |
+| Slice Registers            |  584 |     0 |          0 |    106400 |  0.55 |
+|   Register as Flip Flop    |  584 |     0 |          0 |    106400 |  0.55 |
+|   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
+| F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
+| F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
+| Unique Control Sets        |   25 |       |          0 |     13300 |  0.19 |
++----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 Warning! For any ECO changes, please run place_design if there are unplaced instances
@@ -61,8 +63,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 16    |          Yes |         Set |            - |
+| 568   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,6 +152,18 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| FDRE     |  568 |        Flop & Latch |
+| LUT3     |  247 |                 LUT |
+| LUT6     |  117 |                 LUT |
+| LUT5     |   70 |                 LUT |
+| SRLC32E  |   47 |  Distributed Memory |
+| LUT4     |   40 |                 LUT |
+| SRL16E   |   22 |  Distributed Memory |
+| CARRY4   |   18 |          CarryLogic |
+| LUT2     |   17 |                 LUT |
+| FDSE     |   16 |        Flop & Latch |
+| LUT1     |    5 |                 LUT |
 +----------+------+---------------------+
 
 

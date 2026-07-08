@@ -29,7 +29,6 @@ module tb_hdmi_out;
 
     wire        hdmi_clk;  wire [15:0] hdmi_d;
     wire        hdmi_de, hdmi_hsync, hdmi_vsync;
-    wire        hdmi_scl, hdmi_sda;
     wire [3:0]  vga_r, vga_g, vga_b;
     wire        vga_hsync, vga_vsync;
 
@@ -57,7 +56,6 @@ module tb_hdmi_out;
         .m_axi_hp_rready(rready_m),
         .hdmi_clk(hdmi_clk), .hdmi_d(hdmi_d), .hdmi_de(hdmi_de),
         .hdmi_hsync(hdmi_hsync), .hdmi_vsync(hdmi_vsync),
-        .hdmi_scl(hdmi_scl), .hdmi_sda(hdmi_sda),
         .vga_r(vga_r), .vga_g(vga_g), .vga_b(vga_b),
         .vga_hsync(vga_hsync), .vga_vsync(vga_vsync)
     );
@@ -205,10 +203,10 @@ module tb_hdmi_out;
         axil_rd(16'h0004, rd);
         if (rd !== FB) begin $display("ERROR: FB rb %08x", rd); errors = errors + 1; end
 
-        // I2C bit-bang: drive SDA low, read it back
+        // legacy I2C register stub: writes accepted, reads report bus idle
         axil_wr(16'h000C, 32'h1);
         axil_rd(16'h000C, rd);
-        if (rd[8] !== 1'b0) begin $display("ERROR: sda_in=%b", rd[8]); errors = errors + 1; end
+        if (rd[9:8] !== 2'b11) begin $display("ERROR: i2c stub rb=%b", rd[9:8]); errors = errors + 1; end
         axil_wr(16'h000C, 32'h0);
 
         // enable scanout
@@ -244,8 +242,4 @@ module tb_hdmi_out;
         $display("*** TIMEOUT ***");
         $finish;
     end
-
-    // weak pull-ups on the I2C nets (board has real ones)
-    pullup(hdmi_scl);
-    pullup(hdmi_sda);
 endmodule

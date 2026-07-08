@@ -99,8 +99,6 @@ module system_hdmi_0 (
   hdmi_de,
   hdmi_hsync,
   hdmi_vsync,
-  hdmi_scl,
-  hdmi_sda,
   vga_r,
   vga_g,
   vga_b,
@@ -206,8 +204,6 @@ output wire [15 : 0] hdmi_d;
 output wire hdmi_de;
 output wire hdmi_hsync;
 output wire hdmi_vsync;
-inout wire hdmi_scl;
-inout wire hdmi_sda;
 output wire [3 : 0] vga_r;
 output wire [3 : 0] vga_g;
 output wire [3 : 0] vga_b;
@@ -271,8 +267,6 @@ output wire vga_vsync;
     .hdmi_de(hdmi_de),
     .hdmi_hsync(hdmi_hsync),
     .hdmi_vsync(hdmi_vsync),
-    .hdmi_scl(hdmi_scl),
-    .hdmi_sda(hdmi_sda),
     .vga_r(vga_r),
     .vga_g(vga_g),
     .vga_b(vga_b),

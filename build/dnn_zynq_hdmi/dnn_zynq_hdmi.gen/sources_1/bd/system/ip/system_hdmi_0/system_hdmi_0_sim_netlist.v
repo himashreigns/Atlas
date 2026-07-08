@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jul  8 16:38:57 2026
+// Date        : Wed Jul  8 19:50:41 2026
 // Host        : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/system_hdmi_0_sim_netlist.v
@@ -61,8 +61,6 @@ module system_hdmi_0
     hdmi_de,
     hdmi_hsync,
     hdmi_vsync,
-    hdmi_scl,
-    hdmi_sda,
     vga_r,
     vga_g,
     vga_b,
@@ -112,8 +110,6 @@ module system_hdmi_0
   output hdmi_de;
   output hdmi_hsync;
   output hdmi_vsync;
-  inout hdmi_scl;
-  inout hdmi_sda;
   output [3:0]vga_r;
   output [3:0]vga_g;
   output [3:0]vga_b;
@@ -127,8 +123,6 @@ module system_hdmi_0
   wire hdmi_clk;
   wire [15:0]hdmi_d;
   wire hdmi_de;
-  (* DRIVE = "12" *) (* IBUF_LOW_PWR *) (* SLEW = "SLOW" *) wire hdmi_scl;
-  (* DRIVE = "12" *) (* IBUF_LOW_PWR *) (* SLEW = "SLOW" *) wire hdmi_sda;
   wire [31:0]m_axi_hp_araddr;
   wire m_axi_hp_arready;
   wire m_axi_hp_arvalid;
@@ -208,8 +202,6 @@ module system_hdmi_0
         .hdmi_clk(hdmi_clk),
         .hdmi_d(hdmi_d),
         .hdmi_de(hdmi_de),
-        .hdmi_scl(hdmi_scl),
-        .hdmi_sda(hdmi_sda),
         .m_axi_hp_araddr(m_axi_hp_araddr),
         .m_axi_hp_arready(m_axi_hp_arready),
         .m_axi_hp_arvalid(m_axi_hp_arvalid),
@@ -249,8 +241,6 @@ module system_hdmi_0_hdmi_out
     vga_b,
     rvalid_q_reg_0,
     m_axi_hp_arvalid,
-    hdmi_scl,
-    hdmi_sda,
     s_axi_lite_wvalid,
     s_axi_lite_awvalid,
     s_axi_lite_arvalid,
@@ -280,8 +270,6 @@ module system_hdmi_0_hdmi_out
   output [3:0]vga_b;
   output rvalid_q_reg_0;
   output m_axi_hp_arvalid;
-  inout hdmi_scl;
-  inout hdmi_sda;
   input s_axi_lite_wvalid;
   input s_axi_lite_awvalid;
   input s_axi_lite_arvalid;
@@ -301,7 +289,6 @@ module system_hdmi_0_hdmi_out
   wire \FSM_sequential_fstate[0]_i_1_n_0 ;
   wire \FSM_sequential_fstate[0]_i_2_n_0 ;
   wire \FSM_sequential_fstate[1]_i_1_n_0 ;
-  wire T0;
   wire aclk;
   wire ar_done_i_1_n_0;
   wire ar_done_reg_n_0;
@@ -337,6 +324,7 @@ module system_hdmi_0_hdmi_out
   wire ctrl_mono;
   wire ctrl_yc_swap;
   wire [23:0]data2;
+  wire [1:0]data3;
   wire en_p1;
   wire en_p2;
   wire [31:0]f_addr;
@@ -424,7 +412,7 @@ module system_hdmi_0_hdmi_out
   wire \f_line_reg_n_0_[0] ;
   wire [8:0]f_word;
   wire \f_word[8]_i_3_n_0 ;
-  wire [0:0]f_word_3;
+  wire [0:0]f_word_2;
   wire \f_word_reg_n_0_[0] ;
   wire \f_word_reg_n_0_[1] ;
   wire \f_word_reg_n_0_[2] ;
@@ -437,7 +425,7 @@ module system_hdmi_0_hdmi_out
   wire [31:0]fb_base;
   wire [0:0]fb_base_0;
   wire fetch_overrun_set;
-  wire fetch_overrun_set_4;
+  wire fetch_overrun_set_3;
   wire \frame_cnt_pix[0]_i_1_n_0 ;
   wire \frame_cnt_pix[1]_i_1_n_0 ;
   wire \frame_cnt_pix[2]_i_1_n_0 ;
@@ -516,13 +504,9 @@ module system_hdmi_0_hdmi_out
   wire hdmi_de;
   wire hdmi_de_i_1_n_0;
   wire hdmi_hsync_i_1_n_0;
-  wire hdmi_scl;
-  wire hdmi_sda;
   wire hdmi_vsync_i_1_n_0;
-  wire i2c_scl_low;
   wire i2c_scl_low_i_1_n_0;
   wire i2c_sda_low;
-  wire i2c_sda_low_1;
   wire i2c_sda_low_i_1_n_0;
   wire [31:5]in10;
   wire [31:0]lb_rdata0;
@@ -1414,7 +1398,7 @@ module system_hdmi_0_hdmi_out
   wire mono_p2;
   wire [7:0]p_0_in;
   wire p_0_in0;
-  wire [8:0]p_0_in_2;
+  wire [8:0]p_0_in_1;
   wire p_1_in;
   wire [3:0]p_3_in;
   wire \pix_alive[0]_i_2_n_0 ;
@@ -1532,8 +1516,6 @@ module system_hdmi_0_hdmi_out
   wire s_axi_lite_rready;
   wire [31:0]s_axi_lite_wdata;
   wire s_axi_lite_wvalid;
-  wire scl_in;
-  wire sda_in;
   wire st_overrun_i_1_n_0;
   wire st_overrun_i_2_n_0;
   wire t_s1;
@@ -1541,7 +1523,6 @@ module system_hdmi_0_hdmi_out
   wire t_s3;
   wire tp_p1;
   wire tp_p2;
-  wire u_iobuf_sda_i_1_n_0;
   wire [0:0]vcnt;
   wire \vcnt[3]_i_2_n_0 ;
   wire \vcnt[8]_i_2_n_0 ;
@@ -2109,7 +2090,7 @@ module system_hdmi_0_hdmi_out
         .D(awready_q_i_1_n_0),
         .Q(awready_q_reg_0),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h0080F080)) 
     bvalid_q_i_1
@@ -2153,7 +2134,7 @@ module system_hdmi_0_hdmi_out
         .I4(\awaddr_q_reg_n_0_[0] ),
         .I5(\awaddr_q_reg_n_0_[1] ),
         .O(ctrl_enable));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'h20)) 
     ctrl_enable_i_2
@@ -2367,18 +2348,18 @@ module system_hdmi_0_hdmi_out
   LUT3 #(
     .INIT(8'h01)) 
     f_addr0_i_3
-       (.I0(p_0_in_2[5]),
-        .I1(p_0_in_2[4]),
-        .I2(p_0_in_2[3]),
+       (.I0(p_0_in_1[5]),
+        .I1(p_0_in_1[4]),
+        .I2(p_0_in_1[3]),
         .O(f_addr0_i_3_n_0));
   LUT6 #(
     .INIT(64'h0000000000000100)) 
     f_addr0_i_4
-       (.I0(p_0_in_2[1]),
-        .I1(p_0_in_2[8]),
-        .I2(p_0_in_2[2]),
+       (.I0(p_0_in_1[1]),
+        .I1(p_0_in_1[8]),
+        .I2(p_0_in_1[2]),
         .I3(\vga_q[1]_i_2_n_0 ),
-        .I4(p_0_in_2[0]),
+        .I4(p_0_in_1[0]),
         .I5(\hcnt_reg_n_0_[0] ),
         .O(f_addr0_i_4_n_0));
   LUT6 #(
@@ -2391,14 +2372,14 @@ module system_hdmi_0_hdmi_out
         .I4(f_addr0_i_6_n_0),
         .I5(f_addr0_i_7_n_0),
         .O(f_addr0_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h2)) 
     f_addr0_i_6
        (.I0(\vcnt_reg_n_0_[6] ),
         .I1(\vcnt_reg_n_0_[7] ),
         .O(f_addr0_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     f_addr0_i_7
@@ -2406,7 +2387,7 @@ module system_hdmi_0_hdmi_out
         .I1(\vcnt_reg_n_0_[8] ),
         .I2(\vcnt_reg_n_0_[9] ),
         .O(f_addr0_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT4 #(
     .INIT(16'h00CA)) 
     \f_addr[0]_i_1 
@@ -2889,7 +2870,7 @@ module system_hdmi_0_hdmi_out
         .D(f_addr[9]),
         .Q(m_axi_hp_araddr[9]),
         .R(\rdata_q[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \f_burst[0]_i_1 
@@ -3063,7 +3044,7 @@ module system_hdmi_0_hdmi_out
         .I3(t_s2),
         .I4(t_s3),
         .I5(lb_waddr),
-        .O(f_word_3));
+        .O(f_word_2));
   LUT6 #(
     .INIT(64'h2888888888888888)) 
     \f_word[8]_i_2 
@@ -3085,55 +3066,55 @@ module system_hdmi_0_hdmi_out
         .O(\f_word[8]_i_3_n_0 ));
   FDRE \f_word_reg[0] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[0]),
         .Q(\f_word_reg_n_0_[0] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[1] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[1]),
         .Q(\f_word_reg_n_0_[1] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[2] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[2]),
         .Q(\f_word_reg_n_0_[2] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[3] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[3]),
         .Q(\f_word_reg_n_0_[3] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[4] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[4]),
         .Q(\f_word_reg_n_0_[4] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[5] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[5]),
         .Q(\f_word_reg_n_0_[5] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[6] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[6]),
         .Q(\f_word_reg_n_0_[6] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[7] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[7]),
         .Q(\f_word_reg_n_0_[7] ),
         .R(\rdata_q[31]_i_1_n_0 ));
   FDRE \f_word_reg[8] 
        (.C(aclk),
-        .CE(f_word_3),
+        .CE(f_word_2),
         .D(f_word[8]),
         .Q(\f_word_reg_n_0_[8] ),
         .R(\rdata_q[31]_i_1_n_0 ));
@@ -3346,11 +3327,11 @@ module system_hdmi_0_hdmi_out
         .I1(fstate[0]),
         .I2(t_s2),
         .I3(t_s3),
-        .O(fetch_overrun_set_4));
+        .O(fetch_overrun_set_3));
   FDRE fetch_overrun_set_reg
        (.C(aclk),
         .CE(1'b1),
-        .D(fetch_overrun_set_4),
+        .D(fetch_overrun_set_3),
         .Q(fetch_overrun_set),
         .R(\rdata_q[31]_i_1_n_0 ));
   LUT3 #(
@@ -3442,7 +3423,7 @@ module system_hdmi_0_hdmi_out
         .I3(frame_cnt_pix_reg[2]),
         .I4(frame_cnt_pix_reg[3]),
         .O(\frame_cnt_pix[7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     \frame_cnt_pix[7]_i_3 
@@ -3627,85 +3608,85 @@ module system_hdmi_0_hdmi_out
     \hcnt[0]_i_1 
        (.I0(\hcnt_reg_n_0_[0] ),
         .O(\hcnt[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \hcnt[1]_i_1 
-       (.I0(p_0_in_2[0]),
+       (.I0(p_0_in_1[0]),
         .I1(\hcnt_reg_n_0_[0] ),
         .O(\hcnt[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \hcnt[2]_i_1 
-       (.I0(p_0_in_2[1]),
+       (.I0(p_0_in_1[1]),
         .I1(\hcnt_reg_n_0_[0] ),
-        .I2(p_0_in_2[0]),
+        .I2(p_0_in_1[0]),
         .O(\hcnt[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \hcnt[3]_i_1 
-       (.I0(p_0_in_2[2]),
-        .I1(p_0_in_2[0]),
+       (.I0(p_0_in_1[2]),
+        .I1(p_0_in_1[0]),
         .I2(\hcnt_reg_n_0_[0] ),
-        .I3(p_0_in_2[1]),
+        .I3(p_0_in_1[1]),
         .O(\hcnt[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \hcnt[4]_i_1 
-       (.I0(p_0_in_2[3]),
+       (.I0(p_0_in_1[3]),
         .I1(\hcnt_reg_n_0_[0] ),
-        .I2(p_0_in_2[1]),
-        .I3(p_0_in_2[0]),
-        .I4(p_0_in_2[2]),
+        .I2(p_0_in_1[1]),
+        .I3(p_0_in_1[0]),
+        .I4(p_0_in_1[2]),
         .O(\hcnt[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFF80000000)) 
     \hcnt[5]_i_1 
        (.I0(\hcnt_reg_n_0_[0] ),
-        .I1(p_0_in_2[1]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[3]),
-        .I5(p_0_in_2[4]),
+        .I1(p_0_in_1[1]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[3]),
+        .I5(p_0_in_1[4]),
         .O(\hcnt[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h9AAAAAAA)) 
     \hcnt[6]_i_1 
-       (.I0(p_0_in_2[5]),
+       (.I0(p_0_in_1[5]),
         .I1(\hcnt[7]_i_2_n_0 ),
         .I2(\hcnt_reg_n_0_[0] ),
-        .I3(p_0_in_2[3]),
-        .I4(p_0_in_2[4]),
+        .I3(p_0_in_1[3]),
+        .I4(p_0_in_1[4]),
         .O(\hcnt[6]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAAAAAAAA6AAAAAAA)) 
     \hcnt[7]_i_1 
-       (.I0(p_0_in_2[6]),
+       (.I0(p_0_in_1[6]),
         .I1(\hcnt_reg_n_0_[0] ),
-        .I2(p_0_in_2[3]),
-        .I3(p_0_in_2[4]),
-        .I4(p_0_in_2[5]),
+        .I2(p_0_in_1[3]),
+        .I3(p_0_in_1[4]),
+        .I4(p_0_in_1[5]),
         .I5(\hcnt[7]_i_2_n_0 ),
         .O(\hcnt[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \hcnt[7]_i_2 
-       (.I0(p_0_in_2[1]),
-        .I1(p_0_in_2[0]),
-        .I2(p_0_in_2[2]),
+       (.I0(p_0_in_1[1]),
+        .I1(p_0_in_1[0]),
+        .I2(p_0_in_1[2]),
         .O(\hcnt[7]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \hcnt[8]_i_1 
-       (.I0(p_0_in_2[7]),
+       (.I0(p_0_in_1[7]),
         .I1(\hcnt_reg_n_0_[0] ),
-        .I2(p_0_in_2[6]),
+        .I2(p_0_in_1[6]),
         .I3(\hcnt[9]_i_3_n_0 ),
         .O(\hcnt[8]_i_1_n_0 ));
   LUT2 #(
@@ -3718,21 +3699,21 @@ module system_hdmi_0_hdmi_out
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \hcnt[9]_i_2 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[7]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[7]),
         .I3(\hcnt[9]_i_3_n_0 ),
         .I4(\hcnt_reg_n_0_[0] ),
         .O(\hcnt[9]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     \hcnt[9]_i_3 
-       (.I0(p_0_in_2[3]),
-        .I1(p_0_in_2[4]),
-        .I2(p_0_in_2[5]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[0]),
-        .I5(p_0_in_2[1]),
+       (.I0(p_0_in_1[3]),
+        .I1(p_0_in_1[4]),
+        .I2(p_0_in_1[5]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[0]),
+        .I5(p_0_in_1[1]),
         .O(\hcnt[9]_i_3_n_0 ));
   FDRE \hcnt_reg[0] 
        (.C(pixel_clk),
@@ -3744,57 +3725,57 @@ module system_hdmi_0_hdmi_out
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[1]_i_1_n_0 ),
-        .Q(p_0_in_2[0]),
+        .Q(p_0_in_1[0]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[2] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[2]_i_1_n_0 ),
-        .Q(p_0_in_2[1]),
+        .Q(p_0_in_1[1]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[3] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[3]_i_1_n_0 ),
-        .Q(p_0_in_2[2]),
+        .Q(p_0_in_1[2]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[4] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[4]_i_1_n_0 ),
-        .Q(p_0_in_2[3]),
+        .Q(p_0_in_1[3]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[5] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[5]_i_1_n_0 ),
-        .Q(p_0_in_2[4]),
+        .Q(p_0_in_1[4]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[6] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[6]_i_1_n_0 ),
-        .Q(p_0_in_2[5]),
+        .Q(p_0_in_1[5]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[7] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[7]_i_1_n_0 ),
-        .Q(p_0_in_2[6]),
+        .Q(p_0_in_1[6]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[8] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[8]_i_1_n_0 ),
-        .Q(p_0_in_2[7]),
+        .Q(p_0_in_1[7]),
         .R(\hcnt[9]_i_1_n_0 ));
   FDRE \hcnt_reg[9] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\hcnt[9]_i_2_n_0 ),
-        .Q(p_0_in_2[8]),
+        .Q(p_0_in_1[8]),
         .R(\hcnt[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[0]_i_1 
@@ -3825,14 +3806,14 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hCC10FFFFCC100000)) 
     \hdmi_d_q[10]_i_3 
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[8]),
-        .I2(p_0_in_2[7]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[8]),
+        .I2(p_0_in_1[7]),
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(tp_p2),
         .I5(\hdmi_d_q[10]_i_4_n_0 ),
         .O(\hdmi_d_q[10]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
     .INIT(16'hEB28)) 
     \hdmi_d_q[10]_i_4 
@@ -3841,7 +3822,7 @@ module system_hdmi_0_hdmi_out
         .I2(ccs_p2),
         .I3(\lb_rdata_reg_n_0_[10] ),
         .O(\hdmi_d_q[10]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'hB8AA)) 
     \hdmi_d_q[11]_i_1 
@@ -3854,7 +3835,7 @@ module system_hdmi_0_hdmi_out
     .INIT(64'hEEEEEEEEF0FFF000)) 
     \hdmi_d_q[11]_i_2 
        (.I0(\vga_q[1]_i_2_n_0 ),
-        .I1(p_0_in_2[8]),
+        .I1(p_0_in_1[8]),
         .I2(\lb_rdata_reg_n_0_[19] ),
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(\lb_rdata_reg_n_0_[3] ),
@@ -3863,9 +3844,9 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hAA40FFFFAA400000)) 
     \hdmi_d_q[11]_i_3 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[7]),
-        .I2(p_0_in_2[6]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[7]),
+        .I2(p_0_in_1[6]),
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(tp_p2),
         .I5(\hdmi_d_q[11]_i_4_n_0 ),
@@ -3878,7 +3859,7 @@ module system_hdmi_0_hdmi_out
         .I2(ccs_p2),
         .I3(\lb_rdata_reg_n_0_[11] ),
         .O(\hdmi_d_q[11]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'hB8AA)) 
     \hdmi_d_q[12]_i_1 
@@ -3902,12 +3883,12 @@ module system_hdmi_0_hdmi_out
     .INIT(32'h0808AAA8)) 
     \hdmi_d_q[12]_i_3 
        (.I0(tp_p2),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[8]),
-        .I3(p_0_in_2[7]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[8]),
+        .I3(p_0_in_1[7]),
         .I4(\hcnt_reg_n_0_[0] ),
         .O(\hdmi_d_q[12]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[13]_i_1 
@@ -3920,16 +3901,16 @@ module system_hdmi_0_hdmi_out
     \hdmi_d_q[13]_i_2 
        (.I0(\vga_q[1]_i_1_n_0 ),
         .I1(mono_p2),
-        .I2(p_0_in_2[7]),
+        .I2(p_0_in_1[7]),
         .I3(\hdmi_d_q[13]_i_3_n_0 ),
         .I4(\hdmi_d_q[14]_i_4_n_0 ),
         .I5(\hdmi_d_q[13]_i_4_n_0 ),
         .O(\hdmi_d_q[13]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \hdmi_d_q[13]_i_3 
-       (.I0(p_0_in_2[6]),
+       (.I0(p_0_in_1[6]),
         .I1(\hcnt_reg_n_0_[0] ),
         .O(\hdmi_d_q[13]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -3942,7 +3923,7 @@ module system_hdmi_0_hdmi_out
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(\lb_rdata_reg_n_0_[29] ),
         .O(\hdmi_d_q[13]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[14]_i_1 
@@ -3957,8 +3938,8 @@ module system_hdmi_0_hdmi_out
         .I1(mono_p2),
         .I2(\hdmi_d_q[14]_i_3_n_0 ),
         .I3(\hdmi_d_q[14]_i_4_n_0 ),
-        .I4(p_0_in_2[6]),
-        .I5(p_0_in_2[7]),
+        .I4(p_0_in_1[6]),
+        .I5(p_0_in_1[7]),
         .O(\hdmi_d_q[14]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
@@ -3970,11 +3951,11 @@ module system_hdmi_0_hdmi_out
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(\lb_rdata_reg_n_0_[30] ),
         .O(\hdmi_d_q[14]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \hdmi_d_q[14]_i_4 
-       (.I0(p_0_in_2[8]),
+       (.I0(p_0_in_1[8]),
         .I1(tp_p2),
         .O(\hdmi_d_q[14]_i_4_n_0 ));
   LUT6 #(
@@ -3983,9 +3964,9 @@ module system_hdmi_0_hdmi_out
        (.I0(\hdmi_d_q[15]_i_3_n_0 ),
         .I1(\vcnt_reg_n_0_[9] ),
         .I2(en_p2),
-        .I3(p_0_in_2[8]),
-        .I4(p_0_in_2[7]),
-        .I5(p_0_in_2[6]),
+        .I3(p_0_in_1[8]),
+        .I4(p_0_in_1[7]),
+        .I5(p_0_in_1[6]),
         .O(\hdmi_d_q[15]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h4755)) 
@@ -3995,7 +3976,7 @@ module system_hdmi_0_hdmi_out
         .I2(\hdmi_d_q[15]_i_5_n_0 ),
         .I3(ycs_p2),
         .O(\hdmi_d_q[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \hdmi_d_q[15]_i_3 
@@ -4010,7 +3991,7 @@ module system_hdmi_0_hdmi_out
        (.I0(\lb_rdata_reg_n_0_[23] ),
         .I1(\hcnt_reg_n_0_[0] ),
         .I2(\lb_rdata_reg_n_0_[7] ),
-        .I3(p_0_in_2[8]),
+        .I3(p_0_in_1[8]),
         .I4(tp_p2),
         .I5(\vga_q[3]_i_2_n_0 ),
         .O(\hdmi_d_q[15]_i_4_n_0 ));
@@ -4018,9 +3999,9 @@ module system_hdmi_0_hdmi_out
     .INIT(64'h00000000AA74FFFF)) 
     \hdmi_d_q[15]_i_5 
        (.I0(\hcnt_reg_n_0_[0] ),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[7]),
-        .I3(p_0_in_2[8]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[7]),
+        .I3(p_0_in_1[8]),
         .I4(tp_p2),
         .I5(\hdmi_d_q[15]_i_6_n_0 ),
         .O(\hdmi_d_q[15]_i_5_n_0 ));
@@ -4053,7 +4034,7 @@ module system_hdmi_0_hdmi_out
         .I4(ycs_p2),
         .I5(\hdmi_d_q[10]_i_2_n_0 ),
         .O(\hdmi_d_q[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'hAAB8)) 
     \hdmi_d_q[3]_i_1 
@@ -4062,7 +4043,7 @@ module system_hdmi_0_hdmi_out
         .I2(\hdmi_d_q[11]_i_3_n_0 ),
         .I3(ycs_p2),
         .O(\hdmi_d_q[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'hAAB8)) 
     \hdmi_d_q[4]_i_1 
@@ -4071,7 +4052,7 @@ module system_hdmi_0_hdmi_out
         .I2(\hdmi_d_q[12]_i_2_n_0 ),
         .I3(ycs_p2),
         .O(\hdmi_d_q[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[5]_i_1 
@@ -4079,7 +4060,7 @@ module system_hdmi_0_hdmi_out
         .I1(ycs_p2),
         .I2(\hdmi_d_q[13]_i_2_n_0 ),
         .O(\hdmi_d_q[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[6]_i_1 
@@ -4096,7 +4077,7 @@ module system_hdmi_0_hdmi_out
         .I3(ycs_p2),
         .I4(hdmi_de_i_1_n_0),
         .O(\hdmi_d_q[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \hdmi_d_q[8]_i_1 
@@ -4117,7 +4098,7 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hDDDDDDDDD0DDD000)) 
     \hdmi_d_q[8]_i_3 
-       (.I0(p_0_in_2[6]),
+       (.I0(p_0_in_1[6]),
         .I1(\hdmi_d_q[8]_i_5_n_0 ),
         .I2(\lb_rdata_reg_n_0_[16] ),
         .I3(\hcnt_reg_n_0_[0] ),
@@ -4131,13 +4112,13 @@ module system_hdmi_0_hdmi_out
        (.I0(\hcnt_reg_n_0_[0] ),
         .I1(ccs_p2),
         .O(\hdmi_d_q[8]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hFB)) 
     \hdmi_d_q[8]_i_5 
-       (.I0(p_0_in_2[7]),
+       (.I0(p_0_in_1[7]),
         .I1(tp_p2),
-        .I2(p_0_in_2[8]),
+        .I2(p_0_in_1[8]),
         .O(\hdmi_d_q[8]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hB8BBB888AAAAAAAA)) 
@@ -4152,8 +4133,8 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h11111111F0FFF000)) 
     \hdmi_d_q[9]_i_2 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[7]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[7]),
         .I2(\lb_rdata_reg_n_0_[17] ),
         .I3(\hcnt_reg_n_0_[0] ),
         .I4(\lb_rdata_reg_n_0_[1] ),
@@ -4163,12 +4144,12 @@ module system_hdmi_0_hdmi_out
   LUT4 #(
     .INIT(16'hB5E0)) 
     \hdmi_d_q[9]_i_3 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[6]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[6]),
         .I2(\hcnt_reg_n_0_[0] ),
-        .I3(p_0_in_2[7]),
+        .I3(p_0_in_1[7]),
         .O(\hdmi_d_q[9]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'hEB28)) 
     \hdmi_d_q[9]_i_4 
@@ -4276,9 +4257,9 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h00001F0000000000)) 
     hdmi_de_i_1
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[7]),
-        .I2(p_0_in_2[8]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[7]),
+        .I2(p_0_in_1[8]),
         .I3(en_p2),
         .I4(\vcnt_reg_n_0_[9] ),
         .I5(\hdmi_d_q[15]_i_3_n_0 ),
@@ -4292,12 +4273,12 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hFFDFDFDFDFDFDFFF)) 
     hdmi_hsync_i_1
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[7]),
-        .I2(p_0_in_2[8]),
-        .I3(p_0_in_2[5]),
-        .I4(p_0_in_2[4]),
-        .I5(p_0_in_2[3]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[7]),
+        .I2(p_0_in_1[8]),
+        .I3(p_0_in_1[5]),
+        .I4(p_0_in_1[4]),
+        .I5(p_0_in_1[3]),
         .O(hdmi_hsync_i_1_n_0));
   FDRE hdmi_hsync_reg
        (.C(pixel_clk),
@@ -4321,27 +4302,27 @@ module system_hdmi_0_hdmi_out
         .D(hdmi_vsync_i_1_n_0),
         .Q(vga_vsync),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     i2c_scl_low_i_1
        (.I0(\wdata_q_reg_n_0_[1] ),
-        .I1(i2c_sda_low_1),
-        .I2(i2c_scl_low),
+        .I1(i2c_sda_low),
+        .I2(data3[1]),
         .O(i2c_scl_low_i_1_n_0));
   FDRE i2c_scl_low_reg
        (.C(aclk),
         .CE(1'b1),
         .D(i2c_scl_low_i_1_n_0),
-        .Q(i2c_scl_low),
+        .Q(data3[1]),
         .R(\rdata_q[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     i2c_sda_low_i_1
        (.I0(\wdata_q_reg_n_0_[0] ),
-        .I1(i2c_sda_low_1),
-        .I2(i2c_sda_low),
+        .I1(i2c_sda_low),
+        .I2(data3[0]),
         .O(i2c_sda_low_i_1_n_0));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
@@ -4352,12 +4333,12 @@ module system_hdmi_0_hdmi_out
         .I3(\awaddr_q_reg_n_0_[1] ),
         .I4(\awaddr_q_reg_n_0_[3] ),
         .I5(\awaddr_q_reg_n_0_[2] ),
-        .O(i2c_sda_low_1));
+        .O(i2c_sda_low));
   FDRE i2c_sda_low_reg
        (.C(aclk),
         .CE(1'b1),
         .D(i2c_sda_low_i_1_n_0),
-        .Q(i2c_sda_low),
+        .Q(data3[0]),
         .R(\rdata_q[31]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -5731,9 +5712,9 @@ module system_hdmi_0_hdmi_out
     .INIT(16'hFEAA)) 
     \lb_rdata[31]_i_1 
        (.I0(\hcnt_reg_n_0_[0] ),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[7]),
-        .I3(p_0_in_2[8]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[7]),
+        .I3(p_0_in_1[8]),
         .O(\lb_rdata[31]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5758,21 +5739,21 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hAAAAAAAA6AAAAAAA)) 
     \lb_rdata[31]_i_12 
-       (.I0(p_0_in_2[7]),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[3]),
-        .I3(p_0_in_2[4]),
-        .I4(p_0_in_2[5]),
+       (.I0(p_0_in_1[7]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[3]),
+        .I3(p_0_in_1[4]),
+        .I4(p_0_in_1[5]),
         .I5(\hcnt[7]_i_2_n_0 ),
         .O(rd_addr_next0[7]));
   LUT5 #(
     .INIT(32'h9AAAAAAA)) 
     \lb_rdata[31]_i_13 
-       (.I0(p_0_in_2[6]),
+       (.I0(p_0_in_1[6]),
         .I1(\hcnt[7]_i_2_n_0 ),
-        .I2(p_0_in_2[5]),
-        .I3(p_0_in_2[4]),
-        .I4(p_0_in_2[3]),
+        .I2(p_0_in_1[5]),
+        .I3(p_0_in_1[4]),
+        .I4(p_0_in_1[3]),
         .O(rd_addr_next0[6]));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -5794,16 +5775,16 @@ module system_hdmi_0_hdmi_out
   LUT3 #(
     .INIT(8'hA8)) 
     \lb_rdata[31]_i_4 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[7]),
-        .I2(p_0_in_2[6]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[7]),
+        .I2(p_0_in_1[6]),
         .O(\lb_rdata[31]_i_4_n_0 ));
   LUT4 #(
     .INIT(16'h6AAA)) 
     \lb_rdata[31]_i_7 
-       (.I0(p_0_in_2[8]),
-        .I1(p_0_in_2[6]),
-        .I2(p_0_in_2[7]),
+       (.I0(p_0_in_1[8]),
+        .I1(p_0_in_1[6]),
+        .I2(p_0_in_1[7]),
         .I3(\hcnt[9]_i_3_n_0 ),
         .O(rd_addr_next0[8]));
   LUT6 #(
@@ -7002,7 +6983,7 @@ module system_hdmi_0_hdmi_out
         .D(lb_waddr),
         .Q(lb_we),
         .R(\rdata_q[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     \line_req_num[0]_i_1 
@@ -7017,7 +6998,7 @@ module system_hdmi_0_hdmi_out
         .D(\line_req_num[0]_i_1_n_0 ),
         .Q(line_req_num),
         .R(\vcnt[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'h6)) 
     line_req_tgl_i_1
@@ -7626,47 +7607,47 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     linebuf_reg_r2_0_63_0_2_i_1
-       (.I0(p_0_in_2[5]),
-        .I1(p_0_in_2[3]),
-        .I2(p_0_in_2[4]),
-        .I3(p_0_in_2[1]),
-        .I4(p_0_in_2[0]),
-        .I5(p_0_in_2[2]),
+       (.I0(p_0_in_1[5]),
+        .I1(p_0_in_1[3]),
+        .I2(p_0_in_1[4]),
+        .I3(p_0_in_1[1]),
+        .I4(p_0_in_1[0]),
+        .I5(p_0_in_1[2]),
         .O(rd_addr_next0[5]));
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     linebuf_reg_r2_0_63_0_2_i_2
-       (.I0(p_0_in_2[4]),
-        .I1(p_0_in_2[1]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[3]),
+       (.I0(p_0_in_1[4]),
+        .I1(p_0_in_1[1]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[3]),
         .O(rd_addr_next0[4]));
   LUT4 #(
     .INIT(16'h6AAA)) 
     linebuf_reg_r2_0_63_0_2_i_3
-       (.I0(p_0_in_2[3]),
-        .I1(p_0_in_2[2]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[1]),
+       (.I0(p_0_in_1[3]),
+        .I1(p_0_in_1[2]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_0_2_i_3_n_0));
   LUT3 #(
     .INIT(8'h6A)) 
     linebuf_reg_r2_0_63_0_2_i_4
-       (.I0(p_0_in_2[2]),
-        .I1(p_0_in_2[0]),
-        .I2(p_0_in_2[1]),
+       (.I0(p_0_in_1[2]),
+        .I1(p_0_in_1[0]),
+        .I2(p_0_in_1[1]),
         .O(rd_addr_next0[2]));
   LUT2 #(
     .INIT(4'h6)) 
     linebuf_reg_r2_0_63_0_2_i_5
-       (.I0(p_0_in_2[0]),
-        .I1(p_0_in_2[1]),
+       (.I0(p_0_in_1[0]),
+        .I1(p_0_in_1[1]),
         .O(rd_addr_next0[1]));
   LUT1 #(
     .INIT(2'h1)) 
     linebuf_reg_r2_0_63_0_2_i_6
-       (.I0(p_0_in_2[0]),
+       (.I0(p_0_in_1[0]),
         .O(rd_addr_next0[0]));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -7721,10 +7702,10 @@ module system_hdmi_0_hdmi_out
   LUT4 #(
     .INIT(16'h6AAA)) 
     linebuf_reg_r2_0_63_15_17_i_1
-       (.I0(p_0_in_2[3]),
-        .I1(p_0_in_2[2]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[1]),
+       (.I0(p_0_in_1[3]),
+        .I1(p_0_in_1[2]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_15_17_i_1_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -7754,39 +7735,39 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     linebuf_reg_r2_0_63_18_20_i_1
-       (.I0(p_0_in_2[5]),
-        .I1(p_0_in_2[3]),
-        .I2(p_0_in_2[4]),
-        .I3(p_0_in_2[1]),
-        .I4(p_0_in_2[0]),
-        .I5(p_0_in_2[2]),
+       (.I0(p_0_in_1[5]),
+        .I1(p_0_in_1[3]),
+        .I2(p_0_in_1[4]),
+        .I3(p_0_in_1[1]),
+        .I4(p_0_in_1[0]),
+        .I5(p_0_in_1[2]),
         .O(linebuf_reg_r2_0_63_18_20_i_1_n_0));
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     linebuf_reg_r2_0_63_18_20_i_2
-       (.I0(p_0_in_2[4]),
-        .I1(p_0_in_2[1]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[3]),
+       (.I0(p_0_in_1[4]),
+        .I1(p_0_in_1[1]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[3]),
         .O(linebuf_reg_r2_0_63_18_20_i_2_n_0));
   LUT3 #(
     .INIT(8'h6A)) 
     linebuf_reg_r2_0_63_18_20_i_3
-       (.I0(p_0_in_2[2]),
-        .I1(p_0_in_2[0]),
-        .I2(p_0_in_2[1]),
+       (.I0(p_0_in_1[2]),
+        .I1(p_0_in_1[0]),
+        .I2(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_18_20_i_3_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     linebuf_reg_r2_0_63_18_20_i_4
-       (.I0(p_0_in_2[0]),
-        .I1(p_0_in_2[1]),
+       (.I0(p_0_in_1[0]),
+        .I1(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_18_20_i_4_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     linebuf_reg_r2_0_63_18_20_i_5
-       (.I0(p_0_in_2[0]),
+       (.I0(p_0_in_1[0]),
         .O(linebuf_reg_r2_0_63_18_20_i_5_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -7841,10 +7822,10 @@ module system_hdmi_0_hdmi_out
   LUT4 #(
     .INIT(16'h6AAA)) 
     linebuf_reg_r2_0_63_24_26_i_1
-       (.I0(p_0_in_2[3]),
-        .I1(p_0_in_2[2]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[1]),
+       (.I0(p_0_in_1[3]),
+        .I1(p_0_in_1[2]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_24_26_i_1_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -7874,39 +7855,39 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     linebuf_reg_r2_0_63_27_29_i_1
-       (.I0(p_0_in_2[5]),
-        .I1(p_0_in_2[3]),
-        .I2(p_0_in_2[4]),
-        .I3(p_0_in_2[1]),
-        .I4(p_0_in_2[0]),
-        .I5(p_0_in_2[2]),
+       (.I0(p_0_in_1[5]),
+        .I1(p_0_in_1[3]),
+        .I2(p_0_in_1[4]),
+        .I3(p_0_in_1[1]),
+        .I4(p_0_in_1[0]),
+        .I5(p_0_in_1[2]),
         .O(linebuf_reg_r2_0_63_27_29_i_1_n_0));
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     linebuf_reg_r2_0_63_27_29_i_2
-       (.I0(p_0_in_2[4]),
-        .I1(p_0_in_2[1]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[3]),
+       (.I0(p_0_in_1[4]),
+        .I1(p_0_in_1[1]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[3]),
         .O(linebuf_reg_r2_0_63_27_29_i_2_n_0));
   LUT3 #(
     .INIT(8'h6A)) 
     linebuf_reg_r2_0_63_27_29_i_3
-       (.I0(p_0_in_2[2]),
-        .I1(p_0_in_2[0]),
-        .I2(p_0_in_2[1]),
+       (.I0(p_0_in_1[2]),
+        .I1(p_0_in_1[0]),
+        .I2(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_27_29_i_3_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     linebuf_reg_r2_0_63_27_29_i_4
-       (.I0(p_0_in_2[0]),
-        .I1(p_0_in_2[1]),
+       (.I0(p_0_in_1[0]),
+        .I1(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_27_29_i_4_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     linebuf_reg_r2_0_63_27_29_i_5
-       (.I0(p_0_in_2[0]),
+       (.I0(p_0_in_1[0]),
         .O(linebuf_reg_r2_0_63_27_29_i_5_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -7986,10 +7967,10 @@ module system_hdmi_0_hdmi_out
   LUT4 #(
     .INIT(16'h6AAA)) 
     linebuf_reg_r2_0_63_6_8_i_1
-       (.I0(p_0_in_2[3]),
-        .I1(p_0_in_2[2]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[1]),
+       (.I0(p_0_in_1[3]),
+        .I1(p_0_in_1[2]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_6_8_i_1_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -8019,39 +8000,39 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     linebuf_reg_r2_0_63_9_11_i_1
-       (.I0(p_0_in_2[5]),
-        .I1(p_0_in_2[3]),
-        .I2(p_0_in_2[4]),
-        .I3(p_0_in_2[1]),
-        .I4(p_0_in_2[0]),
-        .I5(p_0_in_2[2]),
+       (.I0(p_0_in_1[5]),
+        .I1(p_0_in_1[3]),
+        .I2(p_0_in_1[4]),
+        .I3(p_0_in_1[1]),
+        .I4(p_0_in_1[0]),
+        .I5(p_0_in_1[2]),
         .O(linebuf_reg_r2_0_63_9_11_i_1_n_0));
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     linebuf_reg_r2_0_63_9_11_i_2
-       (.I0(p_0_in_2[4]),
-        .I1(p_0_in_2[1]),
-        .I2(p_0_in_2[0]),
-        .I3(p_0_in_2[2]),
-        .I4(p_0_in_2[3]),
+       (.I0(p_0_in_1[4]),
+        .I1(p_0_in_1[1]),
+        .I2(p_0_in_1[0]),
+        .I3(p_0_in_1[2]),
+        .I4(p_0_in_1[3]),
         .O(linebuf_reg_r2_0_63_9_11_i_2_n_0));
   LUT3 #(
     .INIT(8'h6A)) 
     linebuf_reg_r2_0_63_9_11_i_3
-       (.I0(p_0_in_2[2]),
-        .I1(p_0_in_2[0]),
-        .I2(p_0_in_2[1]),
+       (.I0(p_0_in_1[2]),
+        .I1(p_0_in_1[0]),
+        .I2(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_9_11_i_3_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     linebuf_reg_r2_0_63_9_11_i_4
-       (.I0(p_0_in_2[0]),
-        .I1(p_0_in_2[1]),
+       (.I0(p_0_in_1[0]),
+        .I1(p_0_in_1[1]),
         .O(linebuf_reg_r2_0_63_9_11_i_4_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     linebuf_reg_r2_0_63_9_11_i_5
-       (.I0(p_0_in_2[0]),
+       (.I0(p_0_in_1[0]),
         .O(linebuf_reg_r2_0_63_9_11_i_5_n_0));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
@@ -12610,23 +12591,22 @@ module system_hdmi_0_hdmi_out
         .Q(data2[23]),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hFFFFBAAA)) 
+    .INIT(32'hFFFFEAAA)) 
     \rdata_q[0]_i_1 
        (.I0(\rdata_q[31]_i_4_n_0 ),
-        .I1(araddr_q[2]),
-        .I2(araddr_q[3]),
-        .I3(data2[0]),
+        .I1(araddr_q[3]),
+        .I2(araddr_q[2]),
+        .I3(data3[0]),
         .I4(\rdata_q[0]_i_2_n_0 ),
         .O(\rdata_q[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
-    .INIT(32'hAA00F0CC)) 
+    .INIT(32'h00CCF0AA)) 
     \rdata_q[0]_i_2 
-       (.I0(i2c_sda_low),
-        .I1(p_3_in[0]),
-        .I2(fb_base[0]),
-        .I3(araddr_q[2]),
-        .I4(araddr_q[3]),
+       (.I0(p_3_in[0]),
+        .I1(fb_base[0]),
+        .I2(data2[0]),
+        .I3(araddr_q[3]),
+        .I4(araddr_q[2]),
         .O(\rdata_q[0]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hAAEEFAAA)) 
@@ -12719,13 +12699,13 @@ module system_hdmi_0_hdmi_out
         .I4(araddr_q[2]),
         .O(\rdata_q[19]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFD9C85140)) 
+    .INIT(64'hFFFFFFFFD591C480)) 
     \rdata_q[1]_i_1 
        (.I0(araddr_q[3]),
         .I1(araddr_q[2]),
-        .I2(fb_base[1]),
-        .I3(ctrl_yc_swap),
-        .I4(i2c_scl_low),
+        .I2(data3[1]),
+        .I3(fb_base[1]),
+        .I4(ctrl_yc_swap),
         .I5(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[1]_i_1_n_0 ));
   LUT5 #(
@@ -12764,7 +12744,7 @@ module system_hdmi_0_hdmi_out
         .I3(araddr_q[3]),
         .I4(araddr_q[2]),
         .O(\rdata_q[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT4 #(
     .INIT(16'h0400)) 
     \rdata_q[24]_i_1 
@@ -12773,7 +12753,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(fb_base[24]),
         .O(\rdata_q[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[25]_i_1 
@@ -12782,7 +12762,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[25]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[26]_i_1 
@@ -12791,7 +12771,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[27]_i_1 
@@ -12800,7 +12780,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[27]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[28]_i_1 
@@ -12809,7 +12789,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT4 #(
     .INIT(16'h0400)) 
     \rdata_q[29]_i_1 
@@ -12827,7 +12807,7 @@ module system_hdmi_0_hdmi_out
         .I3(araddr_q[2]),
         .I4(araddr_q[3]),
         .O(\rdata_q[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[30]_i_1 
@@ -12847,7 +12827,7 @@ module system_hdmi_0_hdmi_out
        (.I0(ar_done_reg_n_0),
         .I1(rvalid_q_reg_0),
         .O(rvalid_q0));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[31]_i_3 
@@ -12875,7 +12855,7 @@ module system_hdmi_0_hdmi_out
         .I3(araddr_q[2]),
         .I4(araddr_q[3]),
         .O(\rdata_q[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT4 #(
     .INIT(16'h0400)) 
     \rdata_q[4]_i_1 
@@ -12884,7 +12864,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(fb_base[4]),
         .O(\rdata_q[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[5]_i_1 
@@ -12893,7 +12873,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[6]_i_1 
@@ -12902,7 +12882,7 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT4 #(
     .INIT(16'hFF08)) 
     \rdata_q[7]_i_1 
@@ -12911,25 +12891,23 @@ module system_hdmi_0_hdmi_out
         .I2(araddr_q[3]),
         .I3(\rdata_q[31]_i_4_n_0 ),
         .O(\rdata_q[7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000CAF00000CA00)) 
+  LUT5 #(
+    .INIT(32'h0F0A0808)) 
     \rdata_q[8]_i_1 
-       (.I0(data2[8]),
-        .I1(sda_in),
+       (.I0(araddr_q[3]),
+        .I1(data2[8]),
+        .I2(\rdata_q[31]_i_4_n_0 ),
+        .I3(fb_base[8]),
+        .I4(araddr_q[2]),
+        .O(\rdata_q[8]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFEAFAEA)) 
+    \rdata_q[9]_i_1 
+       (.I0(\rdata_q[31]_i_4_n_0 ),
+        .I1(fb_base[9]),
         .I2(araddr_q[2]),
         .I3(araddr_q[3]),
-        .I4(\rdata_q[31]_i_4_n_0 ),
-        .I5(fb_base[8]),
-        .O(\rdata_q[8]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFEAC86240)) 
-    \rdata_q[9]_i_1 
-       (.I0(araddr_q[2]),
-        .I1(araddr_q[3]),
-        .I2(data2[9]),
-        .I3(fb_base[9]),
-        .I4(scl_in),
-        .I5(\rdata_q[31]_i_4_n_0 ),
+        .I4(data2[9]),
         .O(\rdata_q[9]_i_1_n_0 ));
   FDRE \rdata_q_reg[0] 
        (.C(aclk),
@@ -13211,33 +13189,6 @@ module system_hdmi_0_hdmi_out
         .Q(hdmi_clk),
         .R(NLW_u_clk_fwd_R_UNCONNECTED),
         .S(NLW_u_clk_fwd_S_UNCONNECTED));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  IOBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    u_iobuf_scl
-       (.I(1'b0),
-        .IO(hdmi_scl),
-        .O(scl_in),
-        .T(T0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    u_iobuf_scl_i_1
-       (.I0(i2c_scl_low),
-        .O(T0));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  IOBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    u_iobuf_sda
-       (.I(1'b0),
-        .IO(hdmi_sda),
-        .O(sda_in),
-        .T(u_iobuf_sda_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    u_iobuf_sda_i_1
-       (.I0(i2c_sda_low),
-        .O(u_iobuf_sda_i_1_n_0));
   LUT2 #(
     .INIT(4'h2)) 
     \vcnt[0]_i_1 
@@ -13339,10 +13290,10 @@ module system_hdmi_0_hdmi_out
     .INIT(32'h00200000)) 
     \vcnt[9]_i_2 
        (.I0(\vcnt[9]_i_4_n_0 ),
-        .I1(p_0_in_2[5]),
-        .I2(p_0_in_2[8]),
-        .I3(p_0_in_2[6]),
-        .I4(p_0_in_2[7]),
+        .I1(p_0_in_1[5]),
+        .I2(p_0_in_1[8]),
+        .I3(p_0_in_1[6]),
+        .I4(p_0_in_1[7]),
         .O(vcnt));
   LUT6 #(
     .INIT(64'hFF5D00000000FF5D)) 
@@ -13357,11 +13308,11 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'h4000000000000000)) 
     \vcnt[9]_i_4 
-       (.I0(p_0_in_2[4]),
-        .I1(p_0_in_2[3]),
-        .I2(p_0_in_2[2]),
-        .I3(p_0_in_2[0]),
-        .I4(p_0_in_2[1]),
+       (.I0(p_0_in_1[4]),
+        .I1(p_0_in_1[3]),
+        .I2(p_0_in_1[2]),
+        .I3(p_0_in_1[0]),
+        .I4(p_0_in_1[1]),
         .I5(\hcnt_reg_n_0_[0] ),
         .O(\vcnt[9]_i_4_n_0 ));
   LUT6 #(
@@ -13463,7 +13414,7 @@ module system_hdmi_0_hdmi_out
     .INIT(64'h1F1F10101F101F10)) 
     \vga_q[0]_i_1 
        (.I0(\vga_q[1]_i_2_n_0 ),
-        .I1(p_0_in_2[8]),
+        .I1(p_0_in_1[8]),
         .I2(tp_p2),
         .I3(\lb_rdata_reg_n_0_[4] ),
         .I4(\lb_rdata_reg_n_0_[20] ),
@@ -13472,19 +13423,19 @@ module system_hdmi_0_hdmi_out
   LUT6 #(
     .INIT(64'hEFE0EFEFEFE0E0E0)) 
     \vga_q[1]_i_1 
-       (.I0(p_0_in_2[8]),
+       (.I0(p_0_in_1[8]),
         .I1(\vga_q[1]_i_2_n_0 ),
         .I2(tp_p2),
         .I3(\lb_rdata_reg_n_0_[21] ),
         .I4(\hcnt_reg_n_0_[0] ),
         .I5(\lb_rdata_reg_n_0_[5] ),
         .O(\vga_q[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \vga_q[1]_i_2 
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[7]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[7]),
         .O(\vga_q[1]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00FFB8B80000B8B8)) 
@@ -13492,32 +13443,32 @@ module system_hdmi_0_hdmi_out
        (.I0(\lb_rdata_reg_n_0_[22] ),
         .I1(\hcnt_reg_n_0_[0] ),
         .I2(\lb_rdata_reg_n_0_[6] ),
-        .I3(p_0_in_2[8]),
+        .I3(p_0_in_1[8]),
         .I4(tp_p2),
         .I5(\vga_q[2]_i_2_n_0 ),
         .O(\vga_q[2]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'hB)) 
     \vga_q[2]_i_2 
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[7]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[7]),
         .O(\vga_q[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h3737370404043704)) 
     \vga_q[3]_i_1 
        (.I0(\vga_q[3]_i_2_n_0 ),
         .I1(tp_p2),
-        .I2(p_0_in_2[8]),
+        .I2(p_0_in_1[8]),
         .I3(\lb_rdata_reg_n_0_[7] ),
         .I4(\hcnt_reg_n_0_[0] ),
         .I5(\lb_rdata_reg_n_0_[23] ),
         .O(\vga_q[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \vga_q[3]_i_2 
-       (.I0(p_0_in_2[6]),
-        .I1(p_0_in_2[7]),
+       (.I0(p_0_in_1[6]),
+        .I1(p_0_in_1[7]),
         .O(\vga_q[3]_i_2_n_0 ));
   FDRE \vga_q_reg[0] 
        (.C(pixel_clk),

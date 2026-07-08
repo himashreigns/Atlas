@@ -19,8 +19,9 @@
 //               [4]=W1: clear sticky status
 //   0x04 FB     framebuffer byte base address (default 0x10100000)
 //   0x08 STATUS [0]=fetch overrun (sticky)  [15:8]=frame counter (pixel dom.)
-//   0x0C I2C    write: [0]=sda_drive_low [1]=scl_drive_low
-//               read : [8]=sda_in [9]=scl_in (open-drain bit-bang)
+//   0x0C I2C    legacy bit-bang register, pads removed — the ADV7511 I2C now
+//               lives on a real axi_iic controller in the BD. Writes are
+//               accepted, reads report the bus idle ([8]=sda=1 [9]=scl=1).
 // =============================================================================
 
 module hdmi_out #(
@@ -81,8 +82,6 @@ module hdmi_out #(
     output reg         hdmi_de,
     output reg         hdmi_hsync,
     output reg         hdmi_vsync,
-    inout  wire        hdmi_scl,      // I2C bit-bang, open-drain
-    inout  wire        hdmi_sda,
 
     // ---- VGA (grayscale fallback) -------------------------------------------
     output wire [3:0]  vga_r,
@@ -229,19 +228,11 @@ module hdmi_out #(
     assign s_axi_lite_rresp   = 2'b00;
     assign s_axi_lite_rvalid  = rvalid_q;
 
-    // I2C open-drain pads. EXPLICIT IOBUFs: the BD module-reference flow
-    // synthesized the naked `assign pad = en ? 1'b0 : 1'bz` into plain OBUFs
-    // (read path silently discarded — pads always read 0). A hand-placed
-    // primitive keeps the bidirectional buffer.
-`ifdef SIM_NO_ODDR
-    assign hdmi_scl = i2c_scl_low ? 1'b0 : 1'bz;
-    assign hdmi_sda = i2c_sda_low ? 1'b0 : 1'bz;
-    assign scl_in = (hdmi_scl === 1'b0) ? 1'b0 : 1'b1;
-    assign sda_in = (hdmi_sda === 1'b0) ? 1'b0 : 1'b1;
-`else
-    IOBUF u_iobuf_scl (.IO(hdmi_scl), .O(scl_in), .I(1'b0), .T(~i2c_scl_low));
-    IOBUF u_iobuf_sda (.IO(hdmi_sda), .O(sda_in), .I(1'b0), .T(~i2c_sda_low));
-`endif
+    // I2C pads removed: the ADV7511 bus is owned by an axi_iic controller in
+    // the block design (AA18/Y16). The 0x0C register is kept for software
+    // back-compat and reads as bus-idle.
+    assign scl_in = 1'b1;
+    assign sda_in = 1'b1;
 
     // =========================================================================
     // Pixel-domain timing generator

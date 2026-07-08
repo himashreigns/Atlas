@@ -265,6 +265,24 @@
                 "SV": "xilinx.com:module_ref:hdmi_out:1.0",
                 "TM": "both",
                 "TU": "register"
+            },
+            "V7": {
+                "VT": "AC",
+                "BA": "0x43C20000",
+                "HA": "0x43C2FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/ps7",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_iic_hdmi_Reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/axi_iic_hdmi",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_iic:2.1",
+                "TM": "both",
+                "TU": "register"
             }
         },
         "edges": [
@@ -293,6 +311,11 @@
             },
             {
                 "src": "V6",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V7",
                 "trg": "V2",
                 "EH": "2"
             }

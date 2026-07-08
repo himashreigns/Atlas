@@ -28,10 +28,10 @@ set_property -dict {PACKAGE_PIN V14  IOSTANDARD LVCMOS33} [get_ports {hdmi_d[14]
 set_property -dict {PACKAGE_PIN V13  IOSTANDARD LVCMOS33} [get_ports {hdmi_d[15]}]
 
 # ADV7511 I2C = AA18/Y16 (ADI mixer downstream ch1; R7/U7 is the FMC I2C and
-# AB4/AB5 the audio codec). The original dead-read was the missing IOBUF,
-# not the pin choice.
-set_property -dict {PACKAGE_PIN AA18 IOSTANDARD LVCMOS33} [get_ports hdmi_scl]
-set_property -dict {PACKAGE_PIN Y16  IOSTANDARD LVCMOS33} [get_ports hdmi_sda]
+# AB4/AB5 the audio codec). Driven by an axi_iic hardware master; the BD
+# wrapper names the pads <intf>_scl_io / <intf>_sda_io and inserts IOBUFs.
+set_property -dict {PACKAGE_PIN AA18 IOSTANDARD LVCMOS33} [get_ports hdmi_iic_scl_io]
+set_property -dict {PACKAGE_PIN Y16  IOSTANDARD LVCMOS33} [get_ports hdmi_iic_sda_io]
 
 # ---- VGA (resistor DAC, grayscale fallback) -----------------------------------
 set_property -dict {PACKAGE_PIN V20  IOSTANDARD LVCMOS33} [get_ports {vga_r[0]}]
@@ -60,10 +60,10 @@ set_clock_groups -asynchronous \
 # tools chase IO timing on them.
 set_false_path -to [get_ports {hdmi_d[*] hdmi_de hdmi_hsync hdmi_vsync}]
 set_false_path -to [get_ports {vga_r[*] vga_g[*] vga_b[*] vga_hsync vga_vsync}]
-set_false_path -to [get_ports {hdmi_scl hdmi_sda}]
-set_false_path -from [get_ports {hdmi_scl hdmi_sda}]
+set_false_path -to [get_ports {hdmi_iic_scl_io hdmi_iic_sda_io}]
+set_false_path -from [get_ports {hdmi_iic_scl_io hdmi_iic_sda_io}]
 
 # Internal pull-ups for the ADV7511 I2C — belt and braces in case the board
 # pull-ups are absent/weak on HD-SCL/HD-SDA.
-set_property PULLUP true [get_ports hdmi_scl]
-set_property PULLUP true [get_ports hdmi_sda]
+set_property PULLUP true [get_ports hdmi_iic_scl_io]
+set_property PULLUP true [get_ports hdmi_iic_sda_io]

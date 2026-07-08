@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Jul  8 16:37:19 2026
-# Process ID         : 134703
+# Start of session at: Wed Jul  8 19:48:29 2026
+# Process ID         : 26483
 # Current directory  : /home/chathupa/Desktop/dnn_opt
 # Command line       : vivado -mode batch -source scripts/build_zynq_hdmi.tcl
 # Log file           : /home/chathupa/Desktop/dnn_opt/vivado.log
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
-# CPU Frequency      : 3500.080 MHz
+# CPU Frequency      : 3499.890 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16589 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20884 MB
-# Available Virtual  : 17350 MB
+# Available Virtual  : 17286 MB
 #-----------------------------------------------------------
 source scripts/build_zynq_hdmi.tcl

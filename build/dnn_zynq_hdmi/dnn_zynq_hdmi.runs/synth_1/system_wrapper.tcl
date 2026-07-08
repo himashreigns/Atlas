@@ -80,7 +80,10 @@ read_verilog -library xil_defaultlib /home/chathupa/Desktop/dnn_opt/build/dnn_zy
 add_files /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.srcs/sources_1/bd/system/system.bd
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0.xdc]
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_pc_hdmi_0/system_axi_pc_hdmi_0_ooc.xdc]

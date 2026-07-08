@@ -20,11 +20,17 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_hdmi
 # IP: bd/system/ip/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_ic_ctrl_imp_xbar_0 || ORIG_REF_NAME==system_axi_ic_ctrl_imp_xbar_0} -quiet] -quiet
 
+# IP: bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_ic_ctrl_imp_auto_pc_1 || ORIG_REF_NAME==system_axi_ic_ctrl_imp_auto_pc_1} -quiet] -quiet
+
 # IP: bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_ic_ctrl_imp_auto_pc_0 || ORIG_REF_NAME==system_axi_ic_ctrl_imp_auto_pc_0} -quiet] -quiet
 
 # IP: bd/system/ip/system_axi_ic_ctrl_0/system_axi_ic_ctrl_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_ic_ctrl_0 || ORIG_REF_NAME==system_axi_ic_ctrl_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_iic_hdmi_0 || ORIG_REF_NAME==system_axi_iic_hdmi_0} -quiet] -quiet
 
 # IP: bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_axi_ic_mem_imp_auto_pc_0 || ORIG_REF_NAME==system_axi_ic_mem_imp_auto_pc_0} -quiet] -quiet

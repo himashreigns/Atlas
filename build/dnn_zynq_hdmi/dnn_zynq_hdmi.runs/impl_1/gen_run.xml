@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1783509086">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1783520641">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="system_wrapper_postroute_physopted.rqs"/>
@@ -298,14 +298,16 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_ctrl_imp_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_accel_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_ctrl_imp_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_pc_hdmi_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_vid_imp_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_mem_imp_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_iic_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_ctrl_imp_auto_pc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="system_rst_sys_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_ps7_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_mem_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_ctrl_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_ic_vid_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_pc_hdmi_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_pc_ctrl_0"/>
 </GenRun>

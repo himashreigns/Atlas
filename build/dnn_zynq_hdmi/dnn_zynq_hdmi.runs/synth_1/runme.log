@@ -7,7 +7,7 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed Jul  8 16:40:44 2026
+  **** Start of session at: Wed Jul  8 19:52:59 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -22,81 +22,95 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 141936
+INFO: [Synth 8-7075] Helper process launched with PID 32704
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2319.543 ; gain = 481.188 ; free physical = 6791 ; free virtual = 14258
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2320.852 ; gain = 481.594 ; free physical = 4865 ; free virtual = 13946
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/hdl/system_wrapper.v:13]
-INFO: [Synth 8-6157] synthesizing module 'system' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1300]
-INFO: [Synth 8-6157] synthesizing module 'system_accel_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_accel_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_hp_wid' of module 'system_accel_0' is unconnected for instance 'accel' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1674]
-WARNING: [Synth 8-7023] instance 'accel' of module 'system_accel_0' has 61 connections declared, but only 60 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1674]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2311]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [/home/chathupa/Desktop/AMD/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6157] synthesizing module 'system' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1542]
+INFO: [Synth 8-6157] synthesizing module 'system_accel_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_accel_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_hp_wid' of module 'system_accel_0' is unconnected for instance 'accel' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1945]
+WARNING: [Synth 8-7023] instance 'accel' of module 'system_accel_0' has 61 connections declared, but only 60 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1945]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2625]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_9IKH7F' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_9IKH7F' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:13]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_12VSN7U' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:260]
 INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_12VSN7U' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:260]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_61HG22' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:662]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'system_axi_ic_ctrl_imp_auto_pc_0' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:900]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'system_axi_ic_ctrl_imp_auto_pc_0' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:900]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_axi_ic_ctrl_imp_auto_pc_0' has 79 connections declared, but only 77 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:900]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_61HG22' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:662]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_xbar_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_xbar_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2311]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3122]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_PTFNND' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:980]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_PTFNND' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:980]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3122]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_vid_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3448]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1G0JM81' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:507]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_vid_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_vid_imp_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_vid_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_ic_vid_imp_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1G0JM81' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:507]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_vid_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3448]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_pc_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_pc_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_pc_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_pc_hdmi_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_pc_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_axi_pc_hdmi_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_hdmi_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_hdmi_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_ps7_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_AWREADY' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_BVALID' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WREADY' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_BRESP' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-WARNING: [Synth 8-7023] instance 'ps7' of module 'system_ps7_0' has 165 connections declared, but only 144 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2157]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_sys_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_sys_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-141829-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2302]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2302]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2302]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2302]
-WARNING: [Synth 8-7023] instance 'rst_sys' of module 'system_rst_sys_0' has 10 connections declared, but only 6 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2302]
-INFO: [Synth 8-6155] done synthesizing module 'system' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1300]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1A1BVY0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:507]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_axi_ic_ctrl_imp_auto_pc_0' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:688]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_axi_ic_ctrl_imp_auto_pc_0' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:688]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_axi_ic_ctrl_imp_auto_pc_0' has 60 connections declared, but only 58 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:688]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1A1BVY0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:507]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_61HG22' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:904]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_1' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_auto_pc_1' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_auto_pc_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'system_axi_ic_ctrl_imp_auto_pc_1' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1142]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'system_axi_ic_ctrl_imp_auto_pc_1' is unconnected for instance 'auto_pc' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1142]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_axi_ic_ctrl_imp_auto_pc_1' has 79 connections declared, but only 77 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1142]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_61HG22' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:904]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_imp_xbar_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_imp_xbar_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_ctrl_imp_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2625]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3591]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_PTFNND' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1222]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_PTFNND' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1222]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3591]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_vid_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3917]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1G0JM81' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:749]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_vid_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_vid_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_vid_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_ic_vid_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1G0JM81' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:749]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_vid_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:3917]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_iic_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_iic_hdmi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_iic_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_iic_hdmi_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'iic2intc_irpt' of module 'system_axi_iic_hdmi_0' is unconnected for instance 'axi_iic_hdmi' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2273]
+WARNING: [Synth 8-7071] port 'gpo' of module 'system_axi_iic_hdmi_0' is unconnected for instance 'axi_iic_hdmi' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2273]
+WARNING: [Synth 8-7023] instance 'axi_iic_hdmi' of module 'system_axi_iic_hdmi_0' has 27 connections declared, but only 25 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2273]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_pc_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_pc_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_pc_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_pc_hdmi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_pc_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_axi_pc_hdmi_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_hdmi_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_hdmi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_hdmi_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_hdmi_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_ps7_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_AWREADY' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_BVALID' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WREADY' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_BRESP' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+WARNING: [Synth 8-7023] instance 'ps7' of module 'system_ps7_0' has 165 connections declared, but only 144 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2471]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_sys_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_sys_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/.Xil/Vivado-32615-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2616]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2616]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2616]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2616]
+WARNING: [Synth 8-7023] instance 'rst_sys' of module 'system_rst_sys_0' has 10 connections declared, but only 6 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:2616]
+INFO: [Synth 8-6155] done synthesizing module 'system' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/synth/system.v:1542]
 INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/hdl/system_wrapper.v:13]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_1G0JM81 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_1G0JM81 is either unconnected or has no load
@@ -111,6 +125,8 @@ WARNING: [Synth 8-7129] Port ACLK in module system_axi_ic_mem_0 is either unconn
 WARNING: [Synth 8-7129] Port ARESETN in module system_axi_ic_mem_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_61HG22 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_61HG22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module m02_couplers_imp_1A1BVY0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module m02_couplers_imp_1A1BVY0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ACLK in module m01_couplers_imp_12VSN7U is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module m01_couplers_imp_12VSN7U is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_ACLK in module m01_couplers_imp_12VSN7U is either unconnected or has no load
@@ -123,21 +139,25 @@ WARNING: [Synth 8-7129] Port M00_ACLK in module system_axi_ic_ctrl_0 is either u
 WARNING: [Synth 8-7129] Port M00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M01_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M01_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M02_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M02_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2417.480 ; gain = 579.125 ; free physical = 6694 ; free virtual = 14160
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2418.820 ; gain = 579.562 ; free physical = 4758 ; free virtual = 13836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2417.480 ; gain = 579.125 ; free physical = 6694 ; free virtual = 14160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2421.789 ; gain = 582.531 ; free physical = 4775 ; free virtual = 13853
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2417.480 ; gain = 579.125 ; free physical = 6694 ; free virtual = 14160
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2421.789 ; gain = 582.531 ; free physical = 4775 ; free virtual = 13853
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2417.480 ; gain = 0.000 ; free physical = 6694 ; free virtual = 14160
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2424.758 ; gain = 0.000 ; free physical = 4775 ; free virtual = 13854
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -150,8 +170,12 @@ Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hd
 Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_hdmi_0/system_hdmi_0/system_hdmi_0_in_context.xdc] for cell 'system_i/hdmi'
 Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/xbar'
 Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0/system_axi_ic_ctrl_imp_xbar_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/xbar'
-Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/s00_couplers/auto_pc'
-Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/s00_couplers/auto_pc'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1_in_context.xdc] for cell 'system_i/axi_ic_ctrl/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1/system_axi_ic_ctrl_imp_auto_pc_1_in_context.xdc] for cell 'system_i/axi_ic_ctrl/s00_couplers/auto_pc'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/m02_couplers/auto_pc'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0/system_axi_ic_ctrl_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_ctrl/m02_couplers/auto_pc'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0_in_context.xdc] for cell 'system_i/axi_iic_hdmi'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0/system_axi_iic_hdmi_0_in_context.xdc] for cell 'system_i/axi_iic_hdmi'
 Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_mem/s00_couplers/auto_pc'
 Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_mem/s00_couplers/auto_pc'
 Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0/system_axi_pc_hdmi_0_in_context.xdc] for cell 'system_i/axi_pc_ctrl'
@@ -187,29 +211,30 @@ Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hd
 Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.133 ; gain = 0.000 ; free physical = 6709 ; free virtual = 14176
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2472.410 ; gain = 0.000 ; free physical = 4811 ; free virtual = 13902
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.168 ; gain = 0.000 ; free physical = 6709 ; free virtual = 14176
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2472.445 ; gain = 0.000 ; free physical = 4811 ; free virtual = 13902
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.168 ; gain = 626.812 ; free physical = 6734 ; free virtual = 14201
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2472.445 ; gain = 633.188 ; free physical = 4872 ; free virtual = 13977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2473.137 ; gain = 634.781 ; free physical = 6734 ; free virtual = 14201
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2480.414 ; gain = 641.156 ; free physical = 4872 ; free virtual = 13977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2473.137 ; gain = 634.781 ; free physical = 6733 ; free virtual = 14200
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2480.414 ; gain = 641.156 ; free physical = 4884 ; free virtual = 13990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2473.137 ; gain = 634.781 ; free physical = 6731 ; free virtual = 14199
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2480.414 ; gain = 641.156 ; free physical = 4889 ; free virtual = 13991
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -245,28 +270,30 @@ WARNING: [Synth 8-7129] Port M00_ACLK in module system_axi_ic_ctrl_0 is either u
 WARNING: [Synth 8-7129] Port M00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M01_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M01_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M02_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M02_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2473.137 ; gain = 634.781 ; free physical = 6739 ; free virtual = 14219
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2480.414 ; gain = 641.156 ; free physical = 4892 ; free virtual = 14004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2585.137 ; gain = 746.781 ; free physical = 6667 ; free virtual = 14140
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2586.414 ; gain = 747.156 ; free physical = 4823 ; free virtual = 13943
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2586.137 ; gain = 747.781 ; free physical = 6667 ; free virtual = 14140
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2587.414 ; gain = 748.156 ; free physical = 4823 ; free virtual = 13943
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2596.145 ; gain = 757.789 ; free physical = 6651 ; free virtual = 14124
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2598.430 ; gain = 759.172 ; free physical = 4814 ; free virtual = 13934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -284,37 +311,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4655 ; free virtual = 13781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4655 ; free virtual = 13781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4655 ; free virtual = 13781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4655 ; free virtual = 13781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4655 ; free virtual = 13781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4647 ; free virtual = 13773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -327,13 +354,15 @@ Report BlackBoxes:
 |1     |system_accel_0                   |         1|
 |2     |system_axi_ic_ctrl_imp_xbar_0    |         1|
 |3     |system_axi_ic_ctrl_imp_auto_pc_0 |         1|
-|4     |system_axi_ic_mem_imp_auto_pc_0  |         1|
-|5     |system_axi_ic_vid_imp_auto_pc_0  |         1|
-|6     |system_axi_pc_ctrl_0             |         1|
-|7     |system_axi_pc_hdmi_0             |         1|
-|8     |system_hdmi_0                    |         1|
-|9     |system_ps7_0                     |         1|
-|10    |system_rst_sys_0                 |         1|
+|4     |system_axi_ic_ctrl_imp_auto_pc_1 |         1|
+|5     |system_axi_ic_mem_imp_auto_pc_0  |         1|
+|6     |system_axi_ic_vid_imp_auto_pc_0  |         1|
+|7     |system_axi_iic_hdmi_0            |         1|
+|8     |system_axi_pc_ctrl_0             |         1|
+|9     |system_axi_pc_hdmi_0             |         1|
+|10    |system_hdmi_0                    |         1|
+|11    |system_ps7_0                     |         1|
+|12    |system_rst_sys_0                 |         1|
 +------+---------------------------------+----------+
 
 Report Cell Usage: 
@@ -341,40 +370,45 @@ Report Cell Usage:
 |      |Cell                           |Count |
 +------+-------------------------------+------+
 |1     |system_accel                   |     1|
-|2     |system_axi_ic_ctrl_imp_auto_pc |     1|
-|3     |system_axi_ic_ctrl_imp_xbar    |     1|
-|4     |system_axi_ic_mem_imp_auto_pc  |     1|
-|5     |system_axi_ic_vid_imp_auto_pc  |     1|
-|6     |system_axi_pc_ctrl             |     1|
-|7     |system_axi_pc_hdmi             |     1|
-|8     |system_hdmi                    |     1|
-|9     |system_ps7                     |     1|
-|10    |system_rst_sys                 |     1|
-|11    |OBUF                           |    38|
+|2     |system_axi_ic_ctrl_imp_auto_pc |     2|
+|4     |system_axi_ic_ctrl_imp_xbar    |     1|
+|5     |system_axi_ic_mem_imp_auto_pc  |     1|
+|6     |system_axi_ic_vid_imp_auto_pc  |     1|
+|7     |system_axi_iic_hdmi            |     1|
+|8     |system_axi_pc_ctrl             |     1|
+|9     |system_axi_pc_hdmi             |     1|
+|10    |system_hdmi                    |     1|
+|11    |system_ps7                     |     1|
+|12    |system_rst_sys                 |     1|
+|13    |IOBUF                          |     2|
+|14    |OBUF                           |    38|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2782.957 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.242 ; gain = 944.984 ; free physical = 4647 ; free virtual = 13773
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2782.957 ; gain = 896.914 ; free physical = 6501 ; free virtual = 13974
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2782.965 ; gain = 944.602 ; free physical = 6501 ; free virtual = 13974
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2784.242 ; gain = 894.328 ; free physical = 4647 ; free virtual = 13773
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.250 ; gain = 944.984 ; free physical = 4646 ; free virtual = 13773
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2782.965 ; gain = 0.000 ; free physical = 6587 ; free virtual = 14060
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2784.250 ; gain = 0.000 ; free physical = 4808 ; free virtual = 13935
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2782.965 ; gain = 0.000 ; free physical = 6610 ; free virtual = 14083
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.250 ; gain = 0.000 ; free physical = 4814 ; free virtual = 13944
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Synth Design complete | Checksum: 4fbb6c8b
+Synth Design complete | Checksum: c80c5890
 INFO: [Common 17-83] Releasing license: Synthesis
-59 Infos, 79 Warnings, 4 Critical Warnings and 0 Errors encountered.
+71 Infos, 91 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 2782.992 ; gain = 1162.324 ; free physical = 6611 ; free virtual = 14084
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2038.848; main = 1926.097; forked = 283.347
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3634.676; main = 2782.961; forked = 986.527
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2784.277 ; gain = 1163.707 ; free physical = 4811 ; free virtual = 13951
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1927.476; main = 1927.476; forked = 283.441
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3492.941; main = 2784.246; forked = 986.523
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2806.969 ; gain = 0.000 ; free physical = 6610 ; free virtual = 14083
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2808.254 ; gain = 0.000 ; free physical = 4811 ; free virtual = 13951
 INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 16:41:23 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 19:53:45 2026...
