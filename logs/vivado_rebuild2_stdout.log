@@ -1,0 +1,1415 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Jun 27 23:55:11 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source scripts/rebuild_zynq_system.tcl
+# set proj_dir  "build/dnn_zynq_yolo"
+# set proj_name "dnn_zynq_yolo"
+# set bd_name   "system"
+# open_project ${proj_dir}/${proj_name}.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.7 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.7/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.5 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.5/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.1/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385_1:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385_2/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.0/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.1 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.1/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.5 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.5/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/chathupa/Desktop/AMD/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Project 1-5713] Board part 'digilentinc.com:zedboard:part0:1.1' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/chathupa/Desktop/AMD/2025.2/data/ip'.
+# reset_run impl_1
+# reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.srcs/utils_1/imports/synth_1/system_wrapper.dcp with file /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/system_wrapper.dcp
+# foreach r [get_runs *_synth_1] {
+#     if {$r ne "synth_1"} {
+#         puts "Resetting OOC run: $r"
+#         reset_run $r
+#     }
+# }
+Resetting OOC run: system_ps7_0_synth_1
+Resetting OOC run: system_rst_sys_0_synth_1
+Resetting OOC run: system_accel_0_synth_1
+Resetting OOC run: system_axi_pc_ctrl_0_synth_1
+Resetting OOC run: system_axi_ic_mem_imp_auto_pc_0_synth_1
+# launch_runs synth_1 -jobs 4
+[Sat Jun 27 23:55:22 2026] Launched system_ps7_0_synth_1, system_rst_sys_0_synth_1, system_accel_0_synth_1, system_axi_pc_ctrl_0_synth_1, system_axi_ic_mem_imp_auto_pc_0_synth_1...
+Run output will be captured here:
+system_ps7_0_synth_1: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_ps7_0_synth_1/runme.log
+system_rst_sys_0_synth_1: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_rst_sys_0_synth_1/runme.log
+system_accel_0_synth_1: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_accel_0_synth_1/runme.log
+system_axi_pc_ctrl_0_synth_1: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_axi_pc_ctrl_0_synth_1/runme.log
+system_axi_ic_mem_imp_auto_pc_0_synth_1: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/runme.log
+[Sat Jun 27 23:55:22 2026] Launched synth_1...
+Run output will be captured here: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Jun 27 23:55:22 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log system_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Jun 27 23:56:20 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/chathupa/Desktop/AMD/2025.2/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.srcs/utils_1/imports/synth_1/system_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.srcs/utils_1/imports/synth_1/system_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top system_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 90418
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2318.188 ; gain = 484.156 ; free physical = 6149 ; free virtual = 15037
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/hdl/system_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'system' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:574]
+INFO: [Synth 8-6157] synthesizing module 'system_accel_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_accel_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_accel_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_hp_wid' of module 'system_accel_0' is unconnected for instance 'accel' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:818]
+WARNING: [Synth 8-7023] instance 'accel' of module 'system_accel_0' has 61 connections declared, but only 60 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:818]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1221]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_61HG22' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:13]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_61HG22' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1221]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1551]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_PTFNND' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:254]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_axi_ic_mem_imp_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_PTFNND' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:254]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1551]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_pc_ctrl_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_pc_ctrl_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_axi_pc_ctrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_ps7_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_ps7_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_ps7_0' is unconnected for instance 'ps7' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+WARNING: [Synth 8-7023] instance 'ps7' of module 'system_ps7_0' has 119 connections declared, but only 107 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1104]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_sys_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_sys_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/.Xil/Vivado-90342-chathupa-Nitro-AN515-55/realtime/system_rst_sys_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1212]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1212]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1212]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_sys_0' is unconnected for instance 'rst_sys' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1212]
+WARNING: [Synth 8-7023] instance 'rst_sys' of module 'system_rst_sys_0' has 10 connections declared, but only 6 given [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:1212]
+INFO: [Synth 8-6155] done synthesizing module 'system' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/synth/system.v:574]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/hdl/system_wrapper.v:13]
+WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_PTFNND is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_PTFNND is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_arlock[1] in module s00_couplers_imp_PTFNND is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_awlock[1] in module s00_couplers_imp_PTFNND is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_61HG22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_61HG22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ACLK in module s00_couplers_imp_61HG22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module s00_couplers_imp_61HG22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2410.156 ; gain = 576.125 ; free physical = 6048 ; free virtual = 14937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2410.156 ; gain = 576.125 ; free physical = 6048 ; free virtual = 14937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2410.156 ; gain = 576.125 ; free physical = 6048 ; free virtual = 14937
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2410.156 ; gain = 0.000 ; free physical = 6048 ; free virtual = 14937
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0/system_ps7_0_in_context.xdc] for cell 'system_i/ps7'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0/system_ps7_0_in_context.xdc] for cell 'system_i/ps7'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_accel_0/system_accel_0/system_accel_0_in_context.xdc] for cell 'system_i/accel'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_accel_0/system_accel_0/system_accel_0_in_context.xdc] for cell 'system_i/accel'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_mem/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_in_context.xdc] for cell 'system_i/axi_ic_mem/s00_couplers/auto_pc'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0_in_context.xdc] for cell 'system_i/axi_pc_ctrl'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0_in_context.xdc] for cell 'system_i/axi_pc_ctrl'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_rst_sys_0/system_rst_sys_0/system_rst_sys_0_in_context.xdc] for cell 'system_i/rst_sys'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_rst_sys_0/system_rst_sys_0/system_rst_sys_0_in_context.xdc] for cell 'system_i/rst_sys'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard_ps.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard_ps.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/chathupa/Desktop/dnn_opt/xdc/zedboard_ps.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2457.809 ; gain = 0.000 ; free physical = 6069 ; free virtual = 14952
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2457.844 ; gain = 0.000 ; free physical = 6069 ; free virtual = 14952
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2457.844 ; gain = 623.812 ; free physical = 6105 ; free virtual = 14989
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.812 ; gain = 631.781 ; free physical = 6105 ; free virtual = 14989
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.812 ; gain = 631.781 ; free physical = 6123 ; free virtual = 15006
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2465.812 ; gain = 631.781 ; free physical = 6123 ; free virtual = 15007
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port ACLK in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_AXI_arlock[1] in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_AXI_awlock[1] in module system_axi_ic_mem_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ACLK in module system_axi_ic_ctrl_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_ARESETN in module system_axi_ic_ctrl_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2465.812 ; gain = 631.781 ; free physical = 6138 ; free virtual = 15027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2574.812 ; gain = 740.781 ; free physical = 6083 ; free virtual = 14972
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2575.812 ; gain = 741.781 ; free physical = 6083 ; free virtual = 14972
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2585.828 ; gain = 751.797 ; free physical = 6075 ; free virtual = 14964
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |system_accel_0                  |         1|
+|2     |system_axi_ic_mem_imp_auto_pc_0 |         1|
+|3     |system_axi_pc_ctrl_0            |         1|
+|4     |system_ps7_0                    |         1|
+|5     |system_rst_sys_0                |         1|
++------+--------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |system_accel                  |     1|
+|2     |system_axi_ic_mem_imp_auto_pc |     1|
+|3     |system_axi_pc_ctrl            |     1|
+|4     |system_ps7                    |     1|
+|5     |system_rst_sys                |     1|
+|6     |OBUF                          |     4|
++------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.641 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2771.641 ; gain = 889.922 ; free physical = 5892 ; free virtual = 14787
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2771.648 ; gain = 937.609 ; free physical = 5892 ; free virtual = 14787
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2771.648 ; gain = 0.000 ; free physical = 5892 ; free virtual = 14787
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2771.648 ; gain = 0.000 ; free physical = 6026 ; free virtual = 14916
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 583b40b9
+INFO: [Common 17-83] Releasing license: Synthesis
+44 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 2771.676 ; gain = 1140.457 ; free physical = 6026 ; free virtual = 14915
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2090.915; main = 1914.859; forked = 283.136
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3695.047; main = 2771.645; forked = 994.215
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2795.652 ; gain = 0.000 ; free physical = 6026 ; free virtual = 14915
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/synth_1/system_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 27 23:56:57 2026...
+[Sat Jun 27 23:56:57 2026] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:04:08 ; elapsed = 00:01:35 . Memory (MB): peak = 1747.344 ; gain = 0.000 ; free physical = 7661 ; free virtual = 16544
+# launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Jun 27 23:57:00 2026] Launched impl_1...
+Run output will be captured here: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Sat Jun 27 23:57:00 2026] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log system_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source system_wrapper.tcl -notrace
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Jun 27 23:57:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/chathupa/Desktop/AMD/2025.2/data/ip'.
+Command: link_design -top system_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_accel_0/system_accel_0.dcp' for cell 'system_i/accel'
+INFO: [Project 1-454] Reading design checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_pc_ctrl_0/system_axi_pc_ctrl_0.dcp' for cell 'system_i/axi_pc_ctrl'
+INFO: [Project 1-454] Reading design checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0.dcp' for cell 'system_i/ps7'
+INFO: [Project 1-454] Reading design checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_rst_sys_0/system_rst_sys_0.dcp' for cell 'system_i/rst_sys'
+INFO: [Project 1-454] Reading design checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0.dcp' for cell 'system_i/axi_ic_mem/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1875.703 ; gain = 0.000 ; free physical = 6947 ; free virtual = 15836
+INFO: [Netlist 29-17] Analyzing 217 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0.xdc] for cell 'system_i/ps7/inst'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_ps7_0/system_ps7_0.xdc] for cell 'system_i/ps7/inst'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_rst_sys_0/system_rst_sys_0_board.xdc] for cell 'system_i/rst_sys/U0'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.gen/sources_1/bd/system/ip/system_rst_sys_0/system_rst_sys_0_board.xdc] for cell 'system_i/rst_sys/U0'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard_ps.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/xdc/zedboard_ps.xdc]
+INFO: [Project 1-1714] 5 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2602.980 ; gain = 0.000 ; free physical = 6407 ; free virtual = 15290
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+17 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2603.016 ; gain = 972.797 ; free physical = 6407 ; free virtual = 15290
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.49 . Memory (MB): peak = 2603.016 ; gain = 0.000 ; free physical = 6378 ; free virtual = 15262
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2603.016 ; gain = 0.000 ; free physical = 6378 ; free virtual = 15262
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+Phase 1 Initialization | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+Phase 2 Timer Update And Timing Data Collection | Checksum: 21196f843
+
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14887
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 4 inverter(s) to 8 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: fa3146aa
+
+Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14881
+Retarget | Checksum: fa3146aa
+INFO: [Opt 31-389] Phase Retarget created 9 cells and removed 60 cells
+INFO: [Opt 31-1021] In phase Retarget, 31 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 1d25cfbea
+
+Time (s): cpu = 00:00:00.72 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14881
+Constant propagation | Checksum: 1d25cfbea
+INFO: [Opt 31-389] Phase Constant propagation created 20 cells and removed 421 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 31 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5997 ; free virtual = 14881
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5999 ; free virtual = 14882
+Phase 5 Sweep | Checksum: 128098624
+
+Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.56 . Memory (MB): peak = 2951.793 ; gain = 0.000 ; free physical = 5999 ; free virtual = 14882
+Sweep | Checksum: 128098624
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 285 cells
+INFO: [Opt 31-1021] In phase Sweep, 107 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 128098624
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.59 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+BUFG optimization | Checksum: 128098624
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 128098624
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.6 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+Shift Register Optimization | Checksum: 128098624
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 130fc9807
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+Post Processing Netlist | Checksum: 130fc9807
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 37 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: f93997f4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2983.809 ; gain = 0.000 ; free physical = 5999 ; free virtual = 14882
+Phase 9.2 Verifying Netlist Connectivity | Checksum: f93997f4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+Phase 9 Finalization | Checksum: f93997f4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               9  |              60  |                                             31  |
+|  Constant propagation         |              20  |             421  |                                             31  |
+|  Sweep                        |               0  |             285  |                                            107  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             37  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: f93997f4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2983.809 ; gain = 32.016 ; free physical = 5999 ; free virtual = 14882
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 12 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 3 newly gated: 0 Total Ports: 24
+Ending PowerOpt Patch Enables Task | Checksum: 12d12199d
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 6218 ; free virtual = 15102
+Ending Power Optimization Task | Checksum: 12d12199d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3151.859 ; gain = 168.051 ; free physical = 6218 ; free virtual = 15102
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 1173e9516
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5919 ; free virtual = 14809
+Ending Final Cleanup Task | Checksum: 1173e9516
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5921 ; free virtual = 14811
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5921 ; free virtual = 14811
+INFO: [Common 17-83] Releasing license: Implementation
+48 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 3151.859 ; gain = 548.844 ; free physical = 5921 ; free virtual = 14811
+INFO: [Vivado 12-24828] Executing command : report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
+Command: report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14804
+Wrote Device Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14805
+Write Physdb Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3151.859 ; gain = 0.000 ; free physical = 5920 ; free virtual = 14805
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 3 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5876 ; free virtual = 14768
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 755c0bb8
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5876 ; free virtual = 14768
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5876 ; free virtual = 14768
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: a2a9a695
+
+Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.47 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5877 ; free virtual = 14769
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 115bd5305
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5877 ; free virtual = 14769
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 115bd5305
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5877 ; free virtual = 14769
+Phase 1 Placer Initialization | Checksum: 115bd5305
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5877 ; free virtual = 14769
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 13c49d229
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5878 ; free virtual = 14770
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1c4242f3e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5878 ; free virtual = 14770
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1c4242f3e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5878 ; free virtual = 14770
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 160d89a5a
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5878 ; free virtual = 14763
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1a19b0a41
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:05 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5883 ; free virtual = 14768
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 163 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 66 nets or LUTs. Breaked 0 LUT, combined 66 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-46] Identified 1 candidate net for critical-cell optimization.
+INFO: [Physopt 32-81] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/ch_in_cnt[0]. Replicated 1 times.
+INFO: [Physopt 32-232] Optimized 1 net. Created 1 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 1 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5866 ; free virtual = 14758
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5866 ; free virtual = 14758
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             66  |                    66  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            1  |              0  |                     1  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            1  |             66  |                    67  |           0  |          10  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: c469c56d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:05 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5873 ; free virtual = 14764
+Phase 2.5 Global Place Phase2 | Checksum: d0e00a10
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5873 ; free virtual = 14764
+Phase 2 Global Placement | Checksum: d0e00a10
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5873 ; free virtual = 14764
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 14b2df2a0
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5872 ; free virtual = 14764
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1c443d732
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5872 ; free virtual = 14763
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 17944e15b
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5871 ; free virtual = 14763
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1e8897d6d
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5871 ; free virtual = 14763
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 15d96994b
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:07 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5873 ; free virtual = 14759
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: a2a8ca9f
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5883 ; free virtual = 14769
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: c15fc63b
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5883 ; free virtual = 14768
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 132fc2229
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5883 ; free virtual = 14768
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: b1d401ac
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5890 ; free virtual = 14776
+Phase 3 Detail Placement | Checksum: b1d401ac
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5890 ; free virtual = 14776
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 13445cabd
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.401 | TNS=-300.580 |
+Phase 1 Physical Synthesis Initialization | Checksum: 147a742c5
+
+Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5890 ; free virtual = 14776
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 16f25b19a
+
+Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5890 ; free virtual = 14776
+Phase 4.1.1.1 BUFG Insertion | Checksum: 13445cabd
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:09 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5890 ; free virtual = 14776
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-4.155. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 12f1a0141
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+Phase 4.1 Post Commit Optimization | Checksum: 12f1a0141
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 12f1a0141
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 12f1a0141
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+Phase 4.3 Placer Reporting | Checksum: 12f1a0141
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1923efc56
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+Ending Placer Task | Checksum: 17cfe4711
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14855
+95 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:25 . Memory (MB): peak = 3166.891 ; gain = 15.031 ; free physical = 5963 ; free virtual = 14855
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file system_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5956 ; free virtual = 14847
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_wrapper_utilization_placed.rpt -pb system_wrapper_utilization_placed.pb
+INFO: [Vivado 12-24828] Executing command : report_io -file system_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.23 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5952 ; free virtual = 14844
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5952 ; free virtual = 14838
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5952 ; free virtual = 14838
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5952 ; free virtual = 14839
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5952 ; free virtual = 14838
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.16 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14839
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14840
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14840
+Write Physdb Complete: Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14840
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5959 ; free virtual = 14848
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 1.73s |  WALL: 0.41s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5959 ; free virtual = 14848
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.155 | TNS=-283.200 |
+Phase 1 Physical Synthesis Initialization | Checksum: d8a905b6
+
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.43 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5959 ; free virtual = 14848
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.155 | TNS=-283.200 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: d8a905b6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.47 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5959 ; free virtual = 14848
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.155 | TNS=-283.200 |
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/ps7/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[3]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_i_1_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_1_out_n_104. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_0_out_n_106. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr5[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_n_96. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[3].  Re-placed instance system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt_reg[3]
+INFO: [Physopt 32-735] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.141 | TNS=-279.172 |
+INFO: [Physopt 32-81] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[0]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.131 | TNS=-281.338 |
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[9]_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[7]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[3]_i_1__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr[3]_i_4__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[9]_i_1__0_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr0__0_n_104. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr0_n_106. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr1_i_1_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr1_i_7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.108 | TNS=-280.518 |
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/ps7/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_i_1_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_1_out_n_104. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr5[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_n_96. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.108 | TNS=-280.518 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14851
+Phase 3 Critical Path Optimization | Checksum: d8a905b6
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5963 ; free virtual = 14851
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.108 | TNS=-280.518 |
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/ps7/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[3]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_i_1_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_1_out_n_104. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_0_out_n_106. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr5[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_n_96. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/ps7/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr_reg[9]_i_1_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/p_1_out_n_104. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr5[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/wgt_raddr4_n_96. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/control_unit/ch_out_cnt[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.108 | TNS=-280.518 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Phase 4 Critical Path Optimization | Checksum: d8a905b6
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-4.108 | TNS=-280.518 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.047  |          2.682  |            2  |              0  |                     3  |           0  |           2  |  00:00:02  |
+|  Total          |          0.047  |          2.682  |            2  |              0  |                     3  |           0  |           3  |  00:00:02  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Ending Physical Synthesis Task | Checksum: 1d0453bc7
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+INFO: [Common 17-83] Releasing license: Implementation
+171 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5948 ; free virtual = 14843
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5947 ; free virtual = 14843
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.16 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5942 ; free virtual = 14842
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5942 ; free virtual = 14842
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5942 ; free virtual = 14843
+Write Physdb Complete: Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5942 ; free virtual = 14843
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 525f6efc ConstDB: 0 ShapeSum: e12f4959 RouteDB: 15f972f0
+Post Restoration Checksum: NetGraph: 6e9f401d | NumContArr: 6e247e69 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 26215b3c0
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5967 ; free virtual = 14858
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 26215b3c0
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5967 ; free virtual = 14858
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 26215b3c0
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5967 ; free virtual = 14858
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 25faa6ebe
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:19 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5978 ; free virtual = 14870
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.211 | TNS=-292.254| WHS=-0.210 | THS=-58.732|
+
+
+Phase 2.4 Soft Constraint Pins - Fast Budgeting
+Phase 2.4 Soft Constraint Pins - Fast Budgeting | Checksum: 2b07d81a2
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:19 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5951 ; free virtual = 14848
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 4305
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 4305
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2b349a1e6
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:19 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5951 ; free virtual = 14848
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2b349a1e6
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:19 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5951 ; free virtual = 14848
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1fb29cb0f
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5961 ; free virtual = 14858
+Phase 4 Initial Routing | Checksum: 1fb29cb0f
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5961 ; free virtual = 14858
+INFO: [Route 35-580] Design has 2 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+=================================================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                                             |
++====================+===================+=================================================================================================+
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[3]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/control_unit/act_raddr_reg[1]/D |
++--------------------+-------------------+-------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 126
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.485 | TNS=-303.795| WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 21106177b
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14862
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.460 | TNS=-306.315| WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 2d43689b9
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14862
+Phase 5 Rip-up And Reroute | Checksum: 2d43689b9
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14862
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2ee8f3e0c
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14862
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.345 | TNS=-289.540| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 6.1 Delay CleanUp | Checksum: 1bd610adc
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14861
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 1bd610adc
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14861
+Phase 6 Delay and Skew Optimization | Checksum: 1bd610adc
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5964 ; free virtual = 14861
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.345 | TNS=-282.733| WHS=0.045  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 2079c018f
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5966 ; free virtual = 14863
+Phase 7 Post Hold Fix | Checksum: 2079c018f
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5966 ; free virtual = 14863
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.722429 %
+  Global Horizontal Routing Utilization  = 0.820909 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 39.6396%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 42.3423%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 41.1765%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 44.1176%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 2079c018f
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5972 ; free virtual = 14863
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 2079c018f
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:21 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5972 ; free virtual = 14863
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 22a900e39
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14865
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 22a900e39
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14866
+
+Phase 12 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.345 | TNS=-282.733| WHS=0.045  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 12 Post Router Timing | Checksum: 22a900e39
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14866
+Total Elapsed time in route_design: 21.71 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 21e74ca4b
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14866
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 21e74ca4b
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14866
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+187 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5974 ; free virtual = 14866
+INFO: [Vivado 12-24828] Executing command : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+Command: report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file system_wrapper_timing_summary_routed.rpt -pb system_wrapper_timing_summary_routed.pb -rpx system_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file system_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file system_wrapper_route_status.rpt -pb system_wrapper_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file system_wrapper_bus_skew_routed.rpt -pb system_wrapper_bus_skew_routed.pb -rpx system_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
+Command: report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+207 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file system_wrapper_clock_utilization_routed.rpt
+generate_parallel_reports: Time (s): cpu = 00:00:18 ; elapsed = 00:00:05 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5962 ; free virtual = 14857
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5962 ; free virtual = 14856
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5962 ; free virtual = 14856
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5962 ; free virtual = 14857
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5960 ; free virtual = 14857
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5955 ; free virtual = 14855
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5955 ; free virtual = 14855
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5955 ; free virtual = 14856
+Write Physdb Complete: Time (s): cpu = 00:00:00.82 ; elapsed = 00:00:00.24 . Memory (MB): peak = 3166.891 ; gain = 0.000 ; free physical = 5955 ; free virtual = 14856
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_routed.dcp' has been generated.
+Command: write_bitstream -force system_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Integrating Hard IP ELF/MEM with the PDI.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./system_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+218 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 3289.023 ; gain = 122.133 ; free physical = 5683 ; free virtual = 14584
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 27 23:58:35 2026...
+[Sat Jun 27 23:58:35 2026] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:03:08 ; elapsed = 00:01:36 . Memory (MB): peak = 1754.281 ; gain = 0.000 ; free physical = 7746 ; free virtual = 16647
+# write_hw_platform -fixed -force -file ${proj_dir}/${proj_name}.xsa
+INFO: [Projectvivado 1-1918] Creating Hardware Platform: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.xsa ...
+INFO: [Projectvivado 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Projectvivado 1-1941] Successfully created Hardware Platform: /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (/home/chathupa/Desktop/AMD/2025.2/data/embeddedsw) loading 0 seconds
+# puts "=================================================================="
+==================================================================
+# puts " Rebuild done."
+ Rebuild done.
+# puts "   Bitstream: ${proj_dir}/${proj_name}.runs/impl_1/${bd_name}_wrapper.bit"
+   Bitstream: build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper.bit
+# puts "   Hardware : ${proj_dir}/${proj_name}.xsa"
+   Hardware : build/dnn_zynq_yolo/dnn_zynq_yolo.xsa
+# puts "=================================================================="
+==================================================================
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 27 23:58:38 2026...

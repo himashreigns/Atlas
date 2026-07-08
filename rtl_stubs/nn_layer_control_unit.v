@@ -49,8 +49,11 @@ module nn_layer_control_unit #(
     output reg  out_re,
     output reg  [ADDR_W-1:0] out_raddr,
     
-    // Status outputs  ($clog2(1024)=10, replaced for Verilog-2001 compatibility)
-    output reg  [10:0] in_rows_buffered,
+    // in_rows_buffered is the count of rows ready from the upstream row_buffer.
+    // It is an INPUT to this control_unit (was previously declared as output
+    // reg, which created a multi-driver conflict with the row_buffer's own
+    // rows_buffered output at the parent layer_stage's net).
+    input  wire [10:0] in_rows_buffered,
     output reg  [10:0] out_rows_produced
 );
 
@@ -213,9 +216,8 @@ module nn_layer_control_unit #(
             wgt_loading_done <= 0;
             computation_done <= 0;
             
-            in_rows_buffered <= 0;
             out_rows_produced <= 0;
-            
+
         end else begin
             // Default values
             act_we <= 0;
@@ -246,7 +248,7 @@ module nn_layer_control_unit #(
                         pipe_delay_cnt <= 0;
                         wgt_loading_done <= 0;
                         computation_done <= 0;
-                        in_rows_buffered <= kernel_size;  // Assume kernel_size rows buffered
+                        // in_rows_buffered is now an input driven by row_buffer
                         out_rows_produced <= 0;
                     end
                 end

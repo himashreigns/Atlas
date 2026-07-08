@@ -1,0 +1,5 @@
+the_ROM_image:
+{
+    [bootloader] /home/chathupa/Desktop/dnn_opt/software/vitis/workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/boot/fsbl.elf
+    /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper.bit
+}

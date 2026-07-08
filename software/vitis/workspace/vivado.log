@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Jul  1 21:11:22 2026
+# Process ID         : 78213
+# Current directory  : /home/chathupa/Desktop/dnn_opt/software/vitis/workspace
+# Command line       : vivado -mode batch -source /tmp/check_dcp.tcl
+# Log file           : /home/chathupa/Desktop/dnn_opt/software/vitis/workspace/vivado.log
+# Journal file       : /home/chathupa/Desktop/dnn_opt/software/vitis/workspace/vivado.jou
+# Running On         : chathupa-Nitro-AN515-55
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+# CPU Frequency      : 800.000 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16589 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20884 MB
+# Available Virtual  : 17900 MB
+#-----------------------------------------------------------
+source /tmp/check_dcp.tcl
+# open_checkpoint /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_routed.dcp
+Command: open_checkpoint /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/impl_1/system_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1558.895 ; gain = 0.000 ; free physical = 6863 ; free virtual = 16600
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1800.242 ; gain = 0.000 ; free physical = 6687 ; free virtual = 16415
+INFO: [Netlist 29-17] Analyzing 201 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1883.992 ; gain = 1.000 ; free physical = 6577 ; free virtual = 16298
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15786
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15786
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15786
+Read placeStorage: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15785
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15785
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15785
+Read Physdb Files: Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15785
+Restored from archive | CPU: 0.360000 secs | Memory: 5.198013 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2492.438 ; gain = 6.938 ; free physical = 6064 ; free virtual = 15785
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2492.438 ; gain = 0.000 ; free physical = 6064 ; free virtual = 15785
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 2492.473 ; gain = 933.578 ; free physical = 6064 ; free virtual = 15785
+# set stream_hold_regs [get_cells -hierarchical -filter {NAME =~ "*stream_hold*"}]
+# puts "stream_hold cells: [llength $stream_hold_regs]"
+stream_hold cells: 9
+# foreach c $stream_hold_regs {
+#     puts "  $c"
+# }
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/stream_hold_i_1
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_0/stream_hold_reg
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/stream_hold_i_1__0
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/stream_hold_reg
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/stream_hold_i_1__1
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_2/stream_hold_reg
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/stream_hold_i_1__2
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/stream_hold_i_2
+  system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/stream_hold_reg
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ "*oc_wr_active*"}'.
+# set oc_wr_active_regs [get_cells -hierarchical -filter {NAME =~ "*oc_wr_active*"}]
+# puts "oc_wr_active cells: [llength $oc_wr_active_regs]"
+oc_wr_active cells: 0
+# exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  1 21:11:36 2026...

@@ -1,0 +1,1244 @@
+Archive member included to satisfy reference by file (symbol)
+
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o (__cpu_init)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+                              workspace/dnn_yolo_app/dnn_accel.o (Xil_DCacheInvalidateRange)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+                              workspace/dnn_yolo_app/main.o (Xil_ExceptionInit)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+                              workspace/dnn_yolo_app/dnn_accel.o (xil_printf)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+                              workspace/dnn_yolo_app/main.o (sleep)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+                              workspace/dnn_yolo_app/dnn_accel.o (XScuGic_Connect)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+                              workspace/dnn_yolo_app/main.o (XScuGic_InterruptHandler)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+                              workspace/dnn_yolo_app/main.o (XScuGic_LookupConfig)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o (XTime_SetTime)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o) (outbyte)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o) (sleep_A9)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o) (usleep_A9)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o) (Xil_Assert)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o) (Xil_SpinLock)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o) (XGetCoreId)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o) (XScuGic_ConfigTable)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o) (XUartPs_SendByte)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o) (__aeabi_uidiv)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_divsi3.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o) (__aeabi_idiv)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_dvmd_tls.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                              workspace/dnn_yolo_app/main.o (__aeabi_uldivmod)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o (exit)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o) (_ctype_)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o) (__stdio_exit_handler)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fwalk.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o) (_fwalk_sglue)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o) (__sread)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-memset.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o) (memset)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o) (_close_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o) (errno)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-impure.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o) (_impure_ptr)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o) (_lseek_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o) (_read_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o) (_write_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-init.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o (__libc_init_array)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fini.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o (__libc_fini_array)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o) (strlen)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-__call_atexit.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o) (__call_exitprocs)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o) (_free_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mallocr.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o) (_malloc_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mlock.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o) (__malloc_lock)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o) (_fclose_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fflush.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o) (__sflush_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o) (_sbrk_r)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o) (sysconf)
+/home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-errno.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o) (__errno)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o) (_exit)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o) (_sbrk)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o) (_close)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o) (_lseek)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o) (_read)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+                              /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o) (_write)
+workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+                              workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o) (inbyte)
+
+Discarded input sections
+
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .got2          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .text          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+ .ARM.attributes
+                0x00000000       0x23 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+ .text          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .text          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/dnn_accel.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/dnn_accel.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/dnn_accel.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/main.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/main.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/main.o
+ .rodata.uart_bang_test.str1.1
+                0x00000000        0x6 workspace/dnn_yolo_app/main.o
+ .text.uart_bang_test
+                0x00000000       0x68 workspace/dnn_yolo_app/main.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/preprocess.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/preprocess.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/preprocess.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/usb_capture.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/usb_capture.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/usb_capture.o
+ .text.usb_capture_state
+                0x00000000        0xc workspace/dnn_yolo_app/usb_capture.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/yolo_post.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/yolo_post.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/yolo_post.o
+ .text          0x00000000        0x0 workspace/dnn_yolo_app/yolo_weights.o
+ .data          0x00000000        0x0 workspace/dnn_yolo_app/yolo_weights.o
+ .bss           0x00000000        0x0 workspace/dnn_yolo_app/yolo_weights.o
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .text          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o)
+ .text          0x00000000      0x2b0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x00000000       0x21 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o)
+ .text          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+ .text          0x00000000      0x23c /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o)
+ .data          0x00000000        0xc /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o)
+ .text          0x00000000       0x44 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fwalk.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fwalk.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fwalk.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fwalk.o)
+ .text          0x00000000       0x94 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-stdio.o)
+ .text          0x00000000       0xa8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-memset.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-memset.o)
+ .text          0x00000000       0x28 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-closer.o)
+ .text          0x00000000       0x70 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o)
+ .bss           0x00000000        0x4 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-reent.o)
+ .text          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-impure.o)
+ .data          0x00000000      0x128 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-impure.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-impure.o)
+ .text          0x00000000       0x30 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-lseekr.o)
+ .text          0x00000000       0x30 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-readr.o)
+ .text          0x00000000       0x30 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-writer.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-init.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-init.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fini.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fini.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+ .ARM.extab     0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+ .eh_frame      0x00000000       0x34 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-__call_atexit.o)
+ .text          0x00000000      0x2c8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-freer.o)
+ .text          0x00000000      0x56c /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mallocr.o)
+ .data          0x00000000      0x410 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mallocr.o)
+ .bss           0x00000000       0x34 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mallocr.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mallocr.o)
+ .text          0x00000000        0x8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mlock.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mlock.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mlock.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-mlock.o)
+ .text          0x00000000       0x90 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fclose.o)
+ .text          0x00000000      0x1b8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fflush.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fflush.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fflush.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fflush.o)
+ .text          0x00000000       0x28 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sbrkr.o)
+ .text          0x00000000       0x1c /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-sysconf.o)
+ .text          0x00000000        0xc /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-errno.o)
+ .data          0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-errno.o)
+ .bss           0x00000000        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-errno.o)
+ .ARM.attributes
+                0x00000000       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-errno.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+ .text          0x00000000       0x40 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .bss           0x00000000        0x4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_info    0x00000000      0x161 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_abbrev  0x00000000       0xed workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_loclists
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_line    0x00000000      0x195 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_str     0x00000000      0x227 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .debug_frame   0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_sbrk.o)
+ .text          0x00000000        0x8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_info    0x00000000       0xc9 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_abbrev  0x00000000       0x77 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_loclists
+                0x00000000       0x24 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_line    0x00000000      0x146 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_str     0x00000000      0x1d2 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .debug_frame   0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(close.o)
+ .text          0x00000000       0x38 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_info    0x00000000      0x15c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_abbrev  0x00000000       0xe9 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_loclists
+                0x00000000       0x54 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_line    0x00000000      0x18a workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_str     0x00000000      0x203 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .debug_frame   0x00000000       0x40 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(lseek.o)
+ .text          0x00000000       0x88 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_info    0x00000000      0x19c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_abbrev  0x00000000      0x131 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_loclists
+                0x00000000       0xaa workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_line    0x00000000      0x192 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_str     0x00000000      0x1fb workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .debug_frame   0x00000000       0x48 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(read.o)
+ .text          0x00000000       0xb8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_info    0x00000000      0x1a7 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_abbrev  0x00000000      0x149 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_loclists
+                0x00000000       0xc2 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_line    0x00000000      0x1d5 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_str     0x00000000      0x1fd workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .debug_frame   0x00000000       0x48 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(write.o)
+ .text          0x00000000        0xc workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .data          0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .bss           0x00000000        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_info    0x00000000       0xf7 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_abbrev  0x00000000       0x8e workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_line    0x00000000      0x166 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_str     0x00000000      0x1f8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .comment       0x00000000       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .debug_frame   0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+ .ARM.attributes
+                0x00000000       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(inbyte.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ps7_ddr_0        0x00100000         0x0ff00000
+ps7_ram_0        0x00000000         0x00030000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00004000                        _STACK_SIZE = DEFINED (_STACK_SIZE)?_STACK_SIZE:0x4000
+                0x00004000                        _HEAP_SIZE = DEFINED (_HEAP_SIZE)?_HEAP_SIZE:0x4000
+                0x00000400                        _ABORT_STACK_SIZE = DEFINED (_ABORT_STACK_SIZE)?_ABORT_STACK_SIZE:0x400
+                0x00000800                        _SUPERVISOR_STACK_SIZE = DEFINED (_SUPERVISOR_STACK_SIZE)?_SUPERVISOR_STACK_SIZE:0x800
+                0x00000400                        _FIQ_STACK_SIZE = DEFINED (_FIQ_STACK_SIZE)?_FIQ_STACK_SIZE:0x400
+                0x00000400                        _UNDEF_STACK_SIZE = DEFINED (_UNDEF_STACK_SIZE)?_UNDEF_STACK_SIZE:0x400
+                0x00000400                        _IRQ_STACK_SIZE = DEFINED (_IRQ_STACK_SIZE)?_IRQ_STACK_SIZE:0x400
+
+.vectors        0x00100000      0x4b8
+ *(.vectors)
+ .vectors       0x00100000      0x12c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+                0x00100000                _vector_table
+ *(.boot)
+ .boot          0x0010012c      0x38c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+                0x0010012c                _boot
+                0x0010012c                _prestart
+
+.text           0x001004c0     0x3918
+ *(.text)
+ .text          0x001004c0       0x78 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+                0x001004d4                _start
+ .text          0x00100538       0x78 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+                0x00100538                FIQInterrupt
+                0x0010054c                IRQInterrupt
+                0x00100560                UndefinedException
+                0x00100574                SWInterrupt
+                0x00100588                DataAbortInterrupt
+                0x0010059c                PrefetchAbortInterrupt
+ .text          0x001005b0       0x3c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+                0x001005b0                __cpu_init
+ .text          0x001005ec      0xcfc workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+                0x001005ec                Xil_DCacheInvalidateLine
+                0x00100624                Xil_DCacheInvalidateRange
+                0x0010079c                Xil_DCacheFlushLine
+                0x001007e4                Xil_DCacheFlushRange
+                0x00100920                Xil_DCacheStoreLine
+                0x00100958                Xil_ICacheDisable
+                0x001009d4                Xil_ICacheInvalidateLine
+                0x00100a0c                Xil_ICacheInvalidateRange
+                0x00100a8c                Xil_L1DCacheInvalidate
+                0x00100b3c                Xil_L1DCacheEnable
+                0x00100b5c                Xil_L1DCacheInvalidateLine
+                0x00100b74                Xil_L1DCacheInvalidateRange
+                0x00100bd8                Xil_L1DCacheFlush
+                0x00100c60                Xil_L1DCacheDisable
+                0x00100c78                Xil_DCacheFlush
+                0x00100cd4                Xil_DCacheDisable
+                0x00100d4c                Xil_L1DCacheFlushLine
+                0x00100d64                Xil_L1DCacheFlushRange
+                0x00100dc8                Xil_L1DCacheStoreLine
+                0x00100de0                Xil_L1ICacheEnable
+                0x00100dfc                Xil_L1ICacheDisable
+                0x00100e18                Xil_L1ICacheInvalidate
+                0x00100e30                Xil_L1ICacheInvalidateLine
+                0x00100e48                Xil_L1ICacheInvalidateRange
+                0x00100eac                Xil_L2CacheDisable
+                0x00100f0c                Xil_L2CacheInvalidate
+                0x00100f78                Xil_DCacheInvalidate
+                0x00100f98                Xil_ICacheInvalidate
+                0x00100fc8                Xil_L2CacheEnable
+                0x00101028                Xil_ICacheEnable
+                0x001010a0                Xil_DCacheEnable
+                0x00101118                Xil_L2CacheInvalidateLine
+                0x0010112c                Xil_L2CacheInvalidateRange
+                0x001011d0                Xil_L2CacheFlush
+                0x00101214                Xil_L2CacheFlushLine
+                0x00101230                Xil_L2CacheFlushRange
+                0x001012d0                Xil_L2CacheStoreLine
+ .text          0x001012e8       0x70 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+                0x001012f8                Xil_ExceptionInit
+                0x001012fc                Xil_ExceptionRegisterHandler
+                0x00101314                Xil_GetExceptionRegisterHandler
+                0x00101334                Xil_ExceptionRemoveHandler
+ .text          0x00101358      0x994 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+                0x001016d4                xil_vprintf
+                0x00101cc0                xil_printf
+ .text          0x00101cec        0x8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+                0x00101cec                sleep
+                0x00101cf0                usleep
+ .text          0x00101cf4      0xca4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+                0x00101d44                XScuGic_Connect
+                0x00101e18                XScuGic_Disconnect
+                0x00101f14                XScuGic_SoftwareIntr
+                0x00102024                XScuGic_SetPriorityTriggerType
+                0x00102188                XScuGic_GetPriorityTriggerType
+                0x001022b4                XScuGic_InterruptMaptoCpu
+                0x00102360                XScuGic_Enable
+                0x00102458                XScuGic_InterruptUnmapFromCpu
+                0x00102500                XScuGic_Disable
+                0x001025f8                XScuGic_UnmapAllInterruptsFromCpu
+                0x00102694                XScuGic_Stop
+                0x0010277c                XScuGic_CfgInitialize
+                0x00102918                XScuGic_SetCpuID
+                0x00102968                XScuGic_GetCpuID
+                0x00102978                XScuGic_IsInitialized
+ .text          0x00102998       0x78 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+                0x00102998                XScuGic_InterruptHandler
+ .text          0x00102a10       0x38 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+                0x00102a10                XScuGic_LookupConfig
+                0x00102a2c                XScuGic_LookupConfigBaseAddr
+ .text          0x00102a48       0x4c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+                0x00102a48                XTime_SetTime
+                0x00102a6c                XTime_GetTime
+ .text          0x00102a94       0x10 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+                0x00102a94                outbyte
+ .text          0x00102aa4       0x48 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+                0x00102aa4                sleep_A9
+ .text          0x00102aec       0x44 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+                0x00102aec                usleep_A9
+ .text          0x00102b30       0x48 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+                0x00102b30                Xil_Assert
+                0x00102b64                Xil_AssertSetCallback
+                0x00102b74                XNullHandler
+ .text          0x00102b78      0x138 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+                0x00102b78                Xil_SpinLock
+                0x00102bc8                Xil_SpinUnlock
+                0x00102bfc                Xil_InitializeSpinLock
+                0x00102c68                Xil_ReleaseSpinLock
+                0x00102c80                Xil_IsSpinLockEnabled
+ .text          0x00102cb0       0x1c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+                0x00102cb0                XGetPlatform_Info
+                0x00102cb8                XGetCoreId
+                0x00102cc4                XIOCoherencySupported
+ .text          0x00102ccc       0xa4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+                0x00102ccc                XUartPs_SendByte
+                0x00102ce4                XUartPs_RecvByte
+                0x00102d00                XUartPs_ResetHw
+                0x00102d50                XUartPs_WaitTransmitDone
+ .text          0x00102d70      0x278 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o)
+                0x00102d70                __udivsi3
+                0x00102d70                __aeabi_uidiv
+                0x00102fcc                __aeabi_uidivmod
+ .text          0x00102fe8        0x4 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x00102fe8                __aeabi_ldiv0
+                0x00102fe8                __aeabi_idiv0
+ .text          0x00102fec       0x30 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x00102fec                __aeabi_uldivmod
+ .text          0x0010301c      0x108 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0010301c                __udivmoddi4
+ .text          0x00103124       0x20 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o)
+                0x00103124                exit
+ .text          0x00103144       0x58 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-init.o)
+                0x00103144                __libc_init_array
+ .text          0x0010319c       0x2c /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fini.o)
+                0x0010319c                __libc_fini_array
+ *fill*         0x001031c8       0x38 
+ .text          0x00103200       0xd8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+                0x00103200                strlen
+ .text          0x001032d8       0xb0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x001032d8                __call_exitprocs
+ .text          0x00103388        0x4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+                0x00103388                _exit
+ *(.text.*)
+ .text.dnn_irq_handler
+                0x0010338c       0x14 workspace/dnn_yolo_app/dnn_accel.o
+ .text.dnn_accel_init
+                0x001033a0       0x68 workspace/dnn_yolo_app/dnn_accel.o
+                0x001033a0                dnn_accel_init
+ .text.dnn_accel_configure_yolo_sizes
+                0x00103408       0x50 workspace/dnn_yolo_app/dnn_accel.o
+                0x00103408                dnn_accel_configure_yolo_sizes
+ .text.dnn_accel_load_weights
+                0x00103458       0xb4 workspace/dnn_yolo_app/dnn_accel.o
+                0x00103458                dnn_accel_load_weights
+ .text.dnn_accel_run_inference
+                0x0010350c       0xf8 workspace/dnn_yolo_app/dnn_accel.o
+                0x0010350c                dnn_accel_run_inference
+ .text.dnn_accel_dump_regs
+                0x00103604       0x40 workspace/dnn_yolo_app/dnn_accel.o
+                0x00103604                dnn_accel_dump_regs
+ .text.dnn_accel_attach_irq
+                0x00103644       0x6c workspace/dnn_yolo_app/dnn_accel.o
+                0x00103644                dnn_accel_attach_irq
+ .text.bm_uart_puts
+                0x001036b0       0x3c workspace/dnn_yolo_app/main.o
+ .text._init    0x001036ec        0x4 workspace/dnn_yolo_app/main.o
+                0x001036ec                _init
+ .text._fini    0x001036f0        0x4 workspace/dnn_yolo_app/main.o
+                0x001036f0                _fini
+ *fill*         0x001036f4        0x4 
+ .text.startup.main
+                0x001036f8      0x374 workspace/dnn_yolo_app/main.o
+                0x001036f8                main
+ .text.preprocess_yuyv_to_q88
+                0x00103a6c       0x90 workspace/dnn_yolo_app/preprocess.o
+                0x00103a6c                preprocess_yuyv_to_q88
+ .text.usb_capture_dump
+                0x00103afc       0x54 workspace/dnn_yolo_app/usb_capture.o
+                0x00103afc                usb_capture_dump
+ .text.usb_capture_init
+                0x00103b50       0x18 workspace/dnn_yolo_app/usb_capture.o
+                0x00103b50                usb_capture_init
+ .text.usb_capture_get_frame
+                0x00103b68       0x7c workspace/dnn_yolo_app/usb_capture.o
+                0x00103b68                usb_capture_get_frame
+ .text.yolo_post_decode
+                0x00103be4      0x12c workspace/dnn_yolo_app/yolo_post.o
+                0x00103be4                yolo_post_decode
+ .text.yolo_post_print
+                0x00103d10       0xc0 workspace/dnn_yolo_app/yolo_post.o
+                0x00103d10                yolo_post_print
+ .text.yolo_post_print.__stub
+                0x00103dd0        0x8 linker stubs
+ *(.gnu.linkonce.t.*)
+ *(.plt)
+ *(.gnu_warning)
+ *(.gcc_except_table)
+ *(.glue_7)
+ .glue_7        0x00103dd8        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00103dd8        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00103dd8        0x0 linker stubs
+ *(.ARM.extab)
+ *(.gnu.linkonce.armextab.*)
+
+.v4_bx          0x00103dd8        0x0
+ .v4_bx         0x00103dd8        0x0 linker stubs
+
+.iplt           0x00103dd8        0x0
+ .iplt          0x00103dd8        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+
+.init
+ *(.init)
+
+.fini
+ *(.fini)
+
+.rodata         0x00103dd8      0xc03
+                0x00103dd8                        __rodata_start = .
+ *(.rodata)
+ .rodata        0x00103dd8      0x101 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+                0x00103dd8                _ctype_
+ *(.rodata.*)
+ .rodata.dnn_accel_init.str1.1
+                0x00103ed9      0x4e9 workspace/dnn_yolo_app/dnn_accel.o
+                                 0x63 (size before relaxing)
+ .rodata.dnn_accel_configure_yolo_sizes.str1.1
+                0x001043c2       0x37 workspace/dnn_yolo_app/dnn_accel.o
+ .rodata.dnn_accel_load_weights.str1.1
+                0x001043c2       0x66 workspace/dnn_yolo_app/dnn_accel.o
+ .rodata.dnn_accel_run_inference.str1.1
+                0x001043c2       0x26 workspace/dnn_yolo_app/dnn_accel.o
+ .rodata.dnn_accel_dump_regs.str1.1
+                0x001043c2       0x72 workspace/dnn_yolo_app/dnn_accel.o
+ .rodata.dnn_accel_attach_irq.str1.1
+                0x001043c2       0x28 workspace/dnn_yolo_app/dnn_accel.o
+ .rodata.main.str1.1
+                0x001043c2      0x261 workspace/dnn_yolo_app/main.o
+ .rodata.usb_capture_dump.str1.1
+                0x001043c2       0x49 workspace/dnn_yolo_app/usb_capture.o
+ .rodata.usb_capture_init.str1.1
+                0x001043c2       0x36 workspace/dnn_yolo_app/usb_capture.o
+ .rodata.yolo_post_print.str1.1
+                0x001043c2       0x4d workspace/dnn_yolo_app/yolo_post.o
+ .rodata.yolo_wgt_l3
+                0x001043c2      0x5a0 workspace/dnn_yolo_app/yolo_weights.o
+                0x001043c2                yolo_wgt_l3
+ .rodata.yolo_wgt_l0
+                0x00104962       0x48 workspace/dnn_yolo_app/yolo_weights.o
+                0x00104962                yolo_wgt_l0
+ *fill*         0x001049aa        0x2 
+ .rodata.str1.4
+                0x001049ac       0x2f workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+                                 0x11 (size before relaxing)
+ .rodata.str1.4
+                0x001049db        0xa workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .rodata.str1.4
+                0x001049db        0xf workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ *(.gnu.linkonce.r.*)
+                0x001049db                        __rodata_end = .
+
+.rodata1        0x001049db        0x0
+                0x001049db                        __rodata1_start = .
+ *(.rodata1)
+ *(.rodata1.*)
+                0x001049db                        __rodata1_end = .
+
+.data           0x001049dc      0x350
+                0x001049dc                        . = ALIGN (0x4)
+                0x001049dc                        __data_start = .
+ *(.data)
+ .data          0x001049dc       0x38 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+                0x001049dc                XExc_VectorTable
+ .data          0x00104a14        0x4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+                0x00104a14                Xil_AssertWait
+ .data          0x00104a18      0x304 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+                0x00104a18                XScuGic_ConfigTable
+ *(.data.*)
+ .data.s_state  0x00104d1c       0x10 workspace/dnn_yolo_app/usb_capture.o
+ *(.gnu.linkonce.d.*)
+ *(.jcr)
+ *(.got)
+ *(.got.plt)
+                0x00104d2c                        __data_end = .
+
+.igot.plt       0x00104d2c        0x0
+ .igot.plt      0x00104d2c        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+
+.got
+ *(.got)
+
+.got1
+ *(.got1)
+
+.got2
+ *(.got2)
+
+.ctors          0x00104d2c        0x0
+                0x00104d2c                        __CTOR_LIST__ = .
+                0x00104d2c                        ___CTORS_LIST___ = .
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x00104d2c                        __CTOR_END__ = .
+                0x00104d2c                        ___CTORS_END___ = .
+
+.dtors          0x00104d2c        0x0
+                0x00104d2c                        __DTOR_LIST__ = .
+                0x00104d2c                        ___DTORS_LIST___ = .
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                0x00104d2c                        __DTOR_END__ = .
+                0x00104d2c                        ___DTORS_END___ = .
+
+.fixup          0x00104d2c        0x0
+                0x00104d2c                        __fixup_start = .
+ *(.fixup)
+                0x00104d2c                        __fixup_end = .
+
+.eh_frame
+ *(.eh_frame)
+
+.eh_framehdr    0x00104d2c        0x0
+                0x00104d2c                        __eh_framehdr_start = .
+ *(.eh_framehdr)
+                0x00104d2c                        __eh_framehdr_end = .
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.mmu_tbl        0x00108000     0x4000
+                0x00108000                        __mmu_tbl_start = .
+ *(.mmu_tbl)
+ .mmu_tbl       0x00108000     0x4000 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+                0x00108000                MMUTable
+                0x0010c000                        __mmu_tbl_end = .
+
+.ARM.exidx      0x0010c000        0x8
+                0x0010c000                        __exidx_start = .
+ *(.ARM.exidx*)
+ .ARM.exidx     0x0010c000        0x8 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0010c008        0x0 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+                                  0x8 (size before relaxing)
+ *(.gnu.linkonce.armexidx.*)
+                0x0010c008                        __exidx_end = .
+
+.rel.dyn        0x0010c008        0x0
+ .rel.iplt      0x0010c008        0x0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+
+.preinit_array  0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __preinit_array_start = .
+ *(SORT_BY_NAME(.preinit_array.*))
+ *(.preinit_array)
+                0x0010c008                        __preinit_array_end = .
+
+.init_array     0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __init_array_start = .
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+                0x0010c008                        __init_array_end = .
+
+.fini_array     0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __fini_array_start = .
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                0x0010c008                        __fini_array_end = .
+
+.ARM.attributes
+                0x0010c008       0x33
+                0x0010c008                        __ARM.attributes_start = .
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0010c008       0x23 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .ARM.attributes
+                0x0010c02b       0x23 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .ARM.attributes
+                0x0010c04e       0x23 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+ .ARM.attributes
+                0x0010c071       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .ARM.attributes
+                0x0010c0a8       0x37 workspace/dnn_yolo_app/dnn_accel.o
+ .ARM.attributes
+                0x0010c0df       0x37 workspace/dnn_yolo_app/main.o
+ .ARM.attributes
+                0x0010c116       0x37 workspace/dnn_yolo_app/preprocess.o
+ .ARM.attributes
+                0x0010c14d       0x37 workspace/dnn_yolo_app/usb_capture.o
+ .ARM.attributes
+                0x0010c184       0x37 workspace/dnn_yolo_app/yolo_post.o
+ .ARM.attributes
+                0x0010c1bb       0x37 workspace/dnn_yolo_app/yolo_weights.o
+ .ARM.attributes
+                0x0010c1f2       0x23 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .ARM.attributes
+                0x0010c215       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .ARM.attributes
+                0x0010c24c       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .ARM.attributes
+                0x0010c283       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .ARM.attributes
+                0x0010c2ba       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .ARM.attributes
+                0x0010c2f1       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .ARM.attributes
+                0x0010c328       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .ARM.attributes
+                0x0010c35f       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .ARM.attributes
+                0x0010c396       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .ARM.attributes
+                0x0010c3cd       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .ARM.attributes
+                0x0010c404       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .ARM.attributes
+                0x0010c43b       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .ARM.attributes
+                0x0010c472       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .ARM.attributes
+                0x0010c4a9       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .ARM.attributes
+                0x0010c4e0       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .ARM.attributes
+                0x0010c517       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .ARM.attributes
+                0x0010c54e       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .ARM.attributes
+                0x0010c585       0x21 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x0010c5a6       0x21 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x0010c5c7       0x21 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x0010c5e8       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x0010c61b       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-exit.o)
+ .ARM.attributes
+                0x0010c64e       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-ctype_.o)
+ .ARM.attributes
+                0x0010c681       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x0010c6b4       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-init.o)
+ .ARM.attributes
+                0x0010c6e7       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-fini.o)
+ .ARM.attributes
+                0x0010c71a       0x19 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-strlen.o)
+ .ARM.attributes
+                0x0010c733       0x33 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-__call_atexit.o)
+ .ARM.attributes
+                0x0010c766       0x37 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+                0x0010c79d                        __ARM.attributes_end = .
+
+.sdata          0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __sdata_start = .
+ *(.sdata)
+ *(.sdata.*)
+ *(.gnu.linkonce.s.*)
+                0x0010c008                        __sdata_end = .
+
+.sbss           0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __sbss_start = .
+ *(.sbss)
+ *(.sbss.*)
+ *(.gnu.linkonce.sb.*)
+                0x0010c008                        __sbss_end = .
+
+.tdata          0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __tdata_start = .
+ *(.tdata)
+ *(.tdata.*)
+ *(.gnu.linkonce.td.*)
+                0x0010c008                        __tdata_end = .
+
+.tbss           0x0010c008        0x0
+                0x0010c008                        . = ALIGN (0x4)
+                0x0010c008                        __tbss_start = .
+ *(.tbss)
+ *(.tbss.*)
+ *(.gnu.linkonce.tb.*)
+                0x0010c008                        __tbss_end = .
+
+.bss            0x0010c040    0x25c44
+                0x0010c040                        . = ALIGN (0x4)
+                0x0010c040                        __bss_start = .
+ *(.bss)
+ .bss           0x0010c040        0xc workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+                0x0010c040                UndefinedExceptionAddr
+                0x0010c044                PrefetchAbortAddr
+                0x0010c048                DataAbortAddr
+ .bss           0x0010c04c        0x4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .bss           0x0010c050        0x8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+                0x0010c054                Xil_AssertStatus
+ .bss           0x0010c058        0x8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .bss           0x0010c060      0x13c /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-findfp.o)
+                0x0010c060                __sf
+                0x0010c198                __stdio_exit_handler
+ .bss           0x0010c19c        0x4 /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x0010c19c                __atexit
+ *(.bss.*)
+ .bss.s_gic     0x0010c1a0        0x4 workspace/dnn_yolo_app/dnn_accel.o
+ .bss.s_done_flag
+                0x0010c1a4        0x4 workspace/dnn_yolo_app/dnn_accel.o
+ .bss.s_stats   0x0010c1a8        0xc workspace/dnn_yolo_app/main.o
+ .bss.s_gic     0x0010c1b4        0xc workspace/dnn_yolo_app/main.o
+ .bss.s_boxes   0x0010c1c0       0x30 workspace/dnn_yolo_app/main.o
+ *fill*         0x0010c1f0       0x10 
+ .bss.s_output  0x0010c200       0x50 workspace/dnn_yolo_app/main.o
+ *fill*         0x0010c250       0x30 
+ .bss.s_q88_input
+                0x0010c280      0x200 workspace/dnn_yolo_app/main.o
+ .bss.s_yuyv_frame
+                0x0010c480    0x25800 workspace/dnn_yolo_app/main.o
+ .bss.phase.0   0x00131c80        0x1 workspace/dnn_yolo_app/usb_capture.o
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+                0x00131c84                        . = ALIGN (0x4)
+ *fill*         0x00131c81        0x3 
+                0x00131c84                        __bss_end = .
+                0x0010c008                        _SDA_BASE_ = (__sdata_start + ((__sbss_end - __sdata_start) / 0x2))
+
+.heap           0x00131c84     0x400c
+                0x00131c90                        . = ALIGN (0x10)
+ *fill*         0x00131c84        0xc 
+                0x00131c90                        _heap = .
+                0x00131c90                        HeapBase = .
+                0x00131c90                        _heap_start = .
+                0x00135c90                        . = (. + _HEAP_SIZE)
+ *fill*         0x00131c90     0x4000 
+                0x00135c90                        _heap_end = .
+                0x00135c90                        HeapLimit = .
+
+.stack          0x00135c90     0x5800
+                0x00135c90                        . = ALIGN (0x10)
+                0x00135c90                        _stack_end = .
+                0x00139c90                        . = (. + _STACK_SIZE)
+ *fill*         0x00135c90     0x4000 
+                0x00139c90                        . = ALIGN (0x10)
+                0x00139c90                        _stack = .
+                0x00139c90                        __stack = _stack
+                0x00139c90                        . = ALIGN (0x10)
+                0x00139c90                        _irq_stack_end = .
+                0x0013a090                        . = (. + _IRQ_STACK_SIZE)
+ *fill*         0x00139c90      0x400 
+                0x0013a090                        . = ALIGN (0x10)
+                0x0013a090                        __irq_stack = .
+                0x0013a090                        _supervisor_stack_end = .
+                0x0013a890                        . = (. + _SUPERVISOR_STACK_SIZE)
+ *fill*         0x0013a090      0x800 
+                0x0013a890                        . = ALIGN (0x10)
+                0x0013a890                        __supervisor_stack = .
+                0x0013a890                        _abort_stack_end = .
+                0x0013ac90                        . = (. + _ABORT_STACK_SIZE)
+ *fill*         0x0013a890      0x400 
+                0x0013ac90                        . = ALIGN (0x10)
+                0x0013ac90                        __abort_stack = .
+                0x0013ac90                        _fiq_stack_end = .
+                0x0013b090                        . = (. + _FIQ_STACK_SIZE)
+ *fill*         0x0013ac90      0x400 
+                0x0013b090                        . = ALIGN (0x10)
+                0x0013b090                        __fiq_stack = .
+                0x0013b090                        _undef_stack_end = .
+                0x0013b490                        . = (. + _UNDEF_STACK_SIZE)
+ *fill*         0x0013b090      0x400 
+                0x0013b490                        . = ALIGN (0x10)
+                0x0013b490                        __undef_stack = .
+                0x0013b490                        _end = .
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/asm_vectors.o
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/translation_table.o
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+LOAD workspace/dnn_yolo_app/dnn_accel.o
+LOAD workspace/dnn_yolo_app/main.o
+LOAD workspace/dnn_yolo_app/preprocess.o
+LOAD workspace/dnn_yolo_app/usb_capture.o
+LOAD workspace/dnn_yolo_app/yolo_post.o
+LOAD workspace/dnn_yolo_app/yolo_weights.o
+START GROUP
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a
+LOAD workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxilffs.a
+LOAD /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a
+LOAD /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a
+LOAD /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libm.a
+END GROUP
+START GROUP
+LOAD /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libgcc.a
+LOAD /home/chathupa/Desktop/AMD/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../aarch32-xilinx-eabi/usr/lib/thumb/v7-a+fp/hard/libc.a
+END GROUP
+OUTPUT(workspace/dnn_yolo_app/dnn_yolo_app.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_line     0x00000000     0x58e7
+ .debug_line    0x00000000       0x61 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .debug_line    0x00000061      0x142 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_line    0x000001a3       0x79 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_line    0x0000021c       0x53 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .debug_line    0x0000026f     0x1d6b workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_line    0x00001fda      0x212 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_line    0x000021ec      0xbd8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_line    0x00002dc4      0x165 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_line    0x00002f29     0x1450 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_line    0x00004379      0x239 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_line    0x000045b2      0x1af workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_line    0x00004761      0x232 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_line    0x00004993      0x16a workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_line    0x00004afd      0x173 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_line    0x00004c70      0x175 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_line    0x00004de5      0x1a6 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_line    0x00004f8b      0x238 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_line    0x000051c3      0x17a workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_line    0x0000533d      0x161 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .debug_line    0x0000549e      0x383 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_line    0x00005821       0xc6 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_line_str
+                0x00000000       0xb1
+ .debug_line_str
+                0x00000000       0xb1 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+                                 0x9f (size before relaxing)
+ .debug_line_str
+                0x000000b1       0x9b workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_line_str
+                0x000000b1       0x9f workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+
+.debug_info     0x00000000     0x74e1
+ .debug_info    0x00000000       0x24 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .debug_info    0x00000024       0x25 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_info    0x00000049      0x13d workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_info    0x00000186       0x24 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .debug_info    0x000001aa     0x32b0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_info    0x0000345a      0x314 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_info    0x0000376e      0xb0a workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_info    0x00004278      0x153 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_info    0x000043cb     0x17f8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_info    0x00005bc3      0x36c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_info    0x00005f2f      0x223 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_info    0x00006152      0x322 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_info    0x00006474      0x114 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_info    0x00006588      0x135 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_info    0x000066bd      0x135 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_info    0x000067f2      0x1d5 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_info    0x000069c7      0x1da workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_info    0x00006ba1      0x15c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_info    0x00006cfd      0x199 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .debug_info    0x00006e96      0x59d workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_info    0x00007433       0xae workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_abbrev   0x00000000     0x1a40
+ .debug_abbrev  0x00000000       0x14 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .debug_abbrev  0x00000014       0x14 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_abbrev  0x00000028       0xb5 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_abbrev  0x000000dd       0x14 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .debug_abbrev  0x000000f1      0x371 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_abbrev  0x00000462      0x1ed workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_abbrev  0x0000064f      0x37d workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_abbrev  0x000009cc       0xc5 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_abbrev  0x00000a91      0x342 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_abbrev  0x00000dd3      0x1ce workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_abbrev  0x00000fa1      0x137 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_abbrev  0x000010d8      0x15d workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_abbrev  0x00001235       0xa7 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_abbrev  0x000012dc       0xde workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_abbrev  0x000013ba       0xde workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_abbrev  0x00001498      0x115 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_abbrev  0x000015ad      0x10c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_abbrev  0x000016b9       0xba workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_abbrev  0x00001773       0xcf workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .debug_abbrev  0x00001842      0x195 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_abbrev  0x000019d7       0x69 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_aranges  0x00000000      0x298
+ .debug_aranges
+                0x00000000       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+ .debug_aranges
+                0x00000020       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_aranges
+                0x00000040       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_aranges
+                0x00000060       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .debug_aranges
+                0x00000080       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_aranges
+                0x000000a0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_aranges
+                0x000000c0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_aranges
+                0x000000e0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_aranges
+                0x00000100       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_aranges
+                0x00000120       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_aranges
+                0x00000140       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_aranges
+                0x00000160       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_aranges
+                0x00000180       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_aranges
+                0x000001a0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_aranges
+                0x000001c0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_aranges
+                0x000001e0       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_aranges
+                0x00000200       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_aranges
+                0x00000220       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_aranges
+                0x00000240       0x18 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .debug_aranges
+                0x00000258       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_aranges
+                0x00000278       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_str      0x00000000     0x1125
+ .debug_str     0x00000000     0x1125 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/xil-crt0.o
+                                 0xad (size before relaxing)
+ .debug_str     0x00001125       0xa9 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/boot.o
+ .debug_str     0x00001125      0x267 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_str     0x00001125       0xad workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(cpu_init.o)
+ .debug_str     0x00001125      0x696 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_str     0x00001125      0x345 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_str     0x00001125      0x3a1 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_str     0x00001125      0x20e workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_str     0x00001125      0x5c0 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_str     0x00001125      0x35c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_str     0x00001125      0x2e8 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_str     0x00001125      0x25d workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_str     0x00001125      0x1fa workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_str     0x00001125      0x1fc workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_str     0x00001125      0x1ff workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_str     0x00001125      0x285 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_str     0x00001125      0x2aa workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_str     0x00001125      0x245 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_str     0x00001125      0x285 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .debug_str     0x00001125      0x290 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_str     0x00001125      0x1cd workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.comment        0x00000000       0x12
+ .comment       0x00000000       0x12 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+                                 0x13 (size before relaxing)
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/dnn_accel.o
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/main.o
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/preprocess.o
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/usb_capture.o
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/yolo_post.o
+ .comment       0x00000012       0x13 workspace/dnn_yolo_app/yolo_weights.o
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_g.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .comment       0x00000012       0x13 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_frame    0x00000000      0x974
+ .debug_frame   0x00000000       0x70 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/vectors.o
+ .debug_frame   0x00000070      0x2dc workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_frame   0x0000034c       0x90 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_frame   0x000003dc       0xe4 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_frame   0x000004c0       0x30 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_frame   0x000004f0      0x210 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_frame   0x00000700       0x2c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_frame   0x0000072c       0x30 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_frame   0x0000075c       0x30 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_frame   0x0000078c       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_frame   0x000007ac       0x34 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_frame   0x000007e0       0x34 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_frame   0x00000814       0x48 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_frame   0x0000085c       0x68 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_frame   0x000008c4       0x40 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_frame   0x00000904       0x50 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_frame   0x00000954       0x20 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_loclists
+                0x00000000     0x47d9
+ .debug_loclists
+                0x00000000     0x2141 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_loclists
+                0x00002141       0x4a workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_exception.o)
+ .debug_loclists
+                0x0000218b      0x937 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_loclists
+                0x00002ac2       0x3c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_sleepcommon.o)
+ .debug_loclists
+                0x00002afe     0x17f5 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_loclists
+                0x000042f3       0xa1 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_intr.o)
+ .debug_loclists
+                0x00004394       0x3c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic_sinit.o)
+ .debug_loclists
+                0x000043d0       0xcd workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_loclists
+                0x0000449d       0x2b workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(outbyte.o)
+ .debug_loclists
+                0x000044c8       0x28 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(sleep.o)
+ .debug_loclists
+                0x000044f0       0x28 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(usleep.o)
+ .debug_loclists
+                0x00004518       0x3c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_assert.o)
+ .debug_loclists
+                0x00004554       0x84 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_spinlock.o)
+ .debug_loclists
+                0x000045d8       0x36 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xplatform_info.o)
+ .debug_loclists
+                0x0000460e      0x1b7 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)
+ .debug_loclists
+                0x000047c5       0x14 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(_exit.o)
+
+.debug_rnglists
+                0x00000000      0x52b
+ .debug_rnglists
+                0x00000000      0x2d6 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_cache.o)
+ .debug_rnglists
+                0x000002d6       0x96 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xil_printf.o)
+ .debug_rnglists
+                0x0000036c      0x142 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xscugic.o)
+ .debug_rnglists
+                0x000004ae       0x21 workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xtime_l.o)
+ .debug_rnglists
+                0x000004cf       0x5c workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/standalone_domain/bsplib/lib/libxil.a(xuartps_hw.o)

@@ -1,0 +1,4 @@
+the_ROM_image:
+{
+    [bootloader] /home/chathupa/Desktop/dnn_opt/software/vitis/workspace/dnn_platform/export/dnn_platform/sw/dnn_platform/boot/fsbl.elf
+}

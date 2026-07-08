@@ -1,0 +1,27 @@
+
+****** Software Commandline Tool (XSCT) v2025.2.0
+  **** SW Build 6298600 on Thu Nov 13 00:55:04 MST 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Starting /home/chathupa/Desktop/AMD/2025.2/Vitis/bin/loader -exec rdi_vitis. This could take few seconds...sh: 1: /home/chathupa/Desktop/AMD/2025.2/sdk/eclipse/lnx64.o/eclipse: not found
+Timeout while establishing a connection with Vitis
+    while executing
+"error "Timeout while establishing a connection with Vitis""
+    (procedure "getsdkchan" line 126)
+    invoked from within
+"getsdkchan"
+    (procedure "getosfromrepo" line 3)
+    invoked from within
+"getosfromrepo $params(platform) "" $params(domain)"
+    (procedure "app" line 232)
+    invoked from within
+"app create -name $app_name -platform $plat_name -domain ${plat_name}_domain \
+           -template $tmpl -lang C"
+    (file "software/vitis/scripts/create_app.tcl" line 29)
+[wrapper] xsct exited 1

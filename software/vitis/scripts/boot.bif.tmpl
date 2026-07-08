@@ -1,0 +1,10 @@
+//
+// boot.bif.tmpl — bootgen image format template for ZedBoard SD boot.
+// build_boot_bin.tcl substitutes @PLACEHOLDERS@ at build time.
+//
+the_ROM_image:
+{
+    [bootloader] @FSBL_ELF@
+    @BITSTREAM@
+    @APP_ELF@
+}
