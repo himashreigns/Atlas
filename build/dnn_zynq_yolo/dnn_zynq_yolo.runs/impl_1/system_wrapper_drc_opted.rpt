@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Jul  7 16:52:19 2026
+| Date         : Wed Jul  8 09:44:59 2026
 | Host         : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
 | Design       : system_wrapper
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 60
+             Checks found: 61
 +-----------+----------+----------------------------+--------+
 | Rule      | Severity | Description                | Checks |
 +-----------+----------+----------------------------+--------+
-| DPIP-1    | Warning  | Input pipelining           | 22     |
+| DPIP-1    | Warning  | Input pipelining           | 23     |
 | DPOP-1    | Warning  | PREG Output pipelining     | 18     |
 | DPOP-2    | Warning  | MREG Output pipelining     | 17     |
 | REQP-1839 | Warning  | RAMB36 async control check | 3      |
@@ -144,6 +144,11 @@ Related violations: <none>
 DPIP-1#22 Warning
 Input pipelining  
 DSP system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/product__0 input system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/product__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/product__1 input system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/product__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning

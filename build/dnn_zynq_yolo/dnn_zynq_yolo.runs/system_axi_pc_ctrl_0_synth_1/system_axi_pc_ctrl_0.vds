@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Jul  7 16:49:18 2026
-# Process ID         : 61195
+# Start of session at: Wed Jul  8 09:42:19 2026
+# Process ID         : 24517
 # Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_axi_pc_ctrl_0_synth_1
 # Command line       : vivado -log system_axi_pc_ctrl_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_pc_ctrl_0.tcl
 # Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.runs/system_axi_pc_ctrl_0_synth_1/system_axi_pc_ctrl_0.vds
@@ -13,15 +13,15 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
-# CPU Frequency      : 3604.249 MHz
+# CPU Frequency      : 3596.591 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16589 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20884 MB
-# Available Virtual  : 16138 MB
+# Available Virtual  : 14635 MB
 #-----------------------------------------------------------
 source system_axi_pc_ctrl_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1615.129 ; gain = 64.059 ; free physical = 237 ; free virtual = 13843
+create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 1589.883 ; gain = 103.059 ; free physical = 232 ; free virtual = 12451
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_axi_pc_ctrl_0, cache-ID = 1b67eeb76d2df037.
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  7 16:49:34 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 09:42:36 2026...

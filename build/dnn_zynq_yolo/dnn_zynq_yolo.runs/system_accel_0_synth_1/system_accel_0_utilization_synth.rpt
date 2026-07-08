@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Jul  7 16:50:41 2026
+| Date         : Wed Jul  8 09:43:42 2026
 | Host         : chathupa-Nitro-AN515-55 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_utilization -file system_accel_0_utilization_synth.rpt -pb system_accel_0_utilization_synth.pb
 | Design       : system_accel_0
@@ -72,11 +72,11 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |  8.5 |     0 |          0 |       140 |  6.07 |
-|   RAMB36/FIFO*    |    7 |     0 |          0 |       140 |  5.00 |
-|     RAMB36E1 only |    7 |       |            |           |       |
-|   RAMB18          |    3 |     0 |          0 |       280 |  1.07 |
-|     RAMB18E1 only |    3 |       |            |           |       |
+| Block RAM Tile    |    9 |     0 |          0 |       140 |  6.43 |
+|   RAMB36/FIFO*    |    8 |     0 |          0 |       140 |  5.71 |
+|     RAMB36E1 only |    8 |       |            |           |       |
+|   RAMB18          |    2 |     0 |          0 |       280 |  0.71 |
+|     RAMB18E1 only |    2 |       |            |           |       |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -163,10 +163,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | CARRY4   |  144 |          CarryLogic |
 | DSP48E1  |   25 |    Block Arithmetic |
 | LUT1     |   20 |                 LUT |
+| RAMB36E1 |    8 |        Block Memory |
 | FDSE     |    8 |        Flop & Latch |
-| RAMB36E1 |    7 |        Block Memory |
-| RAMB18E1 |    3 |        Block Memory |
 | FDPE     |    3 |        Flop & Latch |
+| RAMB18E1 |    2 |        Block Memory |
 +----------+------+---------------------+
 
 

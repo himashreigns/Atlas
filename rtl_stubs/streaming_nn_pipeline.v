@@ -89,7 +89,7 @@ module streaming_nn_pipeline #(
         .stream_out_ready(layer_ready_sig[1]),
         .wgt_load_en(wgt_load_en[0]),
         .wgt_load_addr(wgt_load_addr),
-        .wgt_load_data({{(ACC_W-DATA_W){1'b0}}, wgt_load_data}),
+        .wgt_load_data({{(ACC_W-DATA_W){wgt_load_data[DATA_W-1]}}, wgt_load_data}),   // SIGN-extend: negative s16 weights must stay negative in the 32-bit FC/POOL ports (zero-extension turned -1 into +65535)
         .layer_ready(layer_ready_status[0]),
         .layer_busy(layer_busy[0])
     );
@@ -121,7 +121,7 @@ module streaming_nn_pipeline #(
         .stream_out_ready(layer_ready_sig[2]),
         .wgt_load_en(wgt_load_en[1]),
         .wgt_load_addr(wgt_load_addr),
-        .wgt_load_data({{(ACC_W-DATA_W){1'b0}}, wgt_load_data}),
+        .wgt_load_data({{(ACC_W-DATA_W){wgt_load_data[DATA_W-1]}}, wgt_load_data}),   // SIGN-extend: negative s16 weights must stay negative in the 32-bit FC/POOL ports (zero-extension turned -1 into +65535)
         .layer_ready(layer_ready_status[1]),
         .layer_busy(layer_busy[1])
     );
@@ -153,7 +153,7 @@ module streaming_nn_pipeline #(
         .stream_out_ready(layer_ready_sig[3]),
         .wgt_load_en(wgt_load_en[2]),
         .wgt_load_addr(wgt_load_addr),
-        .wgt_load_data({{(ACC_W-DATA_W){1'b0}}, wgt_load_data}),
+        .wgt_load_data({{(ACC_W-DATA_W){wgt_load_data[DATA_W-1]}}, wgt_load_data}),   // SIGN-extend: negative s16 weights must stay negative in the 32-bit FC/POOL ports (zero-extension turned -1 into +65535)
         .layer_ready(layer_ready_status[2]),
         .layer_busy(layer_busy[2])
     );
@@ -182,7 +182,7 @@ module streaming_nn_pipeline #(
         .stream_out_ready(layer_ready_sig[4]),
         .wgt_load_en(wgt_load_en[3]),
         .wgt_load_addr(wgt_load_addr),
-        .wgt_load_data({{(ACC_W-DATA_W){1'b0}}, wgt_load_data}),
+        .wgt_load_data({{(ACC_W-DATA_W){wgt_load_data[DATA_W-1]}}, wgt_load_data}),   // SIGN-extend: negative s16 weights must stay negative in the 32-bit FC/POOL ports (zero-extension turned -1 into +65535)
         .layer_ready(layer_ready_status[3]),
         .layer_busy(layer_busy[3])
     );

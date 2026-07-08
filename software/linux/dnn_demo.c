@@ -254,7 +254,11 @@ static void preprocess(const uint8_t *yuyv, int16_t *q88) {
                 }
             }
             uint8_t luma = n ? (uint8_t)(sum / n) : 0;
-            q88[dy * IN_W + dx] = (int16_t)((uint16_t)luma << 8);
+            /* <<7 (not <<8): keeps all 0..255 lumas POSITIVE in s16 Q8.8 —
+             * with <<8, luma >= 128 went negative and the CONV ReLU zeroed
+             * out every bright region. The FC weights are scaled x2 to
+             * compensate, so decoded confidences stay in full-luma units. */
+            q88[dy * IN_W + dx] = (int16_t)((uint16_t)luma << 7);
         }
     }
 }
@@ -275,10 +279,20 @@ static int decode(const int32_t *raw, box_t *out) {
     const uint32_t cw = FRAME_W / grid, ch = FRAME_H / grid;
     for (uint32_t c = 0; c < GRID_CELLS; ++c) {
         const int32_t *p = raw + c * PARAMS_PER_CELL;
-        int16_t cx = (int16_t)p[0], cy = (int16_t)p[1];
-        int16_t w  = (int16_t)p[2], h  = (int16_t)p[3];
-        int16_t conf = (int16_t)p[4];
-        if (conf < OBJ_THRESHOLD_Q88) continue;
+        /* Scale-shift decode: the FC accumulator works on luma<<8
+         * activations, so >>8 recovers clean Q8.8 with no wraparound (the
+         * old s16 narrow-cast overflowed for any contrast >= 128 luma).
+         * With the bright-quadrant weights, conf = (corner - center)
+         * regional luma contrast in 0..1.0 Q8.8. */
+        int32_t cx32 = p[0] >> 8, cy32 = p[1] >> 8;
+        int32_t w32  = p[2] >> 8, h32  = p[3] >> 8;
+        int32_t c32  = p[4] >> 8;
+        if (c32 < OBJ_THRESHOLD_Q88) continue;
+        int16_t cx = (int16_t)(cx32 > 255 ? 255 : (cx32 < 0 ? 0 : cx32));
+        int16_t cy = (int16_t)(cy32 > 255 ? 255 : (cy32 < 0 ? 0 : cy32));
+        int16_t w  = (int16_t)(w32  > 255 ? 255 : (w32  < 0 ? 0 : w32));
+        int16_t h  = (int16_t)(h32  > 255 ? 255 : (h32  < 0 ? 0 : h32));
+        int16_t conf = (int16_t)(c32 > 32767 ? 32767 : c32);
 
         uint32_t col = c % grid, row = c / grid;
         uint32_t cxp = col * cw + q88_mul(cx, cw);
@@ -433,7 +447,8 @@ static volatile sig_atomic_t g_stop = 0;
 static void on_signal(int sig) { (void)sig; g_stop = 1; }
 
 int main(int argc, char **argv) {
-    const char *dev = (argc > 1) ? argv[1] : "/dev/video0";
+    /* argv[1] is the video device only when it isn't a --flag */
+    const char *dev = (argc > 1 && argv[1][0] != '-') ? argv[1] : "/dev/video0";
 
     int fd = open("/dev/mem", O_RDWR | O_SYNC);
     if (fd < 0) { perror("open /dev/mem"); return 1; }
@@ -492,6 +507,27 @@ int main(int argc, char **argv) {
 
     if (camera_open(dev) != 0) return 1;
 
+    /* --view: live ASCII map of the preprocessed 16x16 luma grid — shows
+     * exactly what the network sees and where to aim the light. */
+    if (argc > 1 && strcmp(argv[1], "--view") == 0) {
+        const char ramp[] = " .:-=+*#%@";
+        for (int fcount = 0; fcount < 200 && !g_stop; ++fcount) {
+            if (camera_grab(on_frame, NULL) != 0) continue;
+            if (fcount % 10) continue;
+            printf("\n    0123456789012345   (16x16 luma; @ = bright)\n");
+            for (int y = 0; y < IN_H; ++y) {
+                printf("%2d  ", y);
+                for (int x = 0; x < IN_W; ++x) {
+                    int l = s_q88[y * IN_W + x] >> 7;
+                    putchar(ramp[(l * 9) / 255]);
+                }
+                putchar('\n');
+            }
+        }
+        camera_close();
+        return 0;
+    }
+
     printf("[main] entering capture loop (Ctrl-C to stop)\n");
     unsigned long frames = 0, dets = 0, stalls = 0;
     int32_t out[OUT_LEN];
@@ -515,8 +551,20 @@ int main(int argc, char **argv) {
         if (rc == 0) {
             int n = decode(out, boxes);
             dets += n;
-            printf("[frame %lu] cam %.1f fps | accel %.1f us | %d det\n",
-                   frames, fps, t1 - t0, n);
+            /* Per-cell raw confidences (luma-contrast units) + scene range:
+             * makes the detector observable even below threshold. */
+            int lmin = 255, lmax = 0;
+            for (int i = 0; i < IN_LEN; ++i) {
+                int l = s_q88[i] >> 7;
+                if (l < lmin) lmin = l;
+                if (l > lmax) lmax = l;
+            }
+            printf("[frame %lu] cam %.1f fps | accel %.1f us | %d det | "
+                   "conf={%ld,%ld,%ld,%ld} luma=[%d..%d]\n",
+                   frames, fps, t1 - t0, n,
+                   (long)(out[4] >> 8), (long)(out[9] >> 8),
+                   (long)(out[14] >> 8), (long)(out[19] >> 8),
+                   lmin, lmax);
             for (int i = 0; i < n; ++i) {
                 int16_t cq = boxes[i].conf;
                 printf("    cell=%d box=[%u,%u->%u,%u] conf=%d.%02u\n",

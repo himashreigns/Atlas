@@ -99,8 +99,6 @@ set_property used_in_implementation false [get_files /home/chathupa/Desktop/dnn_
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
-
-read_checkpoint -auto_incremental -incremental /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_yolo/dnn_zynq_yolo.srcs/utils_1/imports/synth_1/system_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

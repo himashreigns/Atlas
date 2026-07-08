@@ -1,7 +1,9 @@
 +====================+===================+=================================================================================================+
 | Launch Setup Clock | Launch Hold Clock | Pin                                                                                             |
 +====================+===================+=================================================================================================+
-| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[6]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[5]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[7]/D |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_1/control_unit/act_raddr_reg[3]/D |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[31]/D                   |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[28]/D                   |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[27]/D                   |
@@ -9,4 +11,8 @@
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[23]/D                   |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[20]/D                   |
 | clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[19]/D                   |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[16]/D                   |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[15]/D                   |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[12]/D                   |
+| clk_fpga_0         | clk_fpga_0        | system_i/accel/inst/u_accel/FIXED_MODE.nn_core/pipeline/layer_3/acc_reg[11]/D                   |
 +--------------------+-------------------+-------------------------------------------------------------------------------------------------+

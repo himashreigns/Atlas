@@ -338,7 +338,15 @@
       "Bash(timeout 120 /home/chathupa/Desktop/AMD/2025.2/Vivado/bin/xsdb /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad/jtag_putbin.tcl)",
       "Bash(python3 - /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad)",
       "Bash(timeout 180 /home/chathupa/Desktop/AMD/2025.2/Vivado/bin/xsdb /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad/jtag_putbin2.tcl)",
-      "Bash(timeout 90 stdbuf -o0 cat /dev/ttyACM0)"
+      "Bash(timeout 90 stdbuf -o0 cat /dev/ttyACM0)",
+      "Bash(python3 tools/make_demo_weights.py)",
+      "Bash(/home/chathupa/Desktop/AMD/2025.2/Vivado/bin/xvlog rtl_stubs/streaming_nn_pipeline.v)",
+      "Read(//tmp/dnn_rpm3/**)",
+      "Bash(python3 - /home/chathupa/petalinux_projects/zed_yolo/build/tmp/deploy/rpm/cortexa9t2hf_neon/dnn-demo-1.0-r0.7.cortexa9t2hf_neon.rpm)",
+      "Bash(timeout 180 /home/chathupa/Desktop/AMD/2025.2/Vivado/bin/xsdb __TRACKED_VAR__/jtag_fpga.tcl)",
+      "Read(//tmp/dr4/**)",
+      "Bash(python3 -c ' *)",
+      "Read(//tmp/dr5/**)"
     ],
     "additionalDirectories": [
       "/media/chathupa/3472-745B",
