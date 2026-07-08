@@ -1,0 +1,378 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Jul  8 16:38:03 2026
+# Process ID         : 136270
+# Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1
+# Command line       : vivado -log system_axi_ic_mem_imp_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_ic_mem_imp_auto_pc_0.tcl
+# Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/system_axi_ic_mem_imp_auto_pc_0.vds
+# Journal file       : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/vivado.jou
+# Running On         : chathupa-Nitro-AN515-55
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+# CPU Frequency      : 3500.012 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16589 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20884 MB
+# Available Virtual  : 16146 MB
+#-----------------------------------------------------------
+source system_axi_ic_mem_imp_auto_pc_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 1618.516 ; gain = 64.059 ; free physical = 4272 ; free virtual = 12304
+Command: synth_design -top system_axi_ic_mem_imp_auto_pc_0 -part xc7z020clg484-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 136587
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2307.281 ; gain = 482.156 ; free physical = 547 ; free virtual = 8599
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/synth/system_axi_ic_mem_imp_auto_pc_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_axi_protocol_converter' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_axi3_conv' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:951]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_b_downsizer' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2269]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_b_downsizer' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2269]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_a_axi3_conv' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/home/chathupa/Desktop/AMD/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (0#1) [/home/chathupa/Desktop/AMD/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo__parameterized0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen__parameterized0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_a_axi3_conv' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_w_axi3_conv' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1998]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_w_axi3_conv' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1998]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_a_axi3_conv__parameterized0' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo__parameterized1' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen__parameterized1' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_fifo_gen__parameterized1' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_36_axic_fifo__parameterized1' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/fb46/hdl/axi_data_fifo_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_a_axi3_conv__parameterized0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_37_r_axi3_conv' [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1784]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_r_axi3_conv' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1784]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_axi3_conv' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:951]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_37_axi_protocol_converter' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_ic_mem_imp_auto_pc_0' (0#1) [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/synth/system_axi_ic_mem_imp_auto_pc_0.v:53]
+INFO: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:280]
+INFO: [Synth 8-6014] Unused sequential element NO_B_CHANNEL.cmd_b_depth_reg was removed.  [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:852]
+INFO: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:280]
+INFO: [Synth 8-6014] Unused sequential element cmd_b_push_block_reg was removed.  [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ipshared/d98a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:636]
+INFO: [Synth 8-7129] Port ACLK in module axi_protocol_converter_v2_1_37_r_axi3_conv is either unconnected or has no load
+INFO: [Synth 8-7129] Port ARESET in module axi_protocol_converter_v2_1_37_r_axi3_conv is either unconnected or has no load
+INFO: [Synth 8-7129] Port ALMOST_FULL_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port ALMOST_EMPTY_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_ACK_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port VALID_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port OVERFLOW_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port UNDERFLOW_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[5] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[4] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[3] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[2] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[1] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DATA_COUNT_I[0] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[5] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[4] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[3] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[2] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[1] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_DATA_COUNT_I[0] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[5] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[4] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[3] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[2] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[1] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_DATA_COUNT_I[0] in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SBITERR_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port DBITERR_I in module output_blk__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST_FULL_FF in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_RST in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port SAFETY_CKT_WR_RST in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS2[4] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS2[3] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS2[2] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS2[1] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS2[0] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS3[4] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS3[3] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS3[2] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS3[1] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS3[0] in module wr_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST in module wr_bin_cntr is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_EN_INTO_LOGIC in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_RST_INTO_LOGIC in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_EN in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_RST_BUSY in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port EMPTY in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port ALMOST_EMPTY in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH[4] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH[3] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH[2] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH[1] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH[0] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[4] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[3] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[2] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[1] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[0] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[4] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[3] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[2] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[1] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[0] in module wr_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST in module rd_fwft is either unconnected or has no load
+INFO: [Synth 8-7129] Port SAFETY_CKT_RD_RST in module rd_fwft is either unconnected or has no load
+INFO: [Synth 8-7129] Port RAM_ALMOST_EMPTY in module rd_fwft is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port SAFETY_CKT_RD_RST in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_PNTR_PLUS2[4] in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_PNTR_PLUS2[3] in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_PNTR_PLUS2[2] in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_PNTR_PLUS2[1] in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_PNTR_PLUS2[0] in module rd_status_flags_ss is either unconnected or has no load
+INFO: [Synth 8-7129] Port SRST in module rd_bin_cntr is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_EN_INTO_LOGIC in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_RST_INTO_LOGIC in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port RD_RST_BUSY in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port RST_FULL_FF in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port ALMOST_FULL_FB in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port FULL in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[4] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[3] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[2] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[1] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[0] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH[4] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH[3] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH[2] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH[1] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH[0] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[4] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[3] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[2] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[1] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[0] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[4] in module rd_logic is either unconnected or has no load
+INFO: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[3] in module rd_logic is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2522.219 ; gain = 697.094 ; free physical = 204 ; free virtual = 7622
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2522.219 ; gain = 697.094 ; free physical = 173 ; free virtual = 7591
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2522.219 ; gain = 697.094 ; free physical = 173 ; free virtual = 7591
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2522.219 ; gain = 0.000 ; free physical = 175 ; free virtual = 7486
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.gen/sources_1/bd/system/ip/system_axi_ic_mem_imp_auto_pc_0/system_axi_ic_mem_imp_auto_pc_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2595.051 ; gain = 0.000 ; free physical = 997 ; free virtual = 7928
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2595.086 ; gain = 0.000 ; free physical = 1004 ; free virtual = 7935
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 2595.086 ; gain = 769.961 ; free physical = 333 ; free virtual = 7726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 2603.055 ; gain = 777.930 ; free physical = 333 ; free virtual = 7726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 2603.055 ; gain = 777.930 ; free physical = 334 ; free virtual = 7727
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft'
+INFO: [Synth 8-6159] Found Keep on FSM register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                               00 |                               00
+            stage1_valid |                               10 |                               10
+       both_stages_valid |                               11 |                               11
+            stage2_valid |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 2603.055 ; gain = 777.930 ; free physical = 1965 ; free virtual = 9369
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 2603.055 ; gain = 777.930 ; free physical = 1857 ; free virtual = 9266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 2603.055 ; gain = 777.930 ; free physical = 1203 ; free virtual = 8636
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 2640.086 ; gain = 814.961 ; free physical = 1078 ; free virtual = 8505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:45 . Memory (MB): peak = 2640.086 ; gain = 814.961 ; free physical = 1047 ; free virtual = 8474
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 794 ; free virtual = 8241
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 794 ; free virtual = 8241
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 765 ; free virtual = 8212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 765 ; free virtual = 8212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 764 ; free virtual = 8212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 764 ; free virtual = 8212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    16|
+|2     |LUT1     |    47|
+|3     |LUT2     |    47|
+|4     |LUT3     |    52|
+|5     |LUT4     |    63|
+|6     |LUT5     |   166|
+|7     |LUT6     |    89|
+|8     |RAM32M   |     3|
+|9     |RAM32X1D |     1|
+|10    |FDCE     |    69|
+|11    |FDPE     |    33|
+|12    |FDRE     |   353|
+|13    |FDSE     |     5|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2799.898 ; gain = 974.773 ; free physical = 756 ; free virtual = 8204
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 2799.898 ; gain = 901.906 ; free physical = 739 ; free virtual = 8187
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 2799.906 ; gain = 974.773 ; free physical = 739 ; free virtual = 8187
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2799.906 ; gain = 0.000 ; free physical = 920 ; free virtual = 8368
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 4 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.926 ; gain = 0.000 ; free physical = 5238 ; free virtual = 12689
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+Synth Design complete | Checksum: 53812762
+INFO: [Common 17-83] Releasing license: Synthesis
+153 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 2855.961 ; gain = 1234.711 ; free physical = 5158 ; free virtual = 12609
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1976.805; main = 1841.987; forked = 225.923
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3786.426; main = 2855.930; forked = 986.523
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2879.938 ; gain = 0.000 ; free physical = 5111 ; free virtual = 12562
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/system_axi_ic_mem_imp_auto_pc_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_axi_ic_mem_imp_auto_pc_0, cache-ID = d086158695ffab72
+INFO: [Coretcl 2-1174] Renamed 57 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2879.938 ; gain = 0.000 ; free physical = 4978 ; free virtual = 12431
+INFO: [Common 17-1381] The checkpoint '/home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_mem_imp_auto_pc_0_synth_1/system_axi_ic_mem_imp_auto_pc_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_axi_ic_mem_imp_auto_pc_0_utilization_synth.rpt -pb system_axi_ic_mem_imp_auto_pc_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  8 16:39:21 2026...

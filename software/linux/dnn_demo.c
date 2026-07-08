@@ -103,9 +103,26 @@
 #define OBJ_THRESHOLD_Q88  ((int16_t)(0.30f * 256))
 #define ACCEL_RETRIES      2        /* kick + (soft-reset recovery) retry */
 
+/* ---- HDMI scanout core (hdmi_out.v) --------------------------------------- */
+#define HDMI_BASE       0x43C10000u
+#define HDMI_SPAN       0x1000u
+#define FB_PHYS         0x10100000u          /* 2nd MB of the reserved region */
+#define FB_W            640
+#define FB_H            480
+#define FB_BYTES        (FB_W * FB_H * 2)    /* YUYV */
+
+#define HREG_CTRL       0x00    /* [0] en [1] yc_swap [2] cbcr_swap [3] testpat */
+#define HREG_FB         0x04
+#define HREG_STAT       0x08
+#define HREG_I2C        0x0C    /* w: [0] sda_low [1] scl_low; r: [8] sda [9] scl */
+
+#define ADV7511_ADDR    0x39    /* 7-bit I2C address */
+
 /* ---- Globals ------------------------------------------------------------- */
 static volatile uint32_t *g_regs;   /* accelerator register window */
 static volatile int32_t  *g_dma;    /* DMA scratch (word-addressed) */
+static volatile uint32_t *g_hdmi;   /* scanout register window (or NULL) */
+static volatile uint32_t *g_fb;     /* framebuffer (word access) */
 
 static inline void     reg_wr(uint32_t off, uint32_t v) { g_regs[off >> 2] = v; }
 static inline uint32_t reg_rd(uint32_t off)             { return g_regs[off >> 2]; }
@@ -230,6 +247,212 @@ static int accel_run(const int16_t *input, int32_t *output, uint32_t *statusp) {
     }
     if (statusp) *statusp = st;
     return -1;
+}
+
+/* =============================================================================
+ * HDMI video output: ADV7511 I2C init + framebuffer writer
+ * ============================================================================= */
+static inline void hreg_wr(uint32_t off, uint32_t v) { g_hdmi[off >> 2] = v; }
+static inline uint32_t hreg_rd(uint32_t off)         { return g_hdmi[off >> 2]; }
+
+/* Open-drain bit-bang. Board pull-ups; ~10-20 kHz effective (fine, the
+ * ADV7511 accepts arbitrarily slow I2C). */
+#define I2C_DEL 20
+static void i2c_set(int scl_low, int sda_low) {
+    hreg_wr(HREG_I2C, ((scl_low & 1) << 1) | (sda_low & 1));
+    usleep(I2C_DEL);
+}
+static int i2c_sda_in(void) { return (hreg_rd(HREG_I2C) >> 8) & 1; }
+
+static void i2c_start(void) {
+    i2c_set(0, 0 /*both released*/);
+    i2c_set(0, 1);      /* SDA low while SCL high */
+    i2c_set(1, 1);      /* SCL low */
+}
+static void i2c_stop(void) {
+    i2c_set(1, 1);
+    i2c_set(0, 1);      /* SCL high, SDA low */
+    i2c_set(0, 0);      /* SDA released while SCL high */
+}
+/* returns 0 on ACK */
+static int i2c_wbyte(uint8_t b) {
+    for (int i = 7; i >= 0; --i) {
+        int sda_low = !((b >> i) & 1);
+        i2c_set(1, sda_low);
+        i2c_set(0, sda_low);    /* clock high */
+        i2c_set(1, sda_low);
+    }
+    i2c_set(1, 0);              /* release SDA for ACK */
+    i2c_set(0, 0);
+    int ack = i2c_sda_in();     /* 0 = ACK */
+    i2c_set(1, 0);
+    return ack;
+}
+static int adv_wr(uint8_t reg, uint8_t val) {
+    i2c_start();
+    int e = i2c_wbyte(ADV7511_ADDR << 1);
+    e |= i2c_wbyte(reg);
+    e |= i2c_wbyte(val);
+    i2c_stop();
+    return e;
+}
+static int adv_rd(uint8_t reg, uint8_t *val) {
+    int e; uint8_t b = 0;
+    i2c_start();
+    e  = i2c_wbyte(ADV7511_ADDR << 1);
+    e |= i2c_wbyte(reg);
+    i2c_start();                          /* repeated start */
+    e |= i2c_wbyte((ADV7511_ADDR << 1) | 1);
+    for (int i = 7; i >= 0; --i) {        /* read byte, NACK */
+        i2c_set(1, 0);
+        i2c_set(0, 0);
+        b = (b << 1) | i2c_sda_in();
+        i2c_set(1, 0);
+    }
+    i2c_set(1, 1); i2c_set(0, 1); i2c_set(1, 0);   /* master NACK */
+    i2c_stop();
+    *val = b;
+    return e;
+}
+
+/* ADV7511 init — faithful port of the Linux kernel driver's sequence
+ * (drivers/gpu/drm/bridge/adv7511). Key kernel lessons baked in:
+ *   - most registers reset when HPD drops or the part powers down, so mask
+ *     HPD FIRST (0xD6[7:6]=11 = HPD_SRC_NONE), then rewrite everything
+ *   - the "input style" values in the datasheet don't match the hardware
+ *     field encoding (style 1 -> hw 2)
+ *   - CSC coefficient writes only latch inside the CSC_UPDATE_MODE window
+ *     (0x1A bit5) — without it they are silently discarded
+ * mode 0: DVI out + CSC YCbCr->RGB (kernel table). mode 1: HDMI + 4:2:2
+ * passthrough. */
+/* Verified plain write: the kernel's update_bits reads a SOFTWARE cache and
+ * writes full bytes — chip reads are flaky here, so mirror that: compute the
+ * full value, write it plainly, verify by readback, retry a few times. */
+static int adv_wr_v(uint8_t reg, uint8_t val) {
+    for (int t = 0; t < 5; ++t) {
+        adv_wr(reg, val);
+        uint8_t rb = 0;
+        adv_rd(reg, &rb);
+        if (rb == val) return 0;
+        usleep(2000);
+    }
+    return -1;
+}
+
+static int adv7511_init(int mode) {
+    /* __adv7511_power_on: power up, then mask HPD so nothing resets us */
+    adv_wr(0x41, 0x10);
+    adv_wr(0xD6, 0xC0);           /* HPD_SRC_NONE */
+    usleep(100000);
+    adv_wr(0x41, 0x10);
+    usleep(20000);
+
+    uint8_t rev = 0, sense = 0;
+    adv_rd(0x00, &rev);
+    adv_rd(0x42, &sense);
+    printf("[adv] rev=0x%02x hpd/sense=0x%02x\n", rev, sense);
+
+    /* regcache_sync equivalent: fixed registers (kernel table) */
+    static const uint8_t fixed[][2] = {
+        {0x98,0x03},{0x9A,0xE0},{0x9C,0x30},{0x9D,0x61},
+        {0xA2,0xA4},{0xA3,0xA4},{0xE0,0xD0},{0xF9,0x00},{0x55,0x02},
+    };
+    for (unsigned i = 0; i < sizeof(fixed)/2; ++i)
+        adv_wr(fixed[i][0], fixed[i][1]);
+
+    /* link config: YCbCr 4:2:2, 8-bit, 1x clock, separate syncs,
+     * style 1 (hardware encoding 2 — datasheet values don't match hw!),
+     * right justification. Full-byte values, verified. */
+    int e15 = adv_wr_v(0x15, 0x01);
+    int e16 = adv_wr_v(0x16, (3 << 4) | (2 << 2));   /* 0x38 */
+    adv_wr(0x48, 1 << 3);
+    adv_wr(0xD0, 3 << 2);
+    adv_wr(0xBA, 3 << 5);
+
+    if (mode == 0) {
+        /* CSC: kernel YCbCr->RGB table inside the CSC_UPDATE_MODE window.
+         * Full-byte values: 0x18 = enable|scale|A1hi (enable written LAST),
+         * 0x1A = update|A2hi during the window. */
+        adv_wr(0x1A, 0x20 | 0x04);                  /* update mode + A2 hi */
+        adv_wr(0x18, 0x07); adv_wr(0x19, 0x34);     /* A1 = 0x0734 */
+        adv_wr(0x1B, 0xAD);                          /* A2 = 0x04AD */
+        adv_wr(0x1C, 0x00); adv_wr(0x1D, 0x00);     /* A3 = 0x0000 */
+        adv_wr(0x1E, 0x1C); adv_wr(0x1F, 0x1B);     /* A4 = 0x1C1B */
+        adv_wr(0x20, 0x1D); adv_wr(0x21, 0xDC);     /* B1 = 0x1DDC */
+        adv_wr(0x22, 0x04); adv_wr(0x23, 0xAD);     /* B2 = 0x04AD */
+        adv_wr(0x24, 0x1F); adv_wr(0x25, 0x24);     /* B3 = 0x1F24 */
+        adv_wr(0x26, 0x01); adv_wr(0x27, 0x35);     /* B4 = 0x0135 */
+        adv_wr(0x28, 0x00); adv_wr(0x29, 0x00);     /* C1 = 0x0000 */
+        adv_wr(0x2A, 0x04); adv_wr(0x2B, 0xAD);     /* C2 = 0x04AD */
+        adv_wr(0x2C, 0x08); adv_wr(0x2D, 0x7C);     /* C3 = 0x087C */
+        adv_wr(0x2E, 0x1B); adv_wr(0x2F, 0x77);     /* C4 = 0x1B77 */
+        adv_wr(0x18, 0x80 | (2 << 5) | 0x07);       /* enable, scale x4: 0xC7 */
+        adv_wr(0x1A, 0x04);                          /* close update window */
+        adv_wr(0xAF, 0x04);                          /* DVI mode */
+    } else {
+        adv_wr(0x18, 0x07);                          /* CSC off */
+        adv_wr_v(0x16, 0x81 | (3 << 4) | (2 << 2)); /* out 4:2:2 YCbCr */
+        adv_wr(0xAF, 0x06);                          /* HDMI mode */
+        adv_wr(0x55, 0x20);                          /* AVI: YCbCr 4:2:2 */
+    }
+    adv_wr(0x96, 0xF6);
+
+    uint8_t r15 = 0, r16 = 0, r18 = 0;
+    adv_rd(0x15, &r15); adv_rd(0x16, &r16); adv_rd(0x18, &r18);
+    printf("[adv] init done (mode %d) 0x15=0x%02x(%s) 0x16=0x%02x(%s) 0x18=0x%02x\n",
+           mode, r15, e15 ? "RETRY-FAIL" : "ok",
+           r16, e16 ? "RETRY-FAIL" : "ok", r18);
+    return 0;
+}
+
+/* Camera YUYV 320x240 -> framebuffer 640x480 (2x pixel doubling). Word-wise:
+ * one source word (Y0 U Y1 V) becomes two FB words (Y0 U Y0 V)(Y1 U Y1 V),
+ * each written to two consecutive rows. */
+static void fb_blit_camera(const uint8_t *yuyv) {
+    const uint32_t *src = (const uint32_t *)yuyv;
+    for (int y = 0; y < 240; ++y) {
+        volatile uint32_t *d0 = g_fb + (2*y)   * (FB_W/2);
+        volatile uint32_t *d1 = g_fb + (2*y+1) * (FB_W/2);
+        for (int x = 0; x < 160; ++x) {          /* 160 words per source row */
+            uint32_t s  = src[y*160 + x];
+            uint8_t y0 = s, u = s >> 8, y1 = s >> 16, v = s >> 24;
+            uint32_t w0 = y0 | (u << 8) | (y0 << 16) | (v << 24);
+            uint32_t w1 = y1 | (u << 8) | (y1 << 16) | (v << 24);
+            d0[2*x] = w0; d0[2*x+1] = w1;
+            d1[2*x] = w0; d1[2*x+1] = w1;
+        }
+    }
+}
+
+/* Draw a green rectangle border (camera coords, scaled 2x) into the FB. */
+#define BOXC_Y 235   /* bright white in mono mode */
+#define BOXC_U 54
+#define BOXC_V 34
+static void fb_hline(int fx0, int fx1, int fy, int thick) {
+    if (fy < 0) fy = 0;
+    uint32_t w = BOXC_Y | (BOXC_U << 8) | (BOXC_Y << 16) | (BOXC_V << 24);
+    for (int t = 0; t < thick; ++t) {
+        int yy = fy + t; if (yy >= FB_H) break;
+        for (int x = fx0/2; x <= fx1/2 && x < FB_W/2; ++x)
+            g_fb[yy * (FB_W/2) + x] = w;
+    }
+}
+static void fb_vline(int fx, int fy0, int fy1, int thick) {
+    uint32_t w = BOXC_Y | (BOXC_U << 8) | (BOXC_Y << 16) | (BOXC_V << 24);
+    for (int y = fy0; y <= fy1 && y < FB_H; ++y)
+        for (int t = 0; t < thick; ++t) {
+            int xw = (fx + 2*t)/2;
+            if (xw < FB_W/2) g_fb[y * (FB_W/2) + xw] = w;
+        }
+}
+static void fb_draw_box(int cx0, int cy0, int cx1, int cy1) {
+    int x0 = cx0*2, x1 = cx1*2, y0 = cy0*2, y1 = cy1*2;
+    if (x1 >= FB_W) x1 = FB_W-1;
+    if (y1 >= FB_H) y1 = FB_H-1;
+    fb_hline(x0, x1, y0, 4);
+    fb_hline(x0, x1, y1-3, 4);
+    fb_vline(x0, y0, y1, 2);
+    fb_vline(x1-3, y0, y1, 2);
 }
 
 /* =============================================================================
@@ -428,10 +651,13 @@ static void camera_close(void) {
  * Main
  * ============================================================================= */
 static int16_t s_q88[IN_LEN];
+static int g_use_hdmi = 0;
 
 static void on_frame(const uint8_t *yuyv, void *ctx) {
     (void)ctx;
     preprocess(yuyv, s_q88);
+    if (g_use_hdmi)
+        fb_blit_camera(yuyv);   /* while the V4L2 buffer is still dequeued */
 }
 
 static double now_us(void) {
@@ -482,6 +708,98 @@ int main(int argc, char **argv) {
     if (accel_init() != 0) return 1;
     accel_configure_sizes();
     accel_load_weights();
+
+    /* ---- video output (needs the HDMI bitstream) --------------------------
+     * --hdmi[=mode]   : enable live video out (mode 0 DVI+CSC, 1 HDMI 4:2:2)
+     * --hdmi-test[=m] : ADV7511 init + color-bar test pattern, then exit
+     *                   (the scanout keeps running — look at the monitor)   */
+    int use_hdmi = 0, hdmi_mode = 0, hdmi_test = 0;
+    for (int a = 1; a < argc; ++a) {
+        if (strncmp(argv[a], "--hdmi-poke", 11) == 0) {
+            hdmi_test = 0; use_hdmi = 0;
+            /* just map the windows; handled after mapping below */
+            g_hdmi = (void *)1;   /* sentinel replaced by real mmap next */
+        }
+        if (strncmp(argv[a], "--hdmi-test", 11) == 0) {
+            hdmi_test = 1;
+            if (argv[a][11] == '=') hdmi_mode = atoi(argv[a] + 12);
+        } else if (strncmp(argv[a], "--hdmi", 6) == 0) {
+            use_hdmi = 1;
+            if (argv[a][6] == '=') hdmi_mode = atoi(argv[a] + 7);
+        }
+    }
+    int hdmi_poke = (g_hdmi == (void *)1);
+    if (hdmi_poke) g_hdmi = NULL;
+    if (use_hdmi || hdmi_test || hdmi_poke) {
+        /* Self-contained clock/port bring-up so the video path works no
+         * matter which FSBL booted the board:
+         *   FPGA1_CLK_CTRL: FCLK1 = IOPLL/40/1 = 25 MHz (pixel clock)
+         *   AFI1: force S_AXI_HP1 to 32-bit (reset default is 64-bit; an
+         *   FSBL built before the HDMI design never programs it) */
+        volatile uint32_t *slcr2 = mmap(NULL, SLCR_SPAN, PROT_READ | PROT_WRITE,
+                                        MAP_SHARED, fd, SLCR_BASE);
+        volatile uint32_t *afi1 = mmap(NULL, 0x1000, PROT_READ | PROT_WRITE,
+                                       MAP_SHARED, fd, 0xF8009000);
+        if (slcr2 != MAP_FAILED) {
+            slcr2[SLCR_UNLOCK_OFF >> 2] = SLCR_UNLOCK_KEY;
+            slcr2[0x180 >> 2] = 0x00500800;   /* FCLK1 = 25 MHz (ps7_init split) */
+            slcr2[0x188 >> 2] = 0;            /* FPGA1_THR_CNT: the old FSBL
+                                               * parks unused FCLK1 with the
+                                               * throttle counter = 1, which
+                                               * STOPS the clock outright. */
+            printf("[clk] FCLK1 -> 0x%08x (25 MHz pixel clock)\n",
+                   slcr2[0x180 >> 2]);
+            munmap((void *)slcr2, SLCR_SPAN);
+        }
+        if (afi1 != MAP_FAILED) {
+            afi1[0x00 >> 2] = 1;   /* RDCHAN_CTRL: 32-bit */
+            afi1[0x14 >> 2] = 1;   /* WRCHAN_CTRL: 32-bit */
+            printf("[afi] HP1 width forced to 32-bit\n");
+            munmap((void *)afi1, 0x1000);
+        }
+        usleep(1000);
+        g_hdmi = mmap(NULL, HDMI_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED,
+                      fd, HDMI_BASE);
+        g_fb = mmap(NULL, FB_BYTES, PROT_READ | PROT_WRITE, MAP_SHARED,
+                    fd, FB_PHYS);
+        if (g_hdmi == MAP_FAILED || g_fb == MAP_FAILED) {
+            perror("mmap hdmi/fb"); return 1;
+        }
+        if (!hdmi_poke) {
+        hreg_wr(HREG_FB, FB_PHYS);
+        /* enable + MONO (bit5: Y duplicated into the chroma slot -> R=G=B
+         * downstream, sidestepping the ADV7511's unwritable CSC block) */
+        hreg_wr(HREG_CTRL, 0x21 | (hdmi_test ? 0x8 : 0x0));
+        usleep(50000);
+        printf("[hdmi] frames=%lu (must advance)\n",
+               (unsigned long)((hreg_rd(HREG_STAT) >> 8) & 0xFF));
+        adv7511_init(hdmi_mode);
+        }
+        if (hdmi_test) {
+            printf("[hdmi] test pattern up — color bars should be visible.\n"
+                   "       frames=%lu overrun=%lu\n",
+                   (unsigned long)((hreg_rd(HREG_STAT) >> 8) & 0xFF),
+                   (unsigned long)(hreg_rd(HREG_STAT) & 1));
+            return 0;
+        }
+        /* clear framebuffer to black (Y=16, U=V=128) */
+        for (int i = 0; i < FB_BYTES/4; ++i)
+            g_fb[i] = 0x10 | (0x80 << 8) | (0x10 << 16) | (0x80u << 24);
+        g_use_hdmi = 1;
+    }
+
+    /* --adv REG VAL: raw ADV7511 register poke (hex), then exit. Live CSC /
+     * mode experiments without rebuild cycles. Requires --hdmi* mapping done
+     * above (g_hdmi set). Usage: dnn_demo --hdmi-poke REG VAL */
+    if (argc > 3 && strcmp(argv[1], "--hdmi-poke") == 0) {
+        if (!g_hdmi) { fprintf(stderr, "need hdmi mapping\n"); return 1; }
+        unsigned reg = strtoul(argv[2], NULL, 16);
+        unsigned val = strtoul(argv[3], NULL, 16);
+        adv_wr((uint8_t)reg, (uint8_t)val);
+        uint8_t rb = 0; adv_rd((uint8_t)reg, &rb);
+        printf("[adv] 0x%02x <= 0x%02x (rb 0x%02x)\n", reg, val, rb);
+        return 0;
+    }
 
     /* --selftest: run one inference on the golden sim input (no camera) so we
      * can tell whether the board completes the SAME data that matches golden in
@@ -551,6 +869,10 @@ int main(int argc, char **argv) {
         if (rc == 0) {
             int n = decode(out, boxes);
             dets += n;
+            if (g_use_hdmi)
+                for (int i = 0; i < n; ++i)
+                    fb_draw_box(boxes[i].x0, boxes[i].y0,
+                                boxes[i].x1, boxes[i].y1);
             /* Per-cell raw confidences (luma-contrast units) + scene range:
              * makes the detector observable even below threshold. */
             int lmin = 255, lmax = 0;

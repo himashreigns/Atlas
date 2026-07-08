@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Jul  8 16:39:57 2026
+# Process ID         : 140807
+# Current directory  : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_0_synth_1
+# Command line       : vivado -log system_axi_ic_ctrl_imp_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_ic_ctrl_imp_auto_pc_0.tcl
+# Log file           : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_0_synth_1/system_axi_ic_ctrl_imp_auto_pc_0.vds
+# Journal file       : /home/chathupa/Desktop/dnn_opt/build/dnn_zynq_hdmi/dnn_zynq_hdmi.runs/system_axi_ic_ctrl_imp_auto_pc_0_synth_1/vivado.jou
+# Running On         : chathupa-Nitro-AN515-55
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+# CPU Frequency      : 3329.295 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16589 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20884 MB
+# Available Virtual  : 11635 MB
+#-----------------------------------------------------------
+source system_axi_ic_ctrl_imp_auto_pc_0.tcl -notrace
