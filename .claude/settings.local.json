@@ -402,7 +402,17 @@
       "Bash(lsblk -o NAME,SIZE,LABEL,MOUNTPOINT)",
       "Bash(mount)",
       "Bash(cp /home/chathupa/petalinux_projects/zed_yolo/images/linux/BOOT.BIN /home/chathupa/petalinux_projects/zed_yolo/images/linux/image.ub /media/chathupa/3472-745B/)",
-      "Bash(umount /media/chathupa/3472-745B)"
+      "Bash(umount /media/chathupa/3472-745B)",
+      "Bash(cd /home/chathupa/petalinux_projects/zed_yolo *)",
+      "Read(//home/chathupa/petalinux_projects/zed_yolo/**)",
+      "Bash(rm -rf /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad/rfsx)",
+      "Bash(mkdir -p /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad/rfsx)",
+      "Bash(grep -vE \"^#|^$\" etc/inittab)",
+      "Bash(grep -E \"^start-stop-daemon$|^start_getty$\")",
+      "Bash(grep -E \"^killall$|^pidof$|^start-stop-daemon$\")",
+      "Bash(grep -E '^\\\\-\\\\-quiet$|detection-count')",
+      "Bash(cp /home/chathupa/petalinux_projects/zed_yolo/images/linux/image.ub /media/chathupa/3472-745B/)",
+      "Bash(python3 - /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad /home/chathupa/petalinux_projects/zed_yolo/project-spec/meta-user/recipes-apps/dnn-demo/files/dnn-demo.init)"
     ],
     "additionalDirectories": [
       "/media/chathupa/3472-745B",

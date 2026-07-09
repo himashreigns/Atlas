@@ -681,6 +681,8 @@ static void camera_close(void) {
  * ============================================================================= */
 static int16_t s_q88[IN_LEN];
 static int g_use_hdmi = 0;
+static int g_quiet = 0;    /* --quiet: log only on detection-count changes
+                            * (keeps the RAM-backed boot log tiny for autostart) */
 
 static void on_frame(const uint8_t *yuyv, void *ctx) {
     (void)ctx;
@@ -702,6 +704,11 @@ static volatile sig_atomic_t g_stop = 0;
 static void on_signal(int sig) { (void)sig; g_stop = 1; }
 
 int main(int argc, char **argv) {
+    /* Line-buffer stdout so the log is useful when the autostart init script
+     * redirects it to a file: glibc otherwise switches to 4 KB block buffering
+     * on a non-tty, and the sparse --quiet output would never reach the log. */
+    setvbuf(stdout, NULL, _IOLBF, 0);
+
     /* argv[1] is the video device only when it isn't a --flag */
     const char *dev = (argc > 1 && argv[1][0] != '-') ? argv[1] : "/dev/video0";
 
@@ -755,6 +762,8 @@ int main(int argc, char **argv) {
         } else if (strncmp(argv[a], "--hdmi", 6) == 0) {
             use_hdmi = 1;
             if (argv[a][6] == '=') hdmi_mode = atoi(argv[a] + 7);
+        } else if (strcmp(argv[a], "--quiet") == 0) {
+            g_quiet = 1;
         }
     }
     int hdmi_poke = (g_hdmi == (void *)1);
@@ -895,6 +904,7 @@ int main(int argc, char **argv) {
     box_t boxes[GRID_CELLS];
     double fps_t0 = now_us();
     unsigned fps_frames = 0;
+    int prev_n = -1;   /* last detection count, for --quiet edge logging */
 
     while (!g_stop) {
         if (camera_grab(on_frame, NULL) != 0) { if (g_stop) break; usleep(100000); continue; }
@@ -924,6 +934,9 @@ int main(int argc, char **argv) {
                 if (l < lmin) lmin = l;
                 if (l > lmax) lmax = l;
             }
+            /* In --quiet mode print only when the detection count changes,
+             * so an unattended autostart run doesn't fill the tmpfs log. */
+            if (!g_quiet || n != prev_n) {
             printf("[frame %lu] cam %.1f fps | accel %.1f us | %d det | "
                    "conf={%ld,%ld,%ld,%ld} luma=[%d..%d]\n",
                    frames, fps, t1 - t0, n,
@@ -937,6 +950,9 @@ int main(int argc, char **argv) {
                        boxes[i].x1, boxes[i].y1, cq >> 8,
                        (unsigned)((cq & 0xFF) * 100u >> 8));
             }
+            fflush(stdout);
+            }
+            prev_n = n;
         } else {
             stalls++;
             if ((frames % 15) == 0) {
