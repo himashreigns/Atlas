@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include <stdint.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -36,6 +37,7 @@
 #include <linux/videodev2.h>
 
 #include "dnn_weights.h"
+#include "dnn_weights_face.h"   /* trained face-in-quadrant detector */
 #include "sim_input.h"
 
 /* ---- Accelerator memory map (from software/vitis/src/dnn_accel.h) --------- */
@@ -101,6 +103,12 @@
 #define FRAME_BYTES     (FRAME_W * FRAME_H * 2)   /* YUYV */
 
 #define OBJ_THRESHOLD_Q88  ((int16_t)(0.30f * 256))
+
+/* Weight-set selector: default = flashlight/bright-quadrant demo weights;
+ * --face swaps in the trained face-in-quadrant detector + its threshold. */
+static const int16_t *g_w0 = yolo_wgt_l0;
+static const int16_t *g_w3 = yolo_wgt_l3;
+static int g_obj_thr = (int)(0.30f * 256);
 #define ACCEL_RETRIES      2        /* kick + (soft-reset recovery) retry */
 
 /* ---- HDMI scanout core (hdmi_out.v) --------------------------------------- */
@@ -137,6 +145,13 @@ static volatile uint32_t *g_regs;   /* accelerator register window */
 static volatile int32_t  *g_dma;    /* DMA scratch (word-addressed) */
 static volatile uint32_t *g_hdmi;   /* scanout register window (or NULL) */
 static volatile uint32_t *g_fb;     /* framebuffer (word access) */
+static int g_mirror = 0;   /* selfie mirror: flip horizontally in BOTH the
+                            * display blit and the preprocess, so capture,
+                            * training, and inference share one orientation */
+static int g_single = 0;   /* single-object decode: report only the argmax
+                            * quadrant (for the trained hand/face detector) */
+static int g_grid   = 2;   /* detection grid dim: 2 (flashlight 2x2x5) or 3
+                            * (trained hand: 3x3, one objectness per FC output) */
 
 static inline void     reg_wr(uint32_t off, uint32_t v) { g_regs[off >> 2] = v; }
 static inline uint32_t reg_rd(uint32_t off)             { return g_regs[off >> 2]; }
@@ -174,8 +189,8 @@ static void accel_load_weights(void) {
     int i;
     volatile int32_t *w0 = dma_at(OFFS_WGT_L0);
     volatile int32_t *w3 = dma_at(OFFS_WGT_L3);
-    for (i = 0; i < WGT_L0_LEN; ++i) w0[i] = (int32_t)yolo_wgt_l0[i];
-    for (i = 0; i < WGT_L3_LEN; ++i) w3[i] = (int32_t)yolo_wgt_l3[i];
+    for (i = 0; i < WGT_L0_LEN; ++i) w0[i] = (int32_t)g_w0[i];
+    for (i = 0; i < WGT_L3_LEN; ++i) w3[i] = (int32_t)g_w3[i];
 
     reg_wr(REG_CTRL, CTRL_LOAD_WGT);
     for (int t = 0; t < 100000; ++t) {
@@ -447,19 +462,25 @@ static void fb_blit_camera(const uint8_t *yuyv) {
             uint8_t y0 = s, u = s >> 8, y1 = s >> 16, v = s >> 24;
             uint32_t w0 = y0 | (u << 8) | (y0 << 16) | (v << 24);
             uint32_t w1 = y1 | (u << 8) | (y1 << 16) | (v << 24);
-            d0[2*x] = w0; d0[2*x+1] = w1;
-            d1[2*x] = w0; d1[2*x+1] = w1;
+            /* w0/w1 are internally symmetric (both half-pixels equal), so a
+             * horizontal flip is just reversing the destination word index. */
+            int j0 = g_mirror ? (FB_W/2 - 1 - 2*x) : (2*x);
+            int j1 = g_mirror ? (FB_W/2 - 2 - 2*x) : (2*x + 1);
+            d0[j0] = w0; d0[j1] = w1;
+            d1[j0] = w0; d1[j1] = w1;
         }
     }
 }
 
-/* Draw a green rectangle border (camera coords, scaled 2x) into the FB. */
-#define BOXC_Y 235   /* bright white in mono mode */
-#define BOXC_U 54
-#define BOXC_V 34
+/* Draw a rectangle border (camera coords, scaled 2x) into the FB. g_box_y sets
+ * the luma (235=white for detection boxes, 16=black for guide boxes on a bright
+ * scene). */
+#define BOXC_U 128
+#define BOXC_V 128
+static int g_box_y = 235;
 static void fb_hline(int fx0, int fx1, int fy, int thick) {
     if (fy < 0) fy = 0;
-    uint32_t w = BOXC_Y | (BOXC_U << 8) | (BOXC_Y << 16) | (BOXC_V << 24);
+    uint32_t w = g_box_y | (BOXC_U << 8) | (g_box_y << 16) | (BOXC_V << 24);
     for (int t = 0; t < thick; ++t) {
         int yy = fy + t; if (yy >= FB_H) break;
         for (int x = fx0/2; x <= fx1/2 && x < FB_W/2; ++x)
@@ -467,7 +488,7 @@ static void fb_hline(int fx0, int fx1, int fy, int thick) {
     }
 }
 static void fb_vline(int fx, int fy0, int fy1, int thick) {
-    uint32_t w = BOXC_Y | (BOXC_U << 8) | (BOXC_Y << 16) | (BOXC_V << 24);
+    uint32_t w = g_box_y | (BOXC_U << 8) | (g_box_y << 16) | (BOXC_V << 24);
     for (int y = fy0; y <= fy1 && y < FB_H; ++y)
         for (int t = 0; t < thick; ++t) {
             int xw = (fx + 2*t)/2;
@@ -482,6 +503,13 @@ static void fb_draw_box(int cx0, int cy0, int cx1, int cy1) {
     fb_hline(x0, x1, y1-3, 4);
     fb_vline(x0, y0, y1, 2);
     fb_vline(x1-3, y0, y1, 2);
+}
+/* High-contrast guide box: thick BLACK outer border + WHITE inner border, so
+ * it's visible whether the scene behind it is bright or dark. */
+static void fb_guide_box(int cx0, int cy0, int cx1, int cy1) {
+    g_box_y = 16;  fb_draw_box(cx0, cy0, cx1, cy1);           /* black outer */
+    g_box_y = 235; fb_draw_box(cx0+4, cy0+4, cx1-4, cy1-4);   /* white inner */
+    g_box_y = 235;
 }
 
 /* =============================================================================
@@ -510,7 +538,8 @@ static void preprocess(const uint8_t *yuyv, int16_t *q88) {
              * with <<8, luma >= 128 went negative and the CONV ReLU zeroed
              * out every bright region. The FC weights are scaled x2 to
              * compensate, so decoded confidences stay in full-luma units. */
-            q88[dy * IN_W + dx] = (int16_t)((uint16_t)luma << 7);
+            uint32_t ox = g_mirror ? (IN_W - 1 - dx) : dx;
+            q88[dy * IN_W + ox] = (int16_t)((uint16_t)luma << 7);
         }
     }
 }
@@ -529,6 +558,40 @@ static int decode(const int32_t *raw, box_t *out) {
     int kept = 0;
     const uint32_t grid = 2;
     const uint32_t cw = FRAME_W / grid, ch = FRAME_H / grid;
+
+    /* Single-object mode (--face/hand): exactly one target in one quadrant, so
+     * report only the highest-objectness cell (argmax) if it clears threshold,
+     * and draw a box over that whole quadrant. Sidesteps the per-cell threshold
+     * firing several cells and the box-regression params being tiny. */
+    if (g_single) {
+        const int gd = g_grid;                 /* 2 or 3 */
+        const int ncells = gd * gd;
+        const uint32_t gcw = FRAME_W / gd, gch = FRAME_H / gd;
+        /* per-cell objectness (3x3: FC output c; 2x2: [x,y,w,h,obj] layout) */
+        int best = -1; int32_t bestc = -0x7fffffff;
+        for (int c = 0; c < ncells; ++c) {
+            int32_t o = (gd == 3) ? (raw[c] >> 8) : (raw[c * PARAMS_PER_CELL + 4] >> 8);
+            if (o > bestc) { bestc = o; best = c; }
+        }
+        int cand = (best >= 0 && bestc >= g_obj_thr) ? best : -1;
+        /* Temporal smoothing: majority vote over the last 5 frames. */
+        static int hist[5] = {-1,-1,-1,-1,-1}; static int hp = 0;
+        hist[hp] = cand; hp = (hp + 1) % 5;
+        int votes[16] = {0}, none = 0;
+        for (int i = 0; i < 5; ++i) { if (hist[i] < 0) none++; else votes[hist[i]]++; }
+        int win = -1, wv = 0;
+        for (int c = 0; c < ncells; ++c) if (votes[c] > wv) { wv = votes[c]; win = c; }
+        if (win < 0 || wv < 3 || none >= 3) return 0;
+
+        /* box fills the whole winning cell */
+        uint32_t col = win % gd, row = win / gd;
+        out[0].x0 = col * gcw; out[0].y0 = row * gch;
+        out[0].x1 = (col + 1) * gcw; out[0].y1 = (row + 1) * gch;
+        out[0].conf = (int16_t)(bestc > 32767 ? 32767 : (bestc < 0 ? 0 : bestc));
+        out[0].cell = (uint8_t)win;
+        return 1;
+    }
+
     for (uint32_t c = 0; c < GRID_CELLS; ++c) {
         const int32_t *p = raw + c * PARAMS_PER_CELL;
         /* Scale-shift decode: the FC accumulator works on luma<<8
@@ -539,7 +602,7 @@ static int decode(const int32_t *raw, box_t *out) {
         int32_t cx32 = p[0] >> 8, cy32 = p[1] >> 8;
         int32_t w32  = p[2] >> 8, h32  = p[3] >> 8;
         int32_t c32  = p[4] >> 8;
-        if (c32 < OBJ_THRESHOLD_Q88) continue;
+        if (c32 < g_obj_thr) continue;
         int16_t cx = (int16_t)(cx32 > 255 ? 255 : (cx32 < 0 ? 0 : cx32));
         int16_t cy = (int16_t)(cy32 > 255 ? 255 : (cy32 < 0 ? 0 : cy32));
         int16_t w  = (int16_t)(w32  > 255 ? 255 : (w32  < 0 ? 0 : w32));
@@ -712,6 +775,18 @@ int main(int argc, char **argv) {
     /* argv[1] is the video device only when it isn't a --flag */
     const char *dev = (argc > 1 && argv[1][0] != '-') ? argv[1] : "/dev/video0";
 
+    /* Pre-scan for --face so the trained weights are selected BEFORE the
+     * accelerator weight load below (the main flag loop runs later). */
+    for (int a = 1; a < argc; ++a)
+        if (strcmp(argv[a], "--face") == 0) {
+            g_w0 = face_wgt_l0; g_w3 = face_wgt_l3;
+            g_obj_thr = FACE_OBJ_THRESHOLD_Q88;
+            g_mirror = 1;   /* model is trained on mirrored capture data */
+            g_single = 1;   /* one hand -> argmax cell box */
+            g_grid   = 3;   /* 3x3 grid: objectness = FC outputs 0..8 */
+            printf("[weights] trained 3x3 HAND detector (thr=%d, mirrored)\n", g_obj_thr);
+        }
+
     int fd = open("/dev/mem", O_RDWR | O_SYNC);
     if (fd < 0) { perror("open /dev/mem"); return 1; }
 
@@ -764,6 +839,9 @@ int main(int argc, char **argv) {
             if (argv[a][6] == '=') hdmi_mode = atoi(argv[a] + 7);
         } else if (strcmp(argv[a], "--quiet") == 0) {
             g_quiet = 1;
+        } else if (strcmp(argv[a], "--face") == 0) {
+            g_w0 = face_wgt_l0; g_w3 = face_wgt_l3;
+            g_obj_thr = FACE_OBJ_THRESHOLD_Q88;
         }
     }
     int hdmi_poke = (g_hdmi == (void *)1);
@@ -894,6 +972,108 @@ int main(int argc, char **argv) {
                 putchar('\n');
             }
         }
+        camera_close();
+        return 0;
+    }
+
+    /* --capture LABEL COUNT: record COUNT preprocessed 16x16 luma frames tagged
+     * LABEL (0=TL 1=TR 2=BL 3=BR quadrant the face is in, 4=empty) appended to
+     * /tmp/face_capture.bin. Each record = 1 label byte + 256 luma bytes. Run
+     * once per quadrant + empty to build a fine-tune set. Combine with --hdmi
+     * to watch yourself and aim. */
+    for (int a = 1; a < argc; ++a) {
+        if (strcmp(argv[a], "--capture") == 0 && a + 2 < argc) {
+            int label = atoi(argv[a+1]);
+            int count = atoi(argv[a+2]);
+            FILE *cf = fopen("/tmp/face_capture.bin", "ab");
+            if (!cf) { perror("open capture file"); camera_close(); return 1; }
+            printf("[capture] label=%d count=%d -> /tmp/face_capture.bin\n", label, count);
+            /* Live-preview phase: grab+blit so the monitor shows live video and
+             * you can line your face up in the target quarter. ~8 s. */
+            printf("[capture] LIVE PREVIEW — position your face; recording in 8s\n");
+            double pv0 = now_us();
+            int last_sec = -1;
+            while ((now_us() - pv0) < 8e6 && !g_stop) {
+                if (camera_grab(on_frame, NULL) != 0) { usleep(30000); continue; }
+                int sec = (int)((now_us() - pv0) / 1e6);
+                if (sec != last_sec) { last_sec = sec;
+                    printf("  recording in %d...\n", 8 - sec); fflush(stdout); }
+            }
+            printf("[capture] RECORDING now — hold position\n"); fflush(stdout);
+            int got = 0;
+            unsigned char rec[1 + IN_LEN];
+            rec[0] = (unsigned char)label;
+            while (got < count && !g_stop) {
+                if (camera_grab(on_frame, NULL) != 0) { usleep(50000); continue; }
+                for (int i = 0; i < IN_LEN; ++i) {
+                    int l = s_q88[i] >> 7;              /* luma 0..255 */
+                    rec[1 + i] = (unsigned char)(l < 0 ? 0 : (l > 255 ? 255 : l));
+                }
+                fwrite(rec, 1, sizeof rec, cf);
+                got++;
+                if ((got % 20) == 0) { printf("  %d/%d\n", got, count); fflush(stdout); }
+                usleep(40000);                          /* ~25 fps, spread poses */
+            }
+            fclose(cf);
+            printf("[capture] wrote %d frames (label %d)\n", got, label);
+            camera_close();
+            return 0;
+        }
+    }
+
+    /* --guided: one continuous, mirrored, on-screen-guided capture session for
+     * all 5 labels. The monitor never freezes: it shows live mirrored video the
+     * whole time with a box marking the target quarter. Box BLINKS while you get
+     * ready, then goes SOLID+double while it records ~150 frames. Empty = full
+     * border (leave the frame). Writes /tmp/face_capture.bin. */
+    for (int a = 1; a < argc; ++a) if (strcmp(argv[a], "--guided") == 0) {
+        g_mirror = 1;
+        /* 3x3 grid of camera boxes (320x240) = cells 0..8 (row*3+col), then
+         * label 9 = EMPTY (full-frame border, leave the frame). */
+        static const int qb[10][4] = {
+            {6,4,101,76},   {113,4,208,76},   {220,4,314,76},     /* top row */
+            {6,84,101,156}, {113,84,208,156}, {220,84,314,156},   /* mid row */
+            {6,164,101,236},{113,164,208,236},{220,164,314,236},  /* bot row */
+            {6,6,314,234} };                                       /* empty */
+        static const char *nm[10] = {
+            "TOP-LEFT","TOP-MIDDLE","TOP-RIGHT",
+            "MIDDLE-LEFT","CENTER","MIDDLE-RIGHT",
+            "BOTTOM-LEFT","BOTTOM-MIDDLE","BOTTOM-RIGHT",
+            "EMPTY (leave the frame)"};
+        FILE *cf = fopen("/tmp/face_capture.bin", "wb");
+        if (!cf) { perror("capture file"); camera_close(); return 1; }
+        for (int L = 0; L < 10 && !g_stop; ++L) {
+            printf("\n[guided] === label %d: %s ===\n", L, nm[L]);
+            /* preview: ~6 s, blinking box */
+            double t0 = now_us(); int fr = 0;
+            while ((now_us() - t0) < 6e6 && !g_stop) {
+                if (camera_grab(on_frame, NULL) != 0) { usleep(30000); continue; }
+                if (((fr / 10) & 1) == 0)
+                    fb_guide_box(qb[L][0], qb[L][1], qb[L][2], qb[L][3]);
+                fr++;
+                int s = 6 - (int)((now_us() - t0) / 1e6);
+                if (fr % 25 == 0) { printf("  get ready (%s) %d...\n", nm[L], s); fflush(stdout); }
+            }
+            /* record: 100 frames, solid double box */
+            printf("[guided] RECORDING %s\n", nm[L]); fflush(stdout);
+            unsigned char rec[1 + IN_LEN]; rec[0] = (unsigned char)L;
+            int got = 0;
+            while (got < 100 && !g_stop) {
+                if (camera_grab(on_frame, NULL) != 0) { usleep(40000); continue; }
+                fb_guide_box(qb[L][0], qb[L][1], qb[L][2], qb[L][3]);      /* solid = recording */
+                fb_guide_box(qb[L][0]+8, qb[L][1]+8, qb[L][2]-8, qb[L][3]-8);
+                for (int i = 0; i < IN_LEN; ++i) {
+                    int l = s_q88[i] >> 7;
+                    rec[1 + i] = (unsigned char)(l < 0 ? 0 : (l > 255 ? 255 : l));
+                }
+                fwrite(rec, 1, sizeof rec, cf);
+                got++;
+                usleep(40000);
+            }
+            printf("[guided] wrote %d frames for %s\n", got, nm[L]);
+        }
+        fclose(cf);
+        printf("[guided] done — /tmp/face_capture.bin ready\n");
         camera_close();
         return 0;
     }

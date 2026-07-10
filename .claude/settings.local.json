@@ -412,7 +412,13 @@
       "Bash(grep -E \"^killall$|^pidof$|^start-stop-daemon$\")",
       "Bash(grep -E '^\\\\-\\\\-quiet$|detection-count')",
       "Bash(cp /home/chathupa/petalinux_projects/zed_yolo/images/linux/image.ub /media/chathupa/3472-745B/)",
-      "Bash(python3 - /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad /home/chathupa/petalinux_projects/zed_yolo/project-spec/meta-user/recipes-apps/dnn-demo/files/dnn-demo.init)"
+      "Bash(python3 - /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/7f0f5443-31ba-4c30-8c40-f7fd9a357818/scratchpad /home/chathupa/petalinux_projects/zed_yolo/project-spec/meta-user/recipes-apps/dnn-demo/files/dnn-demo.init)",
+      "Bash(python3 tools/face_data/load_faces.py)",
+      "Bash(python3 tools/gen_face_dataset.py)",
+      "Bash(python3 tools/train_face_detector.py)",
+      "Bash(python3 -c \"import json;m=json.load\\(open\\('tools/face_data/train_meta.json'\\)\\);print\\('s0',m['s0'],'s3',m['s3'],'thr',m['threshold'],'F1 %.3f'%m['metrics']['f1'],'mism',m['golden_mismatches']\\)\")",
+      "Bash(python3 tools/train_hand_detector.py)",
+      "Bash(python3 tools/train_hand3x3.py)"
     ],
     "additionalDirectories": [
       "/media/chathupa/3472-745B",
