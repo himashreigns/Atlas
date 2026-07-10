@@ -418,7 +418,17 @@
       "Bash(python3 tools/train_face_detector.py)",
       "Bash(python3 -c \"import json;m=json.load\\(open\\('tools/face_data/train_meta.json'\\)\\);print\\('s0',m['s0'],'s3',m['s3'],'thr',m['threshold'],'F1 %.3f'%m['metrics']['f1'],'mism',m['golden_mismatches']\\)\")",
       "Bash(python3 tools/train_hand_detector.py)",
-      "Bash(python3 tools/train_hand3x3.py)"
+      "Bash(python3 tools/train_hand3x3.py)",
+      "Bash(cp software/linux/dnn_demo.c software/linux/dnn_weights_face.h /home/chathupa/petalinux_projects/zed_yolo/project-spec/meta-user/recipes-apps/dnn-demo/files/)",
+      "Bash(ls /tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/*/scratchpad/xbin 2>/dev/null; echo \"---\"; ls /home/chathupa/Desktop/dnn_opt/software/linux/*.h)",
+      "Read(//tmp/claude-1000/-home-chathupa-Desktop-dnn-opt/**)",
+      "Bash(lsblk -o NAME,SIZE,MOUNTPOINT,LABEL)",
+      "Bash(lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,LABEL)",
+      "Read(//run/media/**)",
+      "Bash(cp -v /home/chathupa/petalinux_projects/zed_yolo/images/linux/image.ub /media/chathupa/3472-745B/image.ub)",
+      "Bash(lsblk -o NAME,MOUNTPOINT /dev/sdb)",
+      "Bash(stty -F /dev/ttyUSB0 115200 -echo -icrnl)",
+      "Bash(timeout 40 cat /dev/ttyUSB0)"
     ],
     "additionalDirectories": [
       "/media/chathupa/3472-745B",

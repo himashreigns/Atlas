@@ -111,6 +111,15 @@ static const int16_t *g_w3 = yolo_wgt_l3;
 static int g_obj_thr = (int)(0.30f * 256);
 #define ACCEL_RETRIES      2        /* kick + (soft-reset recovery) retry */
 
+/* ---- Single-object (--face/hand) detection tuning ------------------------- *
+ * All knobs for threshold hysteresis + temporal smoothing live here so the
+ * behaviour can be adjusted without hunting through decode(). Objectness is in
+ * Q8.8 luma-contrast units (same scale as g_obj_thr). */
+#define SMOOTH_WIN         7   /* temporal vote window, in frames             */
+#define SMOOTH_ENTER_VOTES 4   /* votes (of WIN) to ACQUIRE a new cell        */
+#define SMOOTH_HOLD_VOTES  2   /* votes (of WIN) to HOLD the locked cell      */
+#define SMOOTH_ENTER_MUL   2   /* objectness must clear g_obj_thr*this to lock*/
+
 /* ---- HDMI scanout core (hdmi_out.v) --------------------------------------- */
 #define HDMI_BASE       0x43C10000u
 #define HDMI_SPAN       0x1000u
@@ -568,26 +577,51 @@ static int decode(const int32_t *raw, box_t *out) {
         const int ncells = gd * gd;
         const uint32_t gcw = FRAME_W / gd, gch = FRAME_H / gd;
         /* per-cell objectness (3x3: FC output c; 2x2: [x,y,w,h,obj] layout) */
+        int32_t score[16];
         int best = -1; int32_t bestc = -0x7fffffff;
         for (int c = 0; c < ncells; ++c) {
             int32_t o = (gd == 3) ? (raw[c] >> 8) : (raw[c * PARAMS_PER_CELL + 4] >> 8);
+            score[c] = o;
             if (o > bestc) { bestc = o; best = c; }
         }
-        int cand = (best >= 0 && bestc >= g_obj_thr) ? best : -1;
-        /* Temporal smoothing: majority vote over the last 5 frames. */
-        static int hist[5] = {-1,-1,-1,-1,-1}; static int hp = 0;
-        hist[hp] = cand; hp = (hp + 1) % 5;
-        int votes[16] = {0}, none = 0;
-        for (int i = 0; i < 5; ++i) { if (hist[i] < 0) none++; else votes[hist[i]]++; }
+
+        /* Threshold with hysteresis: a *new* cell must clear a high bar
+         * (g_obj_thr * SMOOTH_ENTER_MUL) to become a candidate, but the cell
+         * we are already locked onto only has to clear the base threshold.
+         * Keeps the box from flickering off on a single marginal frame while
+         * still rejecting noise before a lock exists. */
+        static int locked_cell = -1;
+        int32_t enter = g_obj_thr * SMOOTH_ENTER_MUL;
+        int cand = -1;
+        if (best >= 0) {
+            int32_t bar = (best == locked_cell) ? g_obj_thr : enter;
+            if (bestc >= bar) cand = best;
+        }
+
+        /* Temporal smoothing: majority vote over the last SMOOTH_WIN frames. */
+        static int hist[SMOOTH_WIN]; static int hinit = 0; static int hp = 0;
+        if (!hinit) { for (int i = 0; i < SMOOTH_WIN; ++i) hist[i] = -1; hinit = 1; }
+        hist[hp] = cand; hp = (hp + 1) % SMOOTH_WIN;
+        int votes[16] = {0};
+        for (int i = 0; i < SMOOTH_WIN; ++i) if (hist[i] >= 0) votes[hist[i]]++;
         int win = -1, wv = 0;
         for (int c = 0; c < ncells; ++c) if (votes[c] > wv) { wv = votes[c]; win = c; }
-        if (win < 0 || wv < 3 || none >= 3) return 0;
+
+        /* Vote hysteresis: acquiring a new cell needs a solid majority; holding
+         * the currently locked cell needs far fewer votes so the box stays put
+         * through brief occlusions / dropouts instead of blinking. */
+        int need = (win == locked_cell) ? SMOOTH_HOLD_VOTES : SMOOTH_ENTER_VOTES;
+        if (win < 0 || wv < need) { locked_cell = -1; return 0; }
+        locked_cell = win;
 
         /* box fills the whole winning cell */
         uint32_t col = win % gd, row = win / gd;
         out[0].x0 = col * gcw; out[0].y0 = row * gch;
         out[0].x1 = (col + 1) * gcw; out[0].y1 = (row + 1) * gch;
-        out[0].conf = (int16_t)(bestc > 32767 ? 32767 : (bestc < 0 ? 0 : bestc));
+        /* report the *winning* cell's own confidence (not the current-frame
+         * argmax, which may briefly be a different cell during a handoff). */
+        int32_t cc = score[win]; if (cc < 0) cc = 0; if (cc > 32767) cc = 32767;
+        out[0].conf = (int16_t)cc;
         out[0].cell = (uint8_t)win;
         return 1;
     }
